@@ -27,6 +27,14 @@ $(document).ready(function() {
     $('.sidebar-button').on('click', function() {
         $(this).css('filter', 'invert(85%)');
     });
+
+    // Handle resize events
+    $(window).on('resize', debounce(function () {
+        if ($(window).innerWidth() >= 1278) {
+            $('body').removeClass('offcanvas-active');
+        }
+    }, 200));
+
     // On window load, adjust height
     $(window).on('load', function() {
         if($('.main').height() < $('#sidebar-nav').height()) {
