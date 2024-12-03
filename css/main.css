@@ -168,9 +168,11 @@ footer {
 }
 .sidebar-button {
     position: fixed;
-    left: 0;
-    bottom: 0;
+    background: #f5f5f5;
+    left: 5px;
+    bottom: 5px;
     border: none;
+    border-radius: 5px;
     transition: all 0.3s ease-in-out;
 }
 
