@@ -16,9 +16,9 @@ $(document).ready(function() {
     // Toggle sidebar full-width
     $('.btn-toggle-fullwidth').on('click', function() {
         $(this).find('.fa-solid').toggleClass('fa-caret-left fa-caret-right');
-        
+
         // For mobile sizes, toggle offcanvas sidebar
-        if($(window).innerWidth() < 1278) {
+        if ($(window).innerWidth() < 1278) {
             $('body').toggleClass('offcanvas-active');
         }
     });
@@ -37,7 +37,7 @@ $(document).ready(function() {
 
     // On window load, adjust height
     $(window).on('load', function() {
-        if($('.main').height() < $('#sidebar-nav').height()) {
+        if ($('.main').height() < $('#sidebar-nav').height()) {
             $('.main').css('min-height', $('#sidebar-nav').height());
         }
     });
