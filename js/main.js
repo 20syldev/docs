@@ -1,4 +1,13 @@
 $(document).ready(function() {
+    // Debounce function to optimize resize events
+    function debounce(func, wait) {
+        let timeout;
+        return function () {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, wait);
+        };
+    }
+
     // Redirect with navigator language
     $(() => !document.cookie.includes('user_language_preference=') 
     && !/^\/(en|fr)(\/|$)/.test(location.pathname) 
