@@ -23,6 +23,10 @@ $(document).ready(function() {
         }
     });
 
+    // Change invert color on click
+    $('.sidebar-button').on('click', function() {
+        $(this).css('filter', 'invert(85%)');
+    });
     // On window load, adjust height
     $(window).on('load', function() {
         if($('.main').height() < $('#sidebar-nav').height()) {
