@@ -238,7 +238,7 @@ footer {
         border-right: 1px solid #323747;
     }
     .sidebar-button {
-        filter: invert(100%);
+        filter: invert(90%);
     }
     .card {
         background: #222529;
