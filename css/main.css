@@ -168,12 +168,15 @@ footer {
 }
 .sidebar-button {
     position: fixed;
-    background: #f5f5f5;
+    background: #ffffffcc;
     left: 5px;
-    bottom: 5px;
+    bottom: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 7.5px;
     transition: all 0.3s ease-in-out;
+}
+.sidebar-button-active {
+    background: #00000000;
 }
 
 /* Main content */
@@ -240,7 +243,10 @@ footer {
         border-right: 1px solid #323747;
     }
     .sidebar-button {
-        filter: invert(90%);
+        background: #ffffffcc;
+    }
+    .sidebar-button-active {
+        background: #ffffff33;
     }
     .card {
         background: #222529;
