@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     // Change invert color on click
     $('.sidebar-button').on('click', function() {
-        $(this).css('filter', 'invert(85%)');
+        $(this).toggleClass('sidebar-button-active');
     });
 
     // Handle resize events
