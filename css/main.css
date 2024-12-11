@@ -78,6 +78,7 @@ footer {
 .copyright {
     margin-bottom: 0;
     text-align: right;
+    font-weight: 500;
     font-size: 13px;
 }
 
@@ -176,7 +177,7 @@ footer {
     transition: all 0.3s ease-in-out;
 }
 .sidebar-button-active {
-    background: #00000000;
+    background: none;
 }
 
 /* Main content */
