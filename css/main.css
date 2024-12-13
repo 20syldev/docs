@@ -25,13 +25,28 @@ a:hover, a:focus {
     text-decoration: none;
 }
 
-/* Code */
+/* Code font */
 code {
-    background: #f6f6fa;
-    color: #121c2d;
-    padding: 3px 5px;
+    font-family: monospace;
+    background: #fafafa;
+    color: #222;
+    padding: 2.5px;
     border-radius: 5px;
-    border: 1px solid #cacdd8;
+}
+
+/* Request block */
+.request {
+    background: #fafafa;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+.request pre {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
 }
 
 /* Badges */
@@ -238,6 +253,14 @@ footer {
     }
     a {
         color: #a7bbff;
+    }
+    code {
+        color: #fff;
+        background: #252525;
+    }
+    .request {
+        background: #222;
+        border: 1px solid #333;
     }
     #wrapper .sidebar {
         background: #222529;
