@@ -23,11 +23,6 @@ $(document).ready(function() {
         }
     });
 
-    // Change invert color on click
-    $('.sidebar-button').on('click', function() {
-        $(this).toggleClass('sidebar-button-active');
-    });
-
     // Handle resize events
     $(window).on('resize', debounce(function () {
         if ($(window).innerWidth() >= 1278) {
