@@ -279,10 +279,8 @@ footer {
         border-right: 1px solid #323747;
     }
     .sidebar-button {
-        background: #ffffffcc;
-    }
-    .sidebar-button-active {
-        background: #ffffff33;
+        background: none;
+        filter: invert(100%);
     }
     .card {
         background: #222529;
