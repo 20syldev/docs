@@ -274,6 +274,9 @@ footer {
         background: #222;
         border: 1px solid #333;
     }
+    .page-title a {
+        color: #fff;
+    }    
     #wrapper .sidebar {
         background: #222529;
         border-right: 1px solid #323747;
