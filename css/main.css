@@ -12,6 +12,7 @@ body {
     color: #121c2d;
 }
 
+/* Separator */
 hr {
     color: #aaa;
     margin: 40px 0;
@@ -222,12 +223,12 @@ footer {
     font-size: 16px;
 }
 
-/* Scrollbar */
+/* Hide scrollbar */
 ::-webkit-scrollbar {
     display: none;
 }
 
-/* Version Mobile */
+/* Tablet */
 @media (max-width: 1278px) {
     .navbar-nav {
         width: 100%;
@@ -252,12 +253,14 @@ footer {
     #wrapper .navbar { left: 0 !important; }
 }
 
+/* Mobile */
 @media (max-width: 600px) {
     .navbar + .main-content { padding-top: 150px; }
     #wrapper #sidebar { padding-top: 20px; }
     #wrapper .main { padding-top: 0; }
 }
 
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
     body {
         background: #17191b;
