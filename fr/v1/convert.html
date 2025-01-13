@@ -115,7 +115,47 @@
                     <h5 class="page-title"><span class="badge bg-get">GET</span><a href="https://api.sylvain.pro/v1/convert" target="_blank">/v1/convert</a></h5>
                     <div class="row">
                         <div class="col-md-12">
-                            <p>En développement.</p>
+                            <p>
+                                L'endpoint <code>/convert</code> permet de convertir plusieurs unités de température entre elles.
+                                Il faut entrer une valeur à convertir, une unité de départ, et l'unité dans laquelle vous souhaitez la convertir.
+                            </p>
+
+                            <h5 class="subtitle">Paramètres</h5>
+                            <ul>
+                                <li><code>value</code> (requis) : La valeur à convertir.</li>
+                                <li><code>from</code> (requis) : L'unité de départ.</li>
+                                    <ul>
+                                        <li><code>celsius</code> : Unité de départ en degrés Celsius.</li>
+                                        <li><code>fahrenheit</code> : Unité de départ en degrés Fahrenheit.</li>
+                                        <li><code>kelvin</code> : Unité de départ en Kelvin.</li>
+                                    </ul>
+                                <li><code>to</code> (requis) : L'unité dans laquelle vous souhaitez convertir.</li>
+                                    <ul>
+                                        <li><code>celsius</code> : Unité de conversion en degrés Celsius.</li>
+                                        <li><code>fahrenheit</code> : Unité de conversion en degrés Fahrenheit.</li>
+                                        <li><code>kelvin</code> : Unité de conversion en Kelvin.</li>
+                                    </ul>
+                            </ul>
+
+                            <h5 class="subtitle">Requête</h5>
+                            <div class="request">
+                                <code><strong>GET</strong> /v1/convert?value=30&from=celsius&to=kelvin</code>
+                            </div>
+                            <div class="request">
+<pre>{
+  "from": "celsius",
+  "to": "kelvin",
+  "value": 30,
+  "result": 303.15
+}</pre>
+                            </div>
+
+                            <h5 class="subtitle">cURL</h5>
+                            <div class="request">
+                                <code class="user-select-none">$ </code><code>curl https://api.sylvain.pro/v1/convert?value=30&from=celsius&to=kelvin</code>
+                            </div>
+
+                            <i>Si la valeur de <code>value</code>, <code>from</code> ou <code>to</code> est vide ou invalide, une erreur sera renvoyée.</i>
                         </div>
                     </div>
                 </div>

@@ -115,7 +115,47 @@
                     <h5 class="page-title"><span class="badge bg-get">GET</span><a href="https://api.sylvain.pro/v1/convert" target="_blank">/v1/convert</a></h5>
                     <div class="row">
                         <div class="col-md-12">
-                            <p>In development.</p>
+                            <p>
+                                The <code>/convert</code> endpoint allows you to convert multiple temperature units between each other.
+                                You need to provide a value to convert, a source unit, and the unit you want to convert to.
+                            </p>
+
+                            <h5 class="subtitle">Parameters</h5>
+                            <ul>
+                                <li><code>value</code> (required): The value to convert.</li>
+                                <li><code>from</code> (required): The source unit.</li>
+                                    <ul>
+                                        <li><code>celsius</code>: Source unit in Celsius degrees.</li>
+                                        <li><code>fahrenheit</code>: Source unit in Fahrenheit degrees.</li>
+                                        <li><code>kelvin</code>: Source unit in Kelvin.</li>
+                                    </ul>
+                                <li><code>to</code> (required): The unit to convert to.</li>
+                                    <ul>
+                                        <li><code>celsius</code>: Conversion unit in Celsius degrees.</li>
+                                        <li><code>fahrenheit</code>: Conversion unit in Fahrenheit degrees.</li>
+                                        <li><code>kelvin</code>: Conversion unit in Kelvin.</li>
+                                    </ul>
+                            </ul>
+
+                            <h5 class="subtitle">Request</h5>
+                            <div class="request">
+                                <code><strong>GET</strong> /v1/convert?value=30&from=celsius&to=kelvin</code>
+                            </div>
+                            <div class="request">
+<pre>{
+  "from": "celsius",
+  "to": "kelvin",
+  "value": 30,
+  "result": 303.15
+}</pre>
+                            </div>
+
+                            <h5 class="subtitle">cURL</h5>
+                            <div class="request">
+                                <code class="user-select-none">$ </code><code>curl https://api.sylvain.pro/v1/convert?value=30&from=celsius&to=kelvin</code>
+                            </div>
+
+                            <i>If the <code>value</code>, <code>from</code>, or <code>to</code> field is empty or invalid, an error will be returned.</i>
                         </div>
                     </div>
                 </div>
