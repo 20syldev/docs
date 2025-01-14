@@ -132,7 +132,6 @@
                             <ul>
                                 <li><code>len</code> (optionnel) : La longueur du token à générer. Doit être un entier entre <code>12</code> et <code>4096</code>.</li>
                                 <li><code>type</code> (optionnel) : Le type de token à générer. Par défaut, le type est <code>alphanum</code>. 
-                                <li><strong>Options disponibles :</strong>
                                     <ul>
                                         <li><code>alpha</code> : Lettres uniquement (minuscules et majuscules).</li>
                                         <li><code>alphanum</code> : Lettres et chiffres.</li>
@@ -148,17 +147,12 @@
 
                             <h5 class="subtitle">Requête</h5>
                             <div class="request">
-                                <code><strong>POST</strong> /v1/token?len=24&type=alphanum</code>
+                                <code class="user-select-none">$ </code><code>curl -X POST -d 'len=24&type=alphanum' 'https://api.sylvain.pro/v1/token'</code>
                             </div>
                             <div class="request">
 <pre>{
-  "token": "FfkfUDfVzRAiNnoMxLtNschm"
+  "token": "6tMdlDV90x4Sm52dRS7MuGyn"
 }</pre>
-                            </div>
-
-                            <h5 class="subtitle">cURL</h5>
-                            <div class="request">
-                                <code class="user-select-none">$ </code><code>curl -d 'len=24&type=alphanum' https://api.sylvain.pro/v1/token</code>
                             </div>
 
                             <i>Si la valeur de <code>len</code> est hors limites, ou que le <code>type</code> est invalide, un token de 12 caractères alphanumériques sera généré.</i>
