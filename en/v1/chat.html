@@ -168,18 +168,19 @@
                     <h5 class="page-title"><span class="badge bg-post">POST</span><a href="https://api.sylvain.pro/v1/chat" target="_blank">/v1/chat</a></h5>
                     <div class="row">
                         <div class="col-md-12">
-                            <p>The <code>/chat</code> endpoint allows sending a message to the global chat.</p>
+                            <p>The <code>/chat</code> endpoint allows sending a message to the global chat or a private chat.</p>
 
                             <h5 class="subtitle">Parameters</h5>
                             <ul>
                                 <li><code>username</code> (required) : The username of the user who sends the message.</li>
                                 <li><code>message</code> (required) : The message to send.</li>
                                 <li><code>session</code> (required) : The session ID of the user.</li>
+                                <li><code>token</code> (optional) : The key used to connect to a private chat. If not provided, the message will be sent to the global chat.</li>
                             </ul>
 
                             <h5 class="subtitle">Request</h5>
                             <div class="request">
-                                <code class="user-select-none">$ </code><code>curl -X POST -d 'username=User3&message=How are you?&session=x82Azo-93sZ0d' 'https://api.sylvain.pro/v1/chat'</code>
+                                <code class="user-select-none">$ </code><code>curl -X POST -d 'username=User3&message=How are you?&session=x82Azo-93sZ0d&token=41a43360-9874-4c7a-9ca8-eec29e765a0e' 'https://api.sylvain.pro/v1/chat'</code>
                             </div>
                             <div class="request">
 <pre>{
@@ -187,7 +188,7 @@
 }</pre>
                             </div>
 
-                            <i>If the value of <code>username</code> or <code>message</code> is empty, an error will be returned.</i>
+                            <i>If the value of <code>username</code>, <code>message</code> or <code>session</code> is empty, an error will be returned.</i>
                         </div>
                     </div>
                 </div>
