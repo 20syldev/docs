@@ -136,12 +136,13 @@
 
                             <h5 class="subtitle">Paramètres</h5>
                             <ul>
+                                <li><code>username</code> (requis) : Le nom d'utilisateur qui a envoyé le message.</li>
                                 <li><code>token</code> (requis) : La clé permettant la connexion au chat privé désiré.</li>
                             </ul>
 
                             <h5 class="subtitle">Requête</h5>
                             <div class="request">
-                                <code class="user-select-none">$ </code><code>curl -X POST -d 'token=41a43360-9874-4c7a-9ca8-eec29e765a0e' 'https://api.sylvain.pro/v1/chat/private'</code>
+                                <code class="user-select-none">$ </code><code>curl -X POST -d 'username=User3&token=41a43360-9874-4c7a-9ca8-eec29e765a0e' 'https://api.sylvain.pro/v1/chat/private'</code>
                             </div>
                             <div class="request">
 <pre>[
@@ -163,7 +164,7 @@
 ]</pre>
                             </div>
 
-                            <i>Si la valeur de <code>token</code> est vide, que le token est invalide ou que le chat n'existe pas, une erreur sera renvoyée.</i>
+                            <i>Si la valeur de <code>username</code> ou <code>token</code> est vide, que le token est invalide ou que le chat n'existe pas, une erreur sera renvoyée.</i>
                         </div>
                     </div>
                 </div>
