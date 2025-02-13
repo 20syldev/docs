@@ -8,11 +8,6 @@ $(document).ready(function() {
         };
     }
 
-    // Redirect with navigator language
-    $(() => !document.cookie.includes('user_language_preference=') 
-    && !/^\/(en|fr)(\/|$)/.test(location.pathname) 
-    && location.replace('/' + (navigator.language.startsWith('en') ? 'en' : 'fr')));
-
     // Toggle sidebar full-width
     $('.btn-toggle-fullwidth').on('click', function() {
         $(this).find('.fa-solid').toggleClass('fa-caret-left fa-caret-right');
