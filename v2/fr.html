@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Documentation de l'API REST</title>
+    <!-- CSS & Icônes -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon shortcut" href="/assets/images/logo.png"/>
+</head>
+<body>
+    <div id="wrapper" class="d-flex">
+        <div id="sidebar" class="sidebar">
+            <div class="overflow-scroll mh-100">
+                <nav>
+                    <ul class="nav flex-column">
+                        <a href="fr" class="nav-link mb-4">
+                            <button class="btn btn-outline-light p-2 w-100">
+                                <i class="fa-solid fa-compass icon"></i>Commencer
+                            </button>
+                        </a>
+                        <li class="nav-item">
+                            <a href="#algorithms" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Algorithms</span></a>
+                            <div id="algorithms" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/fr/algorithms" class="nav-link"><span class="badge bg-get">GET</span>/v2/algorithms</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#captcha" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Captcha</span></a>
+                            <div id="captcha" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/fr/captcha" class="nav-link"><span class="badge bg-get">GET</span>/v2/captcha</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#chat" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Chat</span></a>
+                            <div id="chat" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item pb-0 mb-0"><a href="/v2/fr/chat" class="nav-link pb-0 mb-0"><span class="badge bg-get">GET</span><span class="badge bg-post">POST</span>/v2/chat</a></li>
+                                    <li class="nav-item"><a href="/v2/fr/chat/private" class="nav-link"><span class="badge bg-post">POST</span>/v2/chat/private</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#color" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Color</span></a>
+                            <div id="color" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/fr/color" class="nav-link"><span class="badge bg-get">GET</span>/v2/color</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#convert" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Convert</span></a>
+                            <div id="convert" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/fr/convert" class="nav-link"><span class="badge bg-get">GET</span>/v2/convert</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#domain" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Domain</span></a>
+                            <div id="domain" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/fr/domain" class="nav-link"><span class="badge bg-get">GET</span>/v2/domain</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#hash" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Hash</span></a>
+                            <div id="hash" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/fr/hash" class="nav-link"><span class="badge bg-post">POST</span>/v2/hash</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#infos" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Infos</span></a>
+                            <div id="infos" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/fr/infos" class="nav-link"><span class="badge bg-get">GET</span>/v2/infos</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#personal" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Personal</span></a>
+                            <div id="personal" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/fr/personal" class="nav-link"><span class="badge bg-get">GET</span>/v2/personal</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#qrcode" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>QR code</span></a>
+                            <div id="qrcode" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/fr/qrcode" class="nav-link"><span class="badge bg-get">GET</span>/v2/qrcode</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#tic-tac-toe" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Tic-Tac-Toe</span></a>
+                            <div id="tic-tac-toe" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item pb-0 mb-0"><a href="/v2/fr/tic-tac-toe" class="nav-link pb-0 mb-0"><span class="badge bg-post">POST</span>/v2/tic-tac-toe</a></li>
+                                    <li class="nav-item"><a href="/v2/fr/tic-tac-toe/fetch" class="nav-link"><span class="badge bg-post">POST</span>/v2/. . ./fetch</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#token" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Token</span></a>
+                            <div id="token" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/fr/token" class="nav-link"><span class="badge bg-post">POST</span>/v2/token</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#username" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Username</span></a>
+                            <div id="username" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/fr/username" class="nav-link"><span class="badge bg-get">GET</span>/v2/username</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="main-content">
+                <div class="container-fluid">
+                    <h3 class="page-title">API REST : Endpoints V2</h3>
+                    <hr>
+                    <h5 class="page-title">
+                        <span class="badge bg-get">MAJ</span>
+                        La documentation des endpoints <a href="/v2/fr/tic-tac-toe">/tic-tac-toe</a> et <a href="/v2/fr/tic-tac-toe/fetch">/tic-tac-toe/fetch</a> arrive bientôt !
+                    </h5>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                L'API est conçue pour être simple d'utilisation et facile à intégrer. 
+                                Elle repose sur une architecture REST, ce qui vous permet d'interagir 
+                                avec les différents services via des requêtes HTTP standards.
+                            </p>
+
+                            <br>
+
+                            <h4>Qu'est-ce qu'une API REST ?</h4>
+                            <p>
+                                Une <strong>API</strong> <i>(Interface de Programmation d'Applications)</i> est un moyen pour deux 
+                                applications de communiquer entre elles, en exposant des données ou des services de manière structurée. 
+                                Une API REST (Representational State Transfer) est un style d'architecture web 
+                                qui permet de rendre les ressources accessibles via des URL fixes et des méthodes 
+                                HTTP comme <strong>GET</strong>, <strong>POST</strong>, <strong>PUT</strong>, et <strong>DELETE</strong>.
+                            </p>
+
+                            <p>
+                                Grâce à cette architecture, vous pouvez intégrer des services variés, tels que la génération de QR codes
+                                ou la création de tokens dans vos applications, en effectuant simplement des appels HTTP.
+                            </p>
+
+                            <br>
+
+                            <h4>Ce que vous trouverez dans cette documentation</h4>
+                            <p>
+                                Cette documentation fournit toutes les informations nécessaires pour utiliser l'API de manière efficace. 
+                                Voici quelques points clés que vous trouverez :
+
+                                <ul>
+                                    <li><strong>Descriptions des endpoints</strong> : Chaque service de l'API est détaillé dans des pages spécifiques, avec des exemples de requêtes et de réponses.</li>
+                                    <li><strong>Précisions sur les paramètres</strong> : Chaque endpoint a des paramètres que vous pouvez personnaliser pour obtenir les résultats désirés.</li>
+                                    <li><strong>Exemples de code</strong> : Vous trouverez des exemples pour intégrer l'API dans différents langages de programmation.</li>
+                                </ul>
+                            </p>
+
+                            <br>
+
+                            <h4>Pourquoi utiliser l'API ?</h4>
+                            <p>
+                                Cette API est conçue pour offrir des solutions simples et efficaces pour vos besoins de développement. 
+                                Qu'il s'agisse de générer des QR codes dynamiques, de générer des informations, des noms de domaine ou  
+                                des tokens customisables, cette API vous offre une large gamme d'outils pour améliorer vos projets.
+                            </p>
+                            <p>
+                                De plus, l'API est optimisée pour être utilisée dans des environnements 
+                                modernes, avec un support complet pour les applications mobiles et desktop. 
+                                Elle est facile à intégrer et à utiliser, même pour les développeurs débutants.
+                            </p>
+
+                            <br>
+
+                            <h4>Commencez dès maintenant</h4>
+                            <p>
+                                Vous êtes prêt à intégrer l'API dans votre projet ? 
+                                N'hésitez pas à consulter les pages dédiées à chaque endpoint pour découvrir comment les utiliser. 
+                                La documentation complète est à votre disposition pour vous guider tout au long de l'intégration.
+                            </p>
+
+                            <br>
+
+                            <h4>Feedback et améliorations</h4>
+                            <p>
+                                Cette documentation est en cours de développement, et vos retours sont essentiels pour l'améliorer. 
+                                Si vous voulez rapporter une erreur ou des suggestions, n'hésitez pas à ouvrir une issue sur le 
+                                <a href="https://github.com/20syldev/docs" target="_blank">dépôt GitHub</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-fill sidebar-button">
+            <button type="button" class="btn btn-toggle-fullwidth"><i class="fa-solid fa-caret-right" style="color: #1e232b;"></i></button>
+        </div>
+
+        <footer class="footer mt-auto">
+            <div class="container-fluid">
+                <p class="copyright"><a href="https://docs.sylvain.pro">docs.sylvain.pro</a> &copy; 2024. Tous droits réservés.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Charger le Js -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+</body>
+</html>

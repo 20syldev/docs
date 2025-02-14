@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Documentation - Domain Name Generation</title>
+    <!-- CSS & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon shortcut" href="/assets/images/logo.png"/>
+</head>
+<body>
+    <div id="wrapper" class="d-flex">
+        <div id="sidebar" class="sidebar">
+            <div class="overflow-scroll mh-100">
+                <nav>
+                    <ul class="nav flex-column">
+                        <a href="../en" class="nav-link mb-4">
+                            <button class="btn btn-outline-light p-2 w-100">
+                                <i class="fa-solid fa-compass icon"></i>Get Started
+                            </button>
+                        </a>
+                        <li class="nav-item">
+                            <a href="#algorithms" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Algorithms</span></a>
+                            <div id="algorithms" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/en/algorithms" class="nav-link"><span class="badge bg-get">GET</span>/v2/algorithms</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#captcha" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Captcha</span></a>
+                            <div id="captcha" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/en/captcha" class="nav-link"><span class="badge bg-get">GET</span>/v2/captcha</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#chat" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Chat</span></a>
+                            <div id="chat" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item pb-0 mb-0"><a href="/v2/en/chat" class="nav-link pb-0 mb-0"><span class="badge bg-get">GET</span><span class="badge bg-post">POST</span>/v2/chat</a></li>
+                                    <li class="nav-item"><a href="/v2/en/chat/private" class="nav-link"><span class="badge bg-post">POST</span>/v2/chat/private</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#color" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Color</span></a>
+                            <div id="color" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/en/color" class="nav-link"><span class="badge bg-get">GET</span>/v2/color</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#convert" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Convert</span></a>
+                            <div id="convert" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/en/convert" class="nav-link"><span class="badge bg-get">GET</span>/v2/convert</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#domain" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Domain</span></a>
+                            <div id="domain" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/en/domain" class="nav-link"><span class="badge bg-get">GET</span>/v2/domain</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#hash" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Hash</span></a>
+                            <div id="hash" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/en/hash" class="nav-link"><span class="badge bg-post">POST</span>/v2/hash</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#infos" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Infos</span></a>
+                            <div id="infos" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/en/infos" class="nav-link"><span class="badge bg-get">GET</span>/v2/infos</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#personal" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Personal</span></a>
+                            <div id="personal" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/en/personal" class="nav-link"><span class="badge bg-get">GET</span>/v2/personal</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#qrcode" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>QR code</span></a>
+                            <div id="qrcode" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/en/qrcode" class="nav-link"><span class="badge bg-get">GET</span>/v2/qrcode</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#token" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Token</span></a>
+                            <div id="token" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/en/token" class="nav-link"><span class="badge bg-post">POST</span>/v2/token</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#username" data-bs-toggle="collapse" class="nav-link collapsed"><i class="fa-solid fa-chevron-right icon-submenu"></i> <span>Username</span></a>
+                            <div id="username" class="collapse">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item"><a href="/v2/en/username" class="nav-link"><span class="badge bg-get">GET</span>/v2/username</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="main-content">
+                <div class="container-fluid">
+                    <h3 class="page-title">REST API: Domain Name Generation</h3>
+                    <hr>
+                    <h5 class="page-title"><span class="badge bg-get">GET</span><a href="https://api.sylvain.pro/v2/domain" target="_blank">/v2/domain</a></h5>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                The <code>/domain</code> endpoint generates various random data about a domain to create a complete profile.
+                                This endpoint does not require any options.
+                            </p>
+
+                            <h5 class="subtitle">Request</h5>
+                            <div class="request">
+                                <code><strong>GET</strong> /v2/domain</code>
+                            </div>
+                            <div class="request">
+<pre>
+{
+  "domain": "sylvain.pro",
+  "full_domain": "api.sylvain.pro",
+  "ip_address": [
+    "216.24.57.4",
+    "216.24.57.252"
+  ],
+  "ssl_certified": true,
+  "hosting_provider": "Render",
+  "dns_servers": [
+    "dns1.registrar-servers.com",
+    "dns2.registrar-servers.com"
+  ],
+  "dns_provider": "Namecheap",
+  "traffic": "1000 visits/day",
+  "seo_score": 70,
+  "page_rank": 2,
+  "country": "France",
+  "website_type": "Portfolio",
+  "random_name": "sylvain",
+  "random_subdomain": "api",
+  "random_tld": "pro",
+  "backlinks_count": 14,
+  "creation_date": "2024-03-17T20:49:00.000Z",
+  "expiration_date": "2026-03-17T20:49:00.000Z"
+}</pre>
+                            </div>
+
+                            <h5 class="subtitle">cURL</h5>
+                            <div class="request">
+                                <code class="user-select-none">$ </code><code>curl -X GET 'https://api.sylvain.pro/v2/domain'</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-fill sidebar-button">
+            <button type="button" class="btn btn-toggle-fullwidth"><i class="fa-solid fa-caret-right" style="color: #1e232b;"></i></button>
+        </div>
+
+        <footer class="footer mt-auto">
+            <div class="container-fluid">
+                <p class="copyright"><a href="https://docs.sylvain.pro">docs.sylvain.pro</a> &copy; 2024. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Load the Js -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+</body>
+</html>
