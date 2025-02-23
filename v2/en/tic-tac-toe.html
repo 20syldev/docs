@@ -144,7 +144,33 @@
                     </h5>
                     <div class="row">
                         <div class="col-md-12">
-                            <p>Coming in 2.1.7</p>
+                            <p>The <code>/tic-tac-toe</code> endpoint allows playing and storing an online Tic-Tac-Toe game. Games are stored for 1 hour and can be accessed via a unique identifier.</p>
+
+                            <h5 class="subtitle">Parameters</h5>
+                            <ul>
+                                <li><code>username</code> (required): The username making the move.</li>
+                                <li><code>move</code> (required): The move played in <code>row-column</code> format (e.g., <code>1-1</code>, <code>2-2</code>, <code>3-3</code>).</li>
+                                <li><code>session</code> (required): The user's session identifier.</li>
+                                <li><code>game</code> (required): The game identifier for connection. If the game does not exist, it will be created.</li>
+                            </ul>
+
+                            <h5 class="subtitle">Request</h5>
+                            <div class="request">
+                                <code class="user-select-none">$ </code>
+                                <code>curl -X POST -d "username=User1&move=2-2&session=abc123&game=VWXYZ" "https://api.sylvain.pro/v2/tic-tac-toe"</code>
+                            </div>
+                            <div class="request">
+<pre>{
+  "message": "Move sent successfully"
+}</pre>
+                            </div>
+
+                            <i>
+                                If a <code>username</code>, <code>move</code>, <code>session</code>, or <code>game</code> value is empty or invalid, 
+                                if the game is full, if the same player plays twice in a row, or if the move has already been played, an error will be returned.<br>
+                                When a game is over, the request will return the winner and loser names, as well as whether there is a tie.
+                                The <a href="/v2/en/tic-tac-toe/fetch">/tic-tac-toe/fetch</a> endpoint allows retrieving more information about the current game.
+                            </i>
                         </div>
                     </div>
                 </div>
