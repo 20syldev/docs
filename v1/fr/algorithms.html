@@ -112,7 +112,10 @@
                 <div class="container-fluid">
                     <h3 class="page-title">API REST : Algorithmes</h3>
                     <hr>
-                    <h5 class="page-title"><span class="badge bg-get">GET</span><a href="https://api.sylvain.pro/v1/algorithms" target="_blank">/v1/algorithms</a></h5>
+                    <h5 class="page-title">
+                        <span class="badge bg-get">GET</span>
+                        <a href="https://api.sylvain.pro/v1/algorithms" target="_blank">/v1/algorithms</a>
+                    </h5>
                     <div class="row">
                         <div class="col-md-12">
                             <p>
@@ -151,7 +154,8 @@
 
                             <h5 class="subtitle">cURL</h5>
                             <div class="request">
-                                <code class="user-select-none">$ </code><code>curl -X GET 'https://api.sylvain.pro/v1/algorithms?method=gcd&value=17&value2=493'</code>
+                                <code class="user-select-none">$ </code>
+                                <code>curl -X GET "https://api.sylvain.pro/v1/algorithms?method=gcd&value=17&value2=493"</code>
                             </div>
 
                             <i>Si la valeur de <code>method</code> ou <code>value</code> est vide ou invalide, ou que <code>value2</code> est nécessaire mais vide, une erreur sera renvoyée.</i>

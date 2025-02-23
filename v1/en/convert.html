@@ -112,7 +112,10 @@
                 <div class="container-fluid">
                     <h3 class="page-title">REST API: Conversion</h3>
                     <hr>
-                    <h5 class="page-title"><span class="badge bg-get">GET</span><a href="https://api.sylvain.pro/v1/convert" target="_blank">/v1/convert</a></h5>
+                    <h5 class="page-title">
+                        <span class="badge bg-get">GET</span>
+                        <a href="https://api.sylvain.pro/v1/convert" target="_blank">/v1/convert</a>
+                    </h5>
                     <div class="row">
                         <div class="col-md-12">
                             <p>
@@ -152,7 +155,8 @@
 
                             <h5 class="subtitle">cURL</h5>
                             <div class="request">
-                                <code class="user-select-none">$ </code><code>curl -X GET 'https://api.sylvain.pro/v1/convert?value=30&from=celsius&to=kelvin'</code>
+                                <code class="user-select-none">$ </code>
+                                <code>curl -X GET "https://api.sylvain.pro/v1/convert?value=30&from=celsius&to=kelvin"</code>
                             </div>
 
                             <i>If the <code>value</code>, <code>from</code>, or <code>to</code> field is empty or invalid, an error will be returned.</i>

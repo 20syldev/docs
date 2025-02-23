@@ -138,7 +138,10 @@
                 <div class="container-fluid">
                     <h3 class="page-title">API REST : Génération de QR Codes</h3>
                     <hr>
-                    <h5 class="page-title"><span class="badge bg-get">GET</span><a href="https://api.sylvain.pro/v2/qrcode" target="_blank">/v2/qrcode</a></h5>
+                    <h5 class="page-title">
+                        <span class="badge bg-get">GET</span>
+                        <a href="https://api.sylvain.pro/v2/qrcode" target="_blank">/v2/qrcode</a>
+                    </h5>
                     <div class="row">
                         <div class="col-md-12">
                             <p>
@@ -163,7 +166,8 @@
 
                             <h5 class="subtitle">cURL</h5>
                             <div class="request">
-                                <code class="user-select-none">$ </code><code>curl -X GET 'https://api.sylvain.pro/v2/qrcode?url=https://docs.sylvain.pro'</code>
+                                <code class="user-select-none">$ </code>
+                                <code>curl -X GET "https://api.sylvain.pro/v2/qrcode?url=https://docs.sylvain.pro"</code>
                             </div>
 
                             <i>Si la valeur de <code>url</code> est vide, une erreur sera renvoyée.</i>

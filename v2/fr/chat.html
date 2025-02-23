@@ -138,7 +138,10 @@
                 <div class="container-fluid">
                     <h3 class="page-title">API REST : Chat en ligne</h3>
                     <hr>
-                    <h5 class="page-title"><span class="badge bg-get">GET</span><a href="https://api.sylvain.pro/v2/chat" target="_blank">/v2/chat</a></h5>
+                    <h5 class="page-title">
+                        <span class="badge bg-get">GET</span>
+                        <a href="https://api.sylvain.pro/v2/chat" target="_blank">/v2/chat</a>
+                    </h5>
                     <div class="row">
                         <div class="col-md-12">
                             <p>L'endpoint <code>/chat</code> récupère tous les messages envoyés durant la dernière heure. Cet endpoint ne nécessite aucune option.</p>
@@ -169,12 +172,16 @@
 
                             <h5 class="subtitle">cURL</h5>
                             <div class="request">
-                                <code class="user-select-none">$ </code><code>curl -X GET 'https://api.sylvain.pro/v2/chat'</code>
+                                <code class="user-select-none">$ </code>
+                                <code>curl -X GET "https://api.sylvain.pro/v2/chat"</code>
                             </div>
                         </div>
                     </div>
                     <hr>
-                    <h5 class="page-title"><span class="badge bg-post">POST</span><a href="https://api.sylvain.pro/v2/chat" target="_blank">/v2/chat</a></h5>
+                    <h5 class="page-title">
+                        <span class="badge bg-post">POST</span>
+                        <a href="https://api.sylvain.pro/v2/chat" target="_blank">/v2/chat</a>
+                    </h5>
                     <div class="row">
                         <div class="col-md-12">
                             <p>L'endpoint <code>/chat</code> permet l'envoi d'un message vers le chat global ou un chat privé.</p>
@@ -189,7 +196,8 @@
 
                             <h5 class="subtitle">Requête</h5>
                             <div class="request">
-                                <code class="user-select-none">$ </code><code>curl -X POST -d 'username=User3&message=Ça va ?&session=x82Azo-93sZ0d&token=41a43360-9874-4c7a-9ca8-eec29e765a0e' 'https://api.sylvain.pro/v2/chat'</code>
+                                <code class="user-select-none">$ </code>
+                                <code>curl -X POST -d "username=User3&message=Ça va ?&session=abc123&token=41a43360-9874-4c7a-9ca8-eec29e765a0e" "https://api.sylvain.pro/v2/chat"</code>
                             </div>
                             <div class="request">
 <pre>{
