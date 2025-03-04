@@ -169,13 +169,12 @@
                     <div class="row">
                         <div class="col-md-12">
                             <p>
-                                L'endpoint <code>/hyperplanning</code> permet d'afficher un planning Hyperplanning à partir d'un fichier ICS (calendrier). 
-                                Utile pour les étudiants qui souhaitent afficher leur emploi du temps directement sur leur site web.
+                                L'endpoint <code>/hyperplanning</code> permet d'afficher en JSON, les informations d'un planning Hyperplanning, à partir d'un fichier ICS (calendrier).
                             </p>
 
                             <h5 class="subtitle">Paramètres</h5>
                             <ul>
-                                <li><code>url</code> (requis) : L'URL du fichier ICS à utiliser puis à afficher.</li>
+                                <li><code>url</code> (requis) : L'URL du fichier ICS à utiliser puis à afficher. Doit être encodée en URL avant d'être envoyée.</li>
                                 <li><code>detail</code> (optionnel) : Permet de spécifier le niveau de détail des événements.
                                     <ul>
                                         <li><code>full</code> : Affiche un résumé complet avec matière, enseignant, classes, date, etc.</li>

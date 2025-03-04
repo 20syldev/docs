@@ -169,13 +169,12 @@
                     <div class="row">
                         <div class="col-md-12">
                             <p>
-                                The <code>/hyperplanning</code> endpoint allows you to display a Hyperplanning schedule from an ICS file (calendar). 
-                                Useful for students who want to display their timetable directly on their website.
+                                The <code>/hyperplanning</code> endpoint allows you to display a Hyperplanning schedule information in JSON format from an ICS (calendar) file.
                             </p>
 
                             <h5 class="subtitle">Parameters</h5>
                             <ul>
-                                <li><code>url</code> (required): The URL of the ICS file to use and display.</li>
+                                <li><code>url</code> (required): The URL of the ICS file to use and display. Must be URL-encoded before being sent.</li>
                                 <li><code>detail</code> (optional): Allows you to specify the level of detail for events.
                                     <ul>
                                         <li><code>full</code>: Displays a complete summary with subject, teacher, classes, date, etc.</li>
