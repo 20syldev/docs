@@ -161,14 +161,14 @@ footer {
     border-radius: 10px;
     border: 1px solid transparent;
 }
-.sidebar .nav > li > a:hover, .sidebar .nav > li > a:focus, .sidebar .nav > li > a.active {
+.sidebar .nav > li > a:hover, .sidebar .nav > li > a.active {
     color: #fff;
     background: transparent;
 }
-.sidebar .nav > li > a:hover i, .sidebar .nav > li > a:focus i, .sidebar .nav > li > a.active i {
+.sidebar .nav > li > a:hover i, .sidebar .nav > li > a.active i {
     margin-left: 2px;
 }
-.sidebar .nav > li > a:focus, .sidebar .nav > li > a.active {
+.sidebar .nav > li > a.active {
     border: 1px solid #fff;
 }
 .sidebar .nav > li > a[data-bs-toggle="collapse"] .icon-submenu {
