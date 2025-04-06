@@ -223,6 +223,12 @@ footer {
     font-size: 16px;
 }
 
+/* Table */
+table {
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
 /* Hide scrollbar */
 ::-webkit-scrollbar {
     display: none;
