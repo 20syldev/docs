@@ -170,13 +170,14 @@
                         <div class="col-md-12">
                             <p>
                                 The <code>/tic-tac-toe/fetch</code> endpoint allows you to retrieve an ongoing Tic-Tac-Toe game.
-                                You can use the current game ID to display it.
+                                You can use the current game ID to display it or create a new game if no ID is provided.
                             </p>
 
                             <h5 class="subtitle">Parameters</h5>
                             <ul>
                                 <li><code>username</code> (required): The username making the request.</li>
                                 <li><code>game</code> (optional): The ID of the game to display. If not provided, a new game ID will be generated.</li>
+                                <li><code>private</code> (optional): Set to <code>true</code> to create a private game (default: false).</li>
                             </ul>
 
                             <h5 class="subtitle">Request</h5>
@@ -197,32 +198,41 @@
       "username": "User2",
       "move": "1-3",
       "session": "def456"
-    },
-    {
-      "username": "User1",
-      "move": "1-2",
-      "session": "abc123"
-    },
-    {
-      "username": "User2",
-      "move": "2-3",
-      "session": "def456"
     }
   ],
-  "players": ["user1", "user2"],
-  "turn": "user1",
+  "players": ["User1", "User2"],
+  "turn": "User1",
   "status": "ready",
-  "winner": null,
-  "loser": null,
+  "private": false
+}</pre>
+                            </div>
+
+                            <h6>Game Status Values</h6>
+                            <ul>
+                                <li><code>waiting</code>: Game has less than 2 players</li>
+                                <li><code>ready</code>: Game has 2 players and is ready to play</li>
+                            </ul>
+
+                            <h6>Finished Game Response</h6>
+                            <div class="request">
+<pre>{
+  "id": "VWXYZ",
+  "moves": [...],
+  "players": ["User1", "User2"],
+  "turn": null,
+  "status": "finished",
+  "private": false,
+  "winner": "User1",
+  "loser": "User2",
   "tie": false
 }</pre>
                             </div>
 
                             <i>
                                 If the <code>username</code> value is empty, an error will be returned.
-                                When the game is created, a session ID is generated and returned in the response.
-                                You can use this session ID to make moves in the game.
-                                If the game is over, the winner and loser will be included in the response.
+                                When a new game is created, the user is automatically added to the players list.
+                                Private games are not visible in the public game list but can still be joined if you know the game ID.
+                                The response includes the current game state, players, moves, and turn information.
                             </i>
                         </div>
                     </div>

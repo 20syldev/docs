@@ -168,58 +168,71 @@
                     </h5>
                     <div class="row">
                         <div class="col-md-12">
-                            <p>L'endpoint <code>/tic-tac-toe/fetch</code> permet d'afficher une partie de morpion en cours. Vous pouvez utiliser l'identifiant de la partie en cours pour l'afficher.</p>
+                            <p>
+                                L'endpoint <code>/tic-tac-toe/fetch</code> permet de récupérer une partie de morpion en cours.
+                                Vous pouvez utiliser l'identifiant de la partie en cours pour l'afficher ou créer une nouvelle partie si aucun ID n'est fourni.
+                            </p>
 
                             <h5 class="subtitle">Paramètres</h5>
                             <ul>
                                 <li><code>username</code> (requis) : Le nom d'utilisateur effectuant la requête.</li>
                                 <li><code>game</code> (optionnel) : L'identifiant de la partie à afficher. Si il n'est pas fourni, un nouvel identifiant de partie sera généré.</li>
+                                <li><code>private</code> (optionnel) : Définir à <code>true</code> pour créer une partie privée (défaut : false).</li>
                             </ul>
 
                             <h5 class="subtitle">Requête</h5>
                             <div class="request">
                                 <code class="user-select-none">$ </code>
-                                <code>curl -X POST -d "username=User1&game=VWXYZ" "https://api.sylvain.pro/v3/tic-tac-toe/fetch"</code>
+                                <code>curl -X POST -d "username=Utilisateur1&game=VWXYZ" "https://api.sylvain.pro/v3/tic-tac-toe/fetch"</code>
                             </div>
                             <div class="request">
 <pre>{
   "id": "VWXYZ",
   "moves": [
     {
-      "username": "User1",
+      "username": "Utilisateur1",
       "move": "2-2",
       "session": "abc123"
     },
     {
-      "username": "User2",
+      "username": "Utilisateur2",
       "move": "1-3",
-      "session": "def456"
-    },
-    {
-      "username": "User1",
-      "move": "1-2",
-      "session": "abc123"
-    },
-    {
-      "username": "User2",
-      "move": "2-3",
       "session": "def456"
     }
   ],
-  "players": ["user1", "user2"],
-  "turn": "user1",
+  "players": ["Utilisateur1", "Utilisateur2"],
+  "turn": "Utilisateur1",
   "status": "ready",
-  "winner": null,
-  "loser": null,
+  "private": false
+}</pre>
+                            </div>
+
+                            <h6>Valeurs de statut de partie</h6>
+                            <ul>
+                                <li><code>waiting</code> : La partie a moins de 2 joueurs</li>
+                                <li><code>ready</code> : La partie a 2 joueurs et est prête à être jouée</li>
+                            </ul>
+
+                            <h6>Réponse de partie terminée</h6>
+                            <div class="request">
+<pre>{
+  "id": "VWXYZ",
+  "moves": [...],
+  "players": ["Utilisateur1", "Utilisateur2"],
+  "turn": null,
+  "status": "finished",
+  "private": false,
+  "winner": "Utilisateur1",
+  "loser": "Utilisateur2",
   "tie": false
 }</pre>
                             </div>
 
                             <i>
                                 Si une valeur de <code>username</code> est vide, une erreur sera renvoyée.
-                                Lorsque la partie est créée, un identifiant de session est généré et renvoyé dans la réponse.
-                                Vous pouvez utiliser cet identifiant pour effectuer des mouvements dans la partie.
-                                Si la partie est terminée, le gagnant et le perdant sont renvoyés dans la réponse.
+                                Lorsqu'une nouvelle partie est créée, l'utilisateur est automatiquement ajouté à la liste des joueurs.
+                                Les parties privées ne sont pas visibles dans la liste publique des parties mais peuvent toujours être rejointes si vous connaissez l'ID de la partie.
+                                La réponse inclut l'état actuel de la partie, les joueurs, les coups et les informations de tour.
                             </i>
                         </div>
                     </div>

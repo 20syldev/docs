@@ -170,7 +170,7 @@
                         <div class="col-md-12">
                             <p>
                                 L'endpoint <code>/tic-tac-toe</code> permet de jouer et de stocker une partie de morpion en ligne.
-                                Les parties sont stockées 1 heure et sont accessibles via un identifiant unique.
+                                Les parties sont stockées 1 heure et supportent les modes public et privé.
                             </p>
 
                             <h5 class="subtitle">Paramètres</h5>
@@ -179,6 +179,7 @@
                                 <li><code>move</code> (requis) : Le coup joué au format <code>ligne-colonne</code> (ex. : <code>1-1</code>, <code>2-2</code>, <code>3-3</code>).</li>
                                 <li><code>session</code> (requis) : L'identifiant de session de l'utilisateur.</li>
                                 <li><code>game</code> (requis) : L'identifiant de la partie permettant la connexion. Si la partie n'existe pas, elle sera créée.</li>
+                                <li><code>private</code> (optionnel) : Définir à <code>true</code> pour créer une partie privée (défaut : false).</li>
                             </ul>
 
                             <h5 class="subtitle">Requête</h5>
@@ -192,11 +193,33 @@
 }</pre>
                             </div>
 
+                            <h6>Réponse de victoire</h6>
+                            <div class="request">
+<pre>{
+  "message": "Move sent successfully. Utilisateur1 wins. Utilisateur2 loses.",
+  "winner": "Utilisateur1",
+  "loser": "Utilisateur2",
+  "tie": false
+}</pre>
+                            </div>
+
+                            <h5 class="subtitle">Réponses d'erreur</h5>
+                            <p>Scénarios d'erreur courants et leurs réponses :</p>
+                            <ul>
+                                <li><strong>Limite de taux dépassée :</strong> <code>{"error": "Rate limit exceeded. Try again in X seconds."}</code></li>
+                                <li><strong>Coup invalide :</strong> <code>{"error": "Invalid move. Please provide a valid move (e.g., 1-1, 2-2, 3-3)."}</code></li>
+                                <li><strong>Partie pleine :</strong> <code>{"error": "Game is full, you can only watch."}</code></li>
+                                <li><strong>Pas votre tour :</strong> <code>{"error": "Please wait for the other player to make a move."}</code></li>
+                                <li><strong>Coup déjà joué :</strong> <code>{"error": "Move already made. Please choose a different move."}</code></li>
+                                <li><strong>Session incohérente :</strong> <code>{"error": "Session ID mismatch"}</code></li>
+                            </ul>
+
                             <i>
                                 Si une valeur de <code>username</code>, <code>move</code>, <code>session</code> ou <code>game</code> est vide ou invalide,
                                 que la partie est pleine, que le même joueur joue deux fois de suite ou si le coup est déjà joué, une erreur sera renvoyée.<br>
                                 Lorsqu'une partie est terminée, la requête renverra le nom du gagnant et du perdant, ainsi que s'il y a égalité.
-                                L'endpoint <a href="/v3/fr/tic-tac-toe/fetch">/tic-tac-toe/fetch</a> permet de récupérer plus d'informations sur la partie en cours.
+                                L'endpoint <a href="/v3/fr/tic-tac-toe/fetch">/tic-tac-toe/fetch</a> permet de récupérer plus d'informations sur la partie en cours,
+                                et l'endpoint <a href="/v3/fr/tic-tac-toe/list">/tic-tac-toe/list</a> permet de lister toutes les parties publiques en cours.
                             </i>
                         </div>
                     </div>

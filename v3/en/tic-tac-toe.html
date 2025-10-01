@@ -170,7 +170,7 @@
                         <div class="col-md-12">
                             <p>
                                 The <code>/tic-tac-toe</code> endpoint allows playing and storing an online Tic-Tac-Toe game.
-                                Games are stored for 1 hour and can be accessed via a unique identifier.
+                                Games are stored for 1 hour and support both public and private modes.
                             </p>
 
                             <h5 class="subtitle">Parameters</h5>
@@ -179,6 +179,7 @@
                                 <li><code>move</code> (required): The move played in <code>row-column</code> format (e.g., <code>1-1</code>, <code>2-2</code>, <code>3-3</code>).</li>
                                 <li><code>session</code> (required): The user's session identifier.</li>
                                 <li><code>game</code> (required): The game identifier for connection. If the game does not exist, it will be created.</li>
+                                <li><code>private</code> (optional): Set to <code>true</code> to create a private game (default: false).</li>
                             </ul>
 
                             <h5 class="subtitle">Request</h5>
@@ -192,11 +193,33 @@
 }</pre>
                             </div>
 
+                            <h6>Game Win Response</h6>
+                            <div class="request">
+<pre>{
+  "message": "Move sent successfully. User1 wins. User2 loses.",
+  "winner": "User1",
+  "loser": "User2",
+  "tie": false
+}</pre>
+                            </div>
+
+                            <h5 class="subtitle">Error Responses</h5>
+                            <p>Common error scenarios and their responses:</p>
+                            <ul>
+                                <li><strong>Rate limit exceeded:</strong> <code>{"error": "Rate limit exceeded. Try again in X seconds."}</code></li>
+                                <li><strong>Invalid move:</strong> <code>{"error": "Invalid move. Please provide a valid move (e.g., 1-1, 2-2, 3-3)."}</code></li>
+                                <li><strong>Game is full:</strong> <code>{"error": "Game is full, you can only watch."}</code></li>
+                                <li><strong>Not your turn:</strong> <code>{"error": "Please wait for the other player to make a move."}</code></li>
+                                <li><strong>Move already made:</strong> <code>{"error": "Move already made. Please choose a different move."}</code></li>
+                                <li><strong>Session mismatch:</strong> <code>{"error": "Session ID mismatch"}</code></li>
+                            </ul>
+
                             <i>
                                 If a <code>username</code>, <code>move</code>, <code>session</code>, or <code>game</code> value is empty or invalid,
                                 if the game is full, if the same player plays twice in a row, or if the move has already been played, an error will be returned.<br>
                                 When a game is over, the request will return the winner and loser names, as well as whether there is a tie.
-                                The <a href="/v3/en/tic-tac-toe/fetch">/tic-tac-toe/fetch</a> endpoint allows retrieving more information about the current game.
+                                The <a href="/v3/en/tic-tac-toe/fetch">/tic-tac-toe/fetch</a> endpoint allows retrieving more information about the current game,
+                                and the <a href="/v3/en/tic-tac-toe/list">/tic-tac-toe/list</a> endpoint allows listing all public games in progress.
                             </i>
                         </div>
                     </div>
