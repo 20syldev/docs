@@ -1,0 +1,103 @@
+/* - - - - - - - Navbar - - - - - - - */
+
+/* ----- Sidebar ----- */
+
+.VPSidebar {
+    scrollbar-color: var(--vp-c-divider) transparent;
+    border-right: 1px solid var(--vp-c-divider);
+    scrollbar-width: thin;
+}
+.dark .VPSidebar { border-right: 1px solid var(--vp-c-bg-mute); }
+
+.VPSidebarItem.level-0 { padding-bottom: 16px !important; }
+.VPSidebarItem .text { font-weight: 500; }
+
+/* ----- Version badge ----- */
+
+.VPNavBarTitle .title::after {
+    content: var(--latest-version, 'v3');
+    color: var(--vp-c-text-2);
+    position: relative;
+    margin-left: 6px;
+    font-weight: 500;
+    font-size: 11px;
+    top: 2px;
+}
+
+/* ----- Version dropdown ----- */
+
+.version-switcher-wrapper .VPFlyout .VPMenu .VPMenuLink:first-child .link {
+    display: inline-flex;
+    align-items: center;
+}
+.version-switcher-wrapper .VPFlyout .VPMenu .VPMenuLink:first-child .link::after {
+    content: var(--latest-text, 'Latest');
+    background: var(--vp-c-brand-soft);
+    color: var(--vp-c-brand-1);
+    border-radius: 999px;
+    margin-left: 8px;
+    padding: 3px 8px;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 1;
+}
+
+/* ----- Nav ordering ----- */
+
+.VPNavBarExtra { order: 10; }
+.VPNavBarAppearance { order: 11; }
+.language-switcher-wrapper {
+    align-items: center;
+    display: flex;
+    order: 12;
+}
+.VPSocialLinks { order: 13; }
+
+/* ----- Home link ----- */
+
+.VPNavBarMenuLink[href="/"],
+.VPNavBarMenuLink[href="/fr"],
+.VPNavBarMenuLink[href="/"].active,
+.VPNavBarMenuLink[href="/fr"].active {
+    color: var(--vp-c-text-1) !important;
+}
+
+.VPNavBarMenuLink[href="/"]:hover,
+.VPNavBarMenuLink[href="/fr"]:hover {
+    color: var(--vp-c-brand-1) !important;
+}
+
+/* ----- Search button ----- */
+
+#local-search button,
+.DocSearch-Button {
+    border: 1px solid var(--vp-c-divider) !important;
+    align-items: center !important;
+    display: flex !important;
+}
+.DocSearch-Button-Placeholder,
+#local-search button > span:nth-child(2) {
+    position: relative;
+    top: -1px;
+}
+.DocSearch-Button-Keys,
+#local-search button kbd {
+    margin-left: auto !important;
+}
+
+#localsearch-input,
+.DocSearch-Input {
+    font-size: 14px !important;
+}
+
+/* ----- Transitions ----- */
+
+.VPSidebarItem,
+.VPNavBarMenuLink,
+.VPButton {
+    transition: all 0.2s ease;
+}
+
+/* ----- Footer ----- */
+
+.VPFooter { padding: 16px !important; }

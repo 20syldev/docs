@@ -1,0 +1,131 @@
+/* - - - - - - - API - - - - - - - */
+
+/* ----- API Badge ----- */
+
+.api-badge {
+    font-family: 'JetBrains Mono', monospace;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+}
+.api-badge.get {
+    border-color: #5c7cfa40;
+    background: #5c7cfa1f;
+    color: #5c7cfa;
+}
+.api-badge.post {
+    border-color: #20c99740;
+    background: #20c9971f;
+    color: #20c997;
+}
+.api-badge.put {
+    border-color: #fab00540;
+    background: #fab0051f;
+    color: #fab005;
+}
+.api-badge.delete {
+    border-color: #fa525240;
+    background: #fa52521f;
+    color: #fa5252;
+}
+.api-badge.patch {
+    border-color: #9775fa40;
+    background: #9775fa1f;
+    color: #9775fa;
+}
+
+/* ----- API Endpoint ----- */
+
+.api-endpoint {
+    font-family: 'JetBrains Mono', monospace;
+    display: inline-flex;
+    align-items: center;
+    font-size: 13px;
+    margin: 12px 0;
+    gap: 10px;
+}
+.api-endpoint a,
+.api-endpoint .path {
+    color: var(--vp-c-text-2);
+    text-decoration: none;
+    font-weight: 500;
+}
+.api-endpoint a:hover { color: var(--vp-c-brand-1); }
+
+/* ----- Request block ----- */
+
+.request-block {
+    border: 1px solid var(--vp-c-divider);
+    background: var(--vp-c-bg-soft);
+    overflow: hidden;
+    margin: 12px 0;
+    border-radius: 8px;
+}
+.request-block-header {
+    background: var(--vp-c-bg-mute);
+    border-bottom: 1px solid var(--vp-c-divider);
+    font-family: 'JetBrains Mono', monospace;
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    font-size: 13px;
+    padding: 10px 16px;
+}
+.request-block-content { padding: 16px; }
+.request-block-content pre {
+    background: transparent;
+    line-height: 1.6;
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+}
+.request-block-content code {
+    font-family: 'JetBrains Mono', monospace;
+}
+.request-block-header .title {
+    color: var(--vp-c-text-1);
+    font-weight: 500;
+}
+
+/* ----- Parameter list ----- */
+
+.param-list {
+    list-style: none;
+    margin: 16px 0;
+    padding: 0;
+}
+.param-list li {
+    border-bottom: 1px solid var(--vp-c-divider);
+    padding: 8px 0;
+}
+.param-list li:last-child { border-bottom: none; }
+.param-name {
+    color: var(--vp-c-brand-1);
+    background: var(--vp-c-bg-soft);
+    font-family: 'JetBrains Mono', monospace;
+    border-radius: 4px;
+    font-weight: 500;
+    padding: 2px 6px;
+    font-size: 13px;
+}
+.param-required {
+    color: var(--badge-delete);
+    margin-left: 6px;
+    font-weight: 600;
+    font-size: 11px;
+}
+.param-optional {
+    color: var(--vp-c-text-2);
+    margin-left: 6px;
+    font-weight: 500;
+    font-size: 11px;
+}

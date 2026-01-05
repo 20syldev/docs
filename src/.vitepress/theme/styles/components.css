@@ -1,0 +1,77 @@
+/* - - - - - - - Components - - - - - - - */
+
+/* ----- Version cards ----- */
+
+.version-cards {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    margin: 24px 0;
+    gap: 16px;
+}
+.version-card {
+    background: var(--vp-c-bg-soft);
+    border: 1px solid var(--vp-c-divider);
+    transition: all 0.3s ease !important;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    display: flex;
+    padding: 24px 16px;
+    border-radius: 12px;
+}
+.version-card:hover {
+    border-color: var(--vp-c-brand-1);
+    box-shadow: 0 12px 24px -8px #5c7cfa26;
+    transform: translateY(-4px);
+}
+.version-card:hover .version-number {
+    text-decoration-color: var(--vp-c-brand-1);
+}
+.version-card.current {
+    background: linear-gradient(135deg, #5c7cfa14 0%, #20c99714 100%);
+    border-color: var(--vp-c-brand-1);
+}
+
+/* ----- Version card - Stable Hover ----- */
+
+.version-card:has(.version-badge.stable):hover {
+    border-color: var(--badge-patch);
+}
+.version-card:has(.version-badge.stable):hover .version-number {
+    text-decoration-color: var(--badge-patch);
+}
+
+/* ----- Version card - Legacy Hover ----- */
+
+.version-card:has(.version-badge.legacy):hover {
+    border-color: var(--vp-c-text-3);
+}
+.version-card:has(.version-badge.legacy):hover .version-number {
+    text-decoration-color: var(--vp-c-text-3);
+}
+
+/* ----- Version badge ----- */
+
+.version-badge.stable { background: var(--badge-patch); }
+.version-badge.legacy { background: var(--vp-c-text-3); }
+
+/* ----- Version number ----- */
+
+.version-number {
+    color: var(--vp-c-text-1);
+    transition: all 0.3s ease;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
+    margin: 12px 0 8px;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+/* ----- Version desc ----- */
+
+.version-desc {
+    color: var(--vp-c-text-2);
+    text-align: center;
+    font-size: 13px;
+}

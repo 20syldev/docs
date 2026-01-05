@@ -1,0 +1,37 @@
+/* - - - - - - - Responsive - - - - - - - */
+
+/* ----- Desktop ----- */
+
+@media (min-width: 768px) {
+    .VPNavBarSearch {
+        max-width: none !important;
+        padding: 0 24px !important;
+        flex: 1 !important;
+    }
+    .VPNavBarSearch .VPLocalSearchBox button,
+    .VPNavBarSearch #local-search,
+    .VPNavBarSearch > button { width: 100% !important; }
+}
+
+/* ----- Mobile ----- */
+
+@media (max-width: 960px) {
+    .version-cards { grid-template-columns: 1fr; }
+    .api-endpoint {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .request-block-header { flex-wrap: wrap; }
+    .VPHero .image { display: none; }
+}
+
+/* ----- Print ----- */
+
+@media print {
+    .VPNav,
+    .VPSidebar,
+    .edit-link,
+    .prev-next { display: none !important; }
+    .VPContent { padding: 0 !important; }
+}
