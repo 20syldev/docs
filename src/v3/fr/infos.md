@@ -1,0 +1,43 @@
+# Informations sur l'API
+
+L'endpoint `/infos` fournit des informations générales sur l'[API](https://api.sylvain.pro). Cet endpoint ne nécessite aucune option.
+
+<HEndpoint method="get" path="/v3/infos" baseUrl="https://api.sylvain.pro" />
+
+## Paramètres
+
+Cet endpoint ne nécessite aucun paramètre.
+
+## Exemple de requête
+
+```
+GET /v3/infos
+```
+
+## Réponse
+
+```json
+{
+  "endpoints": 20,
+  "last_version": "v3",
+  "documentation": "https://docs.sylvain.pro",
+  "github": "https://github.com/20syldev/api",
+  "creation": "November 25th 2024"
+}
+```
+
+## Champs de réponse
+
+| Champ           | Description                          |
+| --------------- | ------------------------------------ |
+| `endpoints`     | Nombre total d'endpoints disponibles |
+| `last_version`  | Version actuelle de l'API            |
+| `documentation` | URL de la documentation              |
+| `github`        | URL du dépôt GitHub                  |
+| `creation`      | Date de création de l'API            |
+
+## cURL
+
+```bash
+curl -X GET "https://api.sylvain.pro/v3/infos"
+```

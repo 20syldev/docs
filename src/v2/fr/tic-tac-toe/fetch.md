@@ -1,0 +1,58 @@
+# Récupération du morpion
+
+L'endpoint `/tic-tac-toe/fetch` permet d'afficher une partie de morpion en cours. Vous pouvez utiliser l'identifiant de la partie en cours pour l'afficher.
+
+<HEndpoint method="post" path="/v2/tic-tac-toe/fetch" baseUrl="https://api.sylvain.pro" />
+
+## Paramètres
+
+| Paramètre  | Requis | Description                                                                                               |
+| ---------- | ------ | --------------------------------------------------------------------------------------------------------- |
+| `username` | Oui    | Le nom d'utilisateur effectuant la requête                                                                |
+| `game`     | Non    | L'identifiant de la partie à afficher. S'il n'est pas fourni, un nouvel identifiant de partie sera généré |
+
+## Exemple de requête
+
+```bash
+curl -X POST -d "username=User1&game=VWXYZ" "https://api.sylvain.pro/v2/tic-tac-toe/fetch"
+```
+
+## Réponse
+
+```json
+{
+  "id": "VWXYZ",
+  "moves": [
+        {
+          "username": "User1",
+          "move": "2-2",
+          "session": "abc123"
+        },
+        {
+          "username": "User2",
+          "move": "1-3",
+          "session": "def456"
+        },
+        {
+          "username": "User1",
+          "move": "1-2",
+          "session": "abc123"
+        },
+        {
+          "username": "User2",
+          "move": "2-3",
+          "session": "def456"
+        }
+    ],
+  "players": ["user1", "user2"],
+  "turn": "user1",
+  "status": "ready",
+  "winner": null,
+  "loser": null,
+  "tie": false
+}
+```
+
+## Gestion des erreurs
+
+Si une valeur de `username` est vide, une erreur sera renvoyée. Lorsque la partie est créée, un identifiant de session est généré et renvoyé dans la réponse. Vous pouvez utiliser cet identifiant pour effectuer des mouvements dans la partie. Si la partie est terminée, le gagnant et le perdant sont renvoyés dans la réponse.
