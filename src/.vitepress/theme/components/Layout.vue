@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, watchEffect, onMounted, onUnmounted, ref } from 'vue';
-import { useRoute, useData } from 'vitepress';
+import { useRoute, useData, useRouter } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
 import Lang from './Lang.vue';
 import Version from './Version.vue';
@@ -9,6 +9,7 @@ import { getLang, t } from '../i18n';
 
 const { Layout } = DefaultTheme;
 const route = useRoute();
+const router = useRouter();
 const { isDark: dark } = useData();
 
 const lang = computed(() => getLang(route.path));
@@ -140,8 +141,28 @@ function handleKeydown(e: KeyboardEvent) {
     }
 }
 
+function redirectLang() {
+    if (route.path !== '/') return;
+
+    const savedLang = localStorage.getItem('preferred-lang');
+    if (savedLang === 'fr') {
+        router.go('/fr');
+        return;
+    }
+    if (savedLang === 'en') return;
+
+    const userLang = navigator.language;
+    if (userLang?.toLowerCase().startsWith('fr')) {
+        localStorage.setItem('preferred-lang', 'fr');
+        router.go('/fr');
+    } else {
+        localStorage.setItem('preferred-lang', 'en');
+    }
+}
+
 onMounted(() => {
     translateUI();
+    redirectLang();
     updateCSS();
     fetchLatest();
     document.addEventListener('keydown', handleKeydown);
