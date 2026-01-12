@@ -4,7 +4,7 @@ L'endpoint `/chat` permet de récupérer et d'envoyer des messages dans un chat 
 
 ## Récupérer les messages
 
-<HEndpoint method="get" path="/v2/chat" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v2/chat" baseUrl="https://api.sylvain.pro" />
 
 L'endpoint `/chat` récupère tous les messages envoyés durant la dernière heure. Cet endpoint ne nécessite aucune option.
 
@@ -46,7 +46,7 @@ curl -X GET "https://api.sylvain.pro/v2/chat"
 
 ## Envoyer un message
 
-<HEndpoint method="post" path="/v2/chat" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v2/chat" baseUrl="https://api.sylvain.pro" />
 
 L'endpoint `/chat` permet l'envoi d'un message vers le chat global ou un chat privé.
 

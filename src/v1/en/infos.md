@@ -2,7 +2,7 @@
 
 The `/infos` endpoint provides general information about the [API](https://api.sylvain.pro). This endpoint does not require any options.
 
-<HEndpoint method="get" path="/v1/infos" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v1/infos" baseUrl="https://api.sylvain.pro" />
 
 ## Request Example
 

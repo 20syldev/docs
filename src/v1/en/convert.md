@@ -2,7 +2,7 @@
 
 The `/convert` endpoint allows you to convert multiple temperature units between each other. You need to provide a value to convert, a source unit, and the unit you want to convert to.
 
-<HEndpoint method="get" path="/v1/convert" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v1/convert" baseUrl="https://api.sylvain.pro" />
 
 ## Parameters
 

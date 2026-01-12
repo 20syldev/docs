@@ -2,7 +2,7 @@
 
 L'endpoint `/hash` convertit une chaîne de caractères en hash, c'est-à-dire une chaîne de caractères qui ne peut pas être inversée vers la chaîne originale.
 
-<HEndpoint method="post" path="/v3/hash" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v3/hash" baseUrl="https://api.sylvain.pro" />
 
 ## Paramètres
 

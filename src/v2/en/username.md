@@ -2,7 +2,7 @@
 
 The `/username` endpoint returns a list of adjectives, another with animal names, and the last with professions. A number and a random username are generated from all the information. This endpoint does not require any options.
 
-<HEndpoint method="get" path="/v2/username" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v2/username" baseUrl="https://api.sylvain.pro" />
 
 The username can consist of one or more elements chosen from the lists or the generated number.
 

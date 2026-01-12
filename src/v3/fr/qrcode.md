@@ -2,7 +2,7 @@
 
 L'endpoint `/qrcode` génère un QR Code à partir d'une URL fournie en paramètre. Cet endpoint est pratique pour générer rapidement une image au format PNG.
 
-<HEndpoint method="get" path="/v3/qrcode" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v3/qrcode" baseUrl="https://api.sylvain.pro" />
 
 ## Paramètres
 

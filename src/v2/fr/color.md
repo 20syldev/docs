@@ -2,7 +2,7 @@
 
 L'endpoint `/color` génère une couleur aléatoire dans plusieurs formats. Cet endpoint ne nécessite aucune option.
 
-<HEndpoint method="get" path="/v2/color" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v2/color" baseUrl="https://api.sylvain.pro" />
 
 ## Exemple de requête
 

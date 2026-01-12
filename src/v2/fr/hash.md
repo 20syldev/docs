@@ -2,7 +2,7 @@
 
 L'endpoint `/hash` permet de convertir un texte en hash, c'est-à-dire en un code unique et crypté.
 
-<HEndpoint method="post" path="/v2/hash" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v2/hash" baseUrl="https://api.sylvain.pro" />
 
 ## Paramètres
 

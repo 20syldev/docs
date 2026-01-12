@@ -2,7 +2,7 @@
 
 L'endpoint `/algorithms` fournit plusieurs algorithmes à utiliser comme paramètres. Vous pouvez entrer une ou deux valeurs selon l'algorithme.
 
-<HEndpoint method="get" path="/v3/algorithms" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v3/algorithms" baseUrl="https://api.sylvain.pro" />
 
 ## Paramètres
 

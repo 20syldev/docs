@@ -2,7 +2,7 @@
 
 L'endpoint `/domain` génère plusieurs données aléatoires à propos d'un domaine afin de créer un profil complet. Cet endpoint ne nécessite aucune option.
 
-<HEndpoint method="get" path="/v2/domain" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v2/domain" baseUrl="https://api.sylvain.pro" />
 
 ## Exemple de requête
 

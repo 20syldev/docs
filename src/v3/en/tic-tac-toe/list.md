@@ -2,7 +2,7 @@
 
 The `/tic-tac-toe/list` endpoint lists all public games currently in progress.
 
-<HEndpoint method="post" path="/v3/tic-tac-toe/list" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v3/tic-tac-toe/list" baseUrl="https://api.sylvain.pro" />
 
 ## Parameters
 

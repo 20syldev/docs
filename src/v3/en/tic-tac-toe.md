@@ -2,7 +2,7 @@
 
 The `/tic-tac-toe` endpoint allows playing and storing an online Tic-Tac-Toe game. Games are stored for 1 hour and support both public and private modes.
 
-<HEndpoint method="post" path="/v3/tic-tac-toe" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v3/tic-tac-toe" baseUrl="https://api.sylvain.pro" />
 
 ## Parameters
 

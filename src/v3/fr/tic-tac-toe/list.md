@@ -2,7 +2,7 @@
 
 L'endpoint `/tic-tac-toe/list` permet de récupérer toutes les parties de morpion publiques actuellement en cours. Cet endpoint ne retourne pas les parties privées ni les parties terminées.
 
-<HEndpoint method="post" path="/v3/tic-tac-toe/list" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v3/tic-tac-toe/list" baseUrl="https://api.sylvain.pro" />
 
 ## Paramètres
 

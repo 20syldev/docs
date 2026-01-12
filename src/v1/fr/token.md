@@ -2,7 +2,7 @@
 
 L'endpoint `/token` permet de générer des chaînes sécurisées appelées _tokens_. Cet endpoint est particulièrement utile pour créer des identifiants aléatoires pour diverses applications.
 
-<HEndpoint method="post" path="/v1/token" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v1/token" baseUrl="https://api.sylvain.pro" />
 
 ## Paramètres
 

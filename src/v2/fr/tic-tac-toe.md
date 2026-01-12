@@ -2,7 +2,7 @@
 
 L'endpoint `/tic-tac-toe` permet de jouer et de stocker une partie de morpion en ligne. Les parties sont stockées 1 heure et sont accessibles via un identifiant unique.
 
-<HEndpoint method="post" path="/v2/tic-tac-toe" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v2/tic-tac-toe" baseUrl="https://api.sylvain.pro" />
 
 ## Paramètres
 

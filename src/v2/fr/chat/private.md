@@ -2,7 +2,7 @@
 
 L'endpoint `/chat/private` récupère tous les messages envoyés durant la dernière heure, faisant partie d'un chat privé.
 
-<HEndpoint method="post" path="/v2/chat/private" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v2/chat/private" baseUrl="https://api.sylvain.pro" />
 
 ## Paramètres
 

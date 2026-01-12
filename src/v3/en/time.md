@@ -2,7 +2,7 @@
 
 The `/time` endpoint allows you to retrieve time information based on various parameters. You can get the current time or a random time between a specified range, in different formats and time zones.
 
-<HEndpoint method="get" path="/v3/time" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v3/time" baseUrl="https://api.sylvain.pro" />
 
 ## Parameters
 

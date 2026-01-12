@@ -2,7 +2,7 @@
 
 The `/tic-tac-toe/fetch` endpoint allows you to retrieve an ongoing Tic-Tac-Toe game. You can use the current game ID to display it.
 
-<HEndpoint method="post" path="/v2/tic-tac-toe/fetch" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v2/tic-tac-toe/fetch" baseUrl="https://api.sylvain.pro" />
 
 ## Parameters
 

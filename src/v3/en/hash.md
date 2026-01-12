@@ -2,7 +2,7 @@
 
 The `/hash` endpoint converts a string into a hash, i.e. a string of characters that cannot be reversed into the original string.
 
-<HEndpoint method="post" path="/v3/hash" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v3/hash" baseUrl="https://api.sylvain.pro" />
 
 ## Parameters
 

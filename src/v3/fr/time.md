@@ -2,7 +2,7 @@
 
 L'endpoint `/time` permet de récupérer des informations sur le temps en fonction de différents paramètres. Vous pouvez obtenir l'heure actuelle ou une heure aléatoire entre une plage spécifiée, dans différents formats et fuseaux horaires.
 
-<HEndpoint method="get" path="/v3/time" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v3/time" baseUrl="https://api.sylvain.pro" />
 
 ## Paramètres
 

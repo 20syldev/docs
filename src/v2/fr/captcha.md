@@ -2,7 +2,7 @@
 
 L'endpoint `/captcha` génère une image à partir d'un texte entré en paramètre. Cet endpoint peut être utile pour tester un utilisateur sur le captcha généré en sauvegardant le texte en mémoire.
 
-<HEndpoint method="get" path="/v2/captcha" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v2/captcha" baseUrl="https://api.sylvain.pro" />
 
 ## Paramètres
 
