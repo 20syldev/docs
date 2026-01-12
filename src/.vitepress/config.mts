@@ -4,7 +4,7 @@ import { v2 } from './sidebar/v2';
 import { v3 } from './sidebar/v3';
 
 export default defineConfig({
-    title: 'Hyperion API',
+    title: 'Hyperion API Documentation',
     description:
         'A comprehensive collection of utility endpoints for developers. Algorithms, chat, games, QR codes, and more.',
 
@@ -20,7 +20,7 @@ export default defineConfig({
         ['meta', { property: 'og:type', content: 'website' }],
         ['meta', { property: 'og:site_name', content: 'Hyperion API Documentation' }],
         ['meta', { property: 'og:url', content: 'https://docs.sylvain.pro/' }],
-        ['meta', { property: 'og:title', content: 'Hyperion API - Documentation' }],
+        ['meta', { property: 'og:title', content: 'Hyperion API Documentation' }],
         [
             'meta',
             {
@@ -37,7 +37,7 @@ export default defineConfig({
         // Twitter Card
         ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
         ['meta', { name: 'twitter:site', content: '@20syldev' }],
-        ['meta', { name: 'twitter:title', content: 'Hyperion API - Documentation' }],
+        ['meta', { name: 'twitter:title', content: 'Hyperion API Documentation' }],
         [
             'meta',
             {
