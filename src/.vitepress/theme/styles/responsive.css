@@ -13,29 +13,25 @@
     .VPNavBarSearch > button { width: 100% !important; }
 }
 
-/* ----- Desktop ----- */
-
-@media (min-width: 768px) {
-    .VPNavBarSearch {
-        max-width: none !important;
-        padding: 0 24px !important;
-        flex: 1 !important;
-    }
-    .VPNavBarSearch .VPLocalSearchBox button,
-    .VPNavBarSearch #local-search,
-    .VPNavBarSearch > button { width: 100% !important; }
-}
-
 /* ----- Mobile ----- */
 
 @media (max-width: 768px) {
     .version-cards { grid-template-columns: 1fr; }
+    .request-block-header { flex-wrap: wrap; }
+    .VPNavBarSearch {
+        flex: none !important;
+        padding: 0 !important;
+    }
+    .DocSearch-Button { border: none !important; }
+    .vp-doc div[class*='language-'] {
+        border-radius: 8px;
+        margin: 16px 0;
+    }
     .api-endpoint {
         align-items: flex-start;
         flex-direction: column;
         gap: 8px;
     }
-    .request-block-header { flex-wrap: wrap; }
 }
 
 /* ----- Print ----- */

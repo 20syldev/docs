@@ -1,17 +1,5 @@
 /* - - - - - - - Navbar - - - - - - - */
 
-/* ----- Sidebar ----- */
-
-.VPSidebar {
-    scrollbar-color: var(--vp-c-divider) transparent;
-    border-right: 1px solid var(--vp-c-divider);
-    scrollbar-width: thin;
-}
-.dark .VPSidebar { border-right: 1px solid var(--vp-c-bg-mute); }
-
-.VPSidebarItem.level-0 { padding-bottom: 16px !important; }
-.VPSidebarItem .text { font-weight: 500; }
-
 /* ----- Version badge ----- */
 
 .VPNavBarTitle .title::after {
@@ -22,6 +10,48 @@
     font-weight: 500;
     font-size: 11px;
     top: 2px;
+}
+
+/* ----- Home link ----- */
+
+.VPNavBarMenuLink[href="/"],
+.VPNavBarMenuLink[href="/fr"],
+.VPNavBarMenuLink[href="/"].active,
+.VPNavBarMenuLink[href="/fr"].active {
+    color: var(--vp-c-text-1) !important;
+}
+
+.VPNavBarMenuLink[href="/"]:hover,
+.VPNavBarMenuLink[href="/fr"]:hover {
+    color: var(--vp-c-brand-1) !important;
+}
+
+/* ----- Search ----- */
+
+.VPNavBarSearch {
+    max-width: none !important;
+    padding: 0 24px !important;
+    flex: 1 !important;
+}
+.VPNavBarSearch .VPLocalSearchBox button,
+.VPNavBarSearch #local-search,
+.VPNavBarSearch > button {
+    width: 100% !important;
+}
+
+/* ----- Search - DocSearch ----- */
+
+.DocSearch-Button {
+    border: 1px solid var(--vp-c-divider) !important;
+    height: 35px !important;
+}
+.DocSearch-Button-Keys {
+    margin-left: auto !important;
+}
+.search-input {
+    font-family: inherit;
+    font-size: 14px !important;
+    line-height: 1.5;
 }
 
 /* ----- Version dropdown ----- */
@@ -53,42 +83,17 @@
 }
 .VPSocialLinks { order: 13; }
 
-/* ----- Home link ----- */
+/* ----- Sidebar ----- */
 
-.VPNavBarMenuLink[href="/"],
-.VPNavBarMenuLink[href="/fr"],
-.VPNavBarMenuLink[href="/"].active,
-.VPNavBarMenuLink[href="/fr"].active {
-    color: var(--vp-c-text-1) !important;
+.VPSidebar {
+    scrollbar-color: var(--vp-c-divider) transparent;
+    border-right: 1px solid var(--vp-c-divider);
+    scrollbar-width: thin;
 }
+.dark .VPSidebar { border-right: 1px solid var(--vp-c-bg-mute); }
 
-.VPNavBarMenuLink[href="/"]:hover,
-.VPNavBarMenuLink[href="/fr"]:hover {
-    color: var(--vp-c-brand-1) !important;
-}
-
-/* ----- Search button ----- */
-
-#local-search button,
-.DocSearch-Button {
-    border: 1px solid var(--vp-c-divider) !important;
-    align-items: center !important;
-    display: flex !important;
-}
-.DocSearch-Button-Placeholder,
-#local-search button > span:nth-child(2) {
-    position: relative;
-    top: -1px;
-}
-.DocSearch-Button-Keys,
-#local-search button kbd {
-    margin-left: auto !important;
-}
-
-#localsearch-input,
-.DocSearch-Input {
-    font-size: 14px !important;
-}
+.VPSidebarItem.level-0 { padding-bottom: 16px !important; }
+.VPSidebarItem .text { font-weight: 500; }
 
 /* ----- Transitions ----- */
 
