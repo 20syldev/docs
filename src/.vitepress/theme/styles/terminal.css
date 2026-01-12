@@ -82,16 +82,8 @@
 /* ----- Cursor ----- */
 
 .terminal-cursor {
-    animation: blink 1s infinite;
-    vertical-align: text-bottom;
-    display: inline-block;
-    background: #cdd6f4;
-    height: 16px;
-    width: 8px;
-}
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+    font-weight: bold;
+    color: #cdd6f4;
 }
 
 /* ----- Response ----- */
