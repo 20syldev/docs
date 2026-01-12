@@ -5,7 +5,7 @@
 * {
     scrollbar-color: var(--vp-c-divider) transparent;
     scroll-behavior: smooth;
-    scrollbar-width: thin;
+    scrollbar-width: none;
 }
 
 body { font-family: 'Inter', 'Segoe UI', sans-serif; }
