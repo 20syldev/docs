@@ -39,7 +39,7 @@ function updateCSS() {
     root.style.setProperty('--latest-text', `'${t('latest', lang.value)}'`);
 }
 
-function translateUI() {
+function translate() {
     if (typeof document === 'undefined') return;
     const l = lang.value;
 
@@ -92,12 +92,12 @@ function translateUI() {
 watchEffect(() => {
     if (typeof document !== 'undefined') {
         document.documentElement.classList.toggle('lang-fr', french.value);
-        translateUI();
+        translate();
         updateCSS();
     }
 });
 
-function openDropdown(selector: string, active: () => string) {
+function openMenu(selector: string, active: () => string) {
     const button = document.querySelector(selector) as HTMLElement;
     if (!button) return;
 
@@ -123,16 +123,16 @@ function openDropdown(selector: string, active: () => string) {
     }, 50);
 }
 
-function handleKeydown(e: KeyboardEvent) {
+function onKey(e: KeyboardEvent) {
     // ALT + L: Open language dropdown and focus active language
     if (e.altKey && e.key.toLowerCase() === 'l') {
         e.preventDefault();
-        openDropdown('.language-switcher-wrapper button', () => route.path);
+        openMenu('.language-switcher-wrapper button', () => route.path);
     }
     // ALT + V: Open version dropdown and focus active version
     if (e.altKey && e.key.toLowerCase() === 'v') {
         e.preventDefault();
-        openDropdown('.VPNavBarMenu .VPFlyout button', () => route.path);
+        openMenu('.VPNavBarMenu .VPFlyout button', () => route.path);
     }
     // ALT + T: Toggle theme
     if (e.altKey && e.key.toLowerCase() === 't') {
@@ -161,14 +161,14 @@ function redirectLang() {
 }
 
 onMounted(() => {
-    translateUI();
     redirectLang();
+    translate();
     updateCSS();
     fetchLatest();
-    document.addEventListener('keydown', handleKeydown);
+    document.addEventListener('keydown', onKey);
 
     // Observe DOM changes to re-translate when VitePress updates elements
-    observer = new MutationObserver(() => translateUI());
+    observer = new MutationObserver(() => translate());
 
     observer.observe(document.body, {
         childList: true,
@@ -178,7 +178,7 @@ onMounted(() => {
 
 onUnmounted(() => {
     observer?.disconnect();
-    document.removeEventListener('keydown', handleKeydown);
+    document.removeEventListener('keydown', onKey);
 });
 </script>
 
@@ -189,7 +189,7 @@ onUnmounted(() => {
             <Lang />
         </template>
         <template #home-hero-image v-if="home">
-            <HTerminal />
+            <Terminal />
         </template>
         <template #not-found>
             <div class="not-found">
