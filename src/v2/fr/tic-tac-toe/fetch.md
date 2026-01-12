@@ -14,7 +14,7 @@ L'endpoint `/tic-tac-toe/fetch` permet d'afficher une partie de morpion en cours
 ## Exemple de requête
 
 ```bash
-curl -X POST -d "username=User1&game=VWXYZ" "https://api.sylvain.pro/v2/tic-tac-toe/fetch"
+curl -X POST -d "username=Utilisateur1&game=VWXYZ" "https://api.sylvain.pro/v2/tic-tac-toe/fetch"
 ```
 
 ## Réponse
@@ -24,28 +24,28 @@ curl -X POST -d "username=User1&game=VWXYZ" "https://api.sylvain.pro/v2/tic-tac-
   "id": "VWXYZ",
   "moves": [
         {
-          "username": "User1",
+          "username": "Utilisateur1",
           "move": "2-2",
           "session": "abc123"
         },
         {
-          "username": "User2",
+          "username": "Utilisateur2",
           "move": "1-3",
           "session": "def456"
         },
         {
-          "username": "User1",
+          "username": "Utilisateur1",
           "move": "1-2",
           "session": "abc123"
         },
         {
-          "username": "User2",
+          "username": "Utilisateur2",
           "move": "2-3",
           "session": "def456"
         }
     ],
-  "players": ["user1", "user2"],
-  "turn": "user1",
+  "players": ["utilisateur1", "utilisateur2"],
+  "turn": "utilisateur1",
   "status": "ready",
   "winner": null,
   "loser": null,

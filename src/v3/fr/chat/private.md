@@ -14,7 +14,7 @@ L'endpoint `/chat/private` récupère tous les messages envoyés durant la derni
 ## Exemple de requête
 
 ```bash
-curl -X POST -d "username=User3&token=41a43360-9874-4c7a-9ca8-eec29e765a0e" "https://api.sylvain.pro/v3/chat/private"
+curl -X POST -d "username=Utilisateur3&token=41a43360-9874-4c7a-9ca8-eec29e765a0e" "https://api.sylvain.pro/v3/chat/private"
 ```
 
 ## Réponse
@@ -22,12 +22,12 @@ curl -X POST -d "username=User3&token=41a43360-9874-4c7a-9ca8-eec29e765a0e" "htt
 ```json
 [
   {
-    "username": "User1",
+    "username": "Utilisateur1",
     "message": "Salut !",
     "timestamp": "2025-01-21T08:27:11.068Z"
   },
   {
-    "username": "User3",
+    "username": "Utilisateur3",
     "message": "Comment ça va ?",
     "timestamp": "2025-01-21T08:28:43.070Z"
   }
