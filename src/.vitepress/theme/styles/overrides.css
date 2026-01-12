@@ -3,8 +3,8 @@
 /* ----- Hero ----- */
 
 .VPHero .image-bg { display: none; }
-.VPHero .image { max-width: none; flex-grow: 0; }
 .VPHero .image-container { margin: 0; }
+.VPHero .image { display: none; }
 
 .lang-fr .VPHero .name {
     -webkit-text-fill-color: var(--vp-c-text-1) !important;

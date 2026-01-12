@@ -1,5 +1,18 @@
 /* - - - - - - - Responsive - - - - - - - */
 
+/* ----- Tablet ----- */
+
+@media (min-width: 960px) {
+    .VPHero .image {
+        max-width: none;
+        display: block;
+        flex-grow: 0;
+    }
+    .VPNavBarSearch .VPLocalSearchBox button,
+    .VPNavBarSearch #local-search,
+    .VPNavBarSearch > button { width: 100% !important; }
+}
+
 /* ----- Desktop ----- */
 
 @media (min-width: 768px) {
@@ -15,7 +28,7 @@
 
 /* ----- Mobile ----- */
 
-@media (max-width: 960px) {
+@media (max-width: 768px) {
     .version-cards { grid-template-columns: 1fr; }
     .api-endpoint {
         align-items: flex-start;
@@ -23,7 +36,6 @@
         gap: 8px;
     }
     .request-block-header { flex-wrap: wrap; }
-    .VPHero .image { display: none; }
 }
 
 /* ----- Print ----- */
