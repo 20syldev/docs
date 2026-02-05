@@ -15,7 +15,7 @@
 
 /* ----- Mobile ----- */
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .version-cards { grid-template-columns: 1fr; }
     .request-block-header { flex-wrap: wrap; }
     .VPNavBarSearch {
