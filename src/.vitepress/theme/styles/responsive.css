@@ -1,5 +1,21 @@
 /* - - - - - - - Responsive - - - - - - - */
 
+/* ----- Desktop (1280px+) ----- */
+
+@media (min-width: 1280px) {
+    .extra-menu { display: none !important; }
+    .VPNavBarAppearance {
+        display: flex !important;
+        align-items: center;
+        order: 11;
+    }
+    .language-switcher-wrapper {
+        align-items: center;
+        display: flex !important;
+        order: 12;
+    }
+}
+
 /* ----- Tablet ----- */
 
 @media (min-width: 960px) {
@@ -16,6 +32,7 @@
 /* ----- Mobile ----- */
 
 @media (max-width: 767px) {
+    .extra-menu { display: none !important; }
     .version-cards { grid-template-columns: 1fr; }
     .request-block-header { flex-wrap: wrap; }
     .VPNavBarSearch {
