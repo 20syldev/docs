@@ -2,10 +2,11 @@
 import { computed, watchEffect, onMounted, onUnmounted, ref } from 'vue';
 import { useRoute, useData, useRouter } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
+import Extra from './Extra.vue';
 import Lang from './Lang.vue';
 import Version from './Version.vue';
 import Terminal from './Terminal.vue';
-import { getLang, t } from '../i18n';
+import { getLang, isHome, getLangItems, t } from '../i18n';
 
 const { Layout } = DefaultTheme;
 const route = useRoute();
@@ -15,7 +16,8 @@ const { isDark: dark } = useData();
 const lang = computed(() => getLang(route.path));
 const french = computed(() => lang.value === 'fr');
 const latest = ref('v3');
-const home = computed(() => route.path === '/' || route.path === '/fr' || route.path === '/fr.html' || route.path === '/index.html');
+const home = computed(() => isHome(route.path));
+const languages = computed(() => getLangItems(route.path, home.value));
 
 let observer: MutationObserver | null = null;
 
@@ -37,6 +39,7 @@ function updateCSS() {
     const root = document.documentElement;
     root.style.setProperty('--latest-version', `'${latest.value}'`);
     root.style.setProperty('--latest-text', `'${t('latest', lang.value)}'`);
+    root.style.setProperty('--current-text', `'${t('current', lang.value)}'`);
 }
 
 function translate() {
@@ -127,7 +130,8 @@ function onKey(e: KeyboardEvent) {
     // ALT + L: Open language dropdown and focus active language
     if (e.altKey && e.key.toLowerCase() === 'l') {
         e.preventDefault();
-        openMenu('.language-switcher-wrapper button', () => route.path);
+        const langSelector = window.innerWidth >= 1280 ? '.language-switcher-wrapper button' : '.extra-menu button';
+        openMenu(langSelector, () => route.path);
     }
     // ALT + V: Open version dropdown and focus active version
     if (e.altKey && e.key.toLowerCase() === 'v') {
@@ -186,7 +190,18 @@ onUnmounted(() => {
     <Layout>
         <template #nav-bar-content-after>
             <Version />
+            <Extra />
             <Lang />
+        </template>
+        <template #nav-screen-content-after>
+            <div class="VPNavScreenAppearance language">
+                <p class="text">{{ t('language', lang) }}</p>
+                <div class="options">
+                    <a v-for="item in languages" :key="item.link" :href="item.link" :class="{ active: (lang === 'fr' && item.text === 'Français') || (lang === 'en' && item.text === 'English') }">
+                        {{ item.text }}
+                    </a>
+                </div>
+            </div>
         </template>
         <template #home-hero-image v-if="home">
             <Terminal />

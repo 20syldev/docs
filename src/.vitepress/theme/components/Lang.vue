@@ -2,47 +2,18 @@
 import { computed } from 'vue';
 import { useRoute } from 'vitepress';
 import VPFlyout from 'vitepress/dist/client/theme-default/components/VPFlyout.vue';
+import { getLang, isHome, getLangItems } from '../i18n';
 
 const route = useRoute();
 
-const homepage = computed(() => {
-    const path = route.path;
-    return (
-        path === '/' ||
-        path === '/index.html' ||
-        path === '/fr' ||
-        path === '/fr.html'
-    );
-});
+const homepage = computed(() => isHome(route.path));
 
 const lang = computed(() => {
-    const path = route.path;
-    if (path.includes('/fr')) return 'FR';
-    if (path.includes('/en/')) return 'EN';
-    return 'EN';
+    const l = getLang(route.path);
+    return l === 'fr' ? 'FR' : 'EN';
 });
 
-const items = computed(() => {
-    const path = route.path;
-
-    if (homepage.value) {
-        return [
-            { text: 'English', link: '/' },
-            { text: 'Français', link: '/fr' },
-        ];
-    }
-
-    return [
-        {
-            text: 'English',
-            link: path.replace('/fr/', '/en/'),
-        },
-        {
-            text: 'Français',
-            link: path.replace('/en/', '/fr/'),
-        },
-    ];
-});
+const items = computed(() => getLangItems(route.path, homepage.value));
 
 const visible = computed(() => route.path.includes('/v') || homepage.value);
 </script>
