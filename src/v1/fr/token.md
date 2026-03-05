@@ -2,7 +2,7 @@
 
 L'endpoint `/token` permet de générer des chaînes sécurisées appelées _tokens_. Cet endpoint est particulièrement utile pour créer des identifiants aléatoires pour diverses applications.
 
-<Endpoint method="post" path="/v1/token" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v1/token" baseUrl="https://api.sylvain.sh" />
 
 ## Paramètres
 
@@ -44,7 +44,7 @@ len=24&type=alphanum
 ## cURL
 
 ```bash
-curl -X POST -d "len=24&type=alphanum" "https://api.sylvain.pro/v1/token"
+curl -X POST -d "len=24&type=alphanum" "https://api.sylvain.sh/v1/token"
 ```
 
 ## Gestion des erreurs

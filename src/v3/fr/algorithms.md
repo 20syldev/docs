@@ -2,7 +2,7 @@
 
 L'endpoint `/algorithms` fournit plusieurs algorithmes à utiliser comme paramètres. Vous pouvez entrer une ou deux valeurs selon l'algorithme.
 
-<Endpoint method="get" path="/v3/algorithms" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v3/algorithms" baseUrl="https://api.sylvain.sh" />
 
 ## Paramètres
 
@@ -44,7 +44,7 @@ GET /v3/algorithms?method=gcd&value=17&value2=493
 ## cURL
 
 ```bash
-curl -X GET "https://api.sylvain.pro/v3/algorithms?method=gcd&value=17&value2=493"
+curl -X GET "https://api.sylvain.sh/v3/algorithms?method=gcd&value=17&value2=493"
 ```
 
 ## Gestion des erreurs

@@ -2,7 +2,7 @@
 
 The `/hash` endpoint converts a string into a hash, i.e. a string of characters that cannot be reversed into the original string.
 
-<Endpoint method="post" path="/v2/hash" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v2/hash" baseUrl="https://api.sylvain.sh" />
 
 ## Parameters
 
@@ -69,7 +69,7 @@ The `/hash` endpoint converts a string into a hash, i.e. a string of characters 
 ## Request Example
 
 ```bash
-curl -X POST -d "text=hello&method=sha512" "https://api.sylvain.pro/v2/hash"
+curl -X POST -d "text=hello&method=sha512" "https://api.sylvain.sh/v2/hash"
 ```
 
 ## Response

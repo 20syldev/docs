@@ -16,7 +16,7 @@ Si vous souhaitez dépasser cette limite, vous devez utiliser un token d'authent
       <li><strong>336 000</strong> requêtes/semaine</li>
       <li><strong>~1.4M</strong> requêtes/mois</li>
     </ul>
-    <a href="https://api.sylvain.pro" class="pricing-button" target="_blank">Commencer</a>
+    <a href="https://api.sylvain.sh" class="pricing-button" target="_blank">Commencer</a>
   </div>
 
   <div class="pricing-card">
@@ -59,14 +59,14 @@ Si vous souhaitez dépasser cette limite, vous devez utiliser un token d'authent
 
 ## Offres personnalisées
 
-Si vous souhaitez un nombre de requêtes supérieur à 10 000 par heure ou un tarif personnalisé, envoyez un email à [contact@sylvain.pro](mailto:contact@sylvain.pro).
+Si vous souhaitez un nombre de requêtes supérieur à 10 000 par heure ou un tarif personnalisé, envoyez un email à [contact@sylvain.sh](mailto:contact@sylvain.sh).
 
 ## Authentification
 
 Pour utiliser votre clé API, incluez-la dans l'en-tête `Authorization` :
 
 ```bash
-curl -H "Authorization: Bearer VOTRE_CLE_API" https://api.sylvain.pro/v2/infos
+curl -H "Authorization: Bearer VOTRE_CLE_API" https://api.sylvain.sh/v2/infos
 ```
 
 ### Réponse d'erreur

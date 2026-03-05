@@ -7,20 +7,20 @@ Welcome to the **Hyperion API v3** documentation. This API provides a comprehens
 All API requests should be made to:
 
 ```
-https://api.sylvain.pro/v3
+https://api.sylvain.sh/v3
 ```
 
 ## Quick Example
 
 ```bash
-curl -X GET "https://api.sylvain.pro/v3/infos"
+curl -X GET "https://api.sylvain.sh/v3/infos"
 ```
 
 ```json
 {
   "endpoints": 20,
   "last_version": "v3",
-  "documentation": "https://docs.sylvain.pro",
+  "documentation": "https://docs.sylvain.sh",
   "github": "https://github.com/20syldev/api",
   "creation": "November 25th 2024"
 }

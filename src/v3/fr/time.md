@@ -2,7 +2,7 @@
 
 L'endpoint `/time` permet de récupérer des informations sur le temps en fonction de différents paramètres. Vous pouvez obtenir l'heure actuelle ou une heure aléatoire entre une plage spécifiée, dans différents formats et fuseaux horaires.
 
-<Endpoint method="get" path="/v3/time" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v3/time" baseUrl="https://api.sylvain.sh" />
 
 ## Paramètres
 
@@ -80,7 +80,7 @@ GET /v3/time
 ### Temps aléatoire avec format spécifique
 
 ```bash
-curl -X GET "https://api.sylvain.pro/v3/time?type=random&format=locale&timezone=Europe/Paris"
+curl -X GET "https://api.sylvain.sh/v3/time?type=random&format=locale&timezone=Europe/Paris"
 ```
 
 ```json

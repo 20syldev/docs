@@ -2,7 +2,7 @@
 
 The `/tic-tac-toe/list` endpoint lists all public games currently in progress.
 
-<Endpoint method="post" path="/v3/tic-tac-toe/list" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v3/tic-tac-toe/list" baseUrl="https://api.sylvain.sh" />
 
 ## Parameters
 
@@ -11,7 +11,7 @@ This endpoint does not require any parameters.
 ## Request Example
 
 ```bash
-curl -X POST "https://api.sylvain.pro/v3/tic-tac-toe/list"
+curl -X POST "https://api.sylvain.sh/v3/tic-tac-toe/list"
 ```
 
 ## Response

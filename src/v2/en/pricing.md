@@ -16,7 +16,7 @@ If you wish to exceed this limit, you must use an authentication token. The auth
       <li><strong>336,000</strong> requests/week</li>
       <li><strong>~1.4M</strong> requests/month</li>
     </ul>
-    <a href="https://api.sylvain.pro" class="pricing-button" target="_blank">Get Started</a>
+    <a href="https://api.sylvain.sh" class="pricing-button" target="_blank">Get Started</a>
   </div>
 
   <div class="pricing-card">
@@ -59,14 +59,14 @@ If you wish to exceed this limit, you must use an authentication token. The auth
 
 ## Custom Plans
 
-If you need more than 10,000 requests per hour or a custom pricing plan, send an email to [contact@sylvain.pro](mailto:contact@sylvain.pro).
+If you need more than 10,000 requests per hour or a custom pricing plan, send an email to [contact@sylvain.sh](mailto:contact@sylvain.sh).
 
 ## Authentication
 
 To use your API key, include it in the `Authorization` header:
 
 ```bash
-curl -H "Authorization: Bearer YOUR_API_KEY" https://api.sylvain.pro/v2/infos
+curl -H "Authorization: Bearer YOUR_API_KEY" https://api.sylvain.sh/v2/infos
 ```
 
 ### Error Response

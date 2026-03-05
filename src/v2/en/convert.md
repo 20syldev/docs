@@ -2,7 +2,7 @@
 
 The `/convert` endpoint allows you to convert multiple temperature units between each other. You need to provide a value to convert, a source unit, and the unit you want to convert to.
 
-<Endpoint method="get" path="/v2/convert" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v2/convert" baseUrl="https://api.sylvain.sh" />
 
 ## Parameters
 
@@ -38,7 +38,7 @@ GET /v2/convert?value=30&from=celsius&to=kelvin
 ## cURL
 
 ```bash
-curl -X GET "https://api.sylvain.pro/v2/convert?value=30&from=celsius&to=kelvin"
+curl -X GET "https://api.sylvain.sh/v2/convert?value=30&from=celsius&to=kelvin"
 ```
 
 ## Error Handling

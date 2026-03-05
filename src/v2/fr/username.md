@@ -2,7 +2,7 @@
 
 L'endpoint `/username` renvoie une liste d'adjectifs, une autre avec des noms d'animaux et la dernière avec des métiers. Un nombre ainsi qu'un nom d'utilisateur aléatoire est généré à partir de toutes les informations. Cet endpoint ne nécessite aucune option.
 
-<Endpoint method="get" path="/v2/username" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v2/username" baseUrl="https://api.sylvain.sh" />
 
 Le nom d'utilisateur peut être composé d'un ou plusieurs éléments choisis parmi les listes ou du nombre généré.
 
@@ -27,5 +27,5 @@ GET /v2/username
 ## cURL
 
 ```bash
-curl -X GET "https://api.sylvain.pro/v2/username"
+curl -X GET "https://api.sylvain.sh/v2/username"
 ```

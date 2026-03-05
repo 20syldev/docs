@@ -2,7 +2,7 @@
 
 L'endpoint `/personal` génère des informations aléatoires à propos d'une personne. Un nom, un email, une localisation, un numéro de téléphone, un métier, et bien d'autres informations sont générées. Cet endpoint ne nécessite aucune option.
 
-<Endpoint method="get" path="/v1/personal" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v1/personal" baseUrl="https://api.sylvain.sh" />
 
 ## Exemple de requête
 
@@ -55,5 +55,5 @@ GET /v1/personal
 ## cURL
 
 ```bash
-curl -X GET "https://api.sylvain.pro/v1/personal"
+curl -X GET "https://api.sylvain.sh/v1/personal"
 ```

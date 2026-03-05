@@ -19,7 +19,7 @@ export default defineConfig({
         // Open Graph
         ['meta', { property: 'og:type', content: 'website' }],
         ['meta', { property: 'og:site_name', content: 'Hyperion API Documentation' }],
-        ['meta', { property: 'og:url', content: 'https://docs.sylvain.pro/' }],
+        ['meta', { property: 'og:url', content: 'https://docs.sylvain.sh/' }],
         ['meta', { property: 'og:title', content: 'Hyperion API Documentation' }],
         [
             'meta',
@@ -31,7 +31,7 @@ export default defineConfig({
         ],
         [
             'meta',
-            { property: 'og:image', content: 'https://docs.sylvain.pro/logo.png' },
+            { property: 'og:image', content: 'https://docs.sylvain.sh/logo.png' },
         ],
 
         // Twitter Card
@@ -48,7 +48,7 @@ export default defineConfig({
         ],
         [
             'meta',
-            { name: 'twitter:image', content: 'https://docs.sylvain.pro/logo.png' },
+            { name: 'twitter:image', content: 'https://docs.sylvain.sh/logo.png' },
         ],
 
         // Google Structured Data
@@ -59,13 +59,13 @@ export default defineConfig({
                 '@context': 'https://schema.org',
                 '@type': 'WebSite',
                 name: 'Hyperion API Documentation',
-                url: 'https://docs.sylvain.pro/',
+                url: 'https://docs.sylvain.sh/',
                 description:
                     'A comprehensive collection of utility endpoints for developers.',
                 author: {
                     '@type': 'Person',
                     name: 'Sylvain L.',
-                    url: 'https://sylvain.pro',
+                    url: 'https://sylvain.sh',
                 },
             }),
         ],
@@ -88,7 +88,7 @@ export default defineConfig({
         socialLinks: [{ icon: 'github', link: 'https://github.com/20syldev/docs' }],
 
         footer: {
-            copyright: 'docs.sylvain.pro &copy; 2026',
+            copyright: 'docs.sylvain.sh &copy; 2026',
         },
 
         search: {

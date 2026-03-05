@@ -2,7 +2,7 @@
 
 The `/hyperplanning` endpoint allows you to display a Hyperplanning schedule information in JSON format from an ICS (calendar) file.
 
-<Endpoint method="post" path="/v3/hyperplanning" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v3/hyperplanning" baseUrl="https://api.sylvain.sh" />
 
 ## Parameters
 
@@ -21,7 +21,7 @@ The `/hyperplanning` endpoint allows you to display a Hyperplanning schedule inf
 ## Request Example
 
 ```bash
-curl -X POST -d "url=https%3A%2F%2Fexample.com%2Ffile.ics&detail=full" "https://api.sylvain.pro/v3/hyperplanning"
+curl -X POST -d "url=https%3A%2F%2Fexample.com%2Ffile.ics&detail=full" "https://api.sylvain.sh/v3/hyperplanning"
 ```
 
 ## Response

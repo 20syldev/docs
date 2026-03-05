@@ -4,6 +4,7 @@ import { useRoute, useData, useRouter } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
 import Extra from './Extra.vue';
 import Lang from './Lang.vue';
+import NotFound from './NotFound.vue';
 import Version from './Version.vue';
 import Terminal from './Terminal.vue';
 import { getLang, isHome, getLangItems, t } from '../i18n';
@@ -23,7 +24,7 @@ let observer: MutationObserver | null = null;
 
 async function fetchLatest() {
     try {
-        const response = await fetch('https://api.sylvain.pro/v3/infos');
+        const response = await fetch('https://api.sylvain.sh/v3/infos');
         const data = await response.json();
         if (data.last_version) {
             latest.value = data.last_version;
@@ -207,12 +208,7 @@ onUnmounted(() => {
             <Terminal />
         </template>
         <template #not-found>
-            <div class="not-found">
-                <p class="code">404</p>
-                <h1 class="title">{{ t('notFoundTitle', lang) }}</h1>
-                <p class="quote">{{ t('notFoundMessage', lang) }}</p>
-                <a class="link" :href="lang === 'fr' ? '/fr' : '/'">{{ t('notFoundLink', lang) }}</a>
-            </div>
+            <NotFound :lang="lang" />
         </template>
     </Layout>
 </template>

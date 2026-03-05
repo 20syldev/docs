@@ -4,7 +4,7 @@ L'endpoint `/username` renvoie une liste d'adjectifs, une autre avec des noms d'
 
 _Le nom d'utilisateur peut être composé d'un ou plusieurs éléments choisis parmi les listes ou du nombre généré._
 
-<Endpoint method="get" path="/v1/username" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v1/username" baseUrl="https://api.sylvain.sh" />
 
 ## Exemple de requête
 
@@ -27,5 +27,5 @@ GET /v1/username
 ## cURL
 
 ```bash
-curl -X GET "https://api.sylvain.pro/v1/username"
+curl -X GET "https://api.sylvain.sh/v1/username"
 ```

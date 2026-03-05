@@ -7,7 +7,7 @@ L'API Hyperion utilise l'authentification par token Bearer pour identifier les u
 Pour authentifier vos requêtes, incluez votre clé API dans le header `Authorization` :
 
 ```bash
-curl -H "Authorization: Bearer VOTRE_CLE_API" https://api.sylvain.pro/v2/infos
+curl -H "Authorization: Bearer VOTRE_CLE_API" https://api.sylvain.sh/v2/infos
 ```
 
 ## Limites de requêtes

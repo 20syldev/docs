@@ -2,7 +2,7 @@
 
 L'endpoint `/hyperplanning` permet d'afficher les informations d'un emploi du temps Hyperplanning au format JSON à partir d'un fichier ICS (calendrier).
 
-<Endpoint method="post" path="/v3/hyperplanning" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v3/hyperplanning" baseUrl="https://api.sylvain.sh" />
 
 ## Paramètres
 
@@ -21,7 +21,7 @@ L'endpoint `/hyperplanning` permet d'afficher les informations d'un emploi du te
 ## Exemple de requête
 
 ```bash
-curl -X POST -d "url=https%3A%2F%2Fexample.com%2Ffile.ics&detail=full" "https://api.sylvain.pro/v3/hyperplanning"
+curl -X POST -d "url=https%3A%2F%2Fexample.com%2Ffile.ics&detail=full" "https://api.sylvain.sh/v3/hyperplanning"
 ```
 
 ## Réponse

@@ -1,4 +1,4 @@
-name: Deploy docs.sylvain.pro
+name: Deploy docs.sylvain.sh
 
 on:
   push:

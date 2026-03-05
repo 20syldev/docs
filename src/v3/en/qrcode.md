@@ -2,7 +2,7 @@
 
 The `/qrcode` endpoint generates a QR Code from a URL provided as a parameter. This endpoint is useful for quickly generating an image in PNG format.
 
-<Endpoint method="get" path="/v3/qrcode" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v3/qrcode" baseUrl="https://api.sylvain.sh" />
 
 ## Parameters
 
@@ -13,7 +13,7 @@ The `/qrcode` endpoint generates a QR Code from a URL provided as a parameter. T
 ## Request Example
 
 ```
-GET /v3/qrcode?url=https://docs.sylvain.pro
+GET /v3/qrcode?url=https://docs.sylvain.sh
 ```
 
 ## Response
@@ -33,7 +33,7 @@ GET /v3/qrcode?url=https://docs.sylvain.pro
 ## cURL
 
 ```bash
-curl -X GET "https://api.sylvain.pro/v3/qrcode?url=https://docs.sylvain.pro"
+curl -X GET "https://api.sylvain.sh/v3/qrcode?url=https://docs.sylvain.sh"
 ```
 
 ## Using the Response

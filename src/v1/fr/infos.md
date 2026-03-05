@@ -1,8 +1,8 @@
 # Informations sur l'API
 
-L'endpoint `/infos` permet d'afficher les informations générales à propos de l'[API](https://api.sylvain.pro). Cet endpoint ne nécessite aucune option.
+L'endpoint `/infos` permet d'afficher les informations générales à propos de l'[API](https://api.sylvain.sh). Cet endpoint ne nécessite aucune option.
 
-<Endpoint method="get" path="/v1/infos" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v1/infos" baseUrl="https://api.sylvain.sh" />
 
 ## Exemple de requête
 
@@ -16,7 +16,7 @@ GET /v1/infos
 {
   "endpoints": 11,
   "last_version": "v1",
-  "documentation": "https://docs.sylvain.pro",
+  "documentation": "https://docs.sylvain.sh",
   "github": "https://github.com/20syldev/api",
   "creation": "November 25th 2024"
 }
@@ -25,5 +25,5 @@ GET /v1/infos
 ## cURL
 
 ```bash
-curl -X GET "https://api.sylvain.pro/v1/infos"
+curl -X GET "https://api.sylvain.sh/v1/infos"
 ```

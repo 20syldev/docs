@@ -11,20 +11,20 @@ This is a legacy version of the API. Consider migrating to [v3](/v3/en/) for the
 All API requests should be made to:
 
 ```
-https://api.sylvain.pro/v1
+https://api.sylvain.sh/v1
 ```
 
 ## Quick Example
 
 ```bash
-curl -X GET "https://api.sylvain.pro/v1/infos"
+curl -X GET "https://api.sylvain.sh/v1/infos"
 ```
 
 ```json
 {
   "endpoints": 11,
   "last_version": "v1",
-  "documentation": "https://docs.sylvain.pro",
+  "documentation": "https://docs.sylvain.sh",
   "github": "https://github.com/20syldev/api",
   "creation": "November 25th 2024"
 }

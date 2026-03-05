@@ -2,7 +2,7 @@
 
 The `/tic-tac-toe/fetch` endpoint retrieves information about a current Tic-Tac-Toe game.
 
-<Endpoint method="post" path="/v3/tic-tac-toe/fetch" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v3/tic-tac-toe/fetch" baseUrl="https://api.sylvain.sh" />
 
 ## Parameters
 
@@ -15,7 +15,7 @@ The `/tic-tac-toe/fetch` endpoint retrieves information about a current Tic-Tac-
 ## Request Example
 
 ```bash
-curl -X POST -d "username=User1&game=VWXYZ" "https://api.sylvain.pro/v3/tic-tac-toe/fetch"
+curl -X POST -d "username=User1&game=VWXYZ" "https://api.sylvain.sh/v3/tic-tac-toe/fetch"
 ```
 
 ## Response

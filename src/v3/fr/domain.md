@@ -2,7 +2,7 @@
 
 L'endpoint `/domain` génère diverses données aléatoires sur un domaine pour créer un profil complet. Cet endpoint ne nécessite aucune option.
 
-<Endpoint method="get" path="/v3/domain" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v3/domain" baseUrl="https://api.sylvain.sh" />
 
 ## Paramètres
 
@@ -18,8 +18,8 @@ GET /v3/domain
 
 ```json
 {
-  "domain": "sylvain.pro",
-  "full_domain": "api.sylvain.pro",
+  "domain": "sylvain.sh",
+  "full_domain": "api.sylvain.sh",
   "ip_address": ["216.24.57.4", "216.24.57.252"],
   "ssl_certified": true,
   "hosting_provider": "Render",
@@ -65,5 +65,5 @@ GET /v3/domain
 ## cURL
 
 ```bash
-curl -X GET "https://api.sylvain.pro/v3/domain"
+curl -X GET "https://api.sylvain.sh/v3/domain"
 ```

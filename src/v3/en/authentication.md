@@ -7,7 +7,7 @@ The Hyperion API uses Bearer token authentication to identify users with premium
 To authenticate your requests, include your API key in the `Authorization` header:
 
 ```bash
-curl -H "Authorization: Bearer YOUR_API_KEY" https://api.sylvain.pro/v3/infos
+curl -H "Authorization: Bearer YOUR_API_KEY" https://api.sylvain.sh/v3/infos
 ```
 
 ## Rate Limits

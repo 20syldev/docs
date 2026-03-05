@@ -1,14 +1,14 @@
 <div align="center">
-  <a href="https://docs.sylvain.pro"><img src="https://docs.sylvain.pro/logo.png" alt="Logo" width="25%" height="auto"/></a>
+  <a href="https://docs.sylvain.sh"><img src="https://docs.sylvain.sh/logo.png" alt="Logo" width="25%" height="auto"/></a>
 
   # Documentation de l'API
-  [![Version](https://custom-icon-badges.demolab.com/badge/Version%20:-v3.0.3-6479ee?logo=docs.sylvain.pro&labelColor=23272A)](https://github.com/20syldev/docs/releases/latest)
+  [![Version](https://custom-icon-badges.demolab.com/badge/Version%20:-v3.0.3-6479ee?logo=docs.sylvain.sh&labelColor=23272A)](https://github.com/20syldev/docs/releases/latest)
 </div>
 
 ---
 
 ## À propos de la Documentation
-Voici la documentation de mon API personnelle, disponible sur le domaine [docs.sylvain.pro](https://docs.sylvain.pro).
+Voici la documentation de mon API personnelle, disponible sur le domaine [docs.sylvain.sh](https://docs.sylvain.sh).
 
 ## Développement
 

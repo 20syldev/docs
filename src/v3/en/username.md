@@ -2,7 +2,7 @@
 
 The `/username` endpoint generates random usernames. This endpoint is useful for creating placeholder usernames or suggesting names to users.
 
-<Endpoint method="get" path="/v3/username" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="get" path="/v3/username" baseUrl="https://api.sylvain.sh" />
 
 ## Parameters
 
@@ -31,7 +31,7 @@ GET /v3/username
 ## cURL
 
 ```bash
-curl -X GET "https://api.sylvain.pro/v3/username"
+curl -X GET "https://api.sylvain.sh/v3/username"
 ```
 
 ## Use Cases

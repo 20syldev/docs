@@ -2,7 +2,7 @@
 
 The `/token` endpoint generates secure strings called _tokens_. This endpoint is particularly useful for creating random identifiers for various applications.
 
-<Endpoint method="post" path="/v2/token" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v2/token" baseUrl="https://api.sylvain.sh" />
 
 ## Parameters
 
@@ -27,7 +27,7 @@ The `/token` endpoint generates secure strings called _tokens_. This endpoint is
 ## Request Example
 
 ```bash
-curl -X POST -d "len=24&type=alphanum" "https://api.sylvain.pro/v2/token"
+curl -X POST -d "len=24&type=alphanum" "https://api.sylvain.sh/v2/token"
 ```
 
 ## Response

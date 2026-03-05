@@ -2,7 +2,7 @@
 
 The `/tic-tac-toe` endpoint allows playing and storing an online Tic-Tac-Toe game. Games are stored for 1 hour and support both public and private modes.
 
-<Endpoint method="post" path="/v3/tic-tac-toe" baseUrl="https://api.sylvain.pro" />
+<Endpoint method="post" path="/v3/tic-tac-toe" baseUrl="https://api.sylvain.sh" />
 
 ## Parameters
 
@@ -28,7 +28,7 @@ The board is a 3x3 grid with positions numbered as follows:
 ## Request Example
 
 ```bash
-curl -X POST -d "username=User1&move=2-2&session=abc123&game=VWXYZ" "https://api.sylvain.pro/v3/tic-tac-toe"
+curl -X POST -d "username=User1&move=2-2&session=abc123&game=VWXYZ" "https://api.sylvain.sh/v3/tic-tac-toe"
 ```
 
 ## Response

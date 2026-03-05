@@ -65,20 +65,20 @@ import { VPHomeFeatures } from 'vitepress/theme'
 All API requests should be made to:
 
 ```
-https://api.sylvain.pro
+https://api.sylvain.sh
 ```
 
 ## Example Request
 
 ```bash
-curl -X GET "https://api.sylvain.pro/v3/infos"
+curl -X GET "https://api.sylvain.sh/v3/infos"
 ```
 
 ```json
 {
   "endpoints": 20,
   "last_version": "v3",
-  "documentation": "https://docs.sylvain.pro",
+  "documentation": "https://docs.sylvain.sh",
   "github": "https://github.com/20syldev/api",
   "creation": "November 25th 2024"
 }
