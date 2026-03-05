@@ -2,7 +2,7 @@
   <a href="https://docs.sylvain.sh"><img src="https://docs.sylvain.sh/logo.png" alt="Logo" width="25%" height="auto"/></a>
 
   # Documentation de l'API
-  [![Version](https://custom-icon-badges.demolab.com/badge/Version%20:-v3.0.3-6479ee?logo=docs.sylvain.sh&labelColor=23272A)](https://github.com/20syldev/docs/releases/latest)
+  [![Version](https://custom-icon-badges.demolab.com/badge/Version%20:-v3.0.4-6479ee?logo=docs.sylvain.sh&labelColor=23272A)](https://github.com/20syldev/docs/releases/latest)
 </div>
 
 ---
