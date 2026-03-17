@@ -30,7 +30,9 @@ npm run preview
 
 | Composant        | Description                                                                          |
 | ---------------- | ------------------------------------------------------------------------------------ |
+| `Copy.vue`       | Bouton de copie pour les blocs de code avec icône animée                              |
 | `Endpoint.vue`   | Affiche un endpoint API avec sa méthode HTTP et son chemin cliquable                 |
+| `Extra.vue`      | Barre d'actions avec sélecteur de langue et liens externes                           |
 | `Lang.vue`       | Menu déroulant pour changer de langue (EN/FR)                                        |
 | `Layout.vue`     | Layout principal, gère la traduction de l'UI, les raccourcis clavier et la page 404  |
 | `Method.vue`     | Badge coloré pour les méthodes HTTP (GET, POST, PUT, DELETE, PATCH)                  |
