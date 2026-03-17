@@ -26,6 +26,56 @@
     font-size: 12px;
 }
 
+/* ----- Copy button ----- */
+
+div[class*='language-'] > button.copy { display: none !important; }
+div[class*='language-']:has(> pre):hover .copy-btn { opacity: 1; }
+
+.copy-btn {
+    border: 1px solid var(--vp-c-divider);
+    background: var(--vp-c-bg-soft);
+    justify-content: center;
+    transition: all 0.2s;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    height: 40px;
+    width: 40px;
+    z-index: 3;
+    opacity: 0;
+    top: 12px;
+    right: 12px;
+    border-radius: 8px;
+}
+.copy-btn:hover {
+    background-color: var(--vp-c-bg-mute);
+    border-color: var(--vp-c-brand-1);
+}
+.copy-btn .copy,
+.copy-btn .check {
+    color: var(--vp-c-text-2);
+    transition: color 0.2s;
+    height: 18px;
+    width: 18px;
+}
+.copy-btn:hover .copy { color: var(--vp-c-brand-1); }
+.copy-btn .copy-back {
+    transition: transform 0.3s ease;
+    transform-origin: 30px 20px;
+}
+.copy-btn:hover .copy-back { transform: rotate(-10deg) translate(2px, -2px); }
+.copy-btn.copied {
+    border-color: var(--vp-c-brand-1);
+    opacity: 1;
+}
+.copy-btn.copied .copy { display: none; }
+.copy-btn.copied .check {
+    color: var(--vp-c-brand-1);
+    display: block;
+}
+.copy-btn .check { display: none; }
+
 /* ----- Custom blocks ----- */
 
 .custom-block.tip { border-color: var(--badge-get); }
@@ -68,7 +118,7 @@
     filter: invert(1) hue-rotate(180deg);
 }
 
-.dark .vp-doc svg,
+.dark .vp-doc svg:not(.copy):not(.check),
 .dark .VPFeature svg {
     color: var(--vp-c-text-1);
 }
