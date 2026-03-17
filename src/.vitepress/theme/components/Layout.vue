@@ -7,7 +7,8 @@ import Lang from './Lang.vue';
 import NotFound from './NotFound.vue';
 import Version from './Version.vue';
 import Terminal from './Terminal.vue';
-import { getLang, isHome, getLangItems, t } from '../i18n';
+import Copy from './Copy.vue';
+import { getLang, isHome, getLangItems, getPrefix, languages as langConfig, t } from '../i18n';
 
 const { Layout } = DefaultTheme;
 const route = useRoute();
@@ -18,7 +19,7 @@ const lang = computed(() => getLang(route.path));
 const french = computed(() => lang.value === 'fr');
 const latest = ref('v3');
 const home = computed(() => isHome(route.path));
-const languages = computed(() => getLangItems(route.path, home.value));
+const languages = computed(() => getLangItems(route.path, home.value, lang.value));
 
 let observer: MutationObserver | null = null;
 
@@ -75,8 +76,9 @@ function translate() {
     }
 
     // Home nav link
-    const homeLink = document.querySelector('.VPNavBarMenuLink[href="/"], .VPNavBarMenuLink[href="/fr"]') as HTMLAnchorElement;
-    const href = l === 'fr' ? '/fr' : '/';
+    const homeSelectors = langConfig.map(lg => `.VPNavBarMenuLink[href="${lg.prefix || '/'}"]`).join(', ');
+    const homeLink = document.querySelector(homeSelectors) as HTMLAnchorElement;
+    const href = getPrefix(l) || '/';
     if (homeLink) {
         if (homeLink.textContent !== t('home', l)) {
             homeLink.textContent = t('home', l);
@@ -198,7 +200,7 @@ onUnmounted(() => {
             <div class="VPNavScreenAppearance language">
                 <p class="text">{{ t('language', lang) }}</p>
                 <div class="options">
-                    <a v-for="item in languages" :key="item.link" :href="item.link" :class="{ active: (lang === 'fr' && item.text === 'Français') || (lang === 'en' && item.text === 'English') }">
+                    <a v-for="item in languages" :key="item.link" :href="item.link" :class="{ active: item.lang === lang }">
                         {{ item.text }}
                     </a>
                 </div>
@@ -211,4 +213,5 @@ onUnmounted(() => {
             <NotFound :lang="lang" />
         </template>
     </Layout>
+    <Copy />
 </template>
