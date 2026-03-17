@@ -12,9 +12,9 @@ const lang = computed(() => getLang(route.path));
 const homepage = computed(() => isHome(route.path));
 
 const items = computed(() => {
-    return getLangItems(route.path, homepage.value).map(item => ({
+    return getLangItems(route.path, homepage.value, lang.value).map(item => ({
         ...item,
-        active: (item.text === 'Français') ? lang.value === 'fr' : lang.value === 'en',
+        active: item.lang === lang.value,
     }));
 });
 
