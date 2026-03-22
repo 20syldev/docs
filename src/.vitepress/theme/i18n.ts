@@ -65,6 +65,12 @@ export function getLangItems(path: string, homepage: boolean, lang: string): Arr
     });
 }
 
+export function saveLang(lang: string): void {
+    if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('lang', lang);
+    }
+}
+
 export function t(key: string, lang: string): string {
     return translations[lang]?.[key] || translations[defaultLang][key] || key;
 }
