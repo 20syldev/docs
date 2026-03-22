@@ -3,7 +3,7 @@ import { computed } from 'vue';
 import { useRoute, useData } from 'vitepress';
 import VPFlyout from 'vitepress/dist/client/theme-default/components/VPFlyout.vue';
 import VPSwitchAppearance from 'vitepress/dist/client/theme-default/components/VPSwitchAppearance.vue';
-import { getLang, isHome, getLangItems, t } from '../i18n';
+import { getLang, isHome, getLangItems, t, saveLang } from '../i18n';
 
 const route = useRoute();
 const { site } = useData();
@@ -26,7 +26,7 @@ const visible = computed(() => route.path.includes('/v') || homepage.value);
         <div class="group">
             <p class="group-title">{{ t('language', lang) }}</p>
             <div class="VPMenuLink" v-for="item in items" :key="item.link">
-                <a class="link" :class="{ 'is-active': item.active }" :href="item.link">{{ item.text }}</a>
+                <a class="link" :class="{ 'is-active': item.active }" :href="item.link" @click="saveLang(item.lang)">{{ item.text }}</a>
             </div>
         </div>
 

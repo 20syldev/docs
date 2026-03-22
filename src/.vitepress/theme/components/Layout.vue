@@ -8,7 +8,7 @@ import NotFound from './NotFound.vue';
 import Version from './Version.vue';
 import Terminal from './Terminal.vue';
 import Copy from './Copy.vue';
-import { getLang, isHome, getLangItems, getPrefix, languages as langConfig, t } from '../i18n';
+import { getLang, isHome, getLangItems, getPrefix, languages as langConfig, t, saveLang } from '../i18n';
 
 const { Layout } = DefaultTheme;
 const route = useRoute();
@@ -151,7 +151,7 @@ function onKey(e: KeyboardEvent) {
 function redirectLang() {
     if (route.path !== '/') return;
 
-    const savedLang = localStorage.getItem('preferred-lang');
+    const savedLang = localStorage.getItem('lang');
     if (savedLang === 'fr') {
         router.go('/fr');
         return;
@@ -160,10 +160,10 @@ function redirectLang() {
 
     const userLang = navigator.language;
     if (userLang?.toLowerCase().startsWith('fr')) {
-        localStorage.setItem('preferred-lang', 'fr');
+        localStorage.setItem('lang', 'fr');
         router.go('/fr');
     } else {
-        localStorage.setItem('preferred-lang', 'en');
+        localStorage.setItem('lang', 'en');
     }
 }
 
@@ -200,7 +200,7 @@ onUnmounted(() => {
             <div class="VPNavScreenAppearance language">
                 <p class="text">{{ t('language', lang) }}</p>
                 <div class="options">
-                    <a v-for="item in languages" :key="item.link" :href="item.link" :class="{ active: item.lang === lang }">
+                    <a v-for="item in languages" :key="item.link" :href="item.link" :class="{ active: item.lang === lang }" @click="saveLang(item.lang)">
                         {{ item.text }}
                     </a>
                 </div>
