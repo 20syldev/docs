@@ -59,7 +59,8 @@ export function getLangItems(path: string, homepage: boolean, lang: string): Arr
             link = l.prefix || '/';
         } else {
             const currentPrefix = getPrefix(lang) || `/${lang}`;
-            link = path.replace(currentPrefix + '/', l.prefix + '/') || path;
+            const targetPrefix = l.prefix || `/${l.code}`;
+            link = path.replace(currentPrefix + '/', targetPrefix + '/') || path;
         }
         return { text: t(l.translationKey, lang), link, lang: l.code };
     });
