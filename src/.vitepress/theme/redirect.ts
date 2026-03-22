@@ -3,7 +3,7 @@ export const KNOWN_VERSIONS = ['v1', 'v2', 'v3'];
 
 export function getUserLang(): string {
     if (typeof localStorage === 'undefined') return 'en';
-    const saved = localStorage.getItem('preferred-lang');
+    const saved = localStorage.getItem('lang');
     if (saved === 'fr' || saved === 'en') return saved;
     const nav = (typeof navigator !== 'undefined' ? navigator.language : '') ?? '';
     return nav.toLowerCase().startsWith('fr') ? 'fr' : 'en';
