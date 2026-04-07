@@ -6,10 +6,20 @@
     "scripts": {
         "dev": "vitepress dev src",
         "build": "vitepress build src",
-        "preview": "vitepress preview src"
+        "preview": "vitepress preview src",
+        "format": "prettier --write . && eslint --fix .",
+        "check": "eslint ."
     },
     "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "eslint": "^10.2.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-vue": "^10.8.0",
+        "globals": "^17.4.0",
+        "prettier": "^3.8.1",
+        "typescript-eslint": "^8.58.0",
         "vitepress": "^1.6.4",
-        "vue": "^3.5.0"
+        "vue": "^3.5.0",
+        "vue-eslint-parser": "^10.4.0"
     }
 }
