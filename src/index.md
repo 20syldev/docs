@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /v3/en/
+      link: /v4/en/
     - theme: alt
       text: View on GitHub
       link: https://github.com/20syldev/docs
@@ -18,22 +18,22 @@ features:
       src: /icons/algorithm.svg
     title: Algorithms
     details: Mathematical algorithms including factorial, fibonacci, prime numbers, GCD, and more.
-    link: /v3/en/algorithms
+    link: /v4/en/algorithms
   - icon:
       src: /icons/chat.svg
     title: Chat System
     details: Real-time messaging API with support for public and private channels.
-    link: /v3/en/chat
+    link: /v4/en/chat
   - icon:
       src: /icons/game.svg
     title: Tic-Tac-Toe
     details: Online multiplayer Tic-Tac-Toe game with game state management.
-    link: /v3/en/tic-tac-toe
+    link: /v4/en/tic-tac-toe
   - icon:
       src: /icons/tools.svg
     title: Utilities
     details: QR codes, color conversion, domain info, captcha generation, and more.
-    link: /v3/en/qrcode
+    link: /v4/en/qrcode
 ---
 
 <script setup>
@@ -43,20 +43,20 @@ import { VPHomeFeatures } from 'vitepress/theme'
 ## Quick Start
 
 <div class="version-cards">
-  <a href="/v3/en" class="version-card current">
+  <a href="/v4/en" class="version-card current">
     <span class="badge version-badge">Current</span>
-    <span class="version-number">v3</span>
+    <span class="version-number">v4</span>
     <span class="version-desc">All features</span>
   </a>
-  <a href="/v2/en" class="version-card">
+  <a href="/v3/en" class="version-card">
     <span class="badge version-badge stable">Stable</span>
-    <span class="version-number">v2</span>
+    <span class="version-number">v3</span>
     <span class="version-desc">Previous version</span>
   </a>
-  <a href="/v1/en" class="version-card">
+  <a href="/v2/en" class="version-card">
     <span class="badge version-badge legacy">Legacy</span>
-    <span class="version-number">v1</span>
-    <span class="version-desc">Original version</span>
+    <span class="version-number">v2</span>
+    <span class="version-desc">Legacy version</span>
   </a>
 </div>
 
@@ -71,13 +71,13 @@ https://api.sylvain.sh
 ## Example Request
 
 ```bash
-curl -X GET "https://api.sylvain.sh/v3/infos"
+curl -X GET "https://api.sylvain.sh/v4/infos"
 ```
 
 ```json
 {
   "endpoints": 20,
-  "last_version": "v3",
+  "last_version": "v4",
   "documentation": "https://docs.sylvain.sh",
   "github": "https://github.com/20syldev/api",
   "creation": "November 25th 2024"
