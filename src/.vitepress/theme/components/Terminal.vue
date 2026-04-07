@@ -61,6 +61,7 @@ const body = ref<HTMLElement | null>(null);
 let index = 0;
 let interval: ReturnType<typeof setInterval> | null = null;
 let timeout: ReturnType<typeof setTimeout> | null = null;
+let alive = true;
 
 function scroll() {
     nextTick(() => {
@@ -97,6 +98,7 @@ function typeText(text: string, target: typeof command, speed: number, onComplet
 }
 
 async function runRequest() {
+    if (!alive) return;
     const request = requests[index];
     cursor.value = 'command';
 
@@ -121,6 +123,7 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
+    alive = false;
     if (interval) clearInterval(interval);
     if (timeout) clearTimeout(timeout);
 });
