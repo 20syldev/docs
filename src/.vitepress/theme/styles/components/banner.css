@@ -1,0 +1,54 @@
+/* - - - - - - - Version Banner - - - - - - - */
+
+.banner {
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 16px 20px;
+    line-height: 1.6;
+    margin: 16px 0;
+}
+
+.banner strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.banner p {
+    margin: 0 0 8px;
+    font-size: 14px;
+}
+
+.banner-link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    gap: 6px;
+}
+.banner-link:hover { text-decoration: underline; }
+
+.banner-link svg { flex-shrink: 0; }
+
+.banner.warning {
+    color: var(--vp-c-text-1);
+    border-color: #fab0054d;
+    background: #fab00514;
+}
+.banner.warning strong,
+.banner.warning a,
+.banner.warning svg > * {
+    color: #fab005;
+}
+
+.banner.danger {
+    color: var(--vp-c-text-1);
+    border-color: #fa52524d;
+    background: #fa525214;
+}
+.banner.danger strong,
+.banner.danger a,
+.banner.danger svg > * {
+    color: #fa5252;
+}

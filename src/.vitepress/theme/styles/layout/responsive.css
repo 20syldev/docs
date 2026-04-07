@@ -1,0 +1,103 @@
+/* - - - - - - - Responsive - - - - - - - */
+
+/* ----- Desktop ----- */
+
+@media (min-width: 1280px) {
+    .extra-menu { display: none !important; }
+    .VPNavBarAppearance {
+        display: flex !important;
+        align-items: center;
+        order: 11;
+    }
+    .language-switcher-wrapper {
+        align-items: center;
+        display: flex !important;
+        order: 12;
+    }
+}
+
+/* ----- Tablet ----- */
+
+@media (min-width: 960px) {
+    .VPHero .image {
+        max-width: none;
+        display: block;
+        flex-grow: 0;
+    }
+    .VPNavBarSearch .VPLocalSearchBox button,
+    .VPNavBarSearch #local-search,
+    .VPNavBarSearch > button { width: 100% !important; }
+}
+
+/* ----- Mobile nav ----- */
+
+@media (max-width: 959px) {
+    .extra-menu { display: none !important; }
+    .VPNavBarSearch {
+        flex: none !important;
+        padding: 0 !important;
+    }
+    .DocSearch-Button {
+        justify-content: center !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        width: 48px !important;
+        height: 55px !important;
+        background: transparent !important;
+    }
+    .DocSearch-Button .DocSearch-Search-Icon {
+        top: 0 !important;
+        margin-right: 0 !important;
+        width: 16px !important;
+        height: 16px !important;
+        color: var(--vp-c-text-1) !important;
+    }
+    .DocSearch-Button .DocSearch-Button-Placeholder,
+    .DocSearch-Button .DocSearch-Button-Keys {
+        display: none !important;
+    }
+}
+
+/* ----- Mobile ----- */
+
+@media (max-width: 767px) {
+    .version-cards { grid-template-columns: 1fr; }
+    .request-block-header { flex-wrap: wrap; }
+    .vp-doc div[class*='language-'] {
+        border-radius: 8px;
+        margin: 16px 0;
+    }
+    .panel-params { flex-direction: column; }
+    .panel-params .api-field { min-width: auto; }
+    .panel .panel-header {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+    .panel .panel-header .method-badge { order: 1; }
+    .panel-send {
+        margin-left: auto;
+        order: 2;
+    }
+    .panel-path {
+        flex-basis: 100%;
+        width: 100%;
+        order: 3;
+    }
+    .pg-dropdown { max-height: 260px; }
+    .examples-header .tab-item {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}
+
+/* ----- Print ----- */
+
+@media print {
+    .VPNav,
+    .VPSidebar,
+    .edit-link,
+    .prev-next { display: none !important; }
+    .VPContent { padding: 0 !important; }
+}

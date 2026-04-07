@@ -33,11 +33,6 @@
     padding: 0 24px !important;
     flex: 1 !important;
 }
-.VPNavBarSearch .VPLocalSearchBox button,
-.VPNavBarSearch #local-search,
-.VPNavBarSearch > button {
-    width: 100% !important;
-}
 
 /* ----- Search - DocSearch ----- */
 
@@ -101,11 +96,11 @@
 }
 .VPSocialLinks { order: 13; }
 
-/* ----- Mobile language (hamburger menu) ----- */
+/* ----- Mobile language (hamburger) ----- */
 
 .VPNavScreen .container {
-    display: flex;
     flex-direction: column;
+    display: flex;
 }
 .VPNavScreen .menu { order: 1; }
 .language {

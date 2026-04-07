@@ -1,4 +1,4 @@
-/* - - - - - - - Components - - - - - - - */
+/* - - - - - - - Cards - - - - - - - */
 
 /* ----- Version cards ----- */
 
@@ -35,10 +35,10 @@
 /* ----- Version card - Stable Hover ----- */
 
 .version-card:has(.version-badge.stable):hover {
-    border-color: var(--badge-patch);
+    border-color: var(--method-patch);
 }
 .version-card:has(.version-badge.stable):hover .version-number {
-    text-decoration-color: var(--badge-patch);
+    text-decoration-color: var(--method-patch);
 }
 
 /* ----- Version card - Legacy Hover ----- */
@@ -52,7 +52,7 @@
 
 /* ----- Version badge ----- */
 
-.version-badge.stable { background: var(--badge-patch); }
+.version-badge.stable { background: var(--method-patch); }
 .version-badge.legacy { background: var(--vp-c-text-3); }
 
 /* ----- Version number ----- */

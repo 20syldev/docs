@@ -3,22 +3,22 @@
 /* ----- Container ----- */
 
 .terminal {
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    background: #1e1e2e;
+    font-family: var(--font-mono);
+    background: var(--terminal-bg);
     overflow: hidden;
     height: 220px;
     width: 565px;
     font-size: 13px;
     border-radius: 12px;
     margin: 20px 0 0 25px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px #0000004d;
 }
 
 /* ----- Header ----- */
 
 .terminal-header {
-    background: linear-gradient(180deg, #3c3c4a 0%, #2d2d3a 100%);
-    border-bottom: 1px solid #252532;
+    background: var(--terminal-header);
+    border-bottom: 1px solid var(--terminal-border);
     align-items: center;
     display: flex;
     gap: 12px;
@@ -40,7 +40,7 @@
 .terminal-btn.maximize { background: #27c93f; }
 
 .terminal-title {
-    color: #6c6c80;
+    color: var(--terminal-title);
     text-align: center;
     margin-right: 56px;
     font-size: 13px;
@@ -66,7 +66,7 @@
     gap: 8px;
 }
 .terminal-prompt {
-    color: #20c997;
+    color: var(--terminal-prompt);
     font-weight: 600;
 }
 
@@ -75,24 +75,24 @@
     white-space: pre-wrap;
 }
 .terminal-command {
-    color: #cdd6f4;
+    color: var(--terminal-text);
     font-size: 12px;
 }
 
 /* ----- Cursor ----- */
 
 .terminal-cursor {
+    color: var(--terminal-text);
     font-weight: bold;
-    color: #cdd6f4;
 }
 
 /* ----- Response ----- */
 
 .terminal-response {
+    color: var(--terminal-text-dim);
     word-break: break-word;
     white-space: pre-wrap;
-    color: #a6adc8;
-    margin: 0;
-    font-size: 12px;
     line-height: 1.6;
+    font-size: 12px;
+    margin: 0;
 }
