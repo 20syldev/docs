@@ -40,6 +40,6 @@ Tous les points d'accès retournent des réponses d'erreur cohérentes :
 
 ## Autres Versions
 
-- [Documentation v4](/v4/fr/) - Derniere version (recommandee)
-- [Documentation v3](/v3/fr/) - Version stable precedente
+- [Documentation v4](/v4/fr/) - Dernière version (recommandée)
+- [Documentation v3](/v3/fr/) - Version stable précédente
 - [Documentation v2](/v2/fr/) - Ancienne version

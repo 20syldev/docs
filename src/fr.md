@@ -46,12 +46,12 @@ import { VPHomeFeatures } from 'vitepress/theme'
   <a href="/v4/fr" class="version-card current">
     <span class="badge version-badge">Actuelle</span>
     <span class="version-number">v4</span>
-    <span class="version-desc">Toutes les fonctionnalites</span>
+    <span class="version-desc">Toutes les fonctionnalités</span>
   </a>
   <a href="/v3/fr" class="version-card">
     <span class="badge version-badge stable">Stable</span>
     <span class="version-number">v3</span>
-    <span class="version-desc">Version precedente</span>
+    <span class="version-desc">Version précédente</span>
   </a>
   <a href="/v2/fr" class="version-card">
     <span class="badge version-badge legacy">Legacy</span>
