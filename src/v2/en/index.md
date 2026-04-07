@@ -1,10 +1,8 @@
 # Getting Started
 
-Welcome to the **Hyperion API v2** documentation. This is the previous stable version of the API.
+<Banner />
 
-::: info Migration Available
-A newer version is available! Consider migrating to [v3](/v3/en/) for the latest features including Hyperplanning support, Levenshtein distance, and improved chat functionality.
-:::
+Welcome to the **Hyperion API v2** documentation. This is the previous stable version of the API.
 
 ## Base URL
 
@@ -52,5 +50,6 @@ All endpoints return consistent error responses:
 
 ## Other Versions
 
-- [v3 Documentation](/v3/en/) - Latest version (recommended)
+- [v4 Documentation](/v4/en/) - Latest version (recommended)
+- [v3 Documentation](/v3/en/) - Previous stable version
 - [v1 Documentation](/v1/en/) - Legacy version

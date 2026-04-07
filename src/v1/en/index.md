@@ -1,10 +1,8 @@
 # Getting Started
 
-Welcome to the **Hyperion API v1** documentation. This is the legacy version of the API.
+<Banner />
 
-::: warning Legacy Version
-This is a legacy version of the API. Consider migrating to [v3](/v3/en/) for the latest features and improvements.
-:::
+Welcome to the **Hyperion API v1** documentation. This is the legacy version of the API.
 
 ## Base URL
 
@@ -42,5 +40,6 @@ All endpoints return consistent error responses:
 
 ## Other Versions
 
-- [v3 Documentation](/v3/en/) - Latest version (recommended)
-- [v2 Documentation](/v2/en/) - Previous stable version
+- [v4 Documentation](/v4/en/) - Latest version (recommended)
+- [v3 Documentation](/v3/en/) - Previous stable version
+- [v2 Documentation](/v2/en/) - Legacy version

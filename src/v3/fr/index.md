@@ -1,5 +1,7 @@
 # Commencer
 
+<Banner />
+
 Bienvenue dans la documentation de l'**API Hyperion v3**. Cette API fournit une collection complète d'endpoints utilitaires pour les développeurs.
 
 ## URL de base

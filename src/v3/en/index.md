@@ -1,5 +1,7 @@
 # Getting Started
 
+<Banner />
+
 Welcome to the **Hyperion API v3** documentation. This API provides a comprehensive collection of utility endpoints for developers.
 
 ## Base URL

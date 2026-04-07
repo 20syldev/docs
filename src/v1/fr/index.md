@@ -1,10 +1,8 @@
 # Pour Commencer
 
-Bienvenue dans la documentation de l'**API Hyperion v1**. Ceci est la version historique de l'API.
+<Banner />
 
-::: warning Version Historique
-Ceci est une version historique de l'API. Pensez à migrer vers [v3](/v3/fr/) pour les dernières fonctionnalités et améliorations.
-:::
+Bienvenue dans la documentation de l'**API Hyperion v1**. Ceci est la version historique de l'API.
 
 ## URL de Base
 
@@ -42,5 +40,6 @@ Tous les points d'accès retournent des réponses d'erreur cohérentes :
 
 ## Autres Versions
 
-- [Documentation v3](/v3/fr/) - Dernière version (recommandée)
-- [Documentation v2](/v2/fr/) - Version stable précédente
+- [Documentation v4](/v4/fr/) - Derniere version (recommandee)
+- [Documentation v3](/v3/fr/) - Version stable precedente
+- [Documentation v2](/v2/fr/) - Ancienne version
