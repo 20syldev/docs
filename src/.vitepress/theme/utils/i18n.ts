@@ -103,7 +103,7 @@ export function getLangItems(path: string, homepage: boolean, lang: string): Arr
             link = l.prefix || '/';
         } else {
             const currentPrefix = getPrefix(lang) || `/${lang}`;
-            const targetPrefix = l.prefix || `/${l.code}`;
+            const targetPrefix = getPrefix(l.code) || `/${l.code}`;
             link = path.replace(currentPrefix + '/', targetPrefix + '/') || path;
         }
         return { text: t(l.translationKey, lang), link, lang: l.code };
