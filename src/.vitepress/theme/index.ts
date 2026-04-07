@@ -1,14 +1,18 @@
+/// <reference types="vite/client" />
+
 import DefaultTheme from 'vitepress/theme';
 import type { Theme } from 'vitepress';
 import './main.css';
 
 import Endpoint from './components/Endpoint.vue';
+import Banner from './components/Banner.vue';
 import Layout from './components/Layout.vue';
 
 export default {
     extends: DefaultTheme,
     Layout,
     enhanceApp({ app }) {
+        app.component('Banner', Banner);
         app.component('Endpoint', Endpoint);
     },
 } satisfies Theme;
