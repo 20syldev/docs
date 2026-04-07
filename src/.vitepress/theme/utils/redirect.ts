@@ -2,6 +2,10 @@ export const API_BASE_URL = 'https://api.sylvain.sh';
 export const LATEST_VERSION = 'v3';
 export const KNOWN_VERSIONS = ['v1', 'v2', 'v3'];
 
+const versionNums = KNOWN_VERSIONS.map((v) => v.replace('v', '')).join('');
+export const VERSION_REGEX = new RegExp(`^v[${versionNums}]$`);
+export const VERSION_PATH_REGEX = new RegExp(`^(v[${versionNums}])\\/`);
+
 export function getUserLang(): string {
     if (typeof localStorage === 'undefined') return 'en';
     const saved = localStorage.getItem('lang');
@@ -18,10 +22,10 @@ export function getSmartRedirect(path: string, lang: string, latest = LATEST_VER
 
     // Path already has version + language → no redirect needed
     // e.g. /v3/en/algorithms, /v2/fr/chat
-    if (/^v[123]\/(en|fr)(\/.*)?$/.test(p)) return null;
+    const vRange = `[${versionNums}]`;
+    if (new RegExp(`^v${vRange}\\/(en|fr)(\\/.*)?$`).test(p)) return null;
 
-    // /v{1,2,3} or /v{1,2,3}/page → inject language
-    const versionMatch = p.match(/^(v[123])(\/(.+))?$/);
+    const versionMatch = p.match(new RegExp(`^(v${vRange})(/(.+))?$`));
     if (versionMatch) {
         const [, version, , rest] = versionMatch;
         return `/${version}/${lang}${rest ? '/' + rest : ''}`;
