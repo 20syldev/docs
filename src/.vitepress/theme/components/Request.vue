@@ -8,8 +8,8 @@ defineProps<{
 </script>
 
 <template>
-    <div class="request-block">
-        <div v-if="title || method" class="request-block-header">
+    <div class="panel request-block">
+        <div v-if="title || method" class="panel-header request-block-header">
             <Method v-if="method" :type="method" />
             <span v-if="title" class="title">{{ title }}</span>
         </div>
