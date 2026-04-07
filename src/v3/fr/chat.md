@@ -4,7 +4,7 @@ L'endpoint `/chat` fournit un système de messagerie en temps réel avec support
 
 ## GET /v3/chat
 
-<Endpoint method="get" path="/v3/chat" baseUrl="https://api.sylvain.sh" />
+<Endpoint method="get" path="/chat" />
 
 Récupère tous les messages envoyés durant la dernière heure. Cet endpoint ne nécessite aucune option.
 
@@ -46,7 +46,7 @@ curl -X GET "https://api.sylvain.sh/v3/chat"
 
 ## POST /v3/chat
 
-<Endpoint method="post" path="/v3/chat" baseUrl="https://api.sylvain.sh" />
+<Endpoint method="post" path="/chat" />
 
 Permet d'envoyer un message au chat global ou à un chat privé.
 

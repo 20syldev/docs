@@ -2,7 +2,7 @@
 
 The `/levenshtein` endpoint allows you to calculate the Levenshtein distance between two strings. This distance represents the minimum number of operations required to transform one string into another.
 
-<Endpoint method="get" path="/v3/levenshtein" baseUrl="https://api.sylvain.sh" />
+<Endpoint method="get" path="/levenshtein" />
 
 ## Parameters
 

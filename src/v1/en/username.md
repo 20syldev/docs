@@ -4,7 +4,7 @@ The `/username` endpoint returns a list of adjectives, another with animal names
 
 _The username can consist of one or more elements chosen from the lists or the generated number._
 
-<Endpoint method="get" path="/v1/username" baseUrl="https://api.sylvain.sh" />
+<Endpoint method="get" path="/username" />
 
 ## Request Example
 

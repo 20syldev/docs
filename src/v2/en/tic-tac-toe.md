@@ -2,7 +2,7 @@
 
 The `/tic-tac-toe` endpoint allows playing and storing an online Tic-Tac-Toe game. Games are stored for 1 hour and can be accessed via a unique identifier.
 
-<Endpoint method="post" path="/v2/tic-tac-toe" baseUrl="https://api.sylvain.sh" />
+<Endpoint method="post" path="/tic-tac-toe" />
 
 ## Parameters
 

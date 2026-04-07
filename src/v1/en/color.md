@@ -2,7 +2,7 @@
 
 The `/color` endpoint generates a random color in multiple formats. This endpoint does not require any options.
 
-<Endpoint method="get" path="/v1/color" baseUrl="https://api.sylvain.sh" />
+<Endpoint method="get" path="/color" />
 
 ## Request Example
 

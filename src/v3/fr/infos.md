@@ -2,7 +2,7 @@
 
 L'endpoint `/infos` fournit des informations générales sur l'[API](https://api.sylvain.sh). Cet endpoint ne nécessite aucune option.
 
-<Endpoint method="get" path="/v3/infos" baseUrl="https://api.sylvain.sh" />
+<Endpoint method="get" path="/infos" />
 
 ## Paramètres
 

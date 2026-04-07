@@ -2,7 +2,7 @@
 
 L'endpoint `/algorithms` propose plusieurs algorithmes à entrer en paramètre. Il est possible d'entrer une ou deux valeurs en fonction de l'algorithme.
 
-<Endpoint method="get" path="/v1/algorithms" baseUrl="https://api.sylvain.sh" />
+<Endpoint method="get" path="/algorithms" />
 
 ## Paramètres
 

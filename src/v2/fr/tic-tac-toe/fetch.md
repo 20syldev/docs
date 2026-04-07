@@ -2,7 +2,7 @@
 
 L'endpoint `/tic-tac-toe/fetch` permet d'afficher une partie de morpion en cours. Vous pouvez utiliser l'identifiant de la partie en cours pour l'afficher.
 
-<Endpoint method="post" path="/v2/tic-tac-toe/fetch" baseUrl="https://api.sylvain.sh" />
+<Endpoint method="post" path="/tic-tac-toe/fetch" />
 
 ## Paramètres
 
