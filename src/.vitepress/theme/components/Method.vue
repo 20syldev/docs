@@ -5,7 +5,7 @@ defineProps<{
 </script>
 
 <template>
-    <span class="api-badge" :class="type">
+    <span class="method-badge" :class="type">
         {{ type.toUpperCase() }}
     </span>
 </template>
