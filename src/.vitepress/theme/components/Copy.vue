@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue';
 import { useRoute } from 'vitepress';
-import { getLang, t } from '../i18n';
-import { copyIcon, checkIcon } from '../icons';
+import { getLang, t } from '../utils/i18n';
+import { copyIcon, checkIcon } from '../utils/icons';
 
 const route = useRoute();
 let observer: MutationObserver | null = null;
@@ -48,3 +48,5 @@ onMounted(() => {
 
 onUnmounted(() => observer?.disconnect());
 </script>
+
+<template><span /></template>

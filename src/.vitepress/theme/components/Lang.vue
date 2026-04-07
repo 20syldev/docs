@@ -2,7 +2,7 @@
 import { computed } from 'vue';
 import { useRoute } from 'vitepress';
 import VPFlyout from 'vitepress/dist/client/theme-default/components/VPFlyout.vue';
-import { getLang, isHome, getLangItems, t, saveLang, languages } from '../i18n';
+import { getLang, isHome, getLangItems, saveLang, languages } from '../utils/i18n';
 
 const route = useRoute();
 
@@ -19,7 +19,7 @@ function onLangClick(e: MouseEvent) {
     const link = (e.target as HTMLElement).closest('a');
     if (!link) return;
     const href = link.getAttribute('href') || '';
-    const match = languages.find(l => l.prefix && href.startsWith(l.prefix));
+    const match = languages.find((l) => l.prefix && href.startsWith(l.prefix));
     saveLang(match ? match.code : languages[0].code);
 }
 </script>

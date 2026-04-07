@@ -8,7 +8,7 @@ import NotFound from './NotFound.vue';
 import Version from './Version.vue';
 import Terminal from './Terminal.vue';
 import Copy from './Copy.vue';
-import { getLang, isHome, getLangItems, getPrefix, languages as langConfig, t, saveLang } from '../i18n';
+import { getLang, isHome, getLangItems, getPrefix, languages as langConfig, t, saveLang } from '../utils/i18n';
 
 const { Layout } = DefaultTheme;
 const route = useRoute();

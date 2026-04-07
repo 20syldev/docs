@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { t } from '../i18n';
-import { getSmartRedirect, getUserLang, LATEST_VERSION } from '../redirect';
+import { t } from '../utils/i18n';
+import { getSmartRedirect, getUserLang, LATEST_VERSION } from '../utils/redirect';
 
-const props = defineProps<{ lang: string }>();
+defineProps<{ lang: string }>();
 const redirecting = ref(false);
 
 onMounted(() => {
