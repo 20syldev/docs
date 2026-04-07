@@ -1,6 +1,6 @@
 export const API_BASE_URL = 'https://api.sylvain.sh';
-export const LATEST_VERSION = 'v3';
-export const KNOWN_VERSIONS = ['v1', 'v2', 'v3'];
+export const LATEST_VERSION = 'v4';
+export const KNOWN_VERSIONS = ['v1', 'v2', 'v3', 'v4'];
 
 const versionNums = KNOWN_VERSIONS.map((v) => v.replace('v', '')).join('');
 export const VERSION_REGEX = new RegExp(`^v[${versionNums}]$`);
