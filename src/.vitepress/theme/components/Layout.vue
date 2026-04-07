@@ -17,15 +17,25 @@ const { isDark: dark } = useData();
 
 const lang = computed(() => getLang(route.path));
 const french = computed(() => lang.value === 'fr');
-const latest = ref('v3');
+const latest = ref('v4');
 const home = computed(() => isHome(route.path));
 const languages = computed(() => getLangItems(route.path, home.value, lang.value));
+
+const SEARCH_BUTTON_SELECTOR = '#local-search button, .DocSearch-Button, [aria-label="Search"]';
+const SEARCH_INPUT_SELECTOR = '#localsearch-input, .DocSearch-Input';
+const OUTLINE_TITLE_SELECTOR = '.VPDocAsideOutline .outline-title';
+const SITE_TITLE_SELECTOR = '.VPNavBarTitle a, .title a';
+const PAGER_PREV_SELECTOR = '.pager-link.prev .desc';
+const PAGER_NEXT_SELECTOR = '.pager-link.next .desc';
+const EDIT_LINK_SELECTOR = '.edit-link-button';
+const LAST_UPDATED_SELECTOR = '.VPLastUpdated';
+const VERSION_BUTTON_SELECTOR = '.version-switcher-wrapper button, .VPFlyout button';
 
 let observer: MutationObserver | null = null;
 
 async function fetchLatest() {
     try {
-        const response = await fetch('https://api.sylvain.sh/v3/infos');
+        const response = await fetch('https://api.sylvain.sh/v4/infos');
         const data = await response.json();
         if (data.last_version) {
             latest.value = data.last_version;
@@ -49,13 +59,13 @@ function translate() {
     const l = lang.value;
 
     // Outline title
-    const outlineTitle = document.querySelector('.VPDocAsideOutline .outline-title');
+    const outlineTitle = document.querySelector(OUTLINE_TITLE_SELECTOR);
     if (outlineTitle && outlineTitle.textContent !== t('onThisPage', l)) {
         outlineTitle.textContent = t('onThisPage', l);
     }
 
     // Search button - find the text-only span (not the one with the icon)
-    const searchButton = document.querySelector('#local-search button, .DocSearch-Button, [aria-label="Search"]');
+    const searchButton = document.querySelector(SEARCH_BUTTON_SELECTOR);
     if (searchButton) {
         const spans = searchButton.querySelectorAll('span');
         for (const span of spans) {
@@ -70,7 +80,7 @@ function translate() {
     }
 
     // Search input placeholder
-    const searchInput = document.querySelector('#localsearch-input, .DocSearch-Input') as HTMLInputElement;
+    const searchInput = document.querySelector(SEARCH_INPUT_SELECTOR) as HTMLInputElement;
     if (searchInput && searchInput.placeholder !== t('search', l)) {
         searchInput.placeholder = t('search', l);
     }
@@ -89,9 +99,55 @@ function translate() {
     }
 
     // Site title/logo link
-    const siteTitle = document.querySelector('.VPNavBarTitle a, .title a') as HTMLAnchorElement;
+    const siteTitle = document.querySelector(SITE_TITLE_SELECTOR) as HTMLAnchorElement;
     if (siteTitle && siteTitle.getAttribute('href') !== href) {
         siteTitle.setAttribute('href', href);
+    }
+
+    // Prev/Next page labels
+    const prevDesc = document.querySelector(PAGER_PREV_SELECTOR);
+    if (prevDesc && prevDesc.textContent !== t('prevPage', l)) {
+        prevDesc.textContent = t('prevPage', l);
+    }
+    const nextDesc = document.querySelector(PAGER_NEXT_SELECTOR);
+    if (nextDesc && nextDesc.textContent !== t('nextPage', l)) {
+        nextDesc.textContent = t('nextPage', l);
+    }
+
+    // Edit link
+    const editLink = document.querySelector(EDIT_LINK_SELECTOR);
+    if (editLink) {
+        const textNodes = Array.from(editLink.childNodes).filter(n => n.nodeType === Node.TEXT_NODE);
+        for (const node of textNodes) {
+            const text = node.textContent?.trim();
+            if (text && text !== t('editPage', l)) {
+                node.textContent = ` ${t('editPage', l)}`;
+            }
+        }
+    }
+
+    // Last updated
+    const lastUpdated = document.querySelector(LAST_UPDATED_SELECTOR);
+    if (lastUpdated) {
+        const textNodes = Array.from(lastUpdated.childNodes).filter(n => n.nodeType === Node.TEXT_NODE);
+        for (const node of textNodes) {
+            const text = node.textContent?.trim().replace(/:$/, '');
+            if (text && text !== t('lastUpdated', l)) {
+                node.textContent = `${t('lastUpdated', l)}: `;
+            }
+        }
+        // Update date format to match locale
+        const timeEl = lastUpdated.querySelector('time');
+        if (timeEl && timeEl.getAttribute('datetime')) {
+            const date = new Date(timeEl.getAttribute('datetime')!);
+            const formatted = new Intl.DateTimeFormat(l === 'fr' ? 'fr-FR' : undefined, {
+                dateStyle: 'short',
+                timeStyle: 'short',
+            }).format(date);
+            if (timeEl.textContent !== formatted) {
+                timeEl.textContent = formatted;
+            }
+        }
     }
 }
 
@@ -103,8 +159,7 @@ watchEffect(() => {
     }
 });
 
-function openMenu(selector: string, active: () => string) {
-    const button = document.querySelector(selector) as HTMLElement;
+function openMenu(button: HTMLElement | null, active: () => string) {
     if (!button) return;
 
     button.click();
@@ -129,17 +184,28 @@ function openMenu(selector: string, active: () => string) {
     }, 50);
 }
 
+function getVersionButton() {
+    const buttons = document.querySelectorAll(VERSION_BUTTON_SELECTOR);
+    for (const button of buttons) {
+        if (/^v\d+$/i.test(button.textContent?.trim() || '')) {
+            return button as HTMLElement;
+        }
+    }
+    return null;
+}
+
 function onKey(e: KeyboardEvent) {
     // ALT + L: Open language dropdown and focus active language
     if (e.altKey && e.key.toLowerCase() === 'l') {
         e.preventDefault();
         const langSelector = window.innerWidth >= 1280 ? '.language-switcher-wrapper button' : '.extra-menu button';
-        openMenu(langSelector, () => route.path);
+        const langButton = document.querySelector(langSelector) as HTMLElement | null;
+        openMenu(langButton, () => route.path);
     }
     // ALT + V: Open version dropdown and focus active version
     if (e.altKey && e.key.toLowerCase() === 'v') {
         e.preventDefault();
-        openMenu('.VPNavBarMenu .VPFlyout button', () => route.path);
+        openMenu(getVersionButton(), () => route.path);
     }
     // ALT + T: Toggle theme
     if (e.altKey && e.key.toLowerCase() === 't') {
