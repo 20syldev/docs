@@ -3,7 +3,9 @@
 /* ----- Desktop ----- */
 
 @media (min-width: 1280px) {
-    .extra-menu { display: none !important; }
+    .extra-menu {
+        display: none !important;
+    }
     .VPNavBarAppearance {
         display: flex !important;
         align-items: center;
@@ -26,13 +28,17 @@
     }
     .VPNavBarSearch .VPLocalSearchBox button,
     .VPNavBarSearch #local-search,
-    .VPNavBarSearch > button { width: 100% !important; }
+    .VPNavBarSearch > button {
+        width: 100% !important;
+    }
 }
 
 /* ----- Mobile nav ----- */
 
 @media (max-width: 959px) {
-    .extra-menu { display: none !important; }
+    .extra-menu {
+        display: none !important;
+    }
     .VPNavBarSearch {
         flex: none !important;
         padding: 0 !important;
@@ -62,20 +68,30 @@
 /* ----- Mobile ----- */
 
 @media (max-width: 767px) {
-    .version-cards { grid-template-columns: 1fr; }
-    .request-block-header { flex-wrap: wrap; }
+    .version-cards {
+        grid-template-columns: 1fr;
+    }
+    .request-block-header {
+        flex-wrap: wrap;
+    }
     .vp-doc div[class*='language-'] {
         border-radius: 8px;
         margin: 16px 0;
     }
-    .panel-params { flex-direction: column; }
-    .panel-params .api-field { min-width: auto; }
+    .panel-params {
+        flex-direction: column;
+    }
+    .panel-params .api-field {
+        min-width: auto;
+    }
     .panel .panel-header {
         justify-content: space-between;
         flex-wrap: wrap;
         row-gap: 8px;
     }
-    .panel .panel-header .method-badge { order: 1; }
+    .panel .panel-header .method-badge {
+        order: 1;
+    }
     .panel-send {
         margin-left: auto;
         order: 2;
@@ -85,7 +101,9 @@
         width: 100%;
         order: 3;
     }
-    .pg-dropdown { max-height: 260px; }
+    .pg-dropdown {
+        max-height: 260px;
+    }
     .examples-header .tab-item {
         padding: 8px 10px;
         font-size: 12px;
@@ -98,6 +116,10 @@
     .VPNav,
     .VPSidebar,
     .edit-link,
-    .prev-next { display: none !important; }
-    .VPContent { padding: 0 !important; }
+    .prev-next {
+        display: none !important;
+    }
+    .VPContent {
+        padding: 0 !important;
+    }
 }

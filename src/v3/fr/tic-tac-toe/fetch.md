@@ -22,23 +22,23 @@ curl -X POST -d "username=Utilisateur1&game=VWXYZ" "https://api.sylvain.sh/v3/ti
 
 ```json
 {
-  "id": "VWXYZ",
-  "moves": [
+    "id": "VWXYZ",
+    "moves": [
         {
-          "username": "Utilisateur1",
-          "move": "2-2",
-          "session": "abc123"
+            "username": "Utilisateur1",
+            "move": "2-2",
+            "session": "abc123"
         },
         {
-          "username": "Utilisateur2",
-          "move": "1-3",
-          "session": "def456"
+            "username": "Utilisateur2",
+            "move": "1-3",
+            "session": "def456"
         }
     ],
-  "players": ["Utilisateur1", "Utilisateur2"],
-  "turn": "Utilisateur1",
-  "status": "ready",
-  "private": false
+    "players": ["Utilisateur1", "Utilisateur2"],
+    "turn": "Utilisateur1",
+    "status": "ready",
+    "private": false
 }
 ```
 

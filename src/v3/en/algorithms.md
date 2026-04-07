@@ -37,7 +37,7 @@ GET /v3/algorithms?method=gcd&value=17&value2=493
 
 ```json
 {
-  "answer": 17
+    "answer": 17
 }
 ```
 

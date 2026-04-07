@@ -31,14 +31,14 @@ The `/algorithms` endpoint provides several algorithms to use as parameters. You
 
 ```json
 {
-  "answer": 17
+    "answer": 17
 }
 ```
 
 ## Response Fields
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
+| Field    | Type             | Description          |
+| -------- | ---------------- | -------------------- |
 | `answer` | `number\|string` | The algorithm result |
 
 ## Code Examples

@@ -6,10 +6,10 @@ L'endpoint `/chat/private` récupère tous les messages envoyés durant la derni
 
 ## Paramètres
 
-| Paramètre  | Requis | Description                                          |
-| ---------- | ------ | ---------------------------------------------------- |
-| `username` | Oui    | Le nom d'utilisateur qui a envoyé le message         |
-| `token`    | Oui    | La clé permettant la connexion au chat privé désiré  |
+| Paramètre  | Requis | Description                                         |
+| ---------- | ------ | --------------------------------------------------- |
+| `username` | Oui    | Le nom d'utilisateur qui a envoyé le message        |
+| `token`    | Oui    | La clé permettant la connexion au chat privé désiré |
 
 ## Exemple de requête
 
@@ -21,16 +21,16 @@ curl -X POST -d "username=Utilisateur3&token=41a43360-9874-4c7a-9ca8-eec29e765a0
 
 ```json
 [
-  {
-    "username": "Utilisateur1",
-    "message": "Salut !",
-    "timestamp": "2025-01-21T08:27:11.068Z"
-  },
-  {
-    "username": "Utilisateur3",
-    "message": "Comment ça va ?",
-    "timestamp": "2025-01-21T08:28:43.070Z"
-  }
+    {
+        "username": "Utilisateur1",
+        "message": "Salut !",
+        "timestamp": "2025-01-21T08:27:11.068Z"
+    },
+    {
+        "username": "Utilisateur3",
+        "message": "Comment ça va ?",
+        "timestamp": "2025-01-21T08:28:43.070Z"
+    }
 ]
 ```
 

@@ -6,10 +6,10 @@ L'endpoint `/chat/private` récupère tous les messages envoyés durant la derni
 
 ## Paramètres
 
-| Paramètre  | Requis | Description                                          |
-| ---------- | ------ | ---------------------------------------------------- |
-| `username` | Oui    | Le nom d'utilisateur qui a envoyé le message         |
-| `token`    | Oui    | La clé permettant la connexion au chat privé désiré  |
+| Paramètre  | Requis | Description                                         |
+| ---------- | ------ | --------------------------------------------------- |
+| `username` | Oui    | Le nom d'utilisateur qui a envoyé le message        |
+| `token`    | Oui    | La clé permettant la connexion au chat privé désiré |
 
 ## Exemples de code
 
@@ -19,26 +19,26 @@ L'endpoint `/chat/private` récupère tous les messages envoyés durant la derni
 
 ```json
 [
-  {
-    "username": "Utilisateur1",
-    "message": "Salut !",
-    "timestamp": "2025-01-21T08:27:11.068Z"
-  },
-  {
-    "username": "Utilisateur3",
-    "message": "Comment ça va ?",
-    "timestamp": "2025-01-21T08:28:43.070Z"
-  }
+    {
+        "username": "Utilisateur1",
+        "message": "Salut !",
+        "timestamp": "2025-01-21T08:27:11.068Z"
+    },
+    {
+        "username": "Utilisateur3",
+        "message": "Comment ça va ?",
+        "timestamp": "2025-01-21T08:28:43.070Z"
+    }
 ]
 ```
 
 ## Champs de réponse
 
-| Champ | Type | Description |
-| ----- | ---- | ----------- |
-| `username` | `string` | Nom d'utilisateur de l'expéditeur |
-| `message` | `string` | Contenu du message |
-| `timestamp` | `string` | Horodatage du message (ISO 8601) |
+| Champ       | Type     | Description                       |
+| ----------- | -------- | --------------------------------- |
+| `username`  | `string` | Nom d'utilisateur de l'expéditeur |
+| `message`   | `string` | Contenu du message                |
+| `timestamp` | `string` | Horodatage du message (ISO 8601)  |
 
 ## Essayer
 

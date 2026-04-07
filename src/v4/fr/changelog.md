@@ -3,6 +3,7 @@
 ## Changements API
 
 ### Réécriture TypeScript
+
 L'API a été entièrement réécrite de JavaScript vers **TypeScript**, avec des définitions de types, un stack middleware Express, et une gestion centralisée des erreurs.
 
 ### Réponses enrichies
@@ -12,29 +13,36 @@ L'API a été entièrement réécrite de JavaScript vers **TypeScript**, avec de
 - **Domain** retourne maintenant `ip_address` et `dns_servers` sous forme de tableaux (valeurs multiples)
 
 ### Endpoint Convert
+
 Conversion de température uniquement : **Celsius**, **Fahrenheit** et **Kelvin**.
 
 ### Endpoint Time
+
 - Le paramètre type accepte `live` (heure actuelle) ou `random` (heure aléatoire entre deux dates)
 - 17 options de format : iso, utc, timestamp, locale, date, time, year, month, day, hour, minute, second, ms, dayOfWeek, dayOfYear, weekNumber, timezone
 - 5 options de fuseau horaire : UTC, Europe/Paris, America/New_York, Asia/Tokyo, Australia/Sydney
 
 ### Endpoint Token
+
 - Le type par défaut est maintenant `alphanum` (auparavant `alpha`)
 - Plage de longueur : 12-4096, défaut 24
 
 ## Nouvelles fonctionnalités de la documentation
 
 ### Blocs interactifs "Essayer"
+
 Chaque page d'endpoint inclut désormais un testeur interactif. Remplissez les paramètres et envoyez des requêtes directement depuis la documentation.
 
 ### Playground API
+
 Une page [Playground](/v4/fr/playground) dédiée pour tester n'importe quel endpoint. Inclut un historique des requêtes.
 
 ### Exemples de code multi-langages
+
 Les exemples de code sont disponibles en 4 langages : **cURL**, **JavaScript**, **Python** et **PHP**. Votre préférence est sauvegardée entre les pages.
 
 ### Documentation des schémas de réponse
+
 Tous les endpoints incluent un tableau détaillé des champs de réponse avec types et descriptions.
 
 ## Guide de migration

@@ -24,20 +24,20 @@ L'endpoint `/convert` permet de convertir plusieurs unités de température entr
 
 ```json
 {
-  "from": "celsius",
-  "to": "kelvin",
-  "value": 30,
-  "result": 303.15
+    "from": "celsius",
+    "to": "kelvin",
+    "value": 30,
+    "result": 303.15
 }
 ```
 
 ## Champs de réponse
 
-| Champ | Type | Description |
-| ----- | ---- | ----------- |
-| `from` | `string` | Unité de température source |
-| `to` | `string` | Unité de température cible |
-| `value` | `number` | Valeur originale à convertir |
+| Champ    | Type     | Description                     |
+| -------- | -------- | ------------------------------- |
+| `from`   | `string` | Unité de température source     |
+| `to`     | `string` | Unité de température cible      |
+| `value`  | `number` | Valeur originale à convertir    |
 | `result` | `number` | Valeur de température convertie |
 
 ## Exemples de code

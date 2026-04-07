@@ -35,7 +35,7 @@ Le plateau est une grille 3x3 avec des positions numérotées comme suit :
 
 ```json
 {
-  "message": "Move sent successfully"
+    "message": "Move sent successfully"
 }
 ```
 
@@ -43,10 +43,10 @@ Le plateau est une grille 3x3 avec des positions numérotées comme suit :
 
 ```json
 {
-  "message": "Move sent successfully. Utilisateur1 wins. Utilisateur2 loses.",
-  "winner": "Utilisateur1",
-  "loser": "Utilisateur2",
-  "tie": false
+    "message": "Move sent successfully. Utilisateur1 wins. Utilisateur2 loses.",
+    "winner": "Utilisateur1",
+    "loser": "Utilisateur2",
+    "tie": false
 }
 ```
 
@@ -54,21 +54,21 @@ Le plateau est une grille 3x3 avec des positions numérotées comme suit :
 
 ```json
 {
-  "message": "Game over. It's a tie!",
-  "winner": null,
-  "loser": null,
-  "tie": true
+    "message": "Game over. It's a tie!",
+    "winner": null,
+    "loser": null,
+    "tie": true
 }
 ```
 
 ## Champs de réponse
 
-| Champ | Type | Description |
-| ----- | ---- | ----------- |
-| `message` | `string` | Message de statut du coup |
-| `winner` | `string\|null` | Nom d'utilisateur du gagnant (si la partie est terminée) |
-| `loser` | `string\|null` | Nom d'utilisateur du perdant (si la partie est terminée) |
-| `tie` | `boolean` | Si la partie s'est terminée par une égalité |
+| Champ     | Type           | Description                                              |
+| --------- | -------------- | -------------------------------------------------------- |
+| `message` | `string`       | Message de statut du coup                                |
+| `winner`  | `string\|null` | Nom d'utilisateur du gagnant (si la partie est terminée) |
+| `loser`   | `string\|null` | Nom d'utilisateur du perdant (si la partie est terminée) |
+| `tie`     | `boolean`      | Si la partie s'est terminée par une égalité              |
 
 ## Réponses d'erreur
 

@@ -29,9 +29,9 @@ If the provided token is incorrect or expired:
 
 ```json
 {
-  "message": "Unauthorized",
-  "error": "Invalid token.",
-  "status": "401"
+    "message": "Unauthorized",
+    "error": "Invalid token.",
+    "status": "401"
 }
 ```
 

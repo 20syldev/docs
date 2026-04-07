@@ -18,10 +18,8 @@ const selected = ref<EndpointDef | null>(null);
 const filtered = computed(() => {
     const q = query.value.toLowerCase().trim();
     if (!q) return endpoints;
-    return endpoints.filter(ep =>
-        ep.name.toLowerCase().includes(q) ||
-        ep.path.toLowerCase().includes(q) ||
-        ep.method.includes(q)
+    return endpoints.filter(
+        (ep) => ep.name.toLowerCase().includes(q) || ep.path.toLowerCase().includes(q) || ep.method.includes(q),
     );
 });
 
@@ -64,17 +62,43 @@ onUnmounted(() => document.removeEventListener('click', onClickOutside, true));
 
 <template>
     <div class="pg">
-        <div class="pg-search" ref="dropdownRef">
-            <button class="pg-search-trigger" @click="toggleSearch" v-if="!open">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <div ref="dropdownRef" class="pg-search">
+            <button v-if="!open" class="pg-search-trigger" @click="toggleSearch">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
                 <span v-if="selected" class="pg-search-selected">
                     <span :class="['method-badge', selected.method]">{{ selected.method.toUpperCase() }}</span>
                     {{ selected.name }}
                 </span>
                 <span v-else class="pg-search-placeholder">{{ t('selectEndpoint', lang) }}</span>
             </button>
-            <div class="pg-search-input-wrap" v-if="open">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <div v-if="open" class="pg-search-input-wrap">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
                 <input
                     ref="inputRef"
                     v-model="query"
@@ -83,7 +107,7 @@ onUnmounted(() => document.removeEventListener('click', onClickOutside, true));
                     @keydown.escape="open = false"
                 />
             </div>
-            <div class="pg-dropdown" v-if="open">
+            <div v-if="open" class="pg-dropdown">
                 <template v-if="filtered.length">
                     <div v-for="(eps, group) in filteredGroups" :key="group" class="pg-dropdown-group">
                         <div class="pg-dropdown-label">{{ group }}</div>
@@ -94,7 +118,9 @@ onUnmounted(() => document.removeEventListener('click', onClickOutside, true));
                             :class="{ active: selected?.name === ep.name }"
                             @click="pick(ep)"
                         >
-                            <span :class="['method-badge pg-dropdown-method', ep.method]">{{ ep.method.toUpperCase() }}</span>
+                            <span :class="['method-badge pg-dropdown-method', ep.method]">{{
+                                ep.method.toUpperCase()
+                            }}</span>
                             <span class="pg-dropdown-path">{{ ep.path }}</span>
                             <span class="pg-dropdown-name">{{ ep.name }}</span>
                         </button>

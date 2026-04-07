@@ -24,21 +24,21 @@ The `/convert` endpoint allows you to convert multiple temperature units between
 
 ```json
 {
-  "from": "celsius",
-  "to": "fahrenheit",
-  "value": 100,
-  "result": 212
+    "from": "celsius",
+    "to": "fahrenheit",
+    "value": 100,
+    "result": 212
 }
 ```
 
 ## Response Fields
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| `from` | `string` | Source temperature unit |
-| `to` | `string` | Target temperature unit |
-| `value` | `number` | Original value to convert |
-| `result` | `number` | Converted value |
+| Field    | Type     | Description               |
+| -------- | -------- | ------------------------- |
+| `from`   | `string` | Source temperature unit   |
+| `to`     | `string` | Target temperature unit   |
+| `value`  | `number` | Original value to convert |
+| `result` | `number` | Converted value           |
 
 ## Code Examples
 

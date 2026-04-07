@@ -28,10 +28,10 @@ GET /v2/convert?value=30&from=celsius&to=kelvin
 
 ```json
 {
-  "from": "celsius",
-  "to": "kelvin",
-  "value": 30,
-  "result": 303.15
+    "from": "celsius",
+    "to": "kelvin",
+    "value": 30,
+    "result": 303.15
 }
 ```
 

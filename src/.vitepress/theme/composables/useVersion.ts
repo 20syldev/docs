@@ -6,14 +6,11 @@ import { getLang } from '../utils/i18n';
 export function useVersion() {
     const route = useRoute();
 
-    const version = computed(() =>
-        route.path.match(/^\/(v\d+)\//)?.[1] ?? LATEST_VERSION
-    );
+    const version = computed(() => route.path.match(/^\/(v\d+)\//)?.[1] ?? LATEST_VERSION);
 
     const lang = computed(() => getLang(route.path));
 
-    const versionedPath = (path: string) =>
-        `/${version.value}${path.startsWith('/') ? path : '/' + path}`;
+    const versionedPath = (path: string) => `/${version.value}${path.startsWith('/') ? path : '/' + path}`;
 
     return { version, lang, versionedPath };
 }

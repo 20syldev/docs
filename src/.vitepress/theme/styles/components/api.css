@@ -16,7 +16,9 @@
     text-decoration: none;
     font-weight: 500;
 }
-.api-endpoint a:hover { color: var(--vp-c-brand-1); }
+.api-endpoint a:hover {
+    color: var(--vp-c-brand-1);
+}
 
 /* ----- Request block ----- */
 
@@ -25,7 +27,9 @@
     font-family: var(--font-mono);
     font-size: 13px;
 }
-.request-block-content { padding: 16px; }
+.request-block-content {
+    padding: 16px;
+}
 .request-block-content pre {
     background: #0000;
     line-height: 1.6;

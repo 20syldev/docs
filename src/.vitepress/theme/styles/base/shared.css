@@ -61,7 +61,9 @@
     padding: 10px 16px;
 }
 
-.panel-section { border-top: 1px solid var(--vp-c-divider); }
+.panel-section {
+    border-top: 1px solid var(--vp-c-divider);
+}
 
 .panel-url {
     font-family: var(--font-mono);
@@ -78,7 +80,9 @@
     gap: 12px;
 }
 
-.required-mark { color: var(--vp-c-danger-1); }
+.required-mark {
+    color: var(--vp-c-danger-1);
+}
 
 /* ----- API field ----- */
 
@@ -124,7 +128,9 @@
     padding: 8px 24px;
     border-radius: 6px;
 }
-.action-btn:hover:not(:disabled) { opacity: 0.85; }
+.action-btn:hover:not(:disabled) {
+    opacity: 0.85;
+}
 .action-btn:focus-visible {
     outline: 2px solid var(--vp-c-brand-1);
     outline-offset: 2px;
@@ -188,12 +194,16 @@
     font-weight: 500;
     padding: 8px 14px;
 }
-.tab-item:hover { color: var(--vp-c-text-1); }
+.tab-item:hover {
+    color: var(--vp-c-text-1);
+}
 .tab-item:focus-visible {
     outline: 2px solid var(--vp-c-brand-1);
     outline-offset: -2px;
 }
-.tab-item.active { color: var(--vp-c-brand-1); }
+.tab-item.active {
+    color: var(--vp-c-brand-1);
+}
 .tab-item.active::after {
     background: var(--vp-c-brand-1);
     position: absolute;
@@ -207,7 +217,9 @@
 
 /* ----- Try ----- */
 
-.try { margin: 16px 0; }
+.try {
+    margin: 16px 0;
+}
 
 /* ----- Copy buttons (shared behavior) ----- */
 

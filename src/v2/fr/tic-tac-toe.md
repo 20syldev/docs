@@ -23,7 +23,7 @@ curl -X POST -d "username=Utilisateur1&move=2-2&session=abc123&game=VWXYZ" "http
 
 ```json
 {
-  "message": "Move sent successfully"
+    "message": "Move sent successfully"
 }
 ```
 

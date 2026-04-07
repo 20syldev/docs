@@ -56,24 +56,24 @@ GET /v4/time
 
 ```json
 {
-  "iso": "2000-01-01T12:00:00.000Z",
-  "utc": "Sat, 01 Jan 2000 12:00:00 GMT",
-  "timestamp": 946724400,
-  "locale": "1/1/2000, 12:00:00 PM Coordinated Universal Time",
-  "date": "3/3/2000",
-  "time": "12:00:00 PM",
-  "year": 2000,
-  "month": 1,
-  "day": 1,
-  "hour": 12,
-  "minute": 0,
-  "second": 0,
-  "ms": 0,
-  "dayOfWeek": 6,
-  "dayOfYear": 1,
-  "weekNumber": 1,
-  "timezone": "UTC",
-  "timezoneOffset": 0
+    "iso": "2000-01-01T12:00:00.000Z",
+    "utc": "Sat, 01 Jan 2000 12:00:00 GMT",
+    "timestamp": 946724400,
+    "locale": "1/1/2000, 12:00:00 PM Coordinated Universal Time",
+    "date": "3/3/2000",
+    "time": "12:00:00 PM",
+    "year": 2000,
+    "month": 1,
+    "day": 1,
+    "hour": 12,
+    "minute": 0,
+    "second": 0,
+    "ms": 0,
+    "dayOfWeek": 6,
+    "dayOfYear": 1,
+    "weekNumber": 1,
+    "timezone": "UTC",
+    "timezoneOffset": 0
 }
 ```
 
@@ -85,32 +85,32 @@ curl -X GET "https://api.sylvain.sh/v4/time?type=random&format=locale&timezone=E
 
 ```json
 {
-  "date": "7/28/2024, 2:06:52 PM GMT+01:00"
+    "date": "7/28/2024, 2:06:52 PM GMT+01:00"
 }
 ```
 
 ## Champs de réponse
 
-| Champ | Type | Description |
-| ----- | ---- | ----------- |
-| `iso` | `string` | Date au format ISO 8601 |
-| `utc` | `string` | Date au format UTC |
-| `timestamp` | `number` | Timestamp Unix |
-| `locale` | `string` | Date et heure au format local |
-| `date` | `string` | Date au format MM/DD/YYYY |
-| `time` | `string` | Heure au format HH:MM:SS |
-| `year` | `number` | Année |
-| `month` | `number` | Mois (1-12) |
-| `day` | `number` | Jour du mois |
-| `hour` | `number` | Heure (0-23) |
-| `minute` | `number` | Minutes |
-| `second` | `number` | Secondes |
-| `ms` | `number` | Millisecondes |
-| `dayOfWeek` | `number` | Jour de la semaine (0-6) |
-| `dayOfYear` | `number` | Jour de l'année (1-365/366) |
-| `weekNumber` | `number` | Numéro de semaine |
-| `timezone` | `string` | Nom du fuseau horaire |
-| `timezoneOffset` | `number` | Décalage horaire en minutes |
+| Champ            | Type     | Description                   |
+| ---------------- | -------- | ----------------------------- |
+| `iso`            | `string` | Date au format ISO 8601       |
+| `utc`            | `string` | Date au format UTC            |
+| `timestamp`      | `number` | Timestamp Unix                |
+| `locale`         | `string` | Date et heure au format local |
+| `date`           | `string` | Date au format MM/DD/YYYY     |
+| `time`           | `string` | Heure au format HH:MM:SS      |
+| `year`           | `number` | Année                         |
+| `month`          | `number` | Mois (1-12)                   |
+| `day`            | `number` | Jour du mois                  |
+| `hour`           | `number` | Heure (0-23)                  |
+| `minute`         | `number` | Minutes                       |
+| `second`         | `number` | Secondes                      |
+| `ms`             | `number` | Millisecondes                 |
+| `dayOfWeek`      | `number` | Jour de la semaine (0-6)      |
+| `dayOfYear`      | `number` | Jour de l'année (1-365/366)   |
+| `weekNumber`     | `number` | Numéro de semaine             |
+| `timezone`       | `string` | Nom du fuseau horaire         |
+| `timezoneOffset` | `number` | Décalage horaire en minutes   |
 
 ## Exemples de code
 

@@ -27,9 +27,13 @@
     font-size: 14px;
     gap: 6px;
 }
-.banner-link:hover { text-decoration: underline; }
+.banner-link:hover {
+    text-decoration: underline;
+}
 
-.banner-link svg { flex-shrink: 0; }
+.banner-link svg {
+    flex-shrink: 0;
+}
 
 .banner.warning {
     color: var(--vp-c-text-1);

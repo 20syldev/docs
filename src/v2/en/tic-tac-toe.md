@@ -23,7 +23,7 @@ curl -X POST -d "username=User1&move=2-2&session=abc123&game=VWXYZ" "https://api
 
 ```json
 {
-  "message": "Move sent successfully"
+    "message": "Move sent successfully"
 }
 ```
 

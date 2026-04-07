@@ -52,8 +52,12 @@
 
 /* ----- Version badge ----- */
 
-.version-badge.stable { background: var(--method-patch); }
-.version-badge.legacy { background: var(--vp-c-text-3); }
+.version-badge.stable {
+    background: var(--method-patch);
+}
+.version-badge.legacy {
+    background: var(--vp-c-text-3);
+}
 
 /* ----- Version number ----- */
 

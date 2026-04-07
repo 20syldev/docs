@@ -13,29 +13,29 @@ Retrieves all messages sent during the last hour. This endpoint does not require
 ```json
 [
     {
-      "username": "User1",
-      "message": "Hi!",
-      "timestamp": "2025-01-21T08:27:11.068Z"
+        "username": "User1",
+        "message": "Hi!",
+        "timestamp": "2025-01-21T08:27:11.068Z"
     },
     {
-      "username": "User3",
-      "message": "How are you?",
-      "timestamp": "2025-01-21T08:28:43.070Z"
+        "username": "User3",
+        "message": "How are you?",
+        "timestamp": "2025-01-21T08:28:43.070Z"
     },
     {
-      "username": "User8",
-      "message": "Yeah great, and you?",
-      "timestamp": "2025-01-21T08:32:07.215Z"
+        "username": "User8",
+        "message": "Yeah great, and you?",
+        "timestamp": "2025-01-21T08:32:07.215Z"
     }
 ]
 ```
 
 ### Response Fields
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| `username` | `string` | Username of the message sender |
-| `message` | `string` | Content of the message |
+| Field       | Type     | Description                       |
+| ----------- | -------- | --------------------------------- |
+| `username`  | `string` | Username of the message sender    |
+| `message`   | `string` | Content of the message            |
 | `timestamp` | `string` | ISO 8601 timestamp of the message |
 
 ### Code Examples
@@ -67,14 +67,14 @@ Allows sending a message to the global chat or a private chat.
 
 ```json
 {
-  "message": "Message sent successfully"
+    "message": "Message sent successfully"
 }
 ```
 
 ### Response Fields
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
+| Field     | Type     | Description          |
+| --------- | -------- | -------------------- |
 | `message` | `string` | Confirmation message |
 
 ## Try It

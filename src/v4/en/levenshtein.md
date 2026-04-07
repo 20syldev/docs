@@ -15,18 +15,18 @@ The `/levenshtein` endpoint allows you to calculate the Levenshtein distance bet
 
 ```json
 {
-  "str1": "example",
-  "str2": "samples",
-  "distance": 3
+    "str1": "example",
+    "str2": "samples",
+    "distance": 3
 }
 ```
 
 ## Response Fields
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| `str1` | `string` | The first input string |
-| `str2` | `string` | The second input string |
+| Field      | Type     | Description                                      |
+| ---------- | -------- | ------------------------------------------------ |
+| `str1`     | `string` | The first input string                           |
+| `str2`     | `string` | The second input string                          |
 | `distance` | `number` | The Levenshtein distance between the two strings |
 
 ## Code Examples

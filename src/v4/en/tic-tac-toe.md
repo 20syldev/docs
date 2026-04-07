@@ -35,7 +35,7 @@ The board is a 3x3 grid with positions numbered as follows:
 
 ```json
 {
-  "message": "Move sent successfully"
+    "message": "Move sent successfully"
 }
 ```
 
@@ -43,10 +43,10 @@ The board is a 3x3 grid with positions numbered as follows:
 
 ```json
 {
-  "message": "Move sent successfully. User1 wins. User2 loses.",
-  "winner": "User1",
-  "loser": "User2",
-  "tie": false
+    "message": "Move sent successfully. User1 wins. User2 loses.",
+    "winner": "User1",
+    "loser": "User2",
+    "tie": false
 }
 ```
 
@@ -54,21 +54,21 @@ The board is a 3x3 grid with positions numbered as follows:
 
 ```json
 {
-  "message": "Game over. It's a tie!",
-  "winner": null,
-  "loser": null,
-  "tie": true
+    "message": "Game over. It's a tie!",
+    "winner": null,
+    "loser": null,
+    "tie": true
 }
 ```
 
 ## Response Fields
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| `message` | `string` | Status message about the move |
-| `winner` | `string\|null` | Username of the winner (if game is over) |
-| `loser` | `string\|null` | Username of the loser (if game is over) |
-| `tie` | `boolean` | Whether the game ended in a tie |
+| Field     | Type           | Description                              |
+| --------- | -------------- | ---------------------------------------- |
+| `message` | `string`       | Status message about the move            |
+| `winner`  | `string\|null` | Username of the winner (if game is over) |
+| `loser`   | `string\|null` | Username of the loser (if game is over)  |
+| `tie`     | `boolean`      | Whether the game ended in a tie          |
 
 ## Error Responses
 

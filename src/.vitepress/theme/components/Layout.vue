@@ -70,7 +70,12 @@ function translate() {
         const spans = searchButton.querySelectorAll('span');
         for (const span of spans) {
             // Skip spans that contain SVG or other elements, only target text-only spans
-            if (span.children.length === 0 && span.textContent?.trim() && !span.textContent.includes('⌘') && !span.textContent.includes('Ctrl')) {
+            if (
+                span.children.length === 0 &&
+                span.textContent?.trim() &&
+                !span.textContent.includes('⌘') &&
+                !span.textContent.includes('Ctrl')
+            ) {
                 if (span.textContent !== t('search', l)) {
                     span.textContent = t('search', l);
                 }
@@ -86,7 +91,7 @@ function translate() {
     }
 
     // Home nav link
-    const homeSelectors = langConfig.map(lg => `.VPNavBarMenuLink[href="${lg.prefix || '/'}"]`).join(', ');
+    const homeSelectors = langConfig.map((lg) => `.VPNavBarMenuLink[href="${lg.prefix || '/'}"]`).join(', ');
     const homeLink = document.querySelector(homeSelectors) as HTMLAnchorElement;
     const href = getPrefix(l) || '/';
     if (homeLink) {
@@ -117,7 +122,7 @@ function translate() {
     // Edit link
     const editLink = document.querySelector(EDIT_LINK_SELECTOR);
     if (editLink) {
-        const textNodes = Array.from(editLink.childNodes).filter(n => n.nodeType === Node.TEXT_NODE);
+        const textNodes = Array.from(editLink.childNodes).filter((n) => n.nodeType === Node.TEXT_NODE);
         for (const node of textNodes) {
             const text = node.textContent?.trim();
             if (text && text !== t('editPage', l)) {
@@ -129,7 +134,7 @@ function translate() {
     // Last updated
     const lastUpdated = document.querySelector(LAST_UPDATED_SELECTOR);
     if (lastUpdated) {
-        const textNodes = Array.from(lastUpdated.childNodes).filter(n => n.nodeType === Node.TEXT_NODE);
+        const textNodes = Array.from(lastUpdated.childNodes).filter((n) => n.nodeType === Node.TEXT_NODE);
         for (const node of textNodes) {
             const text = node.textContent?.trim().replace(/:$/, '');
             if (text && text !== t('lastUpdated', l)) {
@@ -266,13 +271,19 @@ onUnmounted(() => {
             <div class="VPNavScreenAppearance language">
                 <p class="text">{{ t('language', lang) }}</p>
                 <div class="options">
-                    <a v-for="item in languages" :key="item.link" :href="item.link" :class="{ active: item.lang === lang }" @click="saveLang(item.lang)">
+                    <a
+                        v-for="item in languages"
+                        :key="item.link"
+                        :href="item.link"
+                        :class="{ active: item.lang === lang }"
+                        @click="saveLang(item.lang)"
+                    >
                         {{ item.text }}
                     </a>
                 </div>
             </div>
         </template>
-        <template #home-hero-image v-if="home">
+        <template v-if="home" #home-hero-image>
             <Terminal />
         </template>
         <template #not-found>

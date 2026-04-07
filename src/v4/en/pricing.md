@@ -75,9 +75,9 @@ If the provided token is incorrect or expired, you will receive a 401 error:
 
 ```json
 {
-  "message": "Unauthorized",
-  "error": "Invalid token.",
-  "status": "401"
+    "message": "Unauthorized",
+    "error": "Invalid token.",
+    "status": "401"
 }
 ```
 

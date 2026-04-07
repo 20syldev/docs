@@ -18,21 +18,21 @@ curl -X POST "https://api.sylvain.sh/v3/tic-tac-toe/list"
 
 ```json
 {
-  "games": [
+    "games": [
         {
-          "game": "VWXYZ",
-          "players": ["User1", "User2"],
-          "status": "in_progress",
-          "created_at": "2025-01-21T10:30:00.000Z"
+            "game": "VWXYZ",
+            "players": ["User1", "User2"],
+            "status": "in_progress",
+            "created_at": "2025-01-21T10:30:00.000Z"
         },
         {
-          "game": "ABCDE",
-          "players": ["User3"],
-          "status": "waiting",
-          "created_at": "2025-01-21T10:35:00.000Z"
+            "game": "ABCDE",
+            "players": ["User3"],
+            "status": "waiting",
+            "created_at": "2025-01-21T10:35:00.000Z"
         }
     ],
-  "total": 2
+    "total": 2
 }
 ```
 

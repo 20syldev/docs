@@ -21,9 +21,9 @@ GET /v3/levenshtein?str1=example&str2=samples
 
 ```json
 {
-  "str1": "example",
-  "str2": "samples",
-  "distance": 3
+    "str1": "example",
+    "str2": "samples",
+    "distance": 3
 }
 ```
 

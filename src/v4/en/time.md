@@ -48,25 +48,25 @@ The `/time` endpoint allows you to retrieve time information based on various pa
 
 ## Response Fields
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| `iso` | `string` | Date in ISO 8601 format |
-| `utc` | `string` | Date in UTC string format |
-| `timestamp` | `number` | Unix timestamp |
-| `locale` | `string` | Localized date and time string |
-| `date` | `string` | Date in MM/DD/YYYY format |
-| `time` | `string` | Time in HH:MM:SS format |
-| `year` | `number` | Year |
-| `month` | `number` | Month (1-12) |
-| `day` | `number` | Day of the month |
-| `hour` | `number` | Hour (0-23) |
-| `minute` | `number` | Minutes |
-| `second` | `number` | Seconds |
-| `ms` | `number` | Milliseconds |
-| `dayOfWeek` | `number` | Day of the week (0-6) |
-| `dayOfYear` | `number` | Day of the year (1-365/366) |
-| `weekNumber` | `number` | Week number of the year |
-| `timezone` | `string` | Time zone name |
+| Field        | Type     | Description                    |
+| ------------ | -------- | ------------------------------ |
+| `iso`        | `string` | Date in ISO 8601 format        |
+| `utc`        | `string` | Date in UTC string format      |
+| `timestamp`  | `number` | Unix timestamp                 |
+| `locale`     | `string` | Localized date and time string |
+| `date`       | `string` | Date in MM/DD/YYYY format      |
+| `time`       | `string` | Time in HH:MM:SS format        |
+| `year`       | `number` | Year                           |
+| `month`      | `number` | Month (1-12)                   |
+| `day`        | `number` | Day of the month               |
+| `hour`       | `number` | Hour (0-23)                    |
+| `minute`     | `number` | Minutes                        |
+| `second`     | `number` | Seconds                        |
+| `ms`         | `number` | Milliseconds                   |
+| `dayOfWeek`  | `number` | Day of the week (0-6)          |
+| `dayOfYear`  | `number` | Day of the year (1-365/366)    |
+| `weekNumber` | `number` | Week number of the year        |
+| `timezone`   | `string` | Time zone name                 |
 
 ## Code Examples
 

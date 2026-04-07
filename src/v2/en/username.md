@@ -16,11 +16,11 @@ GET /v2/username
 
 ```json
 {
-  "adjective": ["Happy", "Silly", "Clever", "Creative", "Brave", "..."],
-  "animal": ["Cat", "Dog", "Tiger", "Elephant", "Monkey", "..."],
-  "job": ["Writer", "Artist", "Musician", "Explorer", "Scientist", "..."],
-  "number": "99",
-  "username": "HappyCat99"
+    "adjective": ["Happy", "Silly", "Clever", "Creative", "Brave", "..."],
+    "animal": ["Cat", "Dog", "Tiger", "Elephant", "Monkey", "..."],
+    "job": ["Writer", "Artist", "Musician", "Explorer", "Scientist", "..."],
+    "number": "99",
+    "username": "HappyCat99"
 }
 ```
 

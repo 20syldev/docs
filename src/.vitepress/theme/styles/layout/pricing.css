@@ -68,8 +68,12 @@
     font-size: 0.8rem;
     padding: 0.3rem 0;
 }
-.pricing-features li:last-child { border-bottom: none; }
-.pricing-features strong { color: var(--vp-c-text-1); }
+.pricing-features li:last-child {
+    border-bottom: none;
+}
+.pricing-features strong {
+    color: var(--vp-c-text-1);
+}
 
 /* ----- Button ----- */
 

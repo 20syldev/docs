@@ -35,9 +35,15 @@
     height: 12px;
     width: 12px;
 }
-.terminal-btn.close { background: #ff5f56; }
-.terminal-btn.minimize { background: #ffbd2e; }
-.terminal-btn.maximize { background: #27c93f; }
+.terminal-btn.close {
+    background: #ff5f56;
+}
+.terminal-btn.minimize {
+    background: #ffbd2e;
+}
+.terminal-btn.maximize {
+    background: #27c93f;
+}
 
 .terminal-title {
     color: var(--terminal-title);
@@ -55,7 +61,9 @@
     padding: 18px;
     height: 180px;
 }
-.terminal-body::-webkit-scrollbar { display: none; }
+.terminal-body::-webkit-scrollbar {
+    display: none;
+}
 
 /* ----- Command line ----- */
 

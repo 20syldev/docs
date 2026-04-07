@@ -37,7 +37,7 @@ curl -X POST -d "username=Utilisateur1&move=2-2&session=abc123&game=VWXYZ" "http
 
 ```json
 {
-  "message": "Move sent successfully"
+    "message": "Move sent successfully"
 }
 ```
 
@@ -45,10 +45,10 @@ curl -X POST -d "username=Utilisateur1&move=2-2&session=abc123&game=VWXYZ" "http
 
 ```json
 {
-  "message": "Move sent successfully. Utilisateur1 wins. Utilisateur2 loses.",
-  "winner": "Utilisateur1",
-  "loser": "Utilisateur2",
-  "tie": false
+    "message": "Move sent successfully. Utilisateur1 wins. Utilisateur2 loses.",
+    "winner": "Utilisateur1",
+    "loser": "Utilisateur2",
+    "tie": false
 }
 ```
 
@@ -56,10 +56,10 @@ curl -X POST -d "username=Utilisateur1&move=2-2&session=abc123&game=VWXYZ" "http
 
 ```json
 {
-  "message": "Game over. It's a tie!",
-  "winner": null,
-  "loser": null,
-  "tie": true
+    "message": "Game over. It's a tie!",
+    "winner": null,
+    "loser": null,
+    "tie": true
 }
 ```
 

@@ -27,26 +27,26 @@ L'endpoint `/hyperplanning` permet d'afficher les informations d'un emploi du te
 ```json
 [
     {
-      "summary": ["Mathematics", "DOE", "Class", "1", "Class", "2"],
-      "subject": "Mathematics",
-      "teacher": "DOE",
-      "classes": ["Class 1", "Class 2"],
-      "start": "2000-03-01T12:00:00.000",
-      "end": "2000-03-01T14:00:00.000"
+        "summary": ["Mathematics", "DOE", "Class", "1", "Class", "2"],
+        "subject": "Mathematics",
+        "teacher": "DOE",
+        "classes": ["Class 1", "Class 2"],
+        "start": "2000-03-01T12:00:00.000",
+        "end": "2000-03-01T14:00:00.000"
     }
 ]
 ```
 
 ## Champs de réponse
 
-| Champ | Type | Description |
-| ----- | ---- | ----------- |
-| `summary` | `string[]` | Tableau des éléments du résumé |
-| `subject` | `string` | Nom de la matière |
-| `teacher` | `string` | Nom de l'enseignant |
-| `classes` | `string[]` | Tableau des noms de classes |
-| `start` | `string` | Heure de début de l'événement (ISO 8601) |
-| `end` | `string` | Heure de fin de l'événement (ISO 8601) |
+| Champ     | Type       | Description                              |
+| --------- | ---------- | ---------------------------------------- |
+| `summary` | `string[]` | Tableau des éléments du résumé           |
+| `subject` | `string`   | Nom de la matière                        |
+| `teacher` | `string`   | Nom de l'enseignant                      |
+| `classes` | `string[]` | Tableau des noms de classes              |
+| `start`   | `string`   | Heure de début de l'événement (ISO 8601) |
+| `end`     | `string`   | Heure de fin de l'événement (ISO 8601)   |
 
 ## Essayer
 

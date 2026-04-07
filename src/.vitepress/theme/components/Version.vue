@@ -9,10 +9,91 @@ const route = useRoute();
 const { version, lang } = useVersion();
 
 const pages: Record<string, string[]> = {
-    v4: ['', 'authentication', 'pricing', 'algorithms', 'captcha', 'chat', 'chat/private', 'color', 'convert', 'domain', 'hash', 'hyperplanning', 'infos', 'levenshtein', 'personal', 'qrcode', 'tic-tac-toe', 'tic-tac-toe/fetch', 'tic-tac-toe/list', 'time', 'token', 'username', 'playground', 'changelog'],
-    v3: ['', 'authentication', 'pricing', 'algorithms', 'captcha', 'chat', 'chat/private', 'color', 'convert', 'domain', 'hash', 'hyperplanning', 'infos', 'levenshtein', 'personal', 'qrcode', 'tic-tac-toe', 'tic-tac-toe/fetch', 'tic-tac-toe/list', 'time', 'token', 'username'],
-    v2: ['', 'authentication', 'pricing', 'algorithms', 'captcha', 'chat', 'chat/private', 'color', 'convert', 'domain', 'hash', 'infos', 'personal', 'qrcode', 'tic-tac-toe', 'tic-tac-toe/fetch', 'token', 'username'],
-    v1: ['', 'authentication', 'pricing', 'algorithms', 'captcha', 'color', 'convert', 'domain', 'infos', 'personal', 'qrcode', 'token', 'username'],
+    v4: [
+        '',
+        'authentication',
+        'pricing',
+        'algorithms',
+        'captcha',
+        'chat',
+        'chat/private',
+        'color',
+        'convert',
+        'domain',
+        'hash',
+        'hyperplanning',
+        'infos',
+        'levenshtein',
+        'personal',
+        'qrcode',
+        'tic-tac-toe',
+        'tic-tac-toe/fetch',
+        'tic-tac-toe/list',
+        'time',
+        'token',
+        'username',
+        'playground',
+        'changelog',
+    ],
+    v3: [
+        '',
+        'authentication',
+        'pricing',
+        'algorithms',
+        'captcha',
+        'chat',
+        'chat/private',
+        'color',
+        'convert',
+        'domain',
+        'hash',
+        'hyperplanning',
+        'infos',
+        'levenshtein',
+        'personal',
+        'qrcode',
+        'tic-tac-toe',
+        'tic-tac-toe/fetch',
+        'tic-tac-toe/list',
+        'time',
+        'token',
+        'username',
+    ],
+    v2: [
+        '',
+        'authentication',
+        'pricing',
+        'algorithms',
+        'captcha',
+        'chat',
+        'chat/private',
+        'color',
+        'convert',
+        'domain',
+        'hash',
+        'infos',
+        'personal',
+        'qrcode',
+        'tic-tac-toe',
+        'tic-tac-toe/fetch',
+        'token',
+        'username',
+    ],
+    v1: [
+        '',
+        'authentication',
+        'pricing',
+        'algorithms',
+        'captcha',
+        'color',
+        'convert',
+        'domain',
+        'infos',
+        'personal',
+        'qrcode',
+        'token',
+        'username',
+    ],
 };
 
 const page = computed(() => route.path.match(/^\/v\d+\/(en|fr)\/(.*)$/)?.[2] ?? '');
@@ -20,17 +101,11 @@ const visible = computed(() => route.path.includes('/v'));
 
 const getLink = (v: string) => `/${v}/${lang.value}/${pages[v]?.includes(page.value) ? page.value : ''}`;
 
-const items = computed(() =>
-    [...KNOWN_VERSIONS].reverse().map(v => ({ text: v, link: getLink(v) }))
-);
+const items = computed(() => [...KNOWN_VERSIONS].reverse().map((v) => ({ text: v, link: getLink(v) })));
 </script>
 
 <template>
     <div v-if="visible" class="version-switcher-wrapper">
-        <VPFlyout
-            class="VPNavBarMenuGroup"
-            :button="version"
-            :items="items"
-        />
+        <VPFlyout class="VPNavBarMenuGroup" :button="version" :items="items" />
     </div>
 </template>

@@ -20,36 +20,36 @@ L'endpoint `/tic-tac-toe/fetch` permet de récupérer les informations d'une par
 
 ```json
 {
-  "id": "VWXYZ",
-  "moves": [
+    "id": "VWXYZ",
+    "moves": [
         {
-          "username": "Utilisateur1",
-          "move": "2-2",
-          "session": "abc123"
+            "username": "Utilisateur1",
+            "move": "2-2",
+            "session": "abc123"
         },
         {
-          "username": "Utilisateur2",
-          "move": "1-3",
-          "session": "def456"
+            "username": "Utilisateur2",
+            "move": "1-3",
+            "session": "def456"
         }
     ],
-  "players": ["Utilisateur1", "Utilisateur2"],
-  "turn": "Utilisateur1",
-  "status": "ready",
-  "private": false
+    "players": ["Utilisateur1", "Utilisateur2"],
+    "turn": "Utilisateur1",
+    "status": "ready",
+    "private": false
 }
 ```
 
 ## Champs de réponse
 
-| Champ | Type | Description |
-| ----- | ---- | ----------- |
-| `id` | `string` | Identifiant de la partie |
-| `moves` | `object[]` | Tableau des coups joués |
-| `players` | `string[]` | Tableau des noms d'utilisateur des joueurs |
-| `turn` | `string\|null` | Nom d'utilisateur du joueur dont c'est le tour |
-| `status` | `string` | Statut de la partie (`waiting`, `ready`, `finished`) |
-| `private` | `boolean` | Si la partie est privée |
+| Champ     | Type           | Description                                          |
+| --------- | -------------- | ---------------------------------------------------- |
+| `id`      | `string`       | Identifiant de la partie                             |
+| `moves`   | `object[]`     | Tableau des coups joués                              |
+| `players` | `string[]`     | Tableau des noms d'utilisateur des joueurs           |
+| `turn`    | `string\|null` | Nom d'utilisateur du joueur dont c'est le tour       |
+| `status`  | `string`       | Statut de la partie (`waiting`, `ready`, `finished`) |
+| `private` | `boolean`      | Si la partie est privée                              |
 
 ## Valeurs de statut de partie
 

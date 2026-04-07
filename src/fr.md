@@ -2,38 +2,38 @@
 layout: home
 
 hero:
-  name: "Documentation"
-  text: "API Hyperion"
-  tagline: Une collection complète d'endpoints utilitaires pour les développeurs
-  actions:
-    - theme: brand
-      text: Commencer
-      link: /v4/fr/
-    - theme: alt
-      text: Voir sur GitHub
-      link: https://github.com/20syldev/docs
+    name: 'Documentation'
+    text: 'API Hyperion'
+    tagline: Une collection complète d'endpoints utilitaires pour les développeurs
+    actions:
+        - theme: brand
+          text: Commencer
+          link: /v4/fr/
+        - theme: alt
+          text: Voir sur GitHub
+          link: https://github.com/20syldev/docs
 
 features:
-  - icon:
-      src: /icons/algorithm.svg
-    title: Algorithmes
-    details: Algorithmes mathématiques incluant factorielle, fibonacci, nombres premiers, PGCD, et plus.
-    link: /v4/fr/algorithms
-  - icon:
-      src: /icons/chat.svg
-    title: Système de Chat
-    details: API de messagerie en temps réel avec support des canaux publics et privés.
-    link: /v4/fr/chat
-  - icon:
-      src: /icons/game.svg
-    title: Morpion
-    details: Jeu de Morpion multijoueur en ligne avec gestion de l'état des parties.
-    link: /v4/fr/tic-tac-toe
-  - icon:
-      src: /icons/tools.svg
-    title: Utilitaires
-    details: QR codes, conversion de couleurs, infos de domaine, génération de captcha, et plus.
-    link: /v4/fr/qrcode
+    - icon:
+          src: /icons/algorithm.svg
+      title: Algorithmes
+      details: Algorithmes mathématiques incluant factorielle, fibonacci, nombres premiers, PGCD, et plus.
+      link: /v4/fr/algorithms
+    - icon:
+          src: /icons/chat.svg
+      title: Système de Chat
+      details: API de messagerie en temps réel avec support des canaux publics et privés.
+      link: /v4/fr/chat
+    - icon:
+          src: /icons/game.svg
+      title: Morpion
+      details: Jeu de Morpion multijoueur en ligne avec gestion de l'état des parties.
+      link: /v4/fr/tic-tac-toe
+    - icon:
+          src: /icons/tools.svg
+      title: Utilitaires
+      details: QR codes, conversion de couleurs, infos de domaine, génération de captcha, et plus.
+      link: /v4/fr/qrcode
 ---
 
 <script setup>
@@ -76,10 +76,10 @@ curl -X GET "https://api.sylvain.sh/v4/infos"
 
 ```json
 {
-  "endpoints": 20,
-  "last_version": "v4",
-  "documentation": "https://docs.sylvain.sh",
-  "github": "https://github.com/20syldev/api",
-  "creation": "November 25th 2024"
+    "endpoints": 20,
+    "last_version": "v4",
+    "documentation": "https://docs.sylvain.sh",
+    "github": "https://github.com/20syldev/api",
+    "creation": "November 25th 2024"
 }
 ```

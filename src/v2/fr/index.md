@@ -20,11 +20,11 @@ curl -X GET "https://api.sylvain.sh/v2/infos"
 
 ```json
 {
-  "endpoints": 17,
-  "last_version": "v2",
-  "documentation": "https://docs.sylvain.sh",
-  "github": "https://github.com/20syldev/api",
-  "creation": "November 25th 2024"
+    "endpoints": 17,
+    "last_version": "v2",
+    "documentation": "https://docs.sylvain.sh",
+    "github": "https://github.com/20syldev/api",
+    "creation": "November 25th 2024"
 }
 ```
 
@@ -34,7 +34,7 @@ Certains points d'accès ont une [limitation de débit](/v3/fr/pricing) pour pr�
 
 ```json
 {
-  "error": "Rate limit exceeded. Try again in X seconds."
+    "error": "Rate limit exceeded. Try again in X seconds."
 }
 ```
 
@@ -44,7 +44,7 @@ Tous les points d'accès retournent des réponses d'erreur cohérentes :
 
 ```json
 {
-  "error": "Description de l'erreur"
+    "error": "Description de l'erreur"
 }
 ```
 

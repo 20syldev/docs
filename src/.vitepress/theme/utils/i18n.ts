@@ -17,7 +17,8 @@ export const translations: Record<string, Record<string, string>> = {
         appearance: 'Appearance',
         current: 'Current',
         notFoundTitle: 'PAGE NOT FOUND',
-        notFoundMessage: "But if you don't change your direction, and if you keep looking, you may end up where you are heading.",
+        notFoundMessage:
+            "But if you don't change your direction, and if you keep looking, you may end up where you are heading.",
         notFoundLink: 'Take me home',
         copyCode: 'Copy code',
         tryIt: 'Try It',
@@ -34,9 +35,11 @@ export const translations: Record<string, Record<string, string>> = {
         playground: 'Playground',
         changelog: 'Changelog',
         bannerMigrationTitle: 'Migration Available',
-        bannerMigrationText: 'A newer version is available! Consider migrating to {version} for the latest features and improvements.',
+        bannerMigrationText:
+            'A newer version is available! Consider migrating to {version} for the latest features and improvements.',
         bannerLegacyTitle: 'Legacy Version',
-        bannerLegacyText: 'This is a legacy version of the API. Consider migrating to {version} for the latest features and improvements.',
+        bannerLegacyText:
+            'This is a legacy version of the API. Consider migrating to {version} for the latest features and improvements.',
         bannerLink: 'View latest version',
         prevPage: 'Previous page',
         nextPage: 'Next page',
@@ -54,7 +57,8 @@ export const translations: Record<string, Record<string, string>> = {
         appearance: 'Apparence',
         current: 'Actuelle',
         notFoundTitle: 'PAGE NON TROUVÉE',
-        notFoundMessage: "Mais si vous ne changez pas de direction et continuez à chercher, vous finirez peut-être par arriver là où vous alliez.",
+        notFoundMessage:
+            'Mais si vous ne changez pas de direction et continuez à chercher, vous finirez peut-être par arriver là où vous alliez.',
         notFoundLink: "Retour à l'accueil",
         copyCode: 'Copier le code',
         tryIt: 'Essayer',
@@ -71,9 +75,11 @@ export const translations: Record<string, Record<string, string>> = {
         playground: 'Playground',
         changelog: 'Changelog',
         bannerMigrationTitle: 'Migration disponible',
-        bannerMigrationText: 'Une version plus récente est disponible ! Envisagez de migrer vers {version} pour les dernières fonctionnalités et améliorations.',
+        bannerMigrationText:
+            'Une version plus récente est disponible ! Envisagez de migrer vers {version} pour les dernières fonctionnalités et améliorations.',
         bannerLegacyTitle: 'Version obsolète',
-        bannerLegacyText: "Ceci est une ancienne version de l'API. Envisagez de migrer vers {version} pour les dernières fonctionnalités et améliorations.",
+        bannerLegacyText:
+            "Ceci est une ancienne version de l'API. Envisagez de migrer vers {version} pour les dernières fonctionnalités et améliorations.",
         bannerLink: 'Voir la dernière version',
         prevPage: 'Page précédente',
         nextPage: 'Page suivante',
@@ -83,21 +89,29 @@ export const translations: Record<string, Record<string, string>> = {
 };
 
 export function isHome(path: string): boolean {
-    const homePaths = ['/', '/index.html', ...languages.filter(l => l.prefix).flatMap(l => [l.prefix, `${l.prefix}.html`])];
+    const homePaths = [
+        '/',
+        '/index.html',
+        ...languages.filter((l) => l.prefix).flatMap((l) => [l.prefix, `${l.prefix}.html`]),
+    ];
     return homePaths.includes(path);
 }
 
 export function getLang(path: string): string {
-    const match = languages.find(l => l.prefix && path.includes(l.prefix));
+    const match = languages.find((l) => l.prefix && path.includes(l.prefix));
     return match ? match.code : defaultLang;
 }
 
 export function getPrefix(lang: string): string {
-    return languages.find(l => l.code === lang)?.prefix ?? '';
+    return languages.find((l) => l.code === lang)?.prefix ?? '';
 }
 
-export function getLangItems(path: string, homepage: boolean, lang: string): Array<{ text: string; link: string; lang: string }> {
-    return languages.map(l => {
+export function getLangItems(
+    path: string,
+    homepage: boolean,
+    lang: string,
+): Array<{ text: string; link: string; lang: string }> {
+    return languages.map((l) => {
         let link: string;
         if (homepage) {
             link = l.prefix || '/';

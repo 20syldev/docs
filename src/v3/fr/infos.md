@@ -18,11 +18,11 @@ GET /v3/infos
 
 ```json
 {
-  "endpoints": 20,
-  "last_version": "v3",
-  "documentation": "https://docs.sylvain.sh",
-  "github": "https://github.com/20syldev/api",
-  "creation": "November 25th 2024"
+    "endpoints": 20,
+    "last_version": "v3",
+    "documentation": "https://docs.sylvain.sh",
+    "github": "https://github.com/20syldev/api",
+    "creation": "November 25th 2024"
 }
 ```
 

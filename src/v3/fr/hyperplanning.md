@@ -29,12 +29,12 @@ curl -X POST -d "url=https%3A%2F%2Fexample.com%2Ffile.ics&detail=full" "https://
 ```json
 [
     {
-      "summary": ["Mathematics", "DOE", "Class", "1", "Class", "2"],
-      "subject": "Mathematics",
-      "teacher": "DOE",
-      "classes": ["Class 1", "Class 2"],
-      "start": "2000-03-01T12:00:00.000",
-      "end": "2000-03-01T14:00:00.000"
+        "summary": ["Mathematics", "DOE", "Class", "1", "Class", "2"],
+        "subject": "Mathematics",
+        "teacher": "DOE",
+        "classes": ["Class 1", "Class 2"],
+        "start": "2000-03-01T12:00:00.000",
+        "end": "2000-03-01T14:00:00.000"
     }
 ]
 ```

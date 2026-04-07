@@ -12,23 +12,23 @@ This endpoint does not require any parameters.
 
 ```json
 {
-  "username": "PilotHorse",
-  "number": 4,
-  "adjective": "Patient",
-  "animal": "Koala",
-  "job": "Journalist"
+    "username": "PilotHorse",
+    "number": 4,
+    "adjective": "Patient",
+    "animal": "Koala",
+    "job": "Journalist"
 }
 ```
 
 ## Response Fields
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| `username` | `string` | A randomly generated username |
-| `number` | `number` | A random number used in generation |
+| Field       | Type     | Description                             |
+| ----------- | -------- | --------------------------------------- |
+| `username`  | `string` | A randomly generated username           |
+| `number`    | `number` | A random number used in generation      |
 | `adjective` | `string` | The adjective component of the username |
-| `animal` | `string` | The animal component of the username |
-| `job` | `string` | A randomly associated job |
+| `animal`    | `string` | The animal component of the username    |
+| `job`       | `string` | A randomly associated job               |
 
 ## Code Examples
 

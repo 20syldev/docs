@@ -6,9 +6,9 @@ The `/chat/private` endpoint retrieves all messages sent during the last hour, b
 
 ## Parameters
 
-| Parameter  | Required | Description                                    |
-| ---------- | -------- | ---------------------------------------------- |
-| `username` | Yes      | The username of the user who sends the message |
+| Parameter  | Required | Description                                         |
+| ---------- | -------- | --------------------------------------------------- |
+| `username` | Yes      | The username of the user who sends the message      |
 | `token`    | Yes      | The key used to connect to the desired private chat |
 
 ## Code Examples
@@ -19,25 +19,25 @@ The `/chat/private` endpoint retrieves all messages sent during the last hour, b
 
 ```json
 [
-  {
-    "username": "User1",
-    "message": "Hi!",
-    "timestamp": "2025-01-21T08:27:11.068Z"
-  },
-  {
-    "username": "User3",
-    "message": "How are you?",
-    "timestamp": "2025-01-21T08:28:43.070Z"
-  }
+    {
+        "username": "User1",
+        "message": "Hi!",
+        "timestamp": "2025-01-21T08:27:11.068Z"
+    },
+    {
+        "username": "User3",
+        "message": "How are you?",
+        "timestamp": "2025-01-21T08:28:43.070Z"
+    }
 ]
 ```
 
 ## Response Fields
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| `username` | `string` | Username of the message sender |
-| `message` | `string` | Content of the message |
+| Field       | Type     | Description                       |
+| ----------- | -------- | --------------------------------- |
+| `username`  | `string` | Username of the message sender    |
+| `message`   | `string` | Content of the message            |
 | `timestamp` | `string` | ISO 8601 timestamp of the message |
 
 ## Try It

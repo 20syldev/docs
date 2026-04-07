@@ -19,19 +19,19 @@ GET /v3/chat
 ```json
 [
     {
-      "username": "Utilisateur1",
-      "message": "Salut !",
-      "timestamp": "2025-01-21T08:27:11.068Z"
+        "username": "Utilisateur1",
+        "message": "Salut !",
+        "timestamp": "2025-01-21T08:27:11.068Z"
     },
     {
-      "username": "Utilisateur3",
-      "message": "Comment ça va ?",
-      "timestamp": "2025-01-21T08:28:43.070Z"
+        "username": "Utilisateur3",
+        "message": "Comment ça va ?",
+        "timestamp": "2025-01-21T08:28:43.070Z"
     },
     {
-      "username": "Utilisateur8",
-      "message": "Très bien, et toi ?",
-      "timestamp": "2025-01-21T08:32:07.215Z"
+        "username": "Utilisateur8",
+        "message": "Très bien, et toi ?",
+        "timestamp": "2025-01-21T08:32:07.215Z"
     }
 ]
 ```
@@ -69,7 +69,7 @@ curl -X POST -d "username=Utilisateur3&message=Comment ça va ?&session=abc123&t
 
 ```json
 {
-  "message": "Message sent successfully"
+    "message": "Message sent successfully"
 }
 ```
 

@@ -30,10 +30,7 @@ export default defineConfig({
                     'A comprehensive collection of utility endpoints for developers. Algorithms, chat, games, QR codes, and more.',
             },
         ],
-        [
-            'meta',
-            { property: 'og:image', content: 'https://docs.sylvain.sh/logo.png' },
-        ],
+        ['meta', { property: 'og:image', content: 'https://docs.sylvain.sh/logo.png' }],
 
         // Twitter Card
         ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
@@ -47,10 +44,7 @@ export default defineConfig({
                     'A comprehensive collection of utility endpoints for developers. Algorithms, chat, games, QR codes, and more.',
             },
         ],
-        [
-            'meta',
-            { name: 'twitter:image', content: 'https://docs.sylvain.sh/logo.png' },
-        ],
+        ['meta', { name: 'twitter:image', content: 'https://docs.sylvain.sh/logo.png' }],
 
         // Google Structured Data
         [
@@ -61,8 +55,7 @@ export default defineConfig({
                 '@type': 'WebSite',
                 name: 'Hyperion API Documentation',
                 url: 'https://docs.sylvain.sh/',
-                description:
-                    'A comprehensive collection of utility endpoints for developers.',
+                description: 'A comprehensive collection of utility endpoints for developers.',
                 author: {
                     '@type': 'Person',
                     name: 'Sylvain L.',

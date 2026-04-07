@@ -12,7 +12,7 @@ const lang = computed(() => getLang(route.path));
 const homepage = computed(() => isHome(route.path));
 
 const items = computed(() => {
-    return getLangItems(route.path, homepage.value, lang.value).map(item => ({
+    return getLangItems(route.path, homepage.value, lang.value).map((item) => ({
         ...item,
         active: item.lang === lang.value,
     }));
@@ -25,8 +25,10 @@ const visible = computed(() => route.path.includes('/v') || homepage.value);
     <VPFlyout v-if="visible" class="VPNavBarExtra extra-menu" label="extra navigation">
         <div class="group">
             <p class="group-title">{{ t('language', lang) }}</p>
-            <div class="VPMenuLink" v-for="item in items" :key="item.link">
-                <a class="link" :class="{ 'is-active': item.active }" :href="item.link" @click="saveLang(item.lang)">{{ item.text }}</a>
+            <div v-for="item in items" :key="item.link" class="VPMenuLink">
+                <a class="link" :class="{ 'is-active': item.active }" :href="item.link" @click="saveLang(item.lang)">{{
+                    item.text
+                }}</a>
             </div>
         </div>
 

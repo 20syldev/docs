@@ -13,30 +13,30 @@ Récupère tous les messages envoyés durant la dernière heure. Cet endpoint ne
 ```json
 [
     {
-      "username": "Utilisateur1",
-      "message": "Salut !",
-      "timestamp": "2025-01-21T08:27:11.068Z"
+        "username": "Utilisateur1",
+        "message": "Salut !",
+        "timestamp": "2025-01-21T08:27:11.068Z"
     },
     {
-      "username": "Utilisateur3",
-      "message": "Comment ça va ?",
-      "timestamp": "2025-01-21T08:28:43.070Z"
+        "username": "Utilisateur3",
+        "message": "Comment ça va ?",
+        "timestamp": "2025-01-21T08:28:43.070Z"
     },
     {
-      "username": "Utilisateur8",
-      "message": "Très bien, et toi ?",
-      "timestamp": "2025-01-21T08:32:07.215Z"
+        "username": "Utilisateur8",
+        "message": "Très bien, et toi ?",
+        "timestamp": "2025-01-21T08:32:07.215Z"
     }
 ]
 ```
 
 ### Champs de réponse
 
-| Champ | Type | Description |
-| ----- | ---- | ----------- |
-| `username` | `string` | Nom d'utilisateur de l'expéditeur |
-| `message` | `string` | Contenu du message |
-| `timestamp` | `string` | Horodatage du message (ISO 8601) |
+| Champ       | Type     | Description                       |
+| ----------- | -------- | --------------------------------- |
+| `username`  | `string` | Nom d'utilisateur de l'expéditeur |
+| `message`   | `string` | Contenu du message                |
+| `timestamp` | `string` | Horodatage du message (ISO 8601)  |
 
 ### Exemples de code
 
@@ -67,14 +67,14 @@ Permet d'envoyer un message au chat global ou à un chat privé.
 
 ```json
 {
-  "message": "Message sent successfully"
+    "message": "Message sent successfully"
 }
 ```
 
 ### Champs de réponse
 
-| Champ | Type | Description |
-| ----- | ---- | ----------- |
+| Champ     | Type     | Description             |
+| --------- | -------- | ----------------------- |
 | `message` | `string` | Message de confirmation |
 
 ### Gestion des erreurs

@@ -6,11 +6,11 @@ The `/tic-tac-toe/fetch` endpoint retrieves information about a current Tic-Tac-
 
 ## Parameters
 
-| Parameter  | Required | Description                                 |
-| ---------- | -------- | ------------------------------------------- |
-| `username` | Yes      | The username of the player                  |
-| `game`     | No       | The game identifier to fetch                |
-| `private`  | No       | Set to `true` to fetch only private games   |
+| Parameter  | Required | Description                               |
+| ---------- | -------- | ----------------------------------------- |
+| `username` | Yes      | The username of the player                |
+| `game`     | No       | The game identifier to fetch              |
+| `private`  | No       | Set to `true` to fetch only private games |
 
 ## Request Example
 
@@ -22,17 +22,17 @@ curl -X POST -d "username=User1&game=VWXYZ" "https://api.sylvain.sh/v3/tic-tac-t
 
 ```json
 {
-  "game": "VWXYZ",
-  "players": ["User1", "User2"],
-  "board": [
+    "game": "VWXYZ",
+    "players": ["User1", "User2"],
+    "board": [
         ["X", "", "O"],
         ["", "X", ""],
         ["O", "", ""]
     ],
-  "current_turn": "User2",
-  "status": "in_progress",
-  "private": false,
-  "created_at": "2025-01-21T10:30:00.000Z"
+    "current_turn": "User2",
+    "status": "in_progress",
+    "private": false,
+    "created_at": "2025-01-21T10:30:00.000Z"
 }
 ```
 

@@ -56,24 +56,24 @@ GET /v3/time
 
 ```json
 {
-  "iso": "2000-01-01T12:00:00.000Z",
-  "utc": "Sat, 01 Jan 2000 12:00:00 GMT",
-  "timestamp": 946724400,
-  "locale": "1/1/2000, 12:00:00 PM Coordinated Universal Time",
-  "date": "3/3/2000",
-  "time": "12:00:00 PM",
-  "year": 2000,
-  "month": 1,
-  "day": 1,
-  "hour": 12,
-  "minute": 0,
-  "second": 0,
-  "ms": 0,
-  "dayOfWeek": 6,
-  "dayOfYear": 1,
-  "weekNumber": 1,
-  "timezone": "UTC",
-  "timezoneOffset": 0
+    "iso": "2000-01-01T12:00:00.000Z",
+    "utc": "Sat, 01 Jan 2000 12:00:00 GMT",
+    "timestamp": 946724400,
+    "locale": "1/1/2000, 12:00:00 PM Coordinated Universal Time",
+    "date": "3/3/2000",
+    "time": "12:00:00 PM",
+    "year": 2000,
+    "month": 1,
+    "day": 1,
+    "hour": 12,
+    "minute": 0,
+    "second": 0,
+    "ms": 0,
+    "dayOfWeek": 6,
+    "dayOfYear": 1,
+    "weekNumber": 1,
+    "timezone": "UTC",
+    "timezoneOffset": 0
 }
 ```
 
@@ -85,7 +85,7 @@ curl -X GET "https://api.sylvain.sh/v3/time?type=random&format=locale&timezone=E
 
 ```json
 {
-  "date": "7/28/2024, 2:06:52 PM GMT+01:00"
+    "date": "7/28/2024, 2:06:52 PM GMT+01:00"
 }
 ```
 

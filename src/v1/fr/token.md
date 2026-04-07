@@ -37,7 +37,7 @@ len=24&type=alphanum
 
 ```json
 {
-  "token": "6tMdlDV90x4Sm52dRS7MuGyn"
+    "token": "6tMdlDV90x4Sm52dRS7MuGyn"
 }
 ```
 

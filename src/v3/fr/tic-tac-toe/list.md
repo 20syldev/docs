@@ -18,26 +18,26 @@ curl -X POST "https://api.sylvain.sh/v3/tic-tac-toe/list"
 
 ```json
 {
-  "message": "Public games available",
-  "count": 2,
-  "games": [
+    "message": "Public games available",
+    "count": 2,
+    "games": [
         {
-          "id": "ABCDE",
-          "players": ["Utilisateur1", "Utilisateur2"],
-          "playersCount": 2,
-          "moves": 3,
-          "turn": "Utilisateur1",
-          "status": "ready",
-          "creation": 1696204800000
+            "id": "ABCDE",
+            "players": ["Utilisateur1", "Utilisateur2"],
+            "playersCount": 2,
+            "moves": 3,
+            "turn": "Utilisateur1",
+            "status": "ready",
+            "creation": 1696204800000
         },
         {
-          "id": "FGHIJ",
-          "players": ["Utilisateur3"],
-          "playersCount": 1,
-          "moves": 1,
-          "turn": "Utilisateur3",
-          "status": "waiting",
-          "creation": 1696204700000
+            "id": "FGHIJ",
+            "players": ["Utilisateur3"],
+            "playersCount": 1,
+            "moves": 1,
+            "turn": "Utilisateur3",
+            "status": "waiting",
+            "creation": 1696204700000
         }
     ]
 }
@@ -69,9 +69,9 @@ curl -X POST "https://api.sylvain.sh/v3/tic-tac-toe/list"
 
 ```json
 {
-  "message": "Public games available",
-  "count": 0,
-  "games": []
+    "message": "Public games available",
+    "count": 0,
+    "games": []
 }
 ```
 

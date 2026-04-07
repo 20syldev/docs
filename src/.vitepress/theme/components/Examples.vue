@@ -3,24 +3,22 @@ import { ref, computed, onMounted } from 'vue';
 import { useVersion } from '../composables/useVersion';
 import { API_BASE_URL } from '../utils/redirect';
 import { copyIcon, checkIcon } from '../utils/icons';
-import {
-    generateSnippet,
-    CODE_LANGS,
-    CODE_LANG_LABELS,
-    type CodeLang,
-} from '../composables/useCodeSnippets';
+import { generateSnippet, CODE_LANGS, CODE_LANG_LABELS, type CodeLang } from '../composables/useCodeSnippets';
 
-const props = withDefaults(defineProps<{
-    method: 'get' | 'post';
-    path: string;
-    baseUrl?: string;
-    params?: Record<string, string>;
-    body?: Record<string, string>;
-}>(), {
-    baseUrl: API_BASE_URL,
-    params: () => ({}),
-    body: () => ({}),
-});
+const props = withDefaults(
+    defineProps<{
+        method: 'get' | 'post';
+        path: string;
+        baseUrl?: string;
+        params?: Record<string, string>;
+        body?: Record<string, string>;
+    }>(),
+    {
+        baseUrl: API_BASE_URL,
+        params: () => ({}),
+        body: () => ({}),
+    },
+);
 
 const { versionedPath } = useVersion();
 const fullPath = computed(() => versionedPath(props.path));
@@ -89,9 +87,9 @@ async function copy() {
             </div>
             <button
                 :class="['examples-copy', { copied }]"
-                @click="copy"
                 :title="copied ? 'Copied!' : 'Copy'"
                 :aria-label="copied ? 'Copied!' : 'Copy code'"
+                @click="copy"
                 v-html="copyIcon + checkIcon"
             />
         </div>

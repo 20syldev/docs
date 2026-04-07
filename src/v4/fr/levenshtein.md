@@ -15,18 +15,18 @@ L'endpoint `/levenshtein` permet de calculer la distance de Levenshtein entre de
 
 ```json
 {
-  "str1": "example",
-  "str2": "samples",
-  "distance": 3
+    "str1": "example",
+    "str2": "samples",
+    "distance": 3
 }
 ```
 
 ## Champs de réponse
 
-| Champ | Type | Description |
-| ----- | ---- | ----------- |
-| `str1` | `string` | La première chaîne d'entrée |
-| `str2` | `string` | La deuxième chaîne d'entrée |
+| Champ      | Type     | Description                                       |
+| ---------- | -------- | ------------------------------------------------- |
+| `str1`     | `string` | La première chaîne d'entrée                       |
+| `str2`     | `string` | La deuxième chaîne d'entrée                       |
 | `distance` | `number` | La distance de Levenshtein entre les deux chaînes |
 
 ## Exemples de code

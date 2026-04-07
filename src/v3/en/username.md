@@ -18,7 +18,7 @@ GET /v3/username
 
 ```json
 {
-  "username": "CoolDragon42"
+    "username": "CoolDragon42"
 }
 ```
 

@@ -14,15 +14,15 @@ The `/qrcode` endpoint generates a QR Code from a URL provided as a parameter. T
 
 ```json
 {
-  "qr": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAYAAABRRIOnAAAAAklEQVR4AewaftIAAAOaSURBVO3BQY5jBxYDwcwH3f/KnF7MgqsPCFKV7..."
+    "qr": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAYAAABRRIOnAAAAAklEQVR4AewaftIAAAOaSURBVO3BQY5jBxYDwcwH3f/KnF7MgqsPCFKV7..."
 }
 ```
 
 ## Response Fields
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| `qr` | `string` | Base64-encoded PNG image of the QR Code |
+| Field | Type     | Description                             |
+| ----- | -------- | --------------------------------------- |
+| `qr`  | `string` | Base64-encoded PNG image of the QR Code |
 
 ## Code Examples
 

@@ -16,34 +16,34 @@ This endpoint does not require any parameters.
 
 ```json
 {
-  "games": [
+    "games": [
         {
-          "game": "VWXYZ",
-          "players": ["User1", "User2"],
-          "status": "in_progress",
-          "created_at": "2025-01-21T10:30:00.000Z"
+            "game": "VWXYZ",
+            "players": ["User1", "User2"],
+            "status": "in_progress",
+            "created_at": "2025-01-21T10:30:00.000Z"
         },
         {
-          "game": "ABCDE",
-          "players": ["User3"],
-          "status": "waiting",
-          "created_at": "2025-01-21T10:35:00.000Z"
+            "game": "ABCDE",
+            "players": ["User3"],
+            "status": "waiting",
+            "created_at": "2025-01-21T10:35:00.000Z"
         }
     ],
-  "total": 2
+    "total": 2
 }
 ```
 
 ## Response Fields
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| `games` | `object[]` | Array of public game objects |
-| `games[].game` | `string` | Game identifier |
-| `games[].players` | `string[]` | Array of player usernames |
-| `games[].status` | `string` | Game status (`waiting`, `in_progress`) |
-| `games[].created_at` | `string` | Game creation timestamp |
-| `total` | `number` | Total number of public games |
+| Field                | Type       | Description                            |
+| -------------------- | ---------- | -------------------------------------- |
+| `games`              | `object[]` | Array of public game objects           |
+| `games[].game`       | `string`   | Game identifier                        |
+| `games[].players`    | `string[]` | Array of player usernames              |
+| `games[].status`     | `string`   | Game status (`waiting`, `in_progress`) |
+| `games[].created_at` | `string`   | Game creation timestamp                |
+| `total`              | `number`   | Total number of public games           |
 
 ## Game Statuses
 

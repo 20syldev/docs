@@ -101,17 +101,17 @@ The `/hash` endpoint converts a string into a hash, i.e. a string of characters 
 
 ```json
 {
-  "method": "sha512",
-  "hash": "9b71d224bd62f3785d96d46ad3ea3d73319bfbc2890caadae2dff72519673ca72323c3d99ba5c11d7c7acc6e14b8c5da0c4663475c2e5c3adef46f73bcdec043"
+    "method": "sha512",
+    "hash": "9b71d224bd62f3785d96d46ad3ea3d73319bfbc2890caadae2dff72519673ca72323c3d99ba5c11d7c7acc6e14b8c5da0c4663475c2e5c3adef46f73bcdec043"
 }
 ```
 
 ## Response Fields
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| `method` | `string` | Hashing method used |
-| `hash` | `string` | Resulting hash string |
+| Field    | Type     | Description           |
+| -------- | -------- | --------------------- |
+| `method` | `string` | Hashing method used   |
+| `hash`   | `string` | Resulting hash string |
 
 ## Try It
 

@@ -25,12 +25,14 @@ Update the export name from `v4` to `v5` at the top of the file.
 ### 3. Update the config
 
 In `src/.vitepress/config.mts`:
+
 - Add `import { v5 } from './sidebar/v5';`
 - Add `...v5` to the sidebar object (before `...v4`)
 
 ### 4. Update `redirect.ts`
 
 In `src/.vitepress/theme/utils/redirect.ts`:
+
 - Change `LATEST_VERSION` from `'v4'` to `'v5'`
 - Add `'v5'` to `KNOWN_VERSIONS` (the version regex is generated automatically)
 
@@ -41,6 +43,7 @@ In `src/.vitepress/theme/components/Version.vue`, add `v5` to the `pages` record
 ### 6. Update the homepage
 
 In `src/index.md` and `src/fr.md`:
+
 - Update hero action links from `/v4/` to `/v5/`
 - Update feature links from `/v4/` to `/v5/`
 - Update version cards (v5 = Current, v4 = Stable, v3 = Legacy)

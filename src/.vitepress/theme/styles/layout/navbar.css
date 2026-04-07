@@ -14,15 +14,15 @@
 
 /* ----- Home link ----- */
 
-.VPNavBarMenuLink[href="/"],
-.VPNavBarMenuLink[href="/fr"],
-.VPNavBarMenuLink[href="/"].active,
-.VPNavBarMenuLink[href="/fr"].active {
+.VPNavBarMenuLink[href='/'],
+.VPNavBarMenuLink[href='/fr'],
+.VPNavBarMenuLink[href='/'].active,
+.VPNavBarMenuLink[href='/fr'].active {
     color: var(--vp-c-text-1) !important;
 }
 
-.VPNavBarMenuLink[href="/"]:hover,
-.VPNavBarMenuLink[href="/fr"]:hover {
+.VPNavBarMenuLink[href='/']:hover,
+.VPNavBarMenuLink[href='/fr']:hover {
     color: var(--vp-c-brand-1) !important;
 }
 
@@ -87,14 +87,20 @@
 
 /* ----- Nav ordering ----- */
 
-.VPNavBar .VPNavBarExtra:not(.extra-menu) { display: none !important; }
-.language-switcher-wrapper { display: none; }
+.VPNavBar .VPNavBarExtra:not(.extra-menu) {
+    display: none !important;
+}
+.language-switcher-wrapper {
+    display: none;
+}
 .extra-menu {
     display: flex !important;
     align-items: center;
     order: 12;
 }
-.VPSocialLinks { order: 13; }
+.VPSocialLinks {
+    order: 13;
+}
 
 /* ----- Mobile language (hamburger) ----- */
 
@@ -102,7 +108,9 @@
     flex-direction: column;
     display: flex;
 }
-.VPNavScreen .menu { order: 1; }
+.VPNavScreen .menu {
+    order: 1;
+}
 .language {
     margin-top: 24px !important;
     order: 2;
@@ -143,7 +151,9 @@
     font-weight: 500;
     font-size: 12px;
 }
-.language a:hover { color: var(--vp-c-text-1); }
+.language a:hover {
+    color: var(--vp-c-text-1);
+}
 .language a.active {
     background: var(--vp-c-brand-soft);
     color: var(--vp-c-brand-1);
@@ -156,10 +166,16 @@
     border-right: 1px solid var(--vp-c-divider);
     scrollbar-width: thin;
 }
-.dark .VPSidebar { border-right: 1px solid var(--vp-c-bg-mute); }
+.dark .VPSidebar {
+    border-right: 1px solid var(--vp-c-bg-mute);
+}
 
-.VPSidebarItem.level-0 { padding-bottom: 16px !important; }
-.VPSidebarItem .text { font-weight: 500; }
+.VPSidebarItem.level-0 {
+    padding-bottom: 16px !important;
+}
+.VPSidebarItem .text {
+    font-weight: 500;
+}
 
 /* ----- Transitions ----- */
 
@@ -171,4 +187,6 @@
 
 /* ----- Footer ----- */
 
-.VPFooter { padding: 16px !important; }
+.VPFooter {
+    padding: 16px !important;
+}

@@ -20,11 +20,11 @@ curl -X GET "https://api.sylvain.sh/v4/infos"
 
 ```json
 {
-  "endpoints": 20,
-  "last_version": "v4",
-  "documentation": "https://docs.sylvain.sh",
-  "github": "https://github.com/20syldev/api",
-  "creation": "November 25th 2024"
+    "endpoints": 20,
+    "last_version": "v4",
+    "documentation": "https://docs.sylvain.sh",
+    "github": "https://github.com/20syldev/api",
+    "creation": "November 25th 2024"
 }
 ```
 
@@ -34,10 +34,10 @@ Some endpoints have rate limiting to prevent abuse. If you exceed the [rate limi
 
 ```json
 {
-  "message": "Too Many Requests",
-  "error": "You have exceeded the limit of 2000 requests per hour.",
-  "documentation": "https://docs.sylvain.sh",
-  "status": "429"
+    "message": "Too Many Requests",
+    "error": "You have exceeded the limit of 2000 requests per hour.",
+    "documentation": "https://docs.sylvain.sh",
+    "status": "429"
 }
 ```
 
@@ -52,10 +52,10 @@ All endpoints return consistent error responses:
 
 ```json
 {
-  "message": "Bad Request",
-  "error": "Description of the error",
-  "documentation": "https://docs.sylvain.sh/v4/{endpoint}",
-  "status": "400"
+    "message": "Bad Request",
+    "error": "Description of the error",
+    "documentation": "https://docs.sylvain.sh/v4/{endpoint}",
+    "status": "400"
 }
 ```
 

@@ -1,13 +1,17 @@
 /* - - - - - - - Examples - - - - - - - */
 
-.examples { margin: 16px 0; }
+.examples {
+    margin: 16px 0;
+}
 
 .examples-header {
     justify-content: space-between;
     align-items: center;
 }
 
-.examples-tabs { display: flex; }
+.examples-tabs {
+    display: flex;
+}
 
 .examples-copy {
     color: var(--vp-c-text-3);
@@ -33,7 +37,9 @@
 .examples-copy .check {
     color: var(--vp-c-text-3);
 }
-.examples-copy:hover .copy { color: var(--vp-c-brand-1); }
+.examples-copy:hover .copy {
+    color: var(--vp-c-brand-1);
+}
 
 .examples .code-output code {
     background: transparent;

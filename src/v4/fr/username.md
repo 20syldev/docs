@@ -12,23 +12,23 @@ Cet endpoint ne nécessite aucun paramètre.
 
 ```json
 {
-  "username": "PilotHorse",
-  "number": 4,
-  "adjective": "Patient",
-  "animal": "Koala",
-  "job": "Journalist"
+    "username": "PilotHorse",
+    "number": 4,
+    "adjective": "Patient",
+    "animal": "Koala",
+    "job": "Journalist"
 }
 ```
 
 ## Champs de réponse
 
-| Champ | Type | Description |
-| ----- | ---- | ----------- |
-| `username` | `string` | Nom d'utilisateur généré |
-| `number` | `number` | Nombre aléatoire |
-| `adjective` | `string` | Adjectif |
-| `animal` | `string` | Animal |
-| `job` | `string` | Métier |
+| Champ       | Type     | Description              |
+| ----------- | -------- | ------------------------ |
+| `username`  | `string` | Nom d'utilisateur généré |
+| `number`    | `number` | Nombre aléatoire         |
+| `adjective` | `string` | Adjectif                 |
+| `animal`    | `string` | Animal                   |
+| `job`       | `string` | Métier                   |
 
 ## Exemples de code
 

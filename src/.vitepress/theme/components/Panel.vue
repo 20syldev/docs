@@ -3,24 +3,22 @@ import { ref, computed, watch } from 'vue';
 import { t } from '../utils/i18n';
 import { useVersion } from '../composables/useVersion';
 import { API_BASE_URL } from '../utils/redirect';
-import {
-    generateSnippet,
-    CODE_LANGS,
-    CODE_LANG_LABELS,
-    type CodeLang,
-} from '../composables/useCodeSnippets';
+import { generateSnippet, CODE_LANGS, CODE_LANG_LABELS, type CodeLang } from '../composables/useCodeSnippets';
 import type { EndpointParam } from '../data/endpoints';
 
-const props = withDefaults(defineProps<{
-    method: 'get' | 'post';
-    path: string;
-    baseUrl?: string;
-    params: EndpointParam[];
-    showCode?: boolean;
-}>(), {
-    baseUrl: API_BASE_URL,
-    showCode: false,
-});
+const props = withDefaults(
+    defineProps<{
+        method: 'get' | 'post';
+        path: string;
+        baseUrl?: string;
+        params: EndpointParam[];
+        showCode?: boolean;
+    }>(),
+    {
+        baseUrl: API_BASE_URL,
+        showCode: false,
+    },
+);
 
 const { lang, versionedPath } = useVersion();
 const fullPath = computed(() => versionedPath(props.path));
@@ -32,12 +30,16 @@ const response = ref<string | null>(null);
 const statusCode = ref<number | null>(null);
 const duration = ref<number | null>(null);
 
-watch(() => props.params, (params) => {
-    values.value = Object.fromEntries(params.map(p => [p.name, p.default ?? '']));
-}, { immediate: true, deep: true });
+watch(
+    () => props.params,
+    (params) => {
+        values.value = Object.fromEntries(params.map((p) => [p.name, p.default ?? '']));
+    },
+    { immediate: true, deep: true },
+);
 
 const filledEntries = computed(() =>
-    props.params.filter(p => values.value[p.name]).map(p => [p.name, values.value[p.name]] as [string, string]),
+    props.params.filter((p) => values.value[p.name]).map((p) => [p.name, values.value[p.name]] as [string, string]),
 );
 
 const bodyObject = computed<Record<string, string>>(() =>
@@ -98,14 +100,14 @@ defineExpose({ resetState });
         <div class="panel-header">
             <span :class="['method-badge', method]">{{ method.toUpperCase() }}</span>
             <code class="panel-url panel-path">{{ fullUrl }}</code>
-            <button class="action-btn panel-send" @click="send" :disabled="loading">
+            <button class="action-btn panel-send" :disabled="loading" @click="send">
                 {{ loading ? '...' : t('send', lang) }}
             </button>
         </div>
 
-        <div class="panel-params" v-if="params.length">
-            <div class="api-field" v-for="p in params" :key="p.name">
-                <label>{{ p.name }}<span class="required-mark" v-if="p.required">*</span></label>
+        <div v-if="params.length" class="panel-params">
+            <div v-for="p in params" :key="p.name" class="api-field">
+                <label>{{ p.name }}<span v-if="p.required" class="required-mark">*</span></label>
                 <select v-if="p.options" v-model="values[p.name]">
                     <option value="" disabled>{{ t('select', lang) }}</option>
                     <option v-for="opt in p.options" :key="opt" :value="opt">{{ opt }}</option>
@@ -114,24 +116,28 @@ defineExpose({ resetState });
             </div>
         </div>
 
-        <div class="panel-section" v-if="showCode">
+        <div v-if="showCode" class="panel-section">
             <div class="tab-bar">
                 <button
                     v-for="l in CODE_LANGS"
                     :key="l"
                     :class="['tab-item', { active: codeLang === l }]"
                     @click="codeLang = l"
-                >{{ CODE_LANG_LABELS[l] }}</button>
+                >
+                    {{ CODE_LANG_LABELS[l] }}
+                </button>
             </div>
             <pre class="code-output panel-code-block">{{ code }}</pre>
         </div>
 
-        <div class="panel-section" v-if="response !== null || loading">
+        <div v-if="response !== null || loading" class="panel-section">
             <div class="panel-response-bar">
                 <span>{{ t('response', lang) }}</span>
                 <div v-if="statusCode !== null" class="panel-meta">
-                    <span :class="['status-badge', statusCode < 300 ? 'ok' : statusCode < 500 ? 'warn' : 'err']">{{ statusCode || 'ERR' }}</span>
-                    <span class="panel-duration" v-if="duration !== null">{{ duration }}ms</span>
+                    <span :class="['status-badge', statusCode < 300 ? 'ok' : statusCode < 500 ? 'warn' : 'err']">{{
+                        statusCode || 'ERR'
+                    }}</span>
+                    <span v-if="duration !== null" class="panel-duration">{{ duration }}ms</span>
                 </div>
             </div>
             <div v-if="loading" class="panel-dots"><span></span><span></span><span></span></div>

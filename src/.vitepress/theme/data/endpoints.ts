@@ -21,7 +21,22 @@ export const endpoints: EndpointDef[] = [
         method: 'get',
         group: 'Endpoints',
         params: [
-            { name: 'method', required: true, options: ['anagram', 'bubblesort', 'factorial', 'gcd', 'isprime', 'fibonacci', 'palindrome', 'primelist', 'primefactors', 'reverse'] },
+            {
+                name: 'method',
+                required: true,
+                options: [
+                    'anagram',
+                    'bubblesort',
+                    'factorial',
+                    'gcd',
+                    'isprime',
+                    'fibonacci',
+                    'palindrome',
+                    'primelist',
+                    'primefactors',
+                    'reverse',
+                ],
+            },
             { name: 'value', required: true },
             { name: 'value2', required: false },
         ],
@@ -31,9 +46,7 @@ export const endpoints: EndpointDef[] = [
         path: '/captcha',
         method: 'get',
         group: 'Endpoints',
-        params: [
-            { name: 'text', required: true },
-        ],
+        params: [{ name: 'text', required: true }],
     },
     {
         name: 'Chat (GET)',
@@ -137,9 +150,7 @@ export const endpoints: EndpointDef[] = [
         path: '/qrcode',
         method: 'get',
         group: 'Endpoints',
-        params: [
-            { name: 'url', required: true },
-        ],
+        params: [{ name: 'url', required: true }],
     },
     {
         name: 'Tic-Tac-Toe',
@@ -178,7 +189,29 @@ export const endpoints: EndpointDef[] = [
         group: 'Endpoints',
         params: [
             { name: 'type', required: false, options: ['live', 'random'] },
-            { name: 'format', required: false, options: ['iso', 'utc', 'timestamp', 'locale', 'date', 'time', 'year', 'month', 'day', 'hour', 'minute', 'second', 'ms', 'dayOfWeek', 'dayOfYear', 'weekNumber', 'timezone'] },
+            {
+                name: 'format',
+                required: false,
+                options: [
+                    'iso',
+                    'utc',
+                    'timestamp',
+                    'locale',
+                    'date',
+                    'time',
+                    'year',
+                    'month',
+                    'day',
+                    'hour',
+                    'minute',
+                    'second',
+                    'ms',
+                    'dayOfWeek',
+                    'dayOfYear',
+                    'weekNumber',
+                    'timezone',
+                ],
+            },
             { name: 'timezone', required: false },
             { name: 'start', required: false },
             { name: 'end', required: false },
@@ -191,7 +224,11 @@ export const endpoints: EndpointDef[] = [
         group: 'Endpoints',
         params: [
             { name: 'len', required: false, default: '24' },
-            { name: 'type', required: false, options: ['alpha', 'alphanum', 'base64', 'hex', 'num', 'punct', 'urlsafe', 'uuid'] },
+            {
+                name: 'type',
+                required: false,
+                options: ['alpha', 'alphanum', 'base64', 'hex', 'num', 'punct', 'urlsafe', 'uuid'],
+            },
         ],
     },
     {

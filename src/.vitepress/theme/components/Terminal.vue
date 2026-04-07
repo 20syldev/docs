@@ -12,55 +12,55 @@ const requests: ApiRequest[] = [
     {
         method: 'GET',
         endpoint: 'https://api.sylvain.sh/health',
-        command: 'curl -X GET \\\n  "https://api.sylvain.sh/health"'
+        command: 'curl -X GET \\\n  "https://api.sylvain.sh/health"',
     },
     {
         method: 'GET',
         endpoint: 'https://api.sylvain.sh/v4',
-        command: 'curl -X GET \\\n  "https://api.sylvain.sh/v4"'
+        command: 'curl -X GET \\\n  "https://api.sylvain.sh/v4"',
     },
     {
         method: 'GET',
         endpoint: 'https://api.sylvain.sh/v4/algorithms?method=fibonacci&value=10',
-        command: 'curl -X GET \\\n  "https://api.sylvain.sh/v4/algorithms?method=fibonacci&value=10"'
+        command: 'curl -X GET \\\n  "https://api.sylvain.sh/v4/algorithms?method=fibonacci&value=10"',
     },
     {
         method: 'GET',
         endpoint: 'https://api.sylvain.sh/v4/domain',
-        command: 'curl -X GET \\\n  "https://api.sylvain.sh/v4/domain"'
+        command: 'curl -X GET \\\n  "https://api.sylvain.sh/v4/domain"',
     },
     {
         method: 'POST',
         endpoint: 'https://api.sylvain.sh/v4/hash',
         body: { text: 'hello', method: 'sha256' },
-        command: 'curl -X POST \\\n  -d "text=hello&method=sha256" \\\n  "https://api.sylvain.sh/v4/hash"'
+        command: 'curl -X POST \\\n  -d "text=hello&method=sha256" \\\n  "https://api.sylvain.sh/v4/hash"',
     },
     {
         method: 'GET',
         endpoint: 'https://api.sylvain.sh/v4/infos',
-        command: 'curl -X GET \\\n  "https://api.sylvain.sh/v4/infos"'
+        command: 'curl -X GET \\\n  "https://api.sylvain.sh/v4/infos"',
     },
     {
         method: 'GET',
         endpoint: 'https://api.sylvain.sh/v4/personal',
-        command: 'curl -X GET \\\n  "https://api.sylvain.sh/v4/personal"'
+        command: 'curl -X GET \\\n  "https://api.sylvain.sh/v4/personal"',
     },
     {
         method: 'GET',
         endpoint: 'https://api.sylvain.sh/v4/time?format=iso',
-        command: 'curl -X GET \\\n  "https://api.sylvain.sh/v4/time?format=iso"'
+        command: 'curl -X GET \\\n  "https://api.sylvain.sh/v4/time?format=iso"',
     },
     {
         method: 'POST',
         endpoint: 'https://api.sylvain.sh/v4/token',
         body: { len: '24', type: 'alphanum' },
-        command: 'curl -X POST \\\n  -d "len=48&type=alphanum" \\\n  "https://api.sylvain.sh/v4/token"'
+        command: 'curl -X POST \\\n  -d "len=48&type=alphanum" \\\n  "https://api.sylvain.sh/v4/token"',
     },
     {
         method: 'GET',
         endpoint: 'https://api.sylvain.sh/v4/username',
-        command: 'curl -X GET \\\n  "https://api.sylvain.sh/v4/username"'
-    }
+        command: 'curl -X GET \\\n  "https://api.sylvain.sh/v4/username"',
+    },
 ];
 
 const command = ref('');
@@ -149,12 +149,18 @@ onUnmounted(() => {
             </div>
             <span class="terminal-title">sylvain@api</span>
         </div>
-        <div class="terminal-body" ref="body">
+        <div ref="body" class="terminal-body">
             <div class="terminal-line">
                 <span class="terminal-prompt">$</span>
-                <span class="terminal-command-wrapper"><span class="terminal-command">{{ command }}<span class="terminal-cursor" v-if="cursor === 'command'">_</span></span></span>
+                <span class="terminal-command-wrapper"
+                    ><span class="terminal-command"
+                        >{{ command }}<span v-if="cursor === 'command'" class="terminal-cursor">_</span></span
+                    ></span
+                >
             </div>
-            <pre class="terminal-response" v-if="response">{{ response }}<span class="terminal-cursor" v-if="cursor === 'response'">_</span></pre>
+            <pre
+                v-if="response"
+                class="terminal-response">{{ response }}<span v-if="cursor === 'response'" class="terminal-cursor">_</span></pre>
         </div>
     </div>
 </template>

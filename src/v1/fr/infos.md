@@ -14,11 +14,11 @@ GET /v1/infos
 
 ```json
 {
-  "endpoints": 11,
-  "last_version": "v1",
-  "documentation": "https://docs.sylvain.sh",
-  "github": "https://github.com/20syldev/api",
-  "creation": "November 25th 2024"
+    "endpoints": 11,
+    "last_version": "v1",
+    "documentation": "https://docs.sylvain.sh",
+    "github": "https://github.com/20syldev/api",
+    "creation": "November 25th 2024"
 }
 ```
 

@@ -21,35 +21,35 @@ curl -X POST -d "username=User1&game=VWXYZ" "https://api.sylvain.sh/v2/tic-tac-t
 
 ```json
 {
-  "id": "VWXYZ",
-  "moves": [
+    "id": "VWXYZ",
+    "moves": [
         {
-          "username": "User1",
-          "move": "2-2",
-          "session": "abc123"
+            "username": "User1",
+            "move": "2-2",
+            "session": "abc123"
         },
         {
-          "username": "User2",
-          "move": "1-3",
-          "session": "def456"
+            "username": "User2",
+            "move": "1-3",
+            "session": "def456"
         },
         {
-          "username": "User1",
-          "move": "1-2",
-          "session": "abc123"
+            "username": "User1",
+            "move": "1-2",
+            "session": "abc123"
         },
         {
-          "username": "User2",
-          "move": "2-3",
-          "session": "def456"
+            "username": "User2",
+            "move": "2-3",
+            "session": "def456"
         }
     ],
-  "players": ["user1", "user2"],
-  "turn": "user1",
-  "status": "ready",
-  "winner": null,
-  "loser": null,
-  "tie": false
+    "players": ["user1", "user2"],
+    "turn": "user1",
+    "status": "ready",
+    "winner": null,
+    "loser": null,
+    "tie": false
 }
 ```
 

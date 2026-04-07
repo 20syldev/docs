@@ -21,35 +21,35 @@ curl -X POST -d "username=Utilisateur1&game=VWXYZ" "https://api.sylvain.sh/v2/ti
 
 ```json
 {
-  "id": "VWXYZ",
-  "moves": [
+    "id": "VWXYZ",
+    "moves": [
         {
-          "username": "Utilisateur1",
-          "move": "2-2",
-          "session": "abc123"
+            "username": "Utilisateur1",
+            "move": "2-2",
+            "session": "abc123"
         },
         {
-          "username": "Utilisateur2",
-          "move": "1-3",
-          "session": "def456"
+            "username": "Utilisateur2",
+            "move": "1-3",
+            "session": "def456"
         },
         {
-          "username": "Utilisateur1",
-          "move": "1-2",
-          "session": "abc123"
+            "username": "Utilisateur1",
+            "move": "1-2",
+            "session": "abc123"
         },
         {
-          "username": "Utilisateur2",
-          "move": "2-3",
-          "session": "def456"
+            "username": "Utilisateur2",
+            "move": "2-3",
+            "session": "def456"
         }
     ],
-  "players": ["utilisateur1", "utilisateur2"],
-  "turn": "utilisateur1",
-  "status": "ready",
-  "winner": null,
-  "loser": null,
-  "tie": false
+    "players": ["utilisateur1", "utilisateur2"],
+    "turn": "utilisateur1",
+    "status": "ready",
+    "winner": null,
+    "loser": null,
+    "tie": false
 }
 ```
 

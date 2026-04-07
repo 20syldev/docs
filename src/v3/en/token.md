@@ -34,7 +34,7 @@ curl -X POST -d "len=24&type=alphanum" "https://api.sylvain.sh/v3/token"
 
 ```json
 {
-  "token": "6tMdlDV90x4Sm52dRS7MuGyn"
+    "token": "6tMdlDV90x4Sm52dRS7MuGyn"
 }
 ```
 

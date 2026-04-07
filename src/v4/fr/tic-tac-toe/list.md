@@ -16,26 +16,26 @@ Cet endpoint ne nécessite aucun paramètre. Il retourne toutes les parties publ
 
 ```json
 {
-  "message": "Public games available",
-  "count": 2,
-  "games": [
+    "message": "Public games available",
+    "count": 2,
+    "games": [
         {
-          "id": "ABCDE",
-          "players": ["Utilisateur1", "Utilisateur2"],
-          "playersCount": 2,
-          "moves": 3,
-          "turn": "Utilisateur1",
-          "status": "ready",
-          "creation": 1696204800000
+            "id": "ABCDE",
+            "players": ["Utilisateur1", "Utilisateur2"],
+            "playersCount": 2,
+            "moves": 3,
+            "turn": "Utilisateur1",
+            "status": "ready",
+            "creation": 1696204800000
         },
         {
-          "id": "FGHIJ",
-          "players": ["Utilisateur3"],
-          "playersCount": 1,
-          "moves": 1,
-          "turn": "Utilisateur3",
-          "status": "waiting",
-          "creation": 1696204700000
+            "id": "FGHIJ",
+            "players": ["Utilisateur3"],
+            "playersCount": 1,
+            "moves": 1,
+            "turn": "Utilisateur3",
+            "status": "waiting",
+            "creation": 1696204700000
         }
     ]
 }
@@ -43,18 +43,18 @@ Cet endpoint ne nécessite aucun paramètre. Il retourne toutes les parties publ
 
 ## Champs de réponse
 
-| Champ | Type | Description |
-| ----- | ---- | ----------- |
-| `message` | `string` | Message de confirmation |
-| `count` | `number` | Nombre de parties publiques disponibles |
-| `games` | `object[]` | Tableau d'objets de partie |
-| `games[].id` | `string` | Identifiant unique de la partie |
-| `games[].players` | `string[]` | Tableau des noms d'utilisateur des joueurs |
-| `games[].playersCount` | `number` | Nombre de joueurs actuellement dans la partie (0-2) |
-| `games[].moves` | `number` | Nombre de coups joués dans la partie |
-| `games[].turn` | `string` | Nom d'utilisateur du joueur dont c'est le tour |
-| `games[].status` | `string` | Statut actuel de la partie (`waiting` ou `ready`) |
-| `games[].creation` | `number` | Horodatage de création de la partie |
+| Champ                  | Type       | Description                                         |
+| ---------------------- | ---------- | --------------------------------------------------- |
+| `message`              | `string`   | Message de confirmation                             |
+| `count`                | `number`   | Nombre de parties publiques disponibles             |
+| `games`                | `object[]` | Tableau d'objets de partie                          |
+| `games[].id`           | `string`   | Identifiant unique de la partie                     |
+| `games[].players`      | `string[]` | Tableau des noms d'utilisateur des joueurs          |
+| `games[].playersCount` | `number`   | Nombre de joueurs actuellement dans la partie (0-2) |
+| `games[].moves`        | `number`   | Nombre de coups joués dans la partie                |
+| `games[].turn`         | `string`   | Nom d'utilisateur du joueur dont c'est le tour      |
+| `games[].status`       | `string`   | Statut actuel de la partie (`waiting` ou `ready`)   |
+| `games[].creation`     | `number`   | Horodatage de création de la partie                 |
 
 ## Valeurs de statut de partie
 
@@ -67,9 +67,9 @@ Cet endpoint ne nécessite aucun paramètre. Il retourne toutes les parties publ
 
 ```json
 {
-  "message": "Public games available",
-  "count": 0,
-  "games": []
+    "message": "Public games available",
+    "count": 0,
+    "games": []
 }
 ```
 

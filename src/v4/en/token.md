@@ -6,9 +6,9 @@ The `/token` endpoint generates secure strings called _tokens_. This endpoint is
 
 ## Parameters
 
-| Parameter | Required | Description                                      |
-| --------- | -------- | ------------------------------------------------ |
-| `len`     | No       | Token length (12-4096). Default: 24              |
+| Parameter | Required | Description                                         |
+| --------- | -------- | --------------------------------------------------- |
+| `len`     | No       | Token length (12-4096). Default: 24                 |
 | `type`    | No       | Token type (see options below). Default: `alphanum` |
 
 ## Token Types
@@ -32,14 +32,14 @@ The `/token` endpoint generates secure strings called _tokens_. This endpoint is
 
 ```json
 {
-  "token": "6tMdlDV90x4Sm52dRS7MuGyn"
+    "token": "6tMdlDV90x4Sm52dRS7MuGyn"
 }
 ```
 
 ## Response Fields
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
+| Field   | Type     | Description                |
+| ------- | -------- | -------------------------- |
 | `token` | `string` | The generated secure token |
 
 ## Use Cases

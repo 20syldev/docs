@@ -20,11 +20,11 @@ curl -X GET "https://api.sylvain.sh/v1/infos"
 
 ```json
 {
-  "endpoints": 11,
-  "last_version": "v1",
-  "documentation": "https://docs.sylvain.sh",
-  "github": "https://github.com/20syldev/api",
-  "creation": "November 25th 2024"
+    "endpoints": 11,
+    "last_version": "v1",
+    "documentation": "https://docs.sylvain.sh",
+    "github": "https://github.com/20syldev/api",
+    "creation": "November 25th 2024"
 }
 ```
 
@@ -34,7 +34,7 @@ Tous les points d'accès retournent des réponses d'erreur cohérentes :
 
 ```json
 {
-  "error": "Description de l'erreur"
+    "error": "Description de l'erreur"
 }
 ```
 

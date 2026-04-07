@@ -6,9 +6,9 @@ L'endpoint `/token` permet de générer des chaînes sécurisées appelées _tok
 
 ## Paramètres
 
-| Paramètre | Requis | Description                                                       |
-| --------- | ------ | ----------------------------------------------------------------- |
-| `len`     | Non    | Longueur du token (12-4096). Par défaut : 24                      |
+| Paramètre | Requis | Description                                                          |
+| --------- | ------ | -------------------------------------------------------------------- |
+| `len`     | Non    | Longueur du token (12-4096). Par défaut : 24                         |
 | `type`    | Non    | Type de token (voir les options ci-dessous). Par défaut : `alphanum` |
 
 ## Types de tokens
@@ -32,14 +32,14 @@ L'endpoint `/token` permet de générer des chaînes sécurisées appelées _tok
 
 ```json
 {
-  "token": "6tMdlDV90x4Sm52dRS7MuGyn"
+    "token": "6tMdlDV90x4Sm52dRS7MuGyn"
 }
 ```
 
 ## Champs de réponse
 
-| Champ | Type | Description |
-| ----- | ---- | ----------- |
+| Champ   | Type     | Description              |
+| ------- | -------- | ------------------------ |
 | `token` | `string` | Le token sécurisé généré |
 
 ## Cas d'utilisation

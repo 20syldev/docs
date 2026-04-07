@@ -22,19 +22,19 @@ curl -X POST -d "username=Utilisateur3&token=41a43360-9874-4c7a-9ca8-eec29e765a0
 ```json
 [
     {
-      "username": "Utilisateur1",
-      "message": "Salut !",
-      "timestamp": "2025-01-21T08:27:11.068Z"
+        "username": "Utilisateur1",
+        "message": "Salut !",
+        "timestamp": "2025-01-21T08:27:11.068Z"
     },
     {
-      "username": "Utilisateur3",
-      "message": "Ça va ?",
-      "timestamp": "2025-01-21T08:28:43.070Z"
+        "username": "Utilisateur3",
+        "message": "Ça va ?",
+        "timestamp": "2025-01-21T08:28:43.070Z"
     },
     {
-      "username": "Utilisateur8",
-      "message": "Ouais super et vous ?",
-      "timestamp": "2025-01-21T08:32:07.215Z"
+        "username": "Utilisateur8",
+        "message": "Ouais super et vous ?",
+        "timestamp": "2025-01-21T08:32:07.215Z"
     }
 ]
 ```
