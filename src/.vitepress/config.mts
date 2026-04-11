@@ -82,10 +82,6 @@ export default defineConfig({
 
         socialLinks: [{ icon: 'github', link: 'https://github.com/20syldev/docs' }],
 
-        footer: {
-            copyright: 'docs.sylvain.sh &copy; 2026',
-        },
-
         search: {
             provider: 'local',
             options: {

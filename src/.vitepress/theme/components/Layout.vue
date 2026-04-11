@@ -8,6 +8,7 @@ import NotFound from './NotFound.vue';
 import Version from './Version.vue';
 import Terminal from './Terminal.vue';
 import Copy from './Copy.vue';
+import Footer from './Footer.vue';
 import { getLang, isHome, getLangItems, getPrefix, languages as langConfig, t, saveLang } from '../utils/i18n';
 
 const { Layout } = DefaultTheme;
@@ -288,6 +289,9 @@ onUnmounted(() => {
         </template>
         <template #not-found>
             <NotFound :lang="lang" />
+        </template>
+        <template #layout-bottom>
+            <Footer />
         </template>
     </Layout>
     <Copy />
