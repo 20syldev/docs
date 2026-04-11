@@ -90,7 +90,7 @@ async function copy() {
                 :title="copied ? 'Copied!' : 'Copy'"
                 :aria-label="copied ? 'Copied!' : 'Copy code'"
                 @click="copy"
-                v-html="copyIcon + checkIcon"
+                v-html="`${copyIcon}${checkIcon}`"
             />
         </div>
         <pre class="code-output"><code>{{ code }}</code></pre>
