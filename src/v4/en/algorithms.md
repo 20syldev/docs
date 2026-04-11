@@ -26,6 +26,7 @@ The `/algorithms` endpoint provides several algorithms to use as parameters. You
 | `primelist`    | Returns a list of prime numbers up to a given number   | No                |
 | `primefactors` | Returns the list of prime factors of a number          | No                |
 | `reverse`      | Reverses a string                                      | No                |
+| `roman`        | Converts between Roman numerals and numbers (1–3999)   | No                |
 
 ## Response
 
@@ -47,7 +48,7 @@ The `/algorithms` endpoint provides several algorithms to use as parameters. You
 
 ## Try It
 
-<Try method="get" path="/algorithms" :params="[{ name: 'method', required: true, options: ['anagram', 'bubblesort', 'factorial', 'gcd', 'isprime', 'fibonacci', 'palindrome', 'primelist', 'primefactors', 'reverse'] }, { name: 'value', required: true }, { name: 'value2', required: false }]" />
+<Try method="get" path="/algorithms" :params="[{ name: 'method', required: true, options: ['anagram', 'bubblesort', 'factorial', 'gcd', 'isprime', 'fibonacci', 'palindrome', 'primelist', 'primefactors', 'reverse', 'roman'] }, { name: 'value', required: true }, { name: 'value2', required: false }]" />
 
 ## Error Handling
 

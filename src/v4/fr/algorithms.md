@@ -26,6 +26,7 @@ L'endpoint `/algorithms` fournit plusieurs algorithmes à utiliser comme paramè
 | `primelist`    | Retourne une liste de nombres premiers jusqu'à un nombre donné | Non                |
 | `primefactors` | Retourne la liste des facteurs premiers d'un nombre            | Non                |
 | `reverse`      | Inverse une chaîne                                             | Non                |
+| `roman`        | Convertit entre chiffres romains et nombres (1–3999)           | Non                |
 
 ## Réponse
 
@@ -47,7 +48,7 @@ L'endpoint `/algorithms` fournit plusieurs algorithmes à utiliser comme paramè
 
 ## Essayer
 
-<Try method="get" path="/algorithms" :params="[{ name: 'method', required: true, options: ['anagram', 'bubblesort', 'factorial', 'gcd', 'isprime', 'fibonacci', 'palindrome', 'primelist', 'primefactors', 'reverse'] }, { name: 'value', required: true }, { name: 'value2', required: false }]" />
+<Try method="get" path="/algorithms" :params="[{ name: 'method', required: true, options: ['anagram', 'bubblesort', 'factorial', 'gcd', 'isprime', 'fibonacci', 'palindrome', 'primelist', 'primefactors', 'reverse', 'roman'] }, { name: 'value', required: true }, { name: 'value2', required: false }]" />
 
 ## Gestion des erreurs
 
