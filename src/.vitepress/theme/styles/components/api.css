@@ -26,6 +26,7 @@
     background: var(--vp-c-bg-mute);
     font-family: var(--font-mono);
     font-size: 13px;
+    flex-wrap: wrap;
 }
 .request-block-content {
     padding: 16px;

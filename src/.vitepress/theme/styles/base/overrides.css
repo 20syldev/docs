@@ -95,6 +95,7 @@ div[class*='language-']:has(> pre):hover .copy-btn {
 
 .vp-doc table {
     border-collapse: collapse;
+    display: table;
     margin: 20px 0;
     width: 100%;
 }
