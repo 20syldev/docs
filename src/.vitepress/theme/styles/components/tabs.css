@@ -13,6 +13,11 @@
     display: flex;
 }
 
+.tab-item {
+    padding: 8px 10px;
+    font-size: 12px;
+}
+
 .examples-copy {
     color: var(--vp-c-text-3);
     justify-content: center;
