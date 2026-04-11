@@ -18,29 +18,28 @@
     letter-spacing: 0.5px;
 }
 .method-badge.get {
-    border-color: color-mix(in srgb, var(--method-get) 25%, transparent);
-    background: color-mix(in srgb, var(--method-get) 12%, transparent);
-    color: var(--method-get);
+    --_c: var(--method-get);
 }
 .method-badge.post {
-    border-color: color-mix(in srgb, var(--method-post) 25%, transparent);
-    background: color-mix(in srgb, var(--method-post) 12%, transparent);
-    color: var(--method-post);
+    --_c: var(--method-post);
 }
 .method-badge.put {
-    border-color: color-mix(in srgb, var(--method-put) 25%, transparent);
-    background: color-mix(in srgb, var(--method-put) 12%, transparent);
-    color: var(--method-put);
+    --_c: var(--method-put);
 }
 .method-badge.delete {
-    border-color: color-mix(in srgb, var(--method-delete) 25%, transparent);
-    background: color-mix(in srgb, var(--method-delete) 12%, transparent);
-    color: var(--method-delete);
+    --_c: var(--method-delete);
 }
 .method-badge.patch {
-    border-color: color-mix(in srgb, var(--method-patch) 25%, transparent);
-    background: color-mix(in srgb, var(--method-patch) 12%, transparent);
-    color: var(--method-patch);
+    --_c: var(--method-patch);
+}
+.method-badge.get,
+.method-badge.post,
+.method-badge.put,
+.method-badge.delete,
+.method-badge.patch {
+    border-color: color-mix(in srgb, var(--_c) 25%, transparent);
+    background: color-mix(in srgb, var(--_c) 12%, transparent);
+    color: var(--_c);
 }
 
 /* ----- Panel ----- */
@@ -106,8 +105,9 @@
     border: 1px solid var(--vp-c-divider);
     transition: border-color 0.2s;
     outline: none;
+    height: 26px;
+    padding: 0 10px;
     font-size: 13px;
-    padding: 6px 10px;
     border-radius: 6px;
 }
 .api-field input:focus,
@@ -144,22 +144,28 @@
 
 .status-badge {
     font-family: var(--font-mono);
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
     border-radius: 4px;
-    padding: 2px 8px;
     font-weight: 700;
-    font-size: 13px;
+    padding: 0 8px;
+    height: 20px;
 }
 .status-badge.ok {
-    background: color-mix(in srgb, var(--method-post) 10%, transparent);
-    color: var(--method-post);
+    --_c: var(--method-post);
 }
 .status-badge.warn {
-    background: color-mix(in srgb, var(--method-put) 10%, transparent);
-    color: var(--method-put);
+    --_c: var(--method-put);
 }
 .status-badge.err {
-    background: color-mix(in srgb, var(--method-delete) 10%, transparent);
-    color: var(--method-delete);
+    --_c: var(--method-delete);
+}
+.status-badge.ok,
+.status-badge.warn,
+.status-badge.err {
+    background: color-mix(in srgb, var(--_c) 10%, transparent);
+    color: var(--_c);
 }
 
 /* ----- Code output ----- */
@@ -223,38 +229,30 @@
 
 /* ----- Copy buttons (shared behavior) ----- */
 
-.copy-btn .copy,
-.copy-btn .check,
-.examples-copy .copy,
-.examples-copy .check {
+:is(.copy-btn, .examples-copy) :is(.copy, .check) {
     transition: color 0.2s;
     height: 16px;
     width: 16px;
 }
 
-.copy-btn .copy-back,
-.examples-copy .copy-back {
+:is(.copy-btn, .examples-copy) .copy-back {
     transition: transform 0.3s ease;
     transform-origin: 30px 20px;
 }
 
-.copy-btn:hover .copy-back,
-.examples-copy:hover .copy-back {
+:is(.copy-btn, .examples-copy):hover .copy-back {
     transform: rotate(-10deg) translate(2px, -2px);
 }
 
-.copy-btn .check,
-.examples-copy .check {
+:is(.copy-btn, .examples-copy) .check {
     display: none;
 }
 
-.copy-btn.copied .copy,
-.examples-copy.copied .copy {
+:is(.copy-btn, .examples-copy).copied .copy {
     display: none;
 }
 
-.copy-btn.copied .check,
-.examples-copy.copied .check {
+:is(.copy-btn, .examples-copy).copied .check {
     color: var(--vp-c-brand-1);
     display: block;
 }

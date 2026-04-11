@@ -32,22 +32,21 @@
     border-color: var(--vp-c-brand-1);
 }
 
-/* ----- Version card - Stable Hover ----- */
+/* ----- Version card - Variant Hover ----- */
 
-.version-card:has(.version-badge.stable):hover {
-    border-color: var(--method-patch);
+.version-card:has(.version-badge.stable) {
+    --_hover: var(--method-patch);
 }
-.version-card:has(.version-badge.stable):hover .version-number {
-    text-decoration-color: var(--method-patch);
+.version-card:has(.version-badge.legacy) {
+    --_hover: var(--vp-c-text-3);
 }
-
-/* ----- Version card - Legacy Hover ----- */
-
+.version-card:has(.version-badge.stable):hover,
 .version-card:has(.version-badge.legacy):hover {
-    border-color: var(--vp-c-text-3);
+    border-color: var(--_hover);
 }
+.version-card:has(.version-badge.stable):hover .version-number,
 .version-card:has(.version-badge.legacy):hover .version-number {
-    text-decoration-color: var(--vp-c-text-3);
+    text-decoration-color: var(--_hover);
 }
 
 /* ----- Version badge ----- */
