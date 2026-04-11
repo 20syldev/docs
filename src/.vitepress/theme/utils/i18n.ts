@@ -45,6 +45,7 @@ export const translations: Record<string, Record<string, string>> = {
         nextPage: 'Next page',
         editPage: 'Edit this page on GitHub',
         lastUpdated: 'Last updated',
+        footerIssue: 'Report an issue',
     },
     fr: {
         onThisPage: 'Sur cette page',
@@ -85,6 +86,7 @@ export const translations: Record<string, Record<string, string>> = {
         nextPage: 'Page suivante',
         editPage: 'Modifier cette page sur GitHub',
         lastUpdated: 'Dernière mise à jour',
+        footerIssue: 'Signaler un bug',
     },
 };
 
