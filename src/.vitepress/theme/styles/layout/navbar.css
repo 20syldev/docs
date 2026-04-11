@@ -94,7 +94,7 @@
     display: none;
 }
 .extra-menu {
-    display: flex !important;
+    display: none !important;
     align-items: center;
     order: 12;
 }
@@ -183,10 +183,4 @@
 .VPNavBarMenuLink,
 .VPButton {
     transition: all 0.2s ease;
-}
-
-/* ----- Footer ----- */
-
-.VPFooter {
-    padding: 16px !important;
 }
