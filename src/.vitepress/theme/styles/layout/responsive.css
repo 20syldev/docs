@@ -1,44 +1,8 @@
 /* - - - - - - - Responsive - - - - - - - */
 
-/* ----- Desktop ----- */
-
-@media (min-width: 1280px) {
-    .extra-menu {
-        display: none !important;
-    }
-    .VPNavBarAppearance {
-        display: flex !important;
-        align-items: center;
-        order: 11;
-    }
-    .language-switcher-wrapper {
-        align-items: center;
-        display: flex !important;
-        order: 12;
-    }
-}
-
-/* ----- Tablet ----- */
-
-@media (min-width: 960px) {
-    .VPHero .image {
-        max-width: none;
-        display: block;
-        flex-grow: 0;
-    }
-    .VPNavBarSearch .VPLocalSearchBox button,
-    .VPNavBarSearch #local-search,
-    .VPNavBarSearch > button {
-        width: 100% !important;
-    }
-}
-
-/* ----- Mobile nav ----- */
+/* ----- Mobile ----- */
 
 @media (max-width: 959px) {
-    .extra-menu {
-        display: none !important;
-    }
     .VPNavBarSearch {
         flex: none !important;
         padding: 0 !important;
@@ -63,50 +27,89 @@
     .DocSearch-Button .DocSearch-Button-Keys {
         display: none !important;
     }
-}
-
-/* ----- Mobile ----- */
-
-@media (max-width: 767px) {
-    .version-cards {
-        grid-template-columns: 1fr;
-    }
-    .request-block-header {
-        flex-wrap: wrap;
-    }
     .vp-doc div[class*='language-'] {
         border-radius: 8px;
         margin: 16px 0;
     }
-    .panel-params {
+    .version-cards {
+        grid-template-columns: 1fr;
+    }
+    .site-footer-inner {
         flex-direction: column;
+        text-align: center;
     }
-    .panel-params .api-field {
-        min-width: auto;
+    .site-footer-links {
+        justify-content: center;
     }
-    .panel .panel-header {
-        justify-content: space-between;
-        flex-wrap: wrap;
-        row-gap: 8px;
+}
+
+/* ----- Tablet ----- */
+
+@media (min-width: 768px) {
+    .extra-menu {
+        display: flex !important;
     }
-    .panel .panel-header .method-badge {
-        order: 1;
+}
+
+/* ----- Desktop ----- */
+
+@media (min-width: 960px) {
+    .VPHero .image {
+        max-width: none;
+        display: block;
+        flex-grow: 0;
     }
-    .panel-send {
-        margin-left: auto;
-        order: 2;
+    .VPNavBarSearch .VPLocalSearchBox button,
+    .VPNavBarSearch #local-search,
+    .VPNavBarSearch > button {
+        width: 100% !important;
+    }
+    .panel-header {
+        flex-wrap: nowrap;
+        row-gap: 0;
+    }
+    .panel .panel-header .method-badge,
+    .panel-send,
+    .panel-path {
+        order: unset;
     }
     .panel-path {
-        flex-basis: 100%;
-        width: 100%;
-        order: 3;
+        flex: 1;
+        width: auto;
+    }
+    .panel-send {
+        margin-left: 0;
+    }
+    .panel-params {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .api-field {
+        min-width: 160px;
     }
     .pg-dropdown {
-        max-height: 260px;
+        max-height: 320px;
     }
     .examples-header .tab-item {
-        padding: 8px 10px;
-        font-size: 12px;
+        padding: 8px 14px;
+    }
+}
+
+/* ----- Wide desktop ----- */
+
+@media (min-width: 1280px) {
+    .extra-menu {
+        display: none !important;
+    }
+    .VPNavBarAppearance {
+        display: flex !important;
+        align-items: center;
+        order: 11;
+    }
+    .language-switcher-wrapper {
+        align-items: center;
+        display: flex !important;
+        order: 12;
     }
 }
 
