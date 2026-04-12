@@ -12,33 +12,7 @@ hero:
         - theme: alt
           text: View on GitHub
           link: https://github.com/20syldev/docs
-
-features:
-    - icon:
-          src: /icons/algorithm.svg
-      title: Algorithms
-      details: Mathematical algorithms including factorial, fibonacci, prime numbers, GCD, and more.
-      link: /v4/en/algorithms
-    - icon:
-          src: /icons/chat.svg
-      title: Chat System
-      details: Real-time messaging API with support for public and private channels.
-      link: /v4/en/chat
-    - icon:
-          src: /icons/game.svg
-      title: Tic-Tac-Toe
-      details: Online multiplayer Tic-Tac-Toe game with game state management.
-      link: /v4/en/tic-tac-toe
-    - icon:
-          src: /icons/tools.svg
-      title: Utilities
-      details: QR codes, color conversion, domain info, captcha generation, and more.
-      link: /v4/en/qrcode
 ---
-
-<script setup>
-import { VPHomeFeatures } from 'vitepress/theme'
-</script>
 
 ## Quick Start
 
