@@ -69,7 +69,16 @@ export const v4 = {
             text: 'Tools',
             items: [
                 { text: 'Playground', link: '/v4/en/playground' },
-                { text: 'Changelog', link: '/v4/en/changelog' },
+                {
+                    text: 'Changelog',
+                    collapsed: true,
+                    items: [
+                        { text: 'Overview', link: '/v4/en/changelog' },
+                        { text: '4.2.0', link: '/v4/en/changelog/4.2.0' },
+                        { text: '4.1.0', link: '/v4/en/changelog/4.1.0' },
+                        { text: '4.0.0', link: '/v4/en/changelog/4.0.0' },
+                    ],
+                },
             ],
         },
         {
@@ -147,7 +156,16 @@ export const v4 = {
             text: 'Outils',
             items: [
                 { text: 'Playground', link: '/v4/fr/playground' },
-                { text: 'Changelog', link: '/v4/fr/changelog' },
+                {
+                    text: 'Changelog',
+                    collapsed: true,
+                    items: [
+                        { text: 'Aperçu', link: '/v4/fr/changelog' },
+                        { text: '4.2.0', link: '/v4/fr/changelog/4.2.0' },
+                        { text: '4.1.0', link: '/v4/fr/changelog/4.1.0' },
+                        { text: '4.0.0', link: '/v4/fr/changelog/4.0.0' },
+                    ],
+                },
             ],
         },
         {
