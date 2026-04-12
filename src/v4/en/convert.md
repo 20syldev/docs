@@ -8,7 +8,7 @@ The `/convert` endpoint allows you to convert multiple temperature units between
 
 | Parameter | Required | Description                                         |
 | --------- | -------- | --------------------------------------------------- |
-| `value`   | Yes      | The value to convert                                |
+| `value`   | Yes      | The value to convert (range: -273.15 to 1,000,000)  |
 | `from`    | Yes      | The source unit (`celsius`, `fahrenheit`, `kelvin`) |
 | `to`      | Yes      | The target unit (`celsius`, `fahrenheit`, `kelvin`) |
 
@@ -19,17 +19,6 @@ The `/convert` endpoint allows you to convert multiple temperature units between
 | `celsius`    | Celsius degrees    |
 | `fahrenheit` | Fahrenheit degrees |
 | `kelvin`     | Kelvin             |
-
-## Response
-
-```json
-{
-    "from": "celsius",
-    "to": "fahrenheit",
-    "value": 100,
-    "result": 212
-}
-```
 
 ## Response Fields
 
@@ -52,8 +41,11 @@ The `/convert` endpoint allows you to convert multiple temperature units between
 
 If parameters are missing or invalid, the API will return an error:
 
-| Error Message                                       | Description                                 |
-| --------------------------------------------------- | ------------------------------------------- |
-| `Please provide a valid value (?value={value})`     | The `value` parameter is missing or invalid |
-| `Please provide a valid source unit (&from={unit})` | The `from` parameter is missing or invalid  |
-| `Please provide a valid target unit (&to={unit})`   | The `to` parameter is missing or invalid    |
+| Error Message                                       | Description                                       |
+| --------------------------------------------------- | ------------------------------------------------- |
+| `Please provide a valid value (?value={value})`     | The `value` parameter is missing or invalid       |
+| `Please provide a valid source unit (&from={unit})` | The `from` parameter is missing or invalid        |
+| `Please provide a valid target unit (&to={unit})`   | The `to` parameter is missing or invalid          |
+| `Value below absolute zero`                         | The value is below the absolute zero for the unit |
+| `Value above maximum`                               | The value exceeds 1,000,000                       |
+| `Source and target units must be different`         | The `from` and `to` parameters are the same       |

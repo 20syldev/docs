@@ -15,24 +15,9 @@ L'endpoint `/chat/private` récupère tous les messages envoyés durant la derni
 
 <Examples method="post" path="/chat/private" :body="{ username: 'Utilisateur3', token: '41a43360-9874-4c7a-9ca8-eec29e765a0e' }" />
 
-## Réponse
-
-```json
-[
-    {
-        "username": "Utilisateur1",
-        "message": "Salut !",
-        "timestamp": "2025-01-21T08:27:11.068Z"
-    },
-    {
-        "username": "Utilisateur3",
-        "message": "Comment ça va ?",
-        "timestamp": "2025-01-21T08:28:43.070Z"
-    }
-]
-```
-
 ## Champs de réponse
+
+Retourne un tableau d'objets message.
 
 | Champ       | Type     | Description                       |
 | ----------- | -------- | --------------------------------- |
@@ -52,6 +37,8 @@ Si les paramètres sont manquants ou invalides, l'API retournera une erreur :
 | -------------------------------------------------- | --------------------------------------------- |
 | `Please provide a username (?username={username})` | Le paramètre `username` est manquant          |
 | `Please provide a valid token (&token={key}).`     | Le paramètre `token` est manquant ou invalide |
+| `Invalid or expired token`                         | Le token est invalide ou expiré               |
+| `Rate limit exceeded`                              | Limite de requêtes atteinte                   |
 
 ## Endpoints associés
 

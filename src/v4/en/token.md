@@ -4,6 +4,10 @@ The `/token` endpoint generates secure strings called _tokens_. This endpoint is
 
 <Endpoint method="post" path="/token" baseUrl="https://api.sylvain.sh" />
 
+::: tip Use Cases
+Generate unique session IDs for authentication, secure API keys for third-party access, one-time password reset tokens, or unique identifiers for files and database records.
+:::
+
 ## Parameters
 
 | Parameter | Required | Description                                         |
@@ -28,27 +32,11 @@ The `/token` endpoint generates secure strings called _tokens_. This endpoint is
 
 <Examples method="post" path="/token" :body="{ len: '24', type: 'alphanum' }" />
 
-## Response
-
-```json
-{
-    "token": "6tMdlDV90x4Sm52dRS7MuGyn"
-}
-```
-
 ## Response Fields
 
 | Field   | Type     | Description                |
 | ------- | -------- | -------------------------- |
 | `token` | `string` | The generated secure token |
-
-## Use Cases
-
-- **Session identifiers**: Generate unique session IDs
-- **API keys**: Create secure API keys
-- **Password reset tokens**: Generate one-time use tokens
-- **File names**: Create unique file identifiers
-- **Database IDs**: Generate unique record identifiers
 
 ## Try It
 

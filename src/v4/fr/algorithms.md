@@ -14,33 +14,25 @@ L'endpoint `/algorithms` fournit plusieurs algorithmes à utiliser comme paramè
 
 ## Méthodes disponibles
 
-| Méthode        | Description                                                    | Nécessite `value2` |
-| -------------- | -------------------------------------------------------------- | ------------------ |
-| `anagram`      | Vérifie si deux chaînes sont des anagrammes                    | Oui                |
-| `bubblesort`   | Trie un tableau de nombres, séparés par des virgules           | Non                |
-| `factorial`    | Calcule la factorielle d'un nombre entre 0 et 170              | Non                |
-| `gcd`          | Calcule le plus grand commun diviseur de deux nombres          | Oui                |
-| `isprime`      | Vérifie si un nombre est premier                               | Non                |
-| `fibonacci`    | Calcule une séquence de Fibonacci jusqu'à un nombre donné      | Non                |
-| `palindrome`   | Vérifie si une chaîne est un palindrome                        | Non                |
-| `primelist`    | Retourne une liste de nombres premiers jusqu'à un nombre donné | Non                |
-| `primefactors` | Retourne la liste des facteurs premiers d'un nombre            | Non                |
-| `reverse`      | Inverse une chaîne                                             | Non                |
-| `roman`        | Convertit entre chiffres romains et nombres (1–3999)           | Non                |
-
-## Réponse
-
-```json
-{
-    "answer": 17
-}
-```
+| Méthode        | Description                                                    | Nécessite `value2` | Limites             |
+| -------------- | -------------------------------------------------------------- | ------------------ | ------------------- |
+| `anagram`      | Vérifie si deux chaînes sont des anagrammes                    | Oui                | Max 1000 caractères |
+| `bubblesort`   | Trie un tableau de nombres, séparés par des virgules           | Non                | Max 1000 éléments   |
+| `factorial`    | Calcule la factorielle d'un nombre entre 0 et 170              | Non                | 0–170               |
+| `fibonacci`    | Calcule une séquence de Fibonacci jusqu'à un nombre donné      | Non                | 0–1000              |
+| `gcd`          | Calcule le plus grand commun diviseur de deux nombres          | Oui                | 1–100 000           |
+| `isprime`      | Vérifie si un nombre est premier                               | Non                | 1–100 000           |
+| `palindrome`   | Vérifie si une chaîne est un palindrome                        | Non                | Max 1000 caractères |
+| `primelist`    | Retourne une liste de nombres premiers jusqu'à un nombre donné | Non                | 2–10 000            |
+| `primefactors` | Retourne la liste des facteurs premiers d'un nombre            | Non                | 1–100 000           |
+| `reverse`      | Inverse une chaîne                                             | Non                | Max 1000 caractères |
+| `roman`        | Convertit entre chiffres romains et nombres (1–3999)           | Non                | 1–3999              |
 
 ## Champs de réponse
 
-| Champ    | Type             | Description                 |
-| -------- | ---------------- | --------------------------- |
-| `answer` | `number\|string` | Le résultat de l'algorithme |
+| Champ    | Type                                | Description                 |
+| -------- | ----------------------------------- | --------------------------- |
+| `answer` | `number\|string\|boolean\|number[]` | Le résultat de l'algorithme |
 
 ## Exemples de code
 

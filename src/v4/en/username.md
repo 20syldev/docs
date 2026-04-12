@@ -4,21 +4,13 @@ The `/username` endpoint generates random usernames. This endpoint is useful for
 
 <Endpoint method="get" path="/username" baseUrl="https://api.sylvain.sh" />
 
+::: tip Use Cases
+Suggest usernames during sign-up, generate player names for games, create test user data, or fill in placeholder content for mockups.
+:::
+
 ## Parameters
 
 This endpoint does not require any parameters.
-
-## Response
-
-```json
-{
-    "username": "PilotHorse",
-    "number": 4,
-    "adjective": "Patient",
-    "animal": "Koala",
-    "job": "Journalist"
-}
-```
 
 ## Response Fields
 
@@ -33,13 +25,6 @@ This endpoint does not require any parameters.
 ## Code Examples
 
 <Examples method="get" path="/username" />
-
-## Use Cases
-
-- **User registration**: Suggest usernames during sign-up
-- **Gaming**: Generate player names
-- **Testing**: Create test user data
-- **Placeholder content**: Fill in sample data
 
 ## Try It
 

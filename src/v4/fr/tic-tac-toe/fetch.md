@@ -16,40 +16,19 @@ L'endpoint `/tic-tac-toe/fetch` permet de récupérer les informations d'une par
 
 <Examples method="post" path="/tic-tac-toe/fetch" :body="{ username: 'Utilisateur1', game: 'VWXYZ' }" />
 
-## Réponse
-
-```json
-{
-    "id": "VWXYZ",
-    "moves": [
-        {
-            "username": "Utilisateur1",
-            "move": "2-2",
-            "session": "abc123"
-        },
-        {
-            "username": "Utilisateur2",
-            "move": "1-3",
-            "session": "def456"
-        }
-    ],
-    "players": ["Utilisateur1", "Utilisateur2"],
-    "turn": "Utilisateur1",
-    "status": "ready",
-    "private": false
-}
-```
-
 ## Champs de réponse
 
-| Champ     | Type           | Description                                          |
-| --------- | -------------- | ---------------------------------------------------- |
-| `id`      | `string`       | Identifiant de la partie                             |
-| `moves`   | `object[]`     | Tableau des coups joués                              |
-| `players` | `string[]`     | Tableau des noms d'utilisateur des joueurs           |
-| `turn`    | `string\|null` | Nom d'utilisateur du joueur dont c'est le tour       |
-| `status`  | `string`       | Statut de la partie (`waiting`, `ready`, `finished`) |
-| `private` | `boolean`      | Si la partie est privée                              |
+| Champ     | Type           | Description                                    |
+| --------- | -------------- | ---------------------------------------------- |
+| `id`      | `string`       | Identifiant de la partie                       |
+| `moves`   | `object[]`     | Tableau des coups joués                        |
+| `players` | `string[]`     | Tableau des noms d'utilisateur des joueurs     |
+| `turn`    | `string\|null` | Nom d'utilisateur du joueur dont c'est le tour |
+| `status`  | `string`       | Statut de la partie (`waiting`, `ready`)       |
+| `private` | `boolean`      | Si la partie est privée                        |
+| `winner`  | `string\|null` | Nom d'utilisateur du gagnant (partie terminée) |
+| `loser`   | `string\|null` | Nom d'utilisateur du perdant (partie terminée) |
+| `tie`     | `boolean`      | Si la partie s'est terminée par une égalité    |
 
 ## Valeurs de statut de partie
 
@@ -57,22 +36,6 @@ L'endpoint `/tic-tac-toe/fetch` permet de récupérer les informations d'une par
 | --------- | ----------------------------------------------- |
 | `waiting` | La partie a moins de 2 joueurs                  |
 | `ready`   | La partie a 2 joueurs et est prête à être jouée |
-
-## Réponse de partie terminée
-
-```json
-{
-  "id": "VWXYZ",
-  "moves": [...],
-  "players": ["Utilisateur1", "Utilisateur2"],
-  "turn": null,
-  "status": "finished",
-  "private": false,
-  "winner": "Utilisateur1",
-  "loser": "Utilisateur2",
-  "tie": false
-}
-```
 
 ## Essayer
 

@@ -4,22 +4,16 @@ The `/levenshtein` endpoint allows you to calculate the Levenshtein distance bet
 
 <Endpoint method="get" path="/levenshtein" baseUrl="https://api.sylvain.sh" />
 
+::: info How it works ?
+The Levenshtein distance counts the minimum number of single-character edits (insertions, deletions, or substitutions) required to change one string into another. Useful for spell checking, fuzzy matching, DNA analysis, and plagiarism detection.
+:::
+
 ## Parameters
 
-| Parameter | Required | Description       |
-| --------- | -------- | ----------------- |
-| `str1`    | Yes      | The first string  |
-| `str2`    | Yes      | The second string |
-
-## Response
-
-```json
-{
-    "str1": "example",
-    "str2": "samples",
-    "distance": 3
-}
-```
+| Parameter | Required | Description                             |
+| --------- | -------- | --------------------------------------- |
+| `str1`    | Yes      | The first string (max 1000 characters)  |
+| `str2`    | Yes      | The second string (max 1000 characters) |
 
 ## Response Fields
 
@@ -45,12 +39,3 @@ If parameters are missing or invalid, the API will return an error:
 | ------------------------------------------------- | ------------------------------- |
 | `Please provide a first string (?str1={string})`  | The `str1` parameter is missing |
 | `Please provide a second string (&str2={string})` | The `str2` parameter is missing |
-
-## About Levenshtein Distance
-
-The Levenshtein distance is a measure of the similarity between two strings. It counts the minimum number of single-character edits (insertions, deletions, or substitutions) required to change one string into the other. This is useful for:
-
-- Spell checking
-- DNA sequence analysis
-- Fuzzy string matching
-- Plagiarism detection

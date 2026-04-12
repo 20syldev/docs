@@ -4,22 +4,16 @@ L'endpoint `/levenshtein` permet de calculer la distance de Levenshtein entre de
 
 <Endpoint method="get" path="/levenshtein" baseUrl="https://api.sylvain.sh" />
 
+::: info Comment ça marche ?
+La distance de Levenshtein compte le nombre minimum d'éditions (insertions, suppressions, substitutions) pour transformer une chaîne en une autre. Utile pour la vérification orthographique, la correspondance approximative, l'analyse ADN et la détection de plagiat.
+:::
+
 ## Paramètres
 
-| Paramètre | Requis | Description        |
-| --------- | ------ | ------------------ |
-| `str1`    | Oui    | La première chaîne |
-| `str2`    | Oui    | La deuxième chaîne |
-
-## Réponse
-
-```json
-{
-    "str1": "example",
-    "str2": "samples",
-    "distance": 3
-}
-```
+| Paramètre | Requis | Description                              |
+| --------- | ------ | ---------------------------------------- |
+| `str1`    | Oui    | La première chaîne (max 1000 caractères) |
+| `str2`    | Oui    | La deuxième chaîne (max 1000 caractères) |
 
 ## Champs de réponse
 
@@ -45,12 +39,3 @@ Si les paramètres sont manquants ou invalides, l'API retournera une erreur :
 | ------------------------------------------------- | -------------------------------- |
 | `Please provide a first string (?str1={string})`  | Le paramètre `str1` est manquant |
 | `Please provide a second string (&str2={string})` | Le paramètre `str2` est manquant |
-
-## À propos de la distance de Levenshtein
-
-La distance de Levenshtein est une mesure de la similarité entre deux chaînes. Elle compte le nombre minimum d'éditions de caractères uniques (insertions, suppressions ou substitutions) nécessaires pour transformer une chaîne en une autre. Cela est utile pour :
-
-- Vérification orthographique
-- Analyse de séquences ADN
-- Correspondance de chaînes approximative
-- Détection de plagiat

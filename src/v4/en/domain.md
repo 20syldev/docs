@@ -8,31 +8,6 @@ The `/domain` endpoint generates various random data about a domain to create a 
 
 This endpoint does not require any parameters.
 
-## Response
-
-```json
-{
-    "domain": "platform.app",
-    "full_domain": "docs.platform.app",
-    "ip_address": ["20.187.77.76", "30.22.131.27", "114.15.55.183"],
-    "ssl_certified": false,
-    "hosting_provider": "Bluehost",
-    "dns_servers": ["253.224.200.63", "132.136.29.172", "31.66.90.143", "94.144.42.100"],
-    "dns_provider": "Cloudflare",
-    "traffic": "7437 visits/day",
-    "seo_score": 49,
-    "page_rank": 2,
-    "country": "India",
-    "website_type": "Community",
-    "random_name": "platform",
-    "random_subdomain": "docs",
-    "random_tld": "app",
-    "backlinks_count": 253,
-    "creation_date": "2026-01-11T04:00:52.592Z",
-    "expiration_date": "2026-04-09T21:35:19.606Z"
-}
-```
-
 ## Response Fields
 
 | Field              | Type       | Description                |

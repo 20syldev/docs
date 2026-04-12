@@ -22,22 +22,11 @@ L'endpoint `/hyperplanning` permet d'afficher les informations d'un emploi du te
 
 <Examples method="post" path="/hyperplanning" :body="{ url: 'https%3A%2F%2Fexample.com%2Ffile.ics', detail: 'full' }" />
 
-## Réponse
-
-```json
-[
-    {
-        "summary": ["Mathematics", "DOE", "Class", "1", "Class", "2"],
-        "subject": "Mathematics",
-        "teacher": "DOE",
-        "classes": ["Class 1", "Class 2"],
-        "start": "2000-03-01T12:00:00.000",
-        "end": "2000-03-01T14:00:00.000"
-    }
-]
-```
-
 ## Champs de réponse
+
+Les champs retournés dépendent de l'option `detail` choisie.
+
+### Mode `full`
 
 | Champ     | Type       | Description                              |
 | --------- | ---------- | ---------------------------------------- |
@@ -47,6 +36,14 @@ L'endpoint `/hyperplanning` permet d'afficher les informations d'un emploi du te
 | `classes` | `string[]` | Tableau des noms de classes              |
 | `start`   | `string`   | Heure de début de l'événement (ISO 8601) |
 | `end`     | `string`   | Heure de fin de l'événement (ISO 8601)   |
+
+### Mode `list`
+
+Retourne un tableau de toutes les données brutes de chaque événement.
+
+### Mode par défaut (sans `detail`)
+
+Retourne un tableau d'objets résumé avec les champs `summary`, `start` et `end`.
 
 ## Essayer
 

@@ -6,11 +6,11 @@ L'endpoint `/convert` permet de convertir plusieurs unités de température entr
 
 ## Paramètres
 
-| Paramètre | Requis | Description                                        |
-| --------- | ------ | -------------------------------------------------- |
-| `value`   | Oui    | La valeur à convertir                              |
-| `from`    | Oui    | L'unité source (`celsius`, `fahrenheit`, `kelvin`) |
-| `to`      | Oui    | L'unité cible (`celsius`, `fahrenheit`, `kelvin`)  |
+| Paramètre | Requis | Description                                         |
+| --------- | ------ | --------------------------------------------------- |
+| `value`   | Oui    | La valeur à convertir (plage : -273.15 à 1 000 000) |
+| `from`    | Oui    | L'unité source (`celsius`, `fahrenheit`, `kelvin`)  |
+| `to`      | Oui    | L'unité cible (`celsius`, `fahrenheit`, `kelvin`)   |
 
 ## Unités disponibles
 
@@ -19,17 +19,6 @@ L'endpoint `/convert` permet de convertir plusieurs unités de température entr
 | `celsius`    | Degrés Celsius    |
 | `fahrenheit` | Degrés Fahrenheit |
 | `kelvin`     | Kelvin            |
-
-## Réponse
-
-```json
-{
-    "from": "celsius",
-    "to": "kelvin",
-    "value": 30,
-    "result": 303.15
-}
-```
 
 ## Champs de réponse
 

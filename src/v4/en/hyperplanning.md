@@ -22,22 +22,11 @@ The `/hyperplanning` endpoint allows you to display a Hyperplanning schedule inf
 
 <Examples method="post" path="/hyperplanning" :body="{ url: 'https%3A%2F%2Fexample.com%2Ffile.ics', detail: 'full' }" />
 
-## Response
-
-```json
-[
-    {
-        "summary": ["Mathematics", "DOE", "Class", "1", "Class", "2"],
-        "subject": "Mathematics",
-        "teacher": "DOE",
-        "classes": ["Class 1", "Class 2"],
-        "start": "2000-03-01T12:00:00.000",
-        "end": "2000-03-01T14:00:00.000"
-    }
-]
-```
-
 ## Response Fields
+
+The response format depends on the `detail` parameter:
+
+### `detail=full`
 
 | Field     | Type       | Description                 |
 | --------- | ---------- | --------------------------- |
@@ -45,8 +34,25 @@ The `/hyperplanning` endpoint allows you to display a Hyperplanning schedule inf
 | `subject` | `string`   | Subject name                |
 | `teacher` | `string`   | Teacher name                |
 | `classes` | `string[]` | Array of class names        |
+| `type`    | `string`   | Event type                  |
 | `start`   | `string`   | Event start time (ISO 8601) |
 | `end`     | `string`   | Event end time (ISO 8601)   |
+
+### `detail=list`
+
+| Field     | Type       | Description                 |
+| --------- | ---------- | --------------------------- |
+| `summary` | `string[]` | Array of summary elements   |
+| `start`   | `string`   | Event start time (ISO 8601) |
+| `end`     | `string`   | Event end time (ISO 8601)   |
+
+### Default (no `detail` parameter)
+
+| Field     | Type     | Description                 |
+| --------- | -------- | --------------------------- |
+| `summary` | `string` | Event summary               |
+| `start`   | `string` | Event start time (ISO 8601) |
+| `end`     | `string` | Event end time (ISO 8601)   |
 
 ## Try It
 

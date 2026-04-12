@@ -6,41 +6,24 @@ L'endpoint `/statistics` calcule des statistiques descriptives sur une liste de 
 
 ## Paramètres
 
-| Paramètre | Requis | Description                               |
-| --------- | ------ | ----------------------------------------- |
-| `values`  | Oui    | Liste de nombres séparés par des virgules |
-
-## Réponse
-
-```json
-{
-    "count": 5,
-    "sum": 15,
-    "min": 1,
-    "max": 5,
-    "range": 4,
-    "mean": 3,
-    "median": 3,
-    "mode": [],
-    "variance": 2,
-    "stddev": 1.414214
-}
-```
+| Paramètre | Requis | Description                                                  |
+| --------- | ------ | ------------------------------------------------------------ |
+| `values`  | Oui    | Liste de nombres séparés par des virgules (max 1000 valeurs) |
 
 ## Champs de réponse
 
-| Champ      | Type       | Description                        |
-| ---------- | ---------- | ---------------------------------- |
-| `count`    | `number`   | Nombre de valeurs                  |
-| `sum`      | `number`   | Somme de toutes les valeurs        |
-| `min`      | `number`   | Valeur minimale                    |
-| `max`      | `number`   | Valeur maximale                    |
-| `range`    | `number`   | Différence entre max et min        |
-| `mean`     | `number`   | Moyenne arithmétique               |
-| `median`   | `number`   | Valeur médiane                     |
-| `mode`     | `number[]` | Valeur(s) la/les plus fréquente(s) |
-| `variance` | `number`   | Variance de la population          |
-| `stddev`   | `number`   | Écart-type                         |
+| Champ      | Type       | Description                                       |
+| ---------- | ---------- | ------------------------------------------------- |
+| `count`    | `number`   | Nombre de valeurs                                 |
+| `sum`      | `number`   | Somme de toutes les valeurs                       |
+| `min`      | `number`   | Valeur minimale                                   |
+| `max`      | `number`   | Valeur maximale                                   |
+| `range`    | `number`   | Différence entre max et min                       |
+| `mean`     | `number`   | Moyenne arithmétique (précision 6 décimales)      |
+| `median`   | `number`   | Valeur médiane (précision 6 décimales)            |
+| `mode`     | `number[]` | Valeur(s) la/les plus fréquente(s)                |
+| `variance` | `number`   | Variance de la population (précision 6 décimales) |
+| `stddev`   | `number`   | Écart-type (précision 6 décimales)                |
 
 ## Exemples de code
 

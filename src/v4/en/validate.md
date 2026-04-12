@@ -13,39 +13,11 @@ The `/validate` endpoint validates various data formats.
 
 ## Validation Types
 
-| Type    | Description                          |
-| ------- | ------------------------------------ |
-| `luhn`  | Luhn algorithm (credit card numbers) |
-| `iban`  | International Bank Account Number    |
-| `email` | Email address format                 |
-
-## Response (`luhn`)
-
-```json
-{
-    "valid": true,
-    "value": "4532015112830366"
-}
-```
-
-## Response (`iban`)
-
-```json
-{
-    "valid": true,
-    "value": "FR7630006000011234567890189",
-    "country": "FR"
-}
-```
-
-## Response (`email`)
-
-```json
-{
-    "valid": true,
-    "value": "user@example.com"
-}
-```
+| Type    | Description                          | Limits           |
+| ------- | ------------------------------------ | ---------------- |
+| `luhn`  | Luhn algorithm (credit card numbers) | 12–19 digits     |
+| `iban`  | International Bank Account Number    | 15–34 characters |
+| `email` | Email address format                 |                  |
 
 ## Response Fields
 

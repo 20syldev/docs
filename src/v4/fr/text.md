@@ -23,47 +23,14 @@ L'endpoint `/text` fournit des utilitaires de manipulation et de génération de
 | `lorem`  | Générer du Lorem Ipsum | `type`, `count`   |
 | `number` | Nombre en lettres      | `value`, `lang`   |
 
-## Réponse (`stats`)
-
-```json
-{
-    "method": "stats",
-    "result": {
-        "characters": 11,
-        "charactersNoSpaces": 10,
-        "words": 2,
-        "sentences": 1,
-        "paragraphs": 1,
-        "readingTime": "1s",
-        "mostFrequentChar": "l"
-    }
-}
-```
-
-## Réponse (`slug`)
-
-```json
-{
-    "method": "slug",
-    "result": "hello-world"
-}
-```
-
-## Réponse (`number`)
-
-```json
-{
-    "method": "number",
-    "result": "quarante-deux"
-}
-```
-
 ## Champs de réponse
 
 | Champ    | Type             | Description                  |
 | -------- | ---------------- | ---------------------------- |
 | `method` | `string`         | La méthode de texte utilisée |
 | `result` | `string\|object` | Le résultat traité           |
+
+**Limites :** `lorem` count 1–500, `number` max 999 999 999.
 
 ## Exemples de code
 

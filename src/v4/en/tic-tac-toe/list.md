@@ -12,45 +12,27 @@ This endpoint does not require any parameters.
 
 <Examples method="post" path="/tic-tac-toe/list" />
 
-## Response
-
-```json
-{
-    "games": [
-        {
-            "game": "VWXYZ",
-            "players": ["User1", "User2"],
-            "status": "in_progress",
-            "created_at": "2025-01-21T10:30:00.000Z"
-        },
-        {
-            "game": "ABCDE",
-            "players": ["User3"],
-            "status": "waiting",
-            "created_at": "2025-01-21T10:35:00.000Z"
-        }
-    ],
-    "total": 2
-}
-```
-
 ## Response Fields
 
-| Field                | Type       | Description                            |
-| -------------------- | ---------- | -------------------------------------- |
-| `games`              | `object[]` | Array of public game objects           |
-| `games[].game`       | `string`   | Game identifier                        |
-| `games[].players`    | `string[]` | Array of player usernames              |
-| `games[].status`     | `string`   | Game status (`waiting`, `in_progress`) |
-| `games[].created_at` | `string`   | Game creation timestamp                |
-| `total`              | `number`   | Total number of public games           |
+| Field                  | Type       | Description                             |
+| ---------------------- | ---------- | --------------------------------------- |
+| `message`              | `string`   | Status message                          |
+| `count`                | `number`   | Total number of public games            |
+| `games`                | `object[]` | Array of public game objects            |
+| `games[].id`           | `string`   | Game identifier                         |
+| `games[].players`      | `string[]` | Array of player usernames               |
+| `games[].playersCount` | `number`   | Number of players in the game           |
+| `games[].moves`        | `array`    | Array of moves made in the game         |
+| `games[].turn`         | `string`   | Username of the player whose turn it is |
+| `games[].status`       | `string`   | Game status (`waiting`, `ready`)        |
+| `games[].creation`     | `string`   | Game creation timestamp                 |
 
 ## Game Statuses
 
-| Status        | Description                               |
-| ------------- | ----------------------------------------- |
-| `waiting`     | Game has one player, waiting for opponent |
-| `in_progress` | Game has two players and is active        |
+| Status    | Description                               |
+| --------- | ----------------------------------------- |
+| `waiting` | Game has one player, waiting for opponent |
+| `ready`   | Game has two players and is active        |
 
 ## Try It
 

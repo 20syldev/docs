@@ -6,26 +6,9 @@ L'endpoint `/dice` lance des dés en notation RPG (NdX ou NdX+M).
 
 ## Paramètres
 
-| Paramètre | Requis | Description                                   |
-| --------- | ------ | --------------------------------------------- |
-| `roll`    | Oui    | Notation de dés (ex : `2d6+3`, `1d20`, `4d8`) |
-
-**Limites :** 1–100 dés, 2–1000 faces par dé.
-
-> Le `+` dans l'URL peut être encodé en espace (`2d6 3`) — les deux sont acceptés.
-
-## Réponse
-
-```json
-{
-    "roll": "2d6+3",
-    "count": 2,
-    "sides": 6,
-    "modifier": 3,
-    "results": [4, 2],
-    "total": 9
-}
-```
+| Paramètre | Requis | Description                                                                                                |
+| --------- | ------ | ---------------------------------------------------------------------------------------------------------- |
+| `roll`    | Oui    | Notation de dés (ex : `2d6+3`, `1d20`, `4d8`). 1–100 dés, 2–1000 faces. Le `+` peut être encodé en espace. |
 
 ## Champs de réponse
 

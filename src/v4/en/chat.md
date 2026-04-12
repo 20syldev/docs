@@ -8,28 +8,6 @@ The `/chat` endpoint provides a real-time messaging system with support for publ
 
 Retrieves all messages sent during the last hour. This endpoint does not require any options.
 
-### Response
-
-```json
-[
-    {
-        "username": "User1",
-        "message": "Hi!",
-        "timestamp": "2025-01-21T08:27:11.068Z"
-    },
-    {
-        "username": "User3",
-        "message": "How are you?",
-        "timestamp": "2025-01-21T08:28:43.070Z"
-    },
-    {
-        "username": "User8",
-        "message": "Yeah great, and you?",
-        "timestamp": "2025-01-21T08:32:07.215Z"
-    }
-]
-```
-
 ### Response Fields
 
 | Field       | Type     | Description                       |
@@ -42,7 +20,9 @@ Retrieves all messages sent during the last hour. This endpoint does not require
 
 <Examples method="get" path="/chat" />
 
----
+### Try It
+
+<Try method="get" path="/chat" :params="[]" />
 
 ## POST /v4/chat
 
@@ -63,25 +43,17 @@ Allows sending a message to the global chat or a private chat.
 
 <Examples method="post" path="/chat" :body="{ username: 'User3', message: 'How are you?', session: 'abc123', token: '41a43360-9874-4c7a-9ca8-eec29e765a0e' }" />
 
-### Response
-
-```json
-{
-    "message": "Message sent successfully"
-}
-```
-
 ### Response Fields
 
 | Field     | Type     | Description          |
 | --------- | -------- | -------------------- |
 | `message` | `string` | Confirmation message |
 
-## Try It
+### Try It
 
-<Try method="get" path="/chat" :params="[]" />
+<Try method="post" path="/chat" :params="[{ name: 'username', required: true }, { name: 'message', required: true }, { name: 'session', required: true }, { name: 'token', required: false }]" />
 
-### Error Handling
+## Error Handling
 
 If parameters are missing or invalid, the API will return an error:
 
@@ -90,6 +62,9 @@ If parameters are missing or invalid, the API will return an error:
 | `Please provide a username (?username={username})`  | The `username` parameter is missing           |
 | `Please provide a message (&message={message})`     | The `message` parameter is missing            |
 | `Please provide a valid session ID (&session={ID})` | The `session` parameter is missing or invalid |
+| `No messages stored`                                | No messages have been sent in the last hour   |
+| `Rate limit exceeded`                               | Too many requests in a short period           |
+| `Session ID mismatch`                               | Session does not match the user               |
 
 ## Related Endpoints
 

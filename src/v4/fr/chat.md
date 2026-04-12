@@ -8,28 +8,6 @@ L'endpoint `/chat` fournit un système de messagerie en temps réel avec support
 
 Récupère tous les messages envoyés durant la dernière heure. Cet endpoint ne nécessite aucune option.
 
-### Réponse
-
-```json
-[
-    {
-        "username": "Utilisateur1",
-        "message": "Salut !",
-        "timestamp": "2025-01-21T08:27:11.068Z"
-    },
-    {
-        "username": "Utilisateur3",
-        "message": "Comment ça va ?",
-        "timestamp": "2025-01-21T08:28:43.070Z"
-    },
-    {
-        "username": "Utilisateur8",
-        "message": "Très bien, et toi ?",
-        "timestamp": "2025-01-21T08:32:07.215Z"
-    }
-]
-```
-
 ### Champs de réponse
 
 | Champ       | Type     | Description                       |
@@ -42,7 +20,9 @@ Récupère tous les messages envoyés durant la dernière heure. Cet endpoint ne
 
 <Examples method="get" path="/chat" />
 
----
+### Essayer
+
+<Try method="get" path="/chat" :params="[]" />
 
 ## POST /v4/chat
 
@@ -63,14 +43,6 @@ Permet d'envoyer un message au chat global ou à un chat privé.
 
 <Examples method="post" path="/chat" :body="{ username: 'Utilisateur3', message: 'Comment ça va ?', session: 'abc123', token: '41a43360-9874-4c7a-9ca8-eec29e765a0e' }" />
 
-### Réponse
-
-```json
-{
-    "message": "Message sent successfully"
-}
-```
-
 ### Champs de réponse
 
 | Champ     | Type     | Description             |
@@ -86,10 +58,12 @@ Si les paramètres sont manquants ou invalides, l'API retournera une erreur :
 | `Please provide a username (?username={username})`  | Le paramètre `username` est manquant            |
 | `Please provide a message (&message={message})`     | Le paramètre `message` est manquant             |
 | `Please provide a valid session ID (&session={ID})` | Le paramètre `session` est manquant ou invalide |
+| `No messages stored`                                | Aucun message stocké dans le chat               |
+| `Rate limit exceeded`                               | Limite de requêtes atteinte                     |
 
-## Essayer
+### Essayer
 
-<Try method="get" path="/chat" :params="[]" />
+<Try method="post" path="/chat" :params="[{ name: 'username', required: true }, { name: 'message', required: true }, { name: 'session', required: true }, { name: 'token', required: false }]" />
 
 ## Endpoints associés
 

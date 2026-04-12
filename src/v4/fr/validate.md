@@ -6,10 +6,10 @@ L'endpoint `/validate` valide différents formats de données.
 
 ## Paramètres
 
-| Paramètre | Requis | Description                                  |
-| --------- | ------ | -------------------------------------------- |
-| `type`    | Oui    | Type de validation : `luhn`, `iban`, `email` |
-| `value`   | Oui    | Valeur à valider                             |
+| Paramètre | Requis | Description                                                       |
+| --------- | ------ | ----------------------------------------------------------------- |
+| `type`    | Oui    | Type de validation : `luhn`, `iban`, `email`                      |
+| `value`   | Oui    | Valeur à valider (luhn : 12–19 chiffres, iban : 15–34 caractères) |
 
 ## Types de validation
 
@@ -18,34 +18,6 @@ L'endpoint `/validate` valide différents formats de données.
 | `luhn`  | Algorithme de Luhn (numéros de carte)   |
 | `iban`  | Numéro de compte bancaire international |
 | `email` | Format d'adresse email                  |
-
-## Réponse (`luhn`)
-
-```json
-{
-    "valid": true,
-    "value": "4532015112830366"
-}
-```
-
-## Réponse (`iban`)
-
-```json
-{
-    "valid": true,
-    "value": "FR7630006000011234567890189",
-    "country": "FR"
-}
-```
-
-## Réponse (`email`)
-
-```json
-{
-    "valid": true,
-    "value": "user@example.com"
-}
-```
 
 ## Champs de réponse
 

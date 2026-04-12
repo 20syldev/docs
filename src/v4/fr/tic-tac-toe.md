@@ -29,38 +29,6 @@ Le plateau est une grille 3x3 avec des positions numérotées comme suit :
 
 <Examples method="post" path="/tic-tac-toe" :body="{ username: 'Utilisateur1', move: '2-2', session: 'abc123', game: 'VWXYZ' }" />
 
-## Réponse
-
-### Coup réussi
-
-```json
-{
-    "message": "Move sent successfully"
-}
-```
-
-### Victoire
-
-```json
-{
-    "message": "Move sent successfully. Utilisateur1 wins. Utilisateur2 loses.",
-    "winner": "Utilisateur1",
-    "loser": "Utilisateur2",
-    "tie": false
-}
-```
-
-### Égalité
-
-```json
-{
-    "message": "Game over. It's a tie!",
-    "winner": null,
-    "loser": null,
-    "tie": true
-}
-```
-
 ## Champs de réponse
 
 | Champ     | Type           | Description                                              |

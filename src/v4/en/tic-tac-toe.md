@@ -29,38 +29,6 @@ The board is a 3x3 grid with positions numbered as follows:
 
 <Examples method="post" path="/tic-tac-toe" :body="{ username: 'User1', move: '2-2', session: 'abc123', game: 'VWXYZ' }" />
 
-## Response
-
-### Move Success
-
-```json
-{
-    "message": "Move sent successfully"
-}
-```
-
-### Game Win
-
-```json
-{
-    "message": "Move sent successfully. User1 wins. User2 loses.",
-    "winner": "User1",
-    "loser": "User2",
-    "tie": false
-}
-```
-
-### Game Tie
-
-```json
-{
-    "message": "Game over. It's a tie!",
-    "winner": null,
-    "loser": null,
-    "tie": true
-}
-```
-
 ## Response Fields
 
 | Field     | Type           | Description                              |

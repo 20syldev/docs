@@ -6,26 +6,9 @@ The `/statistics` endpoint calculates descriptive statistics on a list of number
 
 ## Parameters
 
-| Parameter | Required | Description                     |
-| --------- | -------- | ------------------------------- |
-| `values`  | Yes      | Comma-separated list of numbers |
-
-## Response
-
-```json
-{
-    "count": 5,
-    "sum": 15,
-    "min": 1,
-    "max": 5,
-    "range": 4,
-    "mean": 3,
-    "median": 3,
-    "mode": [],
-    "variance": 2,
-    "stddev": 1.414214
-}
-```
+| Parameter | Required | Description                                       |
+| --------- | -------- | ------------------------------------------------- |
+| `values`  | Yes      | Comma-separated list of numbers (max 1000 values) |
 
 ## Response Fields
 
@@ -41,6 +24,8 @@ The `/statistics` endpoint calculates descriptive statistics on a list of number
 | `mode`     | `number[]` | Most frequent value(s)         |
 | `variance` | `number`   | Population variance            |
 | `stddev`   | `number`   | Standard deviation             |
+
+> `mean`, `median`, `variance`, and `stddev` are returned with up to 6 decimal places of precision.
 
 ## Code Examples
 

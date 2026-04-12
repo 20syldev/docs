@@ -15,23 +15,6 @@ The `/chat/private` endpoint retrieves all messages sent during the last hour, b
 
 <Examples method="post" path="/chat/private" :body="{ username: 'User3', token: '41a43360-9874-4c7a-9ca8-eec29e765a0e' }" />
 
-## Response
-
-```json
-[
-    {
-        "username": "User1",
-        "message": "Hi!",
-        "timestamp": "2025-01-21T08:27:11.068Z"
-    },
-    {
-        "username": "User3",
-        "message": "How are you?",
-        "timestamp": "2025-01-21T08:28:43.070Z"
-    }
-]
-```
-
 ## Response Fields
 
 | Field       | Type     | Description                       |
@@ -52,6 +35,8 @@ If parameters are missing or invalid, the API will return an error:
 | -------------------------------------------------- | ------------------------------------------- |
 | `Please provide a username (?username={username})` | The `username` parameter is missing         |
 | `Please provide a valid token (&token={key}).`     | The `token` parameter is missing or invalid |
+| `Invalid or expired token`                         | The token is invalid or has expired         |
+| `Rate limit exceeded`                              | Too many requests in a short period         |
 
 ## Related Endpoints
 

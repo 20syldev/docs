@@ -12,35 +12,6 @@ Cet endpoint ne nécessite aucun paramètre. Il retourne toutes les parties publ
 
 <Examples method="post" path="/tic-tac-toe/list" />
 
-## Réponse
-
-```json
-{
-    "message": "Public games available",
-    "count": 2,
-    "games": [
-        {
-            "id": "ABCDE",
-            "players": ["Utilisateur1", "Utilisateur2"],
-            "playersCount": 2,
-            "moves": 3,
-            "turn": "Utilisateur1",
-            "status": "ready",
-            "creation": 1696204800000
-        },
-        {
-            "id": "FGHIJ",
-            "players": ["Utilisateur3"],
-            "playersCount": 1,
-            "moves": 1,
-            "turn": "Utilisateur3",
-            "status": "waiting",
-            "creation": 1696204700000
-        }
-    ]
-}
-```
-
 ## Champs de réponse
 
 | Champ                  | Type       | Description                                         |
@@ -62,16 +33,6 @@ Cet endpoint ne nécessite aucun paramètre. Il retourne toutes les parties publ
 | --------- | --------------------------------------------------------------------------- |
 | `waiting` | La partie a moins de 2 joueurs et attend que d'autres joueurs la rejoignent |
 | `ready`   | La partie a 2 joueurs et est prête à être jouée                             |
-
-## Réponse de liste vide
-
-```json
-{
-    "message": "Public games available",
-    "count": 0,
-    "games": []
-}
-```
 
 ## Essayer
 

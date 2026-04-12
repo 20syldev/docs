@@ -27,15 +27,6 @@ L'endpoint `/encode` encode ou décode du texte dans différents formats.
 | `binary`       | Texte → binaire 8 bits               |
 | `unbinary`     | Binaire → Texte                      |
 
-## Réponse
-
-```json
-{
-    "method": "base64encode",
-    "result": "aGVsbG8="
-}
-```
-
 ## Champs de réponse
 
 | Champ    | Type     | Description                    |

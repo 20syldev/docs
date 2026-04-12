@@ -8,19 +8,6 @@ L'endpoint `/color` génère une couleur aléatoire en plusieurs formats. Cet en
 
 Cet endpoint ne nécessite aucun paramètre.
 
-## Réponse
-
-```json
-{
-    "hex": "#517fff",
-    "rgb": "rgb(81, 127, 255)",
-    "hsl": "hsl(224, 100%, 66%)",
-    "hsv": "hsv(224, 68.2%, 100%)",
-    "hwb": "hwb(224, 32%, 0%)",
-    "cmyk": "cmyk(68.24%, 50.2%, 0%, 0%)"
-}
-```
-
 ## Champs de réponse
 
 | Champ  | Type     | Description                                         |

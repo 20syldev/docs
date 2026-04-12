@@ -10,19 +10,11 @@ L'endpoint `/qrcode` génère un QR Code à partir d'une URL fournie en paramèt
 | --------- | ------ | ----------------------------------------------------------------- |
 | `url`     | Oui    | L'URL à encoder dans le QR Code. Doit contenir l'adresse complète |
 
-## Réponse
-
-```json
-{
-    "qr": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAYAAABRRIOnAAAAAklEQVR4AewaftIAAAOaSURBVO3BQY5jBxYDwcwH3f/KnF7MgqsPCFKV7..."
-}
-```
-
 ## Champs de réponse
 
-| Champ | Type     | Description                            |
-| ----- | -------- | -------------------------------------- |
-| `qr`  | `string` | Image PNG du QR Code encodée en Base64 |
+| Champ    | Type     | Description                               |
+| -------- | -------- | ----------------------------------------- |
+| `result` | `string` | URI data base64 de l'image PNG du QR Code |
 
 ## Exemples de code
 

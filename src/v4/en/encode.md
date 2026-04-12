@@ -27,15 +27,6 @@ The `/encode` endpoint encodes or decodes text in various formats.
 | `binary`       | Text → 8-bit binary              |
 | `unbinary`     | Binary → Text                    |
 
-## Response
-
-```json
-{
-    "method": "base64encode",
-    "result": "aGVsbG8="
-}
-```
-
 ## Response Fields
 
 | Field    | Type     | Description                   |
@@ -55,7 +46,11 @@ The `/encode` endpoint encodes or decodes text in various formats.
 
 If parameters are missing or invalid, the API will return an error:
 
-| Error Message                                                                    | Description                                  |
-| -------------------------------------------------------------------------------- | -------------------------------------------- |
-| `A value is required`                                                            | The `text` parameter is missing              |
-| `Please provide a valid method (?method={base64encode\|base64decode\|morse\|…})` | The `method` parameter is missing or invalid |
+| Error Message                                                                    | Description                                            |
+| -------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| `A value is required`                                                            | The `text` parameter is missing                        |
+| `Please provide a valid method (?method={base64encode\|base64decode\|morse\|…})` | The `method` parameter is missing or invalid           |
+| `Invalid Base64 input`                                                           | The text is not valid Base64 (for `base64decode`)      |
+| `Invalid Morse code`                                                             | The text is not valid Morse code (for `unmorse`)       |
+| `Invalid binary input`                                                           | The text is not valid binary (for `unbinary`)          |
+| `Please provide a valid shift value`                                             | The `shift` value is missing or invalid (for `caesar`) |

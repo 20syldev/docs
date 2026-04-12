@@ -11,7 +11,7 @@ The `/text` endpoint provides text manipulation and generation utilities.
 | `method`  | Yes      | Text method (see available methods below)            |
 | `value`   | No       | Source text (required for `stats`, `slug`, `number`) |
 | `type`    | No       | Lorem type: `words`, `sentences`, `paragraphs`       |
-| `count`   | No       | Number of elements for `lorem` (default: 5)          |
+| `count`   | No       | Number of elements for `lorem` (1–500, default: 5)   |
 | `lang`    | No       | Language for `number`: `en` or `fr`                  |
 
 ## Available Methods
@@ -23,47 +23,26 @@ The `/text` endpoint provides text manipulation and generation utilities.
 | `lorem`  | Generate Lorem Ipsum | `type`, `count`     |
 | `number` | Number to words      | `value`, `lang`     |
 
-## Response (`stats`)
-
-```json
-{
-    "method": "stats",
-    "result": {
-        "characters": 11,
-        "charactersNoSpaces": 10,
-        "words": 2,
-        "sentences": 1,
-        "paragraphs": 1,
-        "readingTime": "1s",
-        "mostFrequentChar": "l"
-    }
-}
-```
-
-## Response (`slug`)
-
-```json
-{
-    "method": "slug",
-    "result": "hello-world"
-}
-```
-
-## Response (`number`)
-
-```json
-{
-    "method": "number",
-    "result": "quarante-deux"
-}
-```
-
 ## Response Fields
 
 | Field    | Type             | Description          |
 | -------- | ---------------- | -------------------- |
 | `method` | `string`         | The text method used |
 | `result` | `string\|object` | The processed result |
+
+When using `stats`, the `result` field is an object with the following properties:
+
+| Field                | Type     | Description                           |
+| -------------------- | -------- | ------------------------------------- |
+| `characters`         | `number` | Total number of characters            |
+| `charactersNoSpaces` | `number` | Number of characters excluding spaces |
+| `words`              | `number` | Number of words                       |
+| `sentences`          | `number` | Number of sentences                   |
+| `paragraphs`         | `number` | Number of paragraphs                  |
+| `readingTime`        | `string` | Estimated reading time                |
+| `mostFrequentChar`   | `string` | Most frequently used character        |
+
+> For `number`, the maximum supported value is 999,999,999.
 
 ## Code Examples
 

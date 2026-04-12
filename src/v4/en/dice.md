@@ -6,26 +6,9 @@ The `/dice` endpoint rolls dice using RPG notation (NdX or NdX+M).
 
 ## Parameters
 
-| Parameter | Required | Description                                 |
-| --------- | -------- | ------------------------------------------- |
-| `roll`    | Yes      | Dice notation (e.g. `2d6+3`, `1d20`, `4d8`) |
-
-**Limits:** 1–100 dice, 2–1000 sides per die.
-
-> The `+` in the URL can be encoded as a space (`2d6 3`) — both are accepted.
-
-## Response
-
-```json
-{
-    "roll": "2d6+3",
-    "count": 2,
-    "sides": 6,
-    "modifier": 3,
-    "results": [4, 2],
-    "total": 9
-}
-```
+| Parameter | Required | Description                                                                                               |
+| --------- | -------- | --------------------------------------------------------------------------------------------------------- |
+| `roll`    | Yes      | Dice notation (e.g. `2d6+3`, `1d20`, `4d8`). 1–100 dice, 2–1000 sides. The `+` can be encoded as a space. |
 
 ## Response Fields
 
