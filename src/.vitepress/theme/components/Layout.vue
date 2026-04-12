@@ -8,6 +8,7 @@ import NotFound from './NotFound.vue';
 import Version from './Version.vue';
 import Terminal from './Terminal.vue';
 import Copy from './Copy.vue';
+import Features from './Features.vue';
 import Footer from './Footer.vue';
 import { getLang, isHome, getLangItems, getPrefix, languages as langConfig, t, saveLang } from '../utils/i18n';
 
@@ -286,6 +287,9 @@ onUnmounted(() => {
         </template>
         <template v-if="home" #home-hero-image>
             <Terminal />
+        </template>
+        <template v-if="home" #home-features-after>
+            <Features />
         </template>
         <template #not-found>
             <NotFound :lang="lang" />
