@@ -53,8 +53,8 @@ function updateCSS() {
     if (typeof document === 'undefined') return;
     const root = document.documentElement;
     root.style.setProperty('--latest-version', `'${latest.value}'`);
-    root.style.setProperty('--latest-text', `'${t('latest', lang.value)}'`);
-    root.style.setProperty('--current-text', `'${t('current', lang.value)}'`);
+    root.style.setProperty('--latest-text', `'${t('version.latest', lang.value)}'`);
+    root.style.setProperty('--current-text', `'${t('version.current', lang.value)}'`);
 }
 
 function translate() {
@@ -63,8 +63,8 @@ function translate() {
 
     // Outline title
     const outlineTitle = document.querySelector(OUTLINE_TITLE_SELECTOR);
-    if (outlineTitle && outlineTitle.textContent !== t('onThisPage', l)) {
-        outlineTitle.textContent = t('onThisPage', l);
+    if (outlineTitle && outlineTitle.textContent !== t('nav.onThisPage', l)) {
+        outlineTitle.textContent = t('nav.onThisPage', l);
     }
 
     // Search button - find the text-only span (not the one with the icon)
@@ -79,8 +79,8 @@ function translate() {
                 !span.textContent.includes('⌘') &&
                 !span.textContent.includes('Ctrl')
             ) {
-                if (span.textContent !== t('search', l)) {
-                    span.textContent = t('search', l);
+                if (span.textContent !== t('nav.search', l)) {
+                    span.textContent = t('nav.search', l);
                 }
                 break;
             }
@@ -89,8 +89,8 @@ function translate() {
 
     // Search input placeholder
     const searchInput = document.querySelector(SEARCH_INPUT_SELECTOR) as HTMLInputElement;
-    if (searchInput && searchInput.placeholder !== t('search', l)) {
-        searchInput.placeholder = t('search', l);
+    if (searchInput && searchInput.placeholder !== t('nav.search', l)) {
+        searchInput.placeholder = t('nav.search', l);
     }
 
     // Home nav link
@@ -98,8 +98,8 @@ function translate() {
     const homeLink = document.querySelector(homeSelectors) as HTMLAnchorElement;
     const href = getPrefix(l) || '/';
     if (homeLink) {
-        if (homeLink.textContent !== t('home', l)) {
-            homeLink.textContent = t('home', l);
+        if (homeLink.textContent !== t('nav.home', l)) {
+            homeLink.textContent = t('nav.home', l);
         }
         if (homeLink.getAttribute('href') !== href) {
             homeLink.setAttribute('href', href);
@@ -114,12 +114,12 @@ function translate() {
 
     // Prev/Next page labels
     const prevDesc = document.querySelector(PAGER_PREV_SELECTOR);
-    if (prevDesc && prevDesc.textContent !== t('prevPage', l)) {
-        prevDesc.textContent = t('prevPage', l);
+    if (prevDesc && prevDesc.textContent !== t('nav.prevPage', l)) {
+        prevDesc.textContent = t('nav.prevPage', l);
     }
     const nextDesc = document.querySelector(PAGER_NEXT_SELECTOR);
-    if (nextDesc && nextDesc.textContent !== t('nextPage', l)) {
-        nextDesc.textContent = t('nextPage', l);
+    if (nextDesc && nextDesc.textContent !== t('nav.nextPage', l)) {
+        nextDesc.textContent = t('nav.nextPage', l);
     }
 
     // Edit link
@@ -128,8 +128,8 @@ function translate() {
         const textNodes = Array.from(editLink.childNodes).filter((n) => n.nodeType === Node.TEXT_NODE);
         for (const node of textNodes) {
             const text = node.textContent?.trim();
-            if (text && text !== t('editPage', l)) {
-                node.textContent = ` ${t('editPage', l)}`;
+            if (text && text !== t('nav.editPage', l)) {
+                node.textContent = ` ${t('nav.editPage', l)}`;
             }
         }
     }
@@ -140,8 +140,8 @@ function translate() {
         const textNodes = Array.from(lastUpdated.childNodes).filter((n) => n.nodeType === Node.TEXT_NODE);
         for (const node of textNodes) {
             const text = node.textContent?.trim().replace(/:$/, '');
-            if (text && text !== t('lastUpdated', l)) {
-                node.textContent = `${t('lastUpdated', l)}: `;
+            if (text && text !== t('nav.lastUpdated', l)) {
+                node.textContent = `${t('nav.lastUpdated', l)}: `;
             }
         }
         // Update date format to match locale
@@ -272,7 +272,7 @@ onUnmounted(() => {
         </template>
         <template #nav-screen-content-after>
             <div class="VPNavScreenAppearance language">
-                <p class="text">{{ t('language', lang) }}</p>
+                <p class="text">{{ t('lang.label', lang) }}</p>
                 <div class="options">
                     <a
                         v-for="item in languages"

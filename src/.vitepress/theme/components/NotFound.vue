@@ -20,8 +20,8 @@ onMounted(() => {
 <template>
     <div v-if="!redirecting" class="not-found">
         <p class="code">404</p>
-        <h1 class="title">{{ t('notFoundTitle', lang) }}</h1>
-        <p class="quote">{{ t('notFoundMessage', lang) }}</p>
-        <a class="link" :href="lang === 'fr' ? '/fr' : '/'">{{ t('notFoundLink', lang) }}</a>
+        <h1 class="title">{{ t('notFound.title', lang) }}</h1>
+        <p class="quote">{{ t('notFound.message', lang) }}</p>
+        <a class="link" :href="lang === 'fr' ? '/fr' : '/'">{{ t('notFound.link', lang) }}</a>
     </div>
 </template>

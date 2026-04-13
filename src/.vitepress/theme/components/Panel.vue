@@ -102,7 +102,7 @@ defineExpose({ resetState });
             <span :class="['method-badge', method]">{{ method.toUpperCase() }}</span>
             <code class="panel-url panel-path">{{ fullUrl }}</code>
             <button class="action-btn panel-send" :disabled="loading" @click="send">
-                {{ loading ? '...' : t('send', lang) }}
+                {{ loading ? '...' : t('playground.send', lang) }}
             </button>
         </div>
 
@@ -110,7 +110,7 @@ defineExpose({ resetState });
             <div v-for="p in params" :key="p.name" class="api-field">
                 <label>{{ p.name }}<span v-if="p.required" class="required-mark">*</span></label>
                 <select v-if="p.options" v-model="values[p.name]">
-                    <option value="" disabled>{{ t('select', lang) }}</option>
+                    <option value="" disabled>{{ t('playground.select', lang) }}</option>
                     <option v-for="opt in p.options" :key="opt" :value="opt">{{ opt }}</option>
                 </select>
                 <input v-else v-model="values[p.name]" :placeholder="p.name" type="text" @keydown.enter="send" />
@@ -133,7 +133,7 @@ defineExpose({ resetState });
 
         <div v-if="response !== null || loading" class="panel-section">
             <div class="panel-response-bar">
-                <span>{{ t('response', lang) }}</span>
+                <span>{{ t('playground.response', lang) }}</span>
                 <div v-if="statusCode !== null" class="panel-meta">
                     <span :class="['status-badge', statusCode < 300 ? 'ok' : statusCode < 500 ? 'warn' : 'err']">{{
                         statusCode || 'ERR'

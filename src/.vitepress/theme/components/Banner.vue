@@ -15,8 +15,8 @@ const isPrevious = computed(() => versionIndex.value === latestIndex - 1);
 
 const latestLink = computed(() => `/${LATEST_VERSION}/${lang.value}/`);
 const bannerType = computed(() => (isPrevious.value ? 'warning' : 'danger'));
-const titleKey = computed(() => (isPrevious.value ? 'bannerMigrationTitle' : 'bannerLegacyTitle'));
-const textKey = computed(() => (isPrevious.value ? 'bannerMigrationText' : 'bannerLegacyText'));
+const titleKey = computed(() => (isPrevious.value ? 'banner.migrationTitle' : 'banner.legacyTitle') as TranslationKey);
+const textKey = computed(() => (isPrevious.value ? 'banner.migrationText' : 'banner.legacyText') as TranslationKey);
 </script>
 
 <template>
@@ -24,7 +24,7 @@ const textKey = computed(() => (isPrevious.value ? 'bannerMigrationText' : 'bann
         <strong>{{ t(titleKey, lang) }}</strong>
         <p>{{ t(textKey, lang).replace('{version}', LATEST_VERSION) }}</p>
         <a :href="latestLink" class="banner-link">
-            {{ t('bannerLink', lang) }}
+            {{ t('banner.link', lang) }}
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

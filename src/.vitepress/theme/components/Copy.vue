@@ -18,7 +18,7 @@ function injectButtons() {
 
         const btn = document.createElement('button');
         btn.className = 'copy-btn';
-        btn.setAttribute('title', t('copyCode', lang));
+        btn.setAttribute('title', t('playground.copyCode', lang));
         btn.innerHTML = `${copyIcon}${checkIcon}`;
 
         let timeout = 0;

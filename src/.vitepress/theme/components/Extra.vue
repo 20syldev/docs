@@ -25,7 +25,7 @@ const visible = computed(() => route.path.includes('/v') || homepage.value);
 <template>
     <VPFlyout v-if="visible" class="VPNavBarExtra extra-menu" label="extra navigation">
         <div class="group">
-            <p class="group-title">{{ t('language', lang) }}</p>
+            <p class="group-title">{{ t('lang.label', lang) }}</p>
             <div v-for="item in items" :key="item.link" class="VPMenuLink">
                 <a class="link" :class="{ 'is-active': item.active }" :href="item.link" @click="saveLang(item.lang)">{{
                     item.text
@@ -35,7 +35,7 @@ const visible = computed(() => route.path.includes('/v') || homepage.value);
 
         <div v-if="site.appearance && site.appearance !== 'force-dark'" class="group">
             <div class="item appearance">
-                <p class="label">{{ t('appearance', lang) }}</p>
+                <p class="label">{{ t('lang.appearance', lang) }}</p>
                 <VPSwitchAppearance />
             </div>
         </div>

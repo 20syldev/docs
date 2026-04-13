@@ -83,7 +83,7 @@ onUnmounted(() => document.removeEventListener('click', onClickOutside, true));
                     <span :class="['method-badge', selected.method]">{{ selected.method.toUpperCase() }}</span>
                     {{ selected.name }}
                 </span>
-                <span v-else class="pg-search-placeholder">{{ t('selectEndpoint', lang) }}</span>
+                <span v-else class="pg-search-placeholder">{{ t('playground.selectEndpoint', lang) }}</span>
             </button>
             <div v-if="open" class="pg-search-input-wrap">
                 <svg
@@ -104,7 +104,7 @@ onUnmounted(() => document.removeEventListener('click', onClickOutside, true));
                     ref="inputRef"
                     v-model="query"
                     class="pg-search-input"
-                    :placeholder="t('selectEndpoint', lang)"
+                    :placeholder="t('playground.selectEndpoint', lang)"
                     @keydown.escape="open = false"
                 />
             </div>
