@@ -42,18 +42,6 @@ Toutes les requêtes API doivent être faites vers :
 https://api.sylvain.sh
 ```
 
-## Exemple de requête
+## Exemple
 
-```bash
-curl -X GET "https://api.sylvain.sh/v4/infos"
-```
-
-```json
-{
-    "endpoints": 20,
-    "last_version": "v4",
-    "documentation": "https://docs.sylvain.sh",
-    "github": "https://github.com/20syldev/api",
-    "creation": "November 25th 2024"
-}
-```
+<Try method="get" path="/health" :params="[]" auto-send no-version />

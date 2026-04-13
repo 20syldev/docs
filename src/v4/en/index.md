@@ -14,19 +14,7 @@ https://api.sylvain.sh/v4
 
 ## Quick Example
 
-```bash
-curl -X GET "https://api.sylvain.sh/v4/infos"
-```
-
-```json
-{
-    "endpoints": 20,
-    "last_version": "v4",
-    "documentation": "https://docs.sylvain.sh",
-    "github": "https://github.com/20syldev/api",
-    "creation": "November 25th 2024"
-}
-```
+<Try method="get" path="/infos" :params="[]" auto-send />
 
 ## Rate Limiting
 
