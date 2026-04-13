@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Panel from './Panel.vue';
-import { API_BASE_URL } from '../utils/redirect';
 import type { EndpointParam } from '../data/endpoints';
+import { API_BASE_URL } from '../utils/redirect';
+import Panel from './Panel.vue';
 
 withDefaults(
     defineProps<{

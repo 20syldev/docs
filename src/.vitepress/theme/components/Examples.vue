@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import { computed, onMounted, ref } from 'vue';
+
+import { CODE_LANG_LABELS, CODE_LANGS, type CodeLang, generateSnippet } from '../composables/useCodeSnippets';
 import { useVersion } from '../composables/useVersion';
+import { checkIcon, copyIcon } from '../utils/icons';
 import { API_BASE_URL } from '../utils/redirect';
-import { copyIcon, checkIcon } from '../utils/icons';
-import { generateSnippet, CODE_LANGS, CODE_LANG_LABELS, type CodeLang } from '../composables/useCodeSnippets';
 
 const props = withDefaults(
     defineProps<{

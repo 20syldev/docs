@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from 'vue';
-import { t } from '../utils/i18n';
+import { computed, onMounted, onUnmounted, ref } from 'vue';
+
 import { useVersion } from '../composables/useVersion';
-import { endpoints, type EndpointDef } from '../data/endpoints';
+import { type EndpointDef, endpoints } from '../data/endpoints';
+import { t } from '../utils/i18n';
 import Panel from './Panel.vue';
 
 const { lang } = useVersion();

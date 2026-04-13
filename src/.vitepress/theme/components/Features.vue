@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
 import { useRoute } from 'vitepress';
 import VPFeatures from 'vitepress/dist/client/theme-default/components/VPFeatures.vue';
-import { endpoints } from '../data/endpoints';
+import { ref, watch } from 'vue';
+
 import { useVersion } from '../composables/useVersion';
-import { t } from '../utils/i18n';
+import { endpoints } from '../data/endpoints';
+import { t, type TranslationKey } from '../utils/i18n';
 
 const route = useRoute();
 const { version, lang } = useVersion();

@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { computed } from 'vue';
 import { useRoute } from 'vitepress';
 import VPFlyout from 'vitepress/dist/client/theme-default/components/VPFlyout.vue';
-import { getLang, isHome, getLangItems, saveLang, languages } from '../utils/i18n';
+import { computed } from 'vue';
+
+import { getLang, getLangItems, isHome, languages, saveLang } from '../utils/i18n';
 
 const route = useRoute();
 

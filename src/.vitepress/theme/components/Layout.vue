@@ -1,16 +1,17 @@
 <script setup lang="ts">
-import { computed, watchEffect, onMounted, onUnmounted, ref } from 'vue';
-import { useRoute, useData, useRouter } from 'vitepress';
+import { useData, useRoute, useRouter } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
-import Extra from './Extra.vue';
-import Lang from './Lang.vue';
-import NotFound from './NotFound.vue';
-import Version from './Version.vue';
-import Terminal from './Terminal.vue';
+import { computed, onMounted, onUnmounted, ref, watchEffect } from 'vue';
+
+import { getLang, getLangItems, getPrefix, isHome, languages as langConfig, saveLang, t } from '../utils/i18n';
 import Copy from './Copy.vue';
+import Extra from './Extra.vue';
 import Features from './Features.vue';
 import Footer from './Footer.vue';
-import { getLang, isHome, getLangItems, getPrefix, languages as langConfig, t, saveLang } from '../utils/i18n';
+import Lang from './Lang.vue';
+import NotFound from './NotFound.vue';
+import Terminal from './Terminal.vue';
+import Version from './Version.vue';
 
 const { Layout } = DefaultTheme;
 const route = useRoute();

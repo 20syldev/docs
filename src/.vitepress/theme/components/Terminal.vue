@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, nextTick } from 'vue';
+import { nextTick, onMounted, onUnmounted, ref } from 'vue';
 
 interface ApiRequest {
     method: 'GET' | 'POST';

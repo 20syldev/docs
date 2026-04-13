@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
+
 import { t } from '../utils/i18n';
 import { getSmartRedirect, getUserLang, LATEST_VERSION } from '../utils/redirect';
 

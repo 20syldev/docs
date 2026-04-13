@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { t } from '../utils/i18n';
 import { useVersion } from '../composables/useVersion';
+import { t } from '../utils/i18n';
 
 const { version, lang } = useVersion();
 const year = new Date().getFullYear();

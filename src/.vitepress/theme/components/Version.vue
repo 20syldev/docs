@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue';
 import { useRoute } from 'vitepress';
 import VPFlyout from 'vitepress/dist/client/theme-default/components/VPFlyout.vue';
+import { computed } from 'vue';
+
 import { useVersion } from '../composables/useVersion';
 import { KNOWN_VERSIONS } from '../utils/redirect';
 

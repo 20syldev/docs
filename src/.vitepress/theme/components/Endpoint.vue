@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import Method from './Method.vue';
+
 import { useVersion } from '../composables/useVersion';
 import { API_BASE_URL } from '../utils/redirect';
+import Method from './Method.vue';
 
 const props = withDefaults(
     defineProps<{

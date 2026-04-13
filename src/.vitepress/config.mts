@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress';
+
 import { v1 } from './sidebar/v1';
 import { v2 } from './sidebar/v2';
 import { v3 } from './sidebar/v3';

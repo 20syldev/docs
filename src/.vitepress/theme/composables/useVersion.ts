@@ -1,7 +1,8 @@
-import { computed } from 'vue';
 import { useRoute } from 'vitepress';
-import { LATEST_VERSION } from '../utils/redirect';
+import { computed } from 'vue';
+
 import { getLang } from '../utils/i18n';
+import { LATEST_VERSION } from '../utils/redirect';
 
 export function useVersion() {
     const route = useRoute();

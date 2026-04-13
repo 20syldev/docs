@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue';
-import { t } from '../utils/i18n';
+import { computed, onMounted, ref, watch } from 'vue';
+
+import { CODE_LANG_LABELS, CODE_LANGS, type CodeLang, generateSnippet } from '../composables/useCodeSnippets';
 import { useVersion } from '../composables/useVersion';
-import { API_BASE_URL } from '../utils/redirect';
-import { generateSnippet, CODE_LANGS, CODE_LANG_LABELS, type CodeLang } from '../composables/useCodeSnippets';
 import type { EndpointParam } from '../data/endpoints';
+import { t } from '../utils/i18n';
+import { API_BASE_URL } from '../utils/redirect';
 
 const props = withDefaults(
     defineProps<{

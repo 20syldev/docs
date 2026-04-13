@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useRoute, useData } from 'vitepress';
+import { useData, useRoute } from 'vitepress';
 import VPFlyout from 'vitepress/dist/client/theme-default/components/VPFlyout.vue';
 import VPSwitchAppearance from 'vitepress/dist/client/theme-default/components/VPSwitchAppearance.vue';
-import { getLang, isHome, getLangItems, t, saveLang } from '../utils/i18n';
+import { computed } from 'vue';
+
+import { getLang, getLangItems, isHome, saveLang, t } from '../utils/i18n';
 
 const route = useRoute();
 const { site } = useData();
