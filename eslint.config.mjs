@@ -30,7 +30,19 @@ export default [
         rules: {
             'vue/multi-word-component-names': 'off',
             'vue/no-v-html': 'off',
-            'simple-import-sort/imports': 'error',
+            'simple-import-sort/imports': [
+                'error',
+                {
+                    groups: [
+                        // External packages
+                        ['^@?\\w'],
+                        // Side effect imports
+                        ['^\\u0000'],
+                        // Internal/relative imports
+                        ['^\\.'],
+                    ],
+                },
+            ],
             'simple-import-sort/exports': 'error',
         },
     },

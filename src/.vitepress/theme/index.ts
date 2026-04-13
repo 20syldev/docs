@@ -1,8 +1,8 @@
 /// <reference types="vite/client" />
-import './main.css';
-
 import type { Theme } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
+
+import './main.css';
 
 import Banner from './components/Banner.vue';
 import Endpoint from './components/Endpoint.vue';
