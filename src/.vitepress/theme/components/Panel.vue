@@ -14,15 +14,19 @@ const props = withDefaults(
         baseUrl?: string;
         params: EndpointParam[];
         showCode?: boolean;
+        autoSend?: boolean;
+        noVersion?: boolean;
     }>(),
     {
         baseUrl: API_BASE_URL,
         showCode: false,
+        autoSend: false,
+        noVersion: false,
     },
 );
 
 const { lang, versionedPath } = useVersion();
-const fullPath = computed(() => versionedPath(props.path));
+const fullPath = computed(() => (props.noVersion ? props.path : versionedPath(props.path)));
 
 const values = ref<Record<string, string>>({});
 const codeLang = ref<CodeLang>('curl');
@@ -92,6 +96,10 @@ async function send() {
         loading.value = false;
     }
 }
+
+onMounted(() => {
+    if (props.autoSend) send();
+});
 
 defineExpose({ resetState });
 </script>
