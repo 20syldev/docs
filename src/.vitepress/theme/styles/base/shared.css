@@ -17,6 +17,12 @@
     border-radius: 5px;
     letter-spacing: 0.5px;
 }
+.method-badge.sm {
+    vertical-align: text-top;
+    letter-spacing: 0.3px;
+    border-radius: 3px;
+    padding: 4px 8px;
+}
 .method-badge.get {
     --_c: var(--method-get);
 }
