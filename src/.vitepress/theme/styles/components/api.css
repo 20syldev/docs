@@ -10,14 +10,15 @@
     margin: 12px 0;
     gap: 10px;
 }
-.api-endpoint a,
+.vp-doc .api-endpoint a,
 .api-endpoint .path {
     color: var(--vp-c-text-2);
     text-decoration: none;
     font-weight: 500;
 }
-.api-endpoint a:hover {
+.vp-doc .api-endpoint a:hover {
     color: var(--vp-c-brand-1);
+    text-decoration: none;
 }
 
 /* ----- Request block ----- */
