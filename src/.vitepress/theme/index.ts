@@ -9,6 +9,7 @@ import Endpoint from './components/Endpoint.vue';
 import Examples from './components/Examples.vue';
 import Features from './components/Features.vue';
 import Layout from './components/Layout.vue';
+import Method from './components/Method.vue';
 import Playground from './components/Playground.vue';
 import Try from './components/Try.vue';
 
@@ -20,6 +21,7 @@ export default {
         app.component('Endpoint', Endpoint);
         app.component('Examples', Examples);
         app.component('Features', Features);
+        app.component('Method', Method);
         app.component('Playground', Playground);
         app.component('Try', Try);
     },
