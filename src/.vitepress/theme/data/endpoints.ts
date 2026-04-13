@@ -118,6 +118,18 @@ export const endpoints: EndpointDef[] = [
         params: [],
     },
     {
+        name: 'Geo',
+        path: '/geo',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'lat1', required: true },
+            { name: 'lon1', required: true },
+            { name: 'lat2', required: true },
+            { name: 'lon2', required: true },
+        ],
+    },
+    {
         name: 'Convert',
         path: '/convert',
         method: 'get',
@@ -207,6 +219,39 @@ export const endpoints: EndpointDef[] = [
         params: [
             { name: 'type', required: true, options: ['luhn', 'iban', 'email'] },
             { name: 'value', required: true },
+        ],
+    },
+    {
+        name: 'Palette',
+        path: '/palette',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'color', required: true },
+            {
+                name: 'type',
+                required: true,
+                options: ['complementary', 'triadic', 'analogous', 'tetradic', 'split-complementary'],
+            },
+        ],
+    },
+    {
+        name: 'Placeholder',
+        path: '/placeholder',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'type', required: true, options: ['image', 'skeleton'] },
+            { name: 'width', required: false },
+            { name: 'height', required: false },
+            { name: 'bg', required: false },
+            { name: 'color', required: false },
+            { name: 'text', required: false },
+            { name: 'rows', required: false },
+            { name: 'avatar', required: false, options: ['circle', 'rounded', 'square'] },
+            { name: 'animate', required: false, options: ['shimmer', 'pulse', 'none'] },
+            { name: 'speed', required: false },
+            { name: 'radius', required: false },
         ],
     },
     {

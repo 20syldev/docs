@@ -17,7 +17,13 @@ export const v4 = {
                     text: 'Chat',
                     collapsed: true,
                     items: [
-                        { text: '/v4/chat', link: '/v4/en/chat', badge: 'GET POST' },
+                        { text: '/v4/chat', link: '/v4/en/chat/messages', badge: 'GET' },
+                        { text: '/v4/chat', link: '/v4/en/chat/send', badge: 'POST' },
+                        {
+                            text: '/v4/chat/:token',
+                            link: '/v4/en/chat/clear',
+                            badge: 'DELETE',
+                        },
                         {
                             text: '/v4/chat/private',
                             link: '/v4/en/chat/private',
@@ -30,11 +36,14 @@ export const v4 = {
                 { text: 'Dice', link: '/v4/en/dice', badge: 'GET' },
                 { text: 'Domain', link: '/v4/en/domain', badge: 'GET' },
                 { text: 'Encode', link: '/v4/en/encode', badge: 'GET' },
+                { text: 'Geo', link: '/v4/en/geo', badge: 'GET' },
                 { text: 'Hash', link: '/v4/en/hash', badge: 'POST' },
                 { text: 'Hyperplanning', link: '/v4/en/hyperplanning', badge: 'POST' },
                 { text: 'Infos', link: '/v4/en/infos', badge: 'GET' },
                 { text: 'Levenshtein', link: '/v4/en/levenshtein', badge: 'GET' },
+                { text: 'Palette', link: '/v4/en/palette', badge: 'GET' },
                 { text: 'Personal', link: '/v4/en/personal', badge: 'GET' },
+                { text: 'Placeholder', link: '/v4/en/placeholder', badge: 'GET' },
                 { text: 'QR Code', link: '/v4/en/qrcode', badge: 'GET' },
                 { text: 'Statistics', link: '/v4/en/statistics', badge: 'GET' },
                 { text: 'Text', link: '/v4/en/text', badge: 'GET' },
@@ -46,6 +55,16 @@ export const v4 = {
                             text: '/v4/tic-tac-toe',
                             link: '/v4/en/tic-tac-toe',
                             badge: 'POST',
+                        },
+                        {
+                            text: '/v4/tic-tac-toe/:game',
+                            link: '/v4/en/tic-tac-toe/play',
+                            badge: 'PATCH',
+                        },
+                        {
+                            text: '/v4/tic-tac-toe/:game',
+                            link: '/v4/en/tic-tac-toe/forfeit',
+                            badge: 'DELETE',
                         },
                         {
                             text: '/v4/tic-tac-toe/fetch',
@@ -74,6 +93,7 @@ export const v4 = {
                     collapsed: true,
                     items: [
                         { text: 'Overview', link: '/v4/en/changelog' },
+                        { text: '4.3.0', link: '/v4/en/changelog/4.3.0' },
                         { text: '4.2.0', link: '/v4/en/changelog/4.2.0' },
                         { text: '4.1.0', link: '/v4/en/changelog/4.1.0' },
                         { text: '4.0.0', link: '/v4/en/changelog/4.0.0' },
@@ -104,7 +124,13 @@ export const v4 = {
                     text: 'Chat',
                     collapsed: true,
                     items: [
-                        { text: '/v4/chat', link: '/v4/fr/chat', badge: 'GET POST' },
+                        { text: '/v4/chat', link: '/v4/fr/chat/messages', badge: 'GET' },
+                        { text: '/v4/chat', link: '/v4/fr/chat/send', badge: 'POST' },
+                        {
+                            text: '/v4/chat/:token',
+                            link: '/v4/fr/chat/clear',
+                            badge: 'DELETE',
+                        },
                         {
                             text: '/v4/chat/private',
                             link: '/v4/fr/chat/private',
@@ -117,11 +143,14 @@ export const v4 = {
                 { text: 'Dice', link: '/v4/fr/dice', badge: 'GET' },
                 { text: 'Domain', link: '/v4/fr/domain', badge: 'GET' },
                 { text: 'Encode', link: '/v4/fr/encode', badge: 'GET' },
+                { text: 'Geo', link: '/v4/fr/geo', badge: 'GET' },
                 { text: 'Hash', link: '/v4/fr/hash', badge: 'POST' },
                 { text: 'Hyperplanning', link: '/v4/fr/hyperplanning', badge: 'POST' },
                 { text: 'Infos', link: '/v4/fr/infos', badge: 'GET' },
                 { text: 'Levenshtein', link: '/v4/fr/levenshtein', badge: 'GET' },
+                { text: 'Palette', link: '/v4/fr/palette', badge: 'GET' },
                 { text: 'Personal', link: '/v4/fr/personal', badge: 'GET' },
+                { text: 'Placeholder', link: '/v4/fr/placeholder', badge: 'GET' },
                 { text: 'QR Code', link: '/v4/fr/qrcode', badge: 'GET' },
                 { text: 'Statistics', link: '/v4/fr/statistics', badge: 'GET' },
                 { text: 'Text', link: '/v4/fr/text', badge: 'GET' },
@@ -133,6 +162,16 @@ export const v4 = {
                             text: '/v4/tic-tac-toe',
                             link: '/v4/fr/tic-tac-toe',
                             badge: 'POST',
+                        },
+                        {
+                            text: '/v4/tic-tac-toe/:game',
+                            link: '/v4/fr/tic-tac-toe/play',
+                            badge: 'PATCH',
+                        },
+                        {
+                            text: '/v4/tic-tac-toe/:game',
+                            link: '/v4/fr/tic-tac-toe/forfeit',
+                            badge: 'DELETE',
                         },
                         {
                             text: '/v4/tic-tac-toe/fetch',
@@ -161,6 +200,7 @@ export const v4 = {
                     collapsed: true,
                     items: [
                         { text: 'Aperçu', link: '/v4/fr/changelog' },
+                        { text: '4.3.0', link: '/v4/fr/changelog/4.3.0' },
                         { text: '4.2.0', link: '/v4/fr/changelog/4.2.0' },
                         { text: '4.1.0', link: '/v4/fr/changelog/4.1.0' },
                         { text: '4.0.0', link: '/v4/fr/changelog/4.0.0' },
