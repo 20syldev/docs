@@ -5,7 +5,7 @@ import Panel from './Panel.vue';
 
 withDefaults(
     defineProps<{
-        method: 'get' | 'post';
+        method: 'get' | 'post' | 'patch' | 'delete';
         path: string;
         baseUrl?: string;
         params?: EndpointParam[];

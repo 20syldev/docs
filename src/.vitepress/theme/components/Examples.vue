@@ -8,7 +8,7 @@ import { API_BASE_URL } from '../utils/redirect';
 
 const props = withDefaults(
     defineProps<{
-        method: 'get' | 'post';
+        method: 'get' | 'post' | 'patch' | 'delete';
         path: string;
         baseUrl?: string;
         params?: Record<string, string>;

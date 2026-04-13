@@ -9,7 +9,7 @@ import { API_BASE_URL } from '../utils/redirect';
 
 const props = withDefaults(
     defineProps<{
-        method: 'get' | 'post';
+        method: 'get' | 'post' | 'patch' | 'delete';
         path: string;
         baseUrl?: string;
         params: EndpointParam[];
@@ -48,7 +48,7 @@ const filledEntries = computed(() =>
 );
 
 const bodyObject = computed<Record<string, string>>(() =>
-    props.method === 'post' ? Object.fromEntries(filledEntries.value) : {},
+    props.method !== 'get' ? Object.fromEntries(filledEntries.value) : {},
 );
 
 const fullUrl = computed(() => {
@@ -82,6 +82,9 @@ async function send() {
         if (props.method === 'post' && filledEntries.value.length) {
             opts.headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
             opts.body = new URLSearchParams(filledEntries.value).toString();
+        } else if ((props.method === 'patch' || props.method === 'delete') && filledEntries.value.length) {
+            opts.headers = { 'Content-Type': 'application/json' };
+            opts.body = JSON.stringify(Object.fromEntries(filledEntries.value));
         }
         const res = await fetch(fullUrl.value, opts);
         duration.value = Math.round(performance.now() - start);
