@@ -6,7 +6,7 @@ The `/infos` endpoint provides general information about the [API](https://api.s
 
 ## Parameters
 
-This endpoint does not require any parameters.
+This endpoint does not require any parameters. It returns the API metadata: endpoint count, current version, documentation link and creation date.
 
 ## Response Fields
 

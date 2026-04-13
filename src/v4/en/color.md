@@ -6,7 +6,7 @@ The `/color` endpoint generates a random color in multiple formats. This endpoin
 
 ## Parameters
 
-This endpoint does not require any parameters.
+This endpoint does not require any parameters. It returns a randomly generated color in HEX, RGB and HSL formats.
 
 ## Response Fields
 

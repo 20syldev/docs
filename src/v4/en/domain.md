@@ -6,7 +6,7 @@ The `/domain` endpoint generates various random data about a domain to create a 
 
 ## Parameters
 
-This endpoint does not require any parameters.
+This endpoint does not require any parameters. It returns a randomly generated domain profile with IP, DNS, registrar and WHOIS data.
 
 ## Response Fields
 

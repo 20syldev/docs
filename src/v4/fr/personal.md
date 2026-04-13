@@ -6,7 +6,7 @@ L'endpoint `/personal` génère des informations aléatoires sur une personne. N
 
 ## Paramètres
 
-Cet endpoint ne nécessite aucun paramètre.
+Cet endpoint ne nécessite aucun paramètre. Il retourne une identité fictive générée aléatoirement avec nom, email, adresse, téléphone, profession et plus.
 
 ## Champs de réponse
 

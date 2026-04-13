@@ -10,7 +10,7 @@ Suggest usernames during sign-up, generate player names for games, create test u
 
 ## Parameters
 
-This endpoint does not require any parameters.
+This endpoint does not require any parameters. It returns a randomly generated username using an adjective + animal pattern.
 
 ## Response Fields
 

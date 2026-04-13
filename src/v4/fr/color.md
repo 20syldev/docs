@@ -6,7 +6,7 @@ L'endpoint `/color` génère une couleur aléatoire en plusieurs formats. Cet en
 
 ## Paramètres
 
-Cet endpoint ne nécessite aucun paramètre.
+Cet endpoint ne nécessite aucun paramètre. Il retourne une couleur générée aléatoirement en formats HEX, RGB et HSL.
 
 ## Champs de réponse
 

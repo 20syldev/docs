@@ -6,7 +6,7 @@ L'endpoint `/domain` génère diverses données aléatoires sur un domaine pour 
 
 ## Paramètres
 
-Cet endpoint ne nécessite aucun paramètre.
+Cet endpoint ne nécessite aucun paramètre. Il retourne un profil de domaine généré aléatoirement avec IP, DNS, registrar et données WHOIS.
 
 ## Champs de réponse
 

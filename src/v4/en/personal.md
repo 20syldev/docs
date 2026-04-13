@@ -6,7 +6,7 @@ The `/personal` endpoint generates random information about a person. Name, emai
 
 ## Parameters
 
-This endpoint does not require any parameters.
+This endpoint does not require any parameters. It returns a randomly generated identity with name, email, address, phone number, profession and more.
 
 ## Response Fields
 

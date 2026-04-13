@@ -10,7 +10,7 @@ Suggérer des noms d'utilisateur à l'inscription, générer des noms de joueurs
 
 ## Paramètres
 
-Cet endpoint ne nécessite aucun paramètre.
+Cet endpoint ne nécessite aucun paramètre. Il retourne un nom d'utilisateur généré aléatoirement avec le format adjectif + animal.
 
 ## Champs de réponse
 
