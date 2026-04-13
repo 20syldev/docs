@@ -1,12 +1,16 @@
 # Tic-Tac-Toe List
 
-The `/tic-tac-toe/list` endpoint lists all public games currently in progress.
+The `/tic-tac-toe/list` endpoint lists all public games currently in progress. This endpoint does not return private or finished games.
 
 <Endpoint method="post" path="/tic-tac-toe/list" baseUrl="https://api.sylvain.sh" />
 
+::: info Good to know
+The list only includes public games currently in progress (not finished). Games are sorted by creation time with the most recent first. Private games are never included in this list for privacy reasons. You can join any listed game using its ID with the [/tic-tac-toe](../tic-tac-toe) endpoint.
+:::
+
 ## Parameters
 
-This endpoint does not require any parameters.
+This endpoint does not require any parameters. It returns all currently active public games.
 
 ## Code Examples
 

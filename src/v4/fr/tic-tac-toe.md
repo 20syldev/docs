@@ -71,4 +71,6 @@ Lorsqu'une partie est terminée, la requête retournera les noms du gagnant et d
 ## Endpoints associés
 
 - [/v4/tic-tac-toe/fetch](./tic-tac-toe/fetch) - Récupérer les informations de la partie en cours
-- [/v4/tic-tac-toe/list](./tic-tac-toe/list) - Lister toutes les parties publiques en cours
+- [/v4/tic-tac-toe/list](./tic-tac-toe/list) - Lister toutes les parties publiques
+- <Method type="patch" sm /> [/v4/tic-tac-toe/:game](./tic-tac-toe/play) - Jouer un coup
+- <Method type="delete" sm /> [/v4/tic-tac-toe/:game](./tic-tac-toe/forfeit) - Abandonner une partie
