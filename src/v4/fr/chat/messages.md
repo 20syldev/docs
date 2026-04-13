@@ -1,0 +1,39 @@
+# Chat Messages
+
+L'endpoint `/chat` récupère tous les messages envoyés durant la dernière heure. Cet endpoint ne nécessite aucune option.
+
+<Endpoint method="get" path="/chat" baseUrl="https://api.sylvain.sh" />
+
+## Paramètres
+
+Cet endpoint ne nécessite aucun paramètre. Il retourne tous les messages de la dernière heure.
+
+## Champs de réponse
+
+| Champ       | Type     | Description                       |
+| ----------- | -------- | --------------------------------- |
+| `username`  | `string` | Nom d'utilisateur de l'expéditeur |
+| `message`   | `string` | Contenu du message                |
+| `timestamp` | `string` | Horodatage du message (ISO 8601)  |
+
+## Exemples de code
+
+<Examples method="get" path="/chat" />
+
+## Essayer
+
+<Try method="get" path="/chat" :params="[]" />
+
+## Gestion des erreurs
+
+Si les paramètres sont manquants ou invalides, l'API retournera une erreur :
+
+| Message d'erreur     | Description                       |
+| -------------------- | --------------------------------- |
+| `No messages stored` | Aucun message stocké dans le chat |
+
+## Endpoints associés
+
+- [/v4/chat](./send) - Envoyer un message
+- [/v4/chat/private](./private) - Créer et gérer des canaux de chat privés
+- <Method type="delete" sm /> [/v4/chat/:token](./clear) - Effacer les messages d'un chat privé
