@@ -1,12 +1,14 @@
 # Génération de couleur
 
-L'endpoint `/color` génère une couleur aléatoire en plusieurs formats. Cet endpoint ne nécessite aucune option.
+L'endpoint `/color` génère une couleur en plusieurs formats. Vous pouvez fournir une couleur HEX à convertir, ou l'omettre pour obtenir une couleur aléatoire.
 
 <Endpoint method="get" path="/color" baseUrl="https://api.sylvain.sh" />
 
 ## Paramètres
 
-Cet endpoint ne nécessite aucun paramètre. Il retourne une couleur générée aléatoirement en formats HEX, RGB et HSL.
+| Paramètre | Requis | Description                                                   |
+| --------- | ------ | ------------------------------------------------------------- |
+| `hex`     | Non    | Une couleur HEX à convertir (ex. `ff6600`). Aléatoire si omis |
 
 ## Champs de réponse
 
@@ -21,8 +23,16 @@ Cet endpoint ne nécessite aucun paramètre. Il retourne une couleur générée 
 
 ## Exemples de code
 
-<Examples method="get" path="/color" />
+<Examples method="get" path="/color" :params="{ hex: '1a1a2e' }" />
 
 ## Essayer
 
-<Try method="get" path="/color" :params="[]" />
+<Try method="get" path="/color" :params="[{ name: 'hex', required: false }]" />
+
+## Gestion des erreurs
+
+Si les paramètres sont invalides, l'API retournera une erreur :
+
+| Message d'erreur                  | Description                                |
+| --------------------------------- | ------------------------------------------ |
+| `Invalid HEX color (use #RRGGBB)` | Le paramètre `hex` n'est pas un hex valide |
