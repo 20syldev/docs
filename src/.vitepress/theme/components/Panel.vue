@@ -32,7 +32,8 @@ const values = ref<Record<string, string>>({});
 const codeLang = ref<CodeLang>('curl');
 const loading = ref(false);
 const response = ref<string | null>(null);
-const statusCode = ref<number | null>(null);
+const image = ref<string | null>(null);
+const status = ref<number | null>(null);
 const duration = ref<number | null>(null);
 
 watch(
@@ -69,7 +70,9 @@ const code = computed(() =>
 
 function resetState() {
     response.value = null;
-    statusCode.value = null;
+    if (image.value) URL.revokeObjectURL(image.value);
+    image.value = null;
+    status.value = null;
     duration.value = null;
 }
 
@@ -88,12 +91,16 @@ async function send() {
         }
         const res = await fetch(fullUrl.value, opts);
         duration.value = Math.round(performance.now() - start);
-        statusCode.value = res.status;
+        status.value = res.status;
         const ct = res.headers.get('content-type') || '';
-        response.value = ct.includes('json') ? JSON.stringify(await res.json(), null, 2) : await res.text();
+        if (ct.startsWith('image/')) {
+            image.value = URL.createObjectURL(await res.blob());
+        } else {
+            response.value = ct.includes('json') ? JSON.stringify(await res.json(), null, 2) : await res.text();
+        }
     } catch {
         duration.value = Math.round(performance.now() - start);
-        statusCode.value = 0;
+        status.value = 0;
         response.value = '{\n  "error": "Network error"\n}';
     } finally {
         loading.value = false;
@@ -142,17 +149,18 @@ defineExpose({ resetState });
             <pre class="code-output panel-code-block">{{ code }}</pre>
         </div>
 
-        <div v-if="response !== null || loading" class="panel-section">
+        <div v-if="response !== null || image !== null || loading" class="panel-section">
             <div class="panel-response-bar">
                 <span>{{ t('playground.response', lang) }}</span>
-                <div v-if="statusCode !== null" class="panel-meta">
-                    <span :class="['status-badge', statusCode < 300 ? 'ok' : statusCode < 500 ? 'warn' : 'err']">{{
-                        statusCode || 'ERR'
+                <div v-if="status !== null" class="panel-meta">
+                    <span :class="['status-badge', status < 300 ? 'ok' : status < 500 ? 'warn' : 'err']">{{
+                        status || 'ERR'
                     }}</span>
                     <span v-if="duration !== null" class="panel-duration">{{ duration }}ms</span>
                 </div>
             </div>
             <div v-if="loading" class="panel-dots"><span></span><span></span><span></span></div>
+            <img v-else-if="image" :src="image" alt="Response image" class="panel-image" />
             <pre v-else class="code-output panel-output">{{ response }}</pre>
         </div>
     </div>
