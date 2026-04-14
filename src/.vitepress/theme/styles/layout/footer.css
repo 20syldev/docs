@@ -9,6 +9,9 @@
     background: var(--vp-c-bg);
     padding: 24px;
 }
+.site-footer.has-sidebar {
+    margin-left: var(--vp-sidebar-width, 272px);
+}
 
 .site-footer a {
     color: var(--vp-c-text-3);
