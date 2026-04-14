@@ -5,12 +5,15 @@ import type { TranslationKey, TranslationSchema } from './types';
 export type { TranslationKey, TranslationSchema };
 
 const translations: Record<string, TranslationSchema> = { en, fr };
-const defaultLang = 'en';
 
-export const languages: { code: string; prefix: string; translationKey: TranslationKey }[] = [
-    { code: 'en', prefix: '', translationKey: 'lang.en' },
-    { code: 'fr', prefix: '/fr', translationKey: 'lang.fr' },
+export const defaultLang = 'en';
+
+export const languages: { code: string; prefix: string; locale: string; translationKey: TranslationKey }[] = [
+    { code: 'en', prefix: '', locale: 'en-US', translationKey: 'lang.en' },
+    { code: 'fr', prefix: '/fr', locale: 'fr-FR', translationKey: 'lang.fr' },
 ];
+
+export const langCodes = languages.map((l) => l.code);
 
 function resolve(obj: TranslationSchema | undefined, key: string): string | undefined {
     if (!obj) return undefined;
@@ -61,6 +64,10 @@ export function getLangItems(
         }
         return { text: t(l.translationKey, lang), link, lang: l.code };
     });
+}
+
+export function getLocale(lang: string): string {
+    return languages.find((l) => l.code === lang)?.locale ?? lang;
 }
 
 export function saveLang(lang: string): void {

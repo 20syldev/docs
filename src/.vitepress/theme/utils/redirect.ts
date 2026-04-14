@@ -1,3 +1,5 @@
+import { defaultLang, langCodes, languages } from './i18n';
+
 export const API_BASE_URL = 'https://api.sylvain.sh';
 export const LATEST_VERSION = 'v4';
 export const KNOWN_VERSIONS = ['v1', 'v2', 'v3', 'v4'];
@@ -6,24 +8,27 @@ const versionNums = KNOWN_VERSIONS.map((v) => v.replace('v', '')).join('');
 export const VERSION_REGEX = new RegExp(`^v[${versionNums}]$`);
 export const VERSION_PATH_REGEX = new RegExp(`^(v[${versionNums}])\\/`);
 
+const langPattern = langCodes.join('|');
+const rootPaths = new Set(['', '404', ...languages.filter((l) => l.prefix).map((l) => l.prefix.replace(/^\//, ''))]);
+
 export function getUserLang(): string {
-    if (typeof localStorage === 'undefined') return 'en';
+    if (typeof localStorage === 'undefined') return defaultLang;
     const saved = localStorage.getItem('lang');
-    if (saved === 'fr' || saved === 'en') return saved;
+    if (saved && langCodes.includes(saved)) return saved;
     const nav = (typeof navigator !== 'undefined' ? navigator.language : '') ?? '';
-    return nav.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+    const match = languages.find((l) => nav.toLowerCase().startsWith(l.code));
+    return match ? match.code : defaultLang;
 }
 
 export function getSmartRedirect(path: string, lang: string, latest = LATEST_VERSION): string | null {
     const p = path.replace(/\/$/, '').replace(/^\//, '');
 
     // Known root paths → no redirect
-    if (!p || p === 'fr' || p === '404') return null;
+    if (rootPaths.has(p)) return null;
 
     // Path already has version + language → no redirect needed
-    // e.g. /v3/en/algorithms, /v2/fr/chat
     const vRange = `[${versionNums}]`;
-    if (new RegExp(`^v${vRange}\\/(en|fr)(\\/.*)?$`).test(p)) return null;
+    if (new RegExp(`^v${vRange}\\/(${langPattern})(\\/.*)?$`).test(p)) return null;
 
     const versionMatch = p.match(new RegExp(`^(v${vRange})(/(.+))?$`));
     if (versionMatch) {

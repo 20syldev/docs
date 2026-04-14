@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 
-import { t } from '../utils/i18n';
+import { getPrefix, t } from '../utils/i18n';
 import { getSmartRedirect, getUserLang, LATEST_VERSION } from '../utils/redirect';
 
 defineProps<{ lang: string }>();
@@ -22,6 +22,6 @@ onMounted(() => {
         <p class="code">404</p>
         <h1 class="title">{{ t('notFound.title', lang) }}</h1>
         <p class="quote">{{ t('notFound.message', lang) }}</p>
-        <a class="link" :href="lang === 'fr' ? '/fr' : '/'">{{ t('notFound.link', lang) }}</a>
+        <a class="link" :href="getPrefix(lang) || '/'">{{ t('notFound.link', lang) }}</a>
     </div>
 </template>

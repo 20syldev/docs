@@ -1,9 +1,20 @@
 <script setup lang="ts">
 import { useData, useRoute, useRouter } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
-import { computed, onMounted, onUnmounted, ref, watchEffect } from 'vue';
+import { computed, onMounted, onUnmounted, ref, watch, watchEffect } from 'vue';
 
-import { getLang, getLangItems, getPrefix, isHome, languages as langConfig, saveLang, t } from '../utils/i18n';
+import {
+    defaultLang,
+    getLang,
+    getLangItems,
+    getLocale,
+    getPrefix,
+    isHome,
+    langCodes,
+    languages as langConfig,
+    saveLang,
+    t,
+} from '../utils/i18n';
 import Copy from './Copy.vue';
 import Extra from './Extra.vue';
 import Features from './Features.vue';
@@ -19,7 +30,6 @@ const router = useRouter();
 const { isDark: dark } = useData();
 
 const lang = computed(() => getLang(route.path));
-const french = computed(() => lang.value === 'fr');
 const latest = ref('v4');
 const home = computed(() => isHome(route.path));
 const languages = computed(() => getLangItems(route.path, home.value, lang.value));
@@ -148,7 +158,7 @@ function translate() {
         const timeEl = lastUpdated.querySelector('time');
         if (timeEl && timeEl.getAttribute('datetime')) {
             const date = new Date(timeEl.getAttribute('datetime')!);
-            const formatted = new Intl.DateTimeFormat(l === 'fr' ? 'fr-FR' : undefined, {
+            const formatted = new Intl.DateTimeFormat(getLocale(l), {
                 dateStyle: 'short',
                 timeStyle: 'short',
             }).format(date);
@@ -161,11 +171,16 @@ function translate() {
 
 watchEffect(() => {
     if (typeof document !== 'undefined') {
-        document.documentElement.classList.toggle('lang-fr', french.value);
+        for (const l of langCodes) document.documentElement.classList.toggle(`lang-${l}`, lang.value === l);
         translate();
         updateCSS();
     }
 });
+
+watch(
+    () => route.path,
+    () => scrollSidebarToActive(),
+);
 
 function openMenu(button: HTMLElement | null, active: () => string) {
     if (!button) return;
@@ -222,23 +237,29 @@ function onKey(e: KeyboardEvent) {
     }
 }
 
+function scrollSidebarToActive() {
+    requestAnimationFrame(() => {
+        const active = document.querySelector('.VPSidebar .is-active');
+        active?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
+}
+
 function redirectLang() {
     if (route.path !== '/') return;
 
     const savedLang = localStorage.getItem('lang');
-    if (savedLang === 'fr') {
-        router.go('/fr');
+    if (savedLang && langCodes.includes(savedLang)) {
+        const prefix = getPrefix(savedLang);
+        if (prefix) router.go(prefix);
         return;
     }
-    if (savedLang === 'en') return;
 
-    const userLang = navigator.language;
-    if (userLang?.toLowerCase().startsWith('fr')) {
-        localStorage.setItem('lang', 'fr');
-        router.go('/fr');
-    } else {
-        localStorage.setItem('lang', 'en');
-    }
+    const nav = navigator.language?.toLowerCase() ?? '';
+    const detected = langConfig.find((l) => nav.startsWith(l.code));
+    const code = detected ? detected.code : defaultLang;
+    saveLang(code);
+    const prefix = getPrefix(code);
+    if (prefix) router.go(prefix);
 }
 
 onMounted(() => {
@@ -246,6 +267,7 @@ onMounted(() => {
     translate();
     updateCSS();
     fetchLatest();
+    scrollSidebarToActive();
     document.addEventListener('keydown', onKey);
 
     // Observe DOM changes to re-translate when VitePress updates elements
