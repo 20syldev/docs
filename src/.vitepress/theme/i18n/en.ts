@@ -56,9 +56,9 @@ const en: TranslationSchema = {
     },
     features: {
         algorithms: 'Factorial, fibonacci, prime numbers, GCD, roman numerals, and more.',
-        captcha: 'Generate CAPTCHA images from text for bot protection.',
-        color: 'Generate random colors with HEX, RGB, and HSL values.',
-        convert: 'Temperature conversion between Celsius, Fahrenheit, and Kelvin.',
+        captcha: 'Generate CAPTCHA images with customizable size, colors, and auto-generated text.',
+        color: 'Generate or convert colors with HEX, RGB, HSL, HSV, HWB, and CMYK values.',
+        convert: 'Unit conversion: temperature, length, weight, data, and speed.',
         dice: 'Roll dice using RPG notation (2d6+3, 1d20, 4d8).',
         domain: 'Get domain information including IP, DNS, registrar, and WHOIS data.',
         encode: 'Encode and decode text in Base64, Morse, Caesar, binary, and more.',
