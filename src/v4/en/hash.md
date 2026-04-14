@@ -6,10 +6,11 @@ The `/hash` endpoint converts a string into a hash, i.e. a string of characters 
 
 ## Parameters
 
-| Parameter | Required | Description                                             |
-| --------- | -------- | ------------------------------------------------------- |
-| `text`    | Yes      | The string to hash (word, sentence, paragraph, etc.)    |
-| `method`  | Yes      | The hashing method to use (see available methods below) |
+| Parameter  | Required | Description                                             |
+| ---------- | -------- | ------------------------------------------------------- |
+| `text`     | Yes      | The string to hash (word, sentence, paragraph, etc.)    |
+| `method`   | Yes      | The hashing method to use (see available methods below) |
+| `encoding` | No       | Output encoding: `hex` (default) or `base64`            |
 
 ## Available Methods
 
@@ -95,25 +96,27 @@ The `/hash` endpoint converts a string into a hash, i.e. a string of characters 
 
 ## Code Examples
 
-<Examples method="post" path="/hash" :body="{ text: 'hello', method: 'sha512' }" />
+<Examples method="post" path="/hash" :body="{ text: 'hello', method: 'sha256', encoding: 'base64' }" />
 
 ## Response Fields
 
-| Field    | Type     | Description                        |
-| -------- | -------- | ---------------------------------- |
-| `method` | `string` | Hashing method used                |
-| `hash`   | `string` | Resulting hash string (hex digest) |
+| Field    | Type     | Description                                          |
+| -------- | -------- | ---------------------------------------------------- |
+| `method` | `string` | Hashing method used                                  |
+| `hash`   | `string` | Resulting hash string (hex or base64 encoded digest) |
 
 ## Try It
 
-<Try method="post" path="/hash" :params="[{ name: 'text', required: true }, { name: 'method', required: true, options: ['md5', 'sha1', 'sha256', 'sha384', 'sha512', 'blake2b512'] }]" />
+<Try method="post" path="/hash" :params="[{ name: 'text', required: true }, { name: 'method', required: true, options: ['md5', 'sha1', 'sha256', 'sha384', 'sha512', 'blake2b512'] }, { name: 'encoding', required: false, options: ['hex', 'base64'] }]" />
 
 ## Error Handling
 
 If parameters are missing or invalid, the API will return an error:
 
-| Error Message                                                                   | Description                                  |
-| ------------------------------------------------------------------------------- | -------------------------------------------- |
-| `Please provide a text (?text={text})`                                          | The `text` parameter is missing              |
-| `Please provide a valid hash algorithm (&method={algorithm})`                   | The `method` parameter is missing or invalid |
-| `Unsupported method. Use one of: md5, sha1, sha256, sha384, sha512, blake2b512` | The method is not supported                  |
+| Error Message                                                 | Description                                  |
+| ------------------------------------------------------------- | -------------------------------------------- |
+| `Please provide a text (?text={text})`                        | The `text` parameter is missing              |
+| `Text is required`                                            | The `text` parameter is empty                |
+| `Please provide a valid hash algorithm (&method={algorithm})` | The `method` parameter is missing or invalid |
+| `Unsupported method. Use one of: {methods}`                   | The method is not a supported hash algorithm |
+| `Encoding must be one of: hex, base64`                        | Invalid `encoding` value                     |

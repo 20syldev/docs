@@ -6,10 +6,11 @@ L'endpoint `/hash` convertit une chaîne de caractères en hash, c'est-à-dire u
 
 ## Paramètres
 
-| Paramètre | Requis | Description                                                                 |
-| --------- | ------ | --------------------------------------------------------------------------- |
-| `text`    | Oui    | La chaîne à hacher (mot, phrase, paragraphe, etc.)                          |
-| `method`  | Oui    | La méthode de hachage à utiliser (voir les méthodes disponibles ci-dessous) |
+| Paramètre  | Requis | Description                                                                 |
+| ---------- | ------ | --------------------------------------------------------------------------- |
+| `text`     | Oui    | La chaîne à hacher (mot, phrase, paragraphe, etc.)                          |
+| `method`   | Oui    | La méthode de hachage à utiliser (voir les méthodes disponibles ci-dessous) |
+| `encoding` | Non    | Encodage de sortie : `hex` (défaut) ou `base64`                             |
 
 ## Méthodes disponibles
 
@@ -95,18 +96,18 @@ L'endpoint `/hash` convertit une chaîne de caractères en hash, c'est-à-dire u
 
 ## Exemples de code
 
-<Examples method="post" path="/hash" :body="{ text: 'hello', method: 'sha512' }" />
+<Examples method="post" path="/hash" :body="{ text: 'hello', method: 'sha256', encoding: 'base64' }" />
 
 ## Champs de réponse
 
-| Champ    | Type     | Description                 |
-| -------- | -------- | --------------------------- |
-| `method` | `string` | Méthode de hachage utilisée |
-| `hash`   | `string` | Hash hexadécimal résultant  |
+| Champ    | Type     | Description                                             |
+| -------- | -------- | ------------------------------------------------------- |
+| `method` | `string` | Méthode de hachage utilisée                             |
+| `hash`   | `string` | Hash résultant (encodé en hex ou base64 selon le choix) |
 
 ## Essayer
 
-<Try method="post" path="/hash" :params="[{ name: 'text', required: true }, { name: 'method', required: true, options: ['sha256', 'sha512', 'md5', 'sha1', 'sha384', 'blake2b512'] }]" />
+<Try method="post" path="/hash" :params="[{ name: 'text', required: true }, { name: 'method', required: true, options: ['sha256', 'sha512', 'md5', 'sha1', 'sha384', 'blake2b512'] }, { name: 'encoding', required: false, options: ['hex', 'base64'] }]" />
 
 ## Gestion des erreurs
 
@@ -115,4 +116,7 @@ Si les paramètres sont manquants ou invalides, l'API retournera une erreur :
 | Message d'erreur                                              | Description                                    |
 | ------------------------------------------------------------- | ---------------------------------------------- |
 | `Please provide a text (?text={text})`                        | Le paramètre `text` est manquant               |
+| `Text is required`                                            | Le paramètre `text` est vide                   |
 | `Please provide a valid hash algorithm (&method={algorithm})` | Le paramètre `method` est manquant ou invalide |
+| `Unsupported method. Use one of: {methods}`                   | La méthode n'est pas un algorithme supporté    |
+| `Encoding must be one of: hex, base64`                        | Valeur d'`encoding` invalide                   |
