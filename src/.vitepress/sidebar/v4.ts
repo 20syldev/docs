@@ -17,8 +17,8 @@ export const v4 = {
                     text: 'Chat',
                     collapsed: true,
                     items: [
+                        { text: '/v4/chat', link: '/v4/en/chat', badge: 'POST' },
                         { text: '/v4/chat', link: '/v4/en/chat/messages', badge: 'GET' },
-                        { text: '/v4/chat', link: '/v4/en/chat/send', badge: 'POST' },
                         {
                             text: '/v4/chat/:token',
                             link: '/v4/en/chat/clear',
@@ -93,6 +93,7 @@ export const v4 = {
                     collapsed: true,
                     items: [
                         { text: 'Overview', link: '/v4/en/changelog' },
+                        { text: '4.4.0', link: '/v4/en/changelog/4.4.0' },
                         { text: '4.3.0', link: '/v4/en/changelog/4.3.0' },
                         { text: '4.2.0', link: '/v4/en/changelog/4.2.0' },
                         { text: '4.1.0', link: '/v4/en/changelog/4.1.0' },
@@ -124,8 +125,8 @@ export const v4 = {
                     text: 'Chat',
                     collapsed: true,
                     items: [
+                        { text: '/v4/chat', link: '/v4/fr/chat', badge: 'POST' },
                         { text: '/v4/chat', link: '/v4/fr/chat/messages', badge: 'GET' },
-                        { text: '/v4/chat', link: '/v4/fr/chat/send', badge: 'POST' },
                         {
                             text: '/v4/chat/:token',
                             link: '/v4/fr/chat/clear',
@@ -200,6 +201,7 @@ export const v4 = {
                     collapsed: true,
                     items: [
                         { text: 'Aperçu', link: '/v4/fr/changelog' },
+                        { text: '4.4.0', link: '/v4/fr/changelog/4.4.0' },
                         { text: '4.3.0', link: '/v4/fr/changelog/4.3.0' },
                         { text: '4.2.0', link: '/v4/fr/changelog/4.2.0' },
                         { text: '4.1.0', link: '/v4/fr/changelog/4.1.0' },
