@@ -48,5 +48,5 @@ This endpoint does not require parameters and will not return parameter-related 
 
 ## Related Endpoints
 
-- [/v4/tic-tac-toe](../tic-tac-toe) - Main game endpoint for making moves
-- [/v4/tic-tac-toe/fetch](./fetch) - Fetch specific game details
+- <Method type="post" sm /> [/v4/tic-tac-toe](../tic-tac-toe) - Main game endpoint for making moves
+- <Method type="post" sm /> [/v4/tic-tac-toe/fetch](./fetch) - Fetch specific game details

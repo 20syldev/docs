@@ -42,5 +42,6 @@ If parameters are missing or invalid, the API will return an error:
 
 ## Related Endpoints
 
-- [/v4/chat](../chat) - Main chat endpoint for sending and receiving messages
-- [/v4/chat/private](./private) - Create and manage private chat channels
+- <Method type="post" sm /> [/v4/chat](../chat) - Send a message
+- <Method type="get" sm /> [/v4/chat](./messages) - Retrieve all recent messages
+- <Method type="post" sm /> [/v4/chat/private](./private) - Create and manage private chat channels

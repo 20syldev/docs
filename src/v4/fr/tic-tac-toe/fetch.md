@@ -53,5 +53,5 @@ Lorsqu'une nouvelle partie est créée, l'utilisateur est automatiquement ajout�
 
 ## Endpoints associés
 
-- [/v4/tic-tac-toe](../tic-tac-toe) - Endpoint principal du jeu pour effectuer des coups
-- [/v4/tic-tac-toe/list](./list) - Lister toutes les parties publiques
+- <Method type="post" sm /> [/v4/tic-tac-toe](../tic-tac-toe) - Endpoint principal du jeu pour effectuer des coups
+- <Method type="post" sm /> [/v4/tic-tac-toe/list](./list) - Lister toutes les parties publiques

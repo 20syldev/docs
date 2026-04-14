@@ -42,7 +42,7 @@ If parameters are missing or invalid, the API will return an error:
 
 ## Related Endpoints
 
-- [/v4/tic-tac-toe](../tic-tac-toe) - Main game endpoint for making moves
-- [/v4/tic-tac-toe/:game](./play) - Play a move
-- [/v4/tic-tac-toe/fetch](./fetch) - Retrieve current game information
-- [/v4/tic-tac-toe/list](./list) - List all public games
+- <Method type="post" sm /> [/v4/tic-tac-toe](../tic-tac-toe) - Main game endpoint for making moves
+- <Method type="patch" sm /> [/v4/tic-tac-toe/:game](./play) - Play a move
+- <Method type="post" sm /> [/v4/tic-tac-toe/fetch](./fetch) - Retrieve current game information
+- <Method type="post" sm /> [/v4/tic-tac-toe/list](./list) - List all public games

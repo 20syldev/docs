@@ -44,5 +44,5 @@ Cet endpoint ne nécessite aucun paramètre. Il retourne toutes les parties publ
 
 ## Endpoints associés
 
-- [/v4/tic-tac-toe](../tic-tac-toe) - Endpoint principal du jeu pour effectuer des coups
-- [/v4/tic-tac-toe/fetch](./fetch) - Récupérer les détails d'une partie spécifique
+- <Method type="post" sm /> [/v4/tic-tac-toe](../tic-tac-toe) - Endpoint principal du jeu pour effectuer des coups
+- <Method type="post" sm /> [/v4/tic-tac-toe/fetch](./fetch) - Récupérer les détails d'une partie spécifique

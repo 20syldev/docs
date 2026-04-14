@@ -34,6 +34,6 @@ Si les paramètres sont manquants ou invalides, l'API retournera une erreur :
 
 ## Endpoints associés
 
-- [/v4/chat](./send) - Envoyer un message
-- [/v4/chat/private](./private) - Créer et gérer des canaux de chat privés
+- <Method type="post" sm /> [/v4/chat](../chat) - Envoyer un message
+- <Method type="post" sm /> [/v4/chat/private](./private) - Créer et gérer des canaux de chat privés
 - <Method type="delete" sm /> [/v4/chat/:token](./clear) - Effacer les messages d'un chat privé

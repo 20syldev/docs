@@ -48,7 +48,7 @@ Si les paramètres sont manquants ou invalides, l'API retournera une erreur :
 
 ## Endpoints associés
 
-- [/v4/tic-tac-toe](../tic-tac-toe) - Endpoint principal du jeu pour effectuer des coups
-- [/v4/tic-tac-toe/:game](./forfeit) - Abandonner une partie
-- [/v4/tic-tac-toe/fetch](./fetch) - Récupérer les informations de la partie
-- [/v4/tic-tac-toe/list](./list) - Lister toutes les parties publiques
+- <Method type="post" sm /> [/v4/tic-tac-toe](../tic-tac-toe) - Endpoint principal du jeu pour effectuer des coups
+- <Method type="delete" sm /> [/v4/tic-tac-toe/:game](./forfeit) - Abandonner une partie
+- <Method type="post" sm /> [/v4/tic-tac-toe/fetch](./fetch) - Récupérer les informations de la partie
+- <Method type="post" sm /> [/v4/tic-tac-toe/list](./list) - Lister toutes les parties publiques
