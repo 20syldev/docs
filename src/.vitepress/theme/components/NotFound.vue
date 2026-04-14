@@ -12,6 +12,7 @@ onMounted(() => {
     const target = getSmartRedirect(window.location.pathname, lang, LATEST_VERSION);
     if (target) {
         redirecting.value = true;
+        document.title = 'Redirecting...';
         window.location.replace(target);
     }
 });
