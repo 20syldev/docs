@@ -1,18 +1,20 @@
-# Conversion de température
+# Conversion d'unités
 
-L'endpoint `/convert` permet de convertir plusieurs unités de température entre elles. Vous devez fournir une valeur à convertir, une unité source et l'unité vers laquelle vous souhaitez convertir.
+L'endpoint `/convert` permet de convertir des valeurs entre unités de la même catégorie. Vous devez fournir une valeur à convertir, une unité source et l'unité cible.
 
 <Endpoint method="get" path="/convert" baseUrl="https://api.sylvain.sh" />
 
 ## Paramètres
 
-| Paramètre | Requis | Description                                         |
-| --------- | ------ | --------------------------------------------------- |
-| `value`   | Oui    | La valeur à convertir (plage : -273.15 à 1 000 000) |
-| `from`    | Oui    | L'unité source (`celsius`, `fahrenheit`, `kelvin`)  |
-| `to`      | Oui    | L'unité cible (`celsius`, `fahrenheit`, `kelvin`)   |
+| Paramètre | Requis | Description                                               |
+| --------- | ------ | --------------------------------------------------------- |
+| `value`   | Oui    | La valeur numérique à convertir                           |
+| `from`    | Oui    | L'unité source (voir les unités disponibles ci-dessous)   |
+| `to`      | Oui    | L'unité cible (doit être de la même catégorie que `from`) |
 
 ## Unités disponibles
+
+**Température :**
 
 | Unité        | Description       |
 | ------------ | ----------------- |
@@ -20,29 +22,73 @@ L'endpoint `/convert` permet de convertir plusieurs unités de température entr
 | `fahrenheit` | Degrés Fahrenheit |
 | `kelvin`     | Kelvin            |
 
+**Longueur :**
+
+| Unité | Description |
+| ----- | ----------- |
+| `km`  | Kilomètres  |
+| `mi`  | Miles       |
+| `m`   | Mètres      |
+| `ft`  | Pieds       |
+| `cm`  | Centimètres |
+| `in`  | Pouces      |
+| `yd`  | Yards       |
+
+**Poids :**
+
+| Unité | Description      |
+| ----- | ---------------- |
+| `kg`  | Kilogrammes      |
+| `lb`  | Livres           |
+| `oz`  | Onces            |
+| `g`   | Grammes          |
+| `ton` | Tonnes métriques |
+
+**Données :**
+
+| Unité | Description |
+| ----- | ----------- |
+| `b`   | Octets      |
+| `kb`  | Kilooctets  |
+| `mb`  | Mégaoctets  |
+| `gb`  | Gigaoctets  |
+| `tb`  | Téraoctets  |
+
+**Vitesse :**
+
+| Unité   | Description      |
+| ------- | ---------------- |
+| `km/h`  | Kilomètres/heure |
+| `mph`   | Miles/heure      |
+| `m/s`   | Mètres/seconde   |
+| `knots` | Nœuds            |
+
 ## Champs de réponse
 
-| Champ    | Type     | Description                     |
-| -------- | -------- | ------------------------------- |
-| `from`   | `string` | Unité de température source     |
-| `to`     | `string` | Unité de température cible      |
-| `value`  | `number` | Valeur originale à convertir    |
-| `result` | `number` | Valeur de température convertie |
+| Champ    | Type     | Description                  |
+| -------- | -------- | ---------------------------- |
+| `from`   | `string` | Unité source                 |
+| `to`     | `string` | Unité cible                  |
+| `value`  | `number` | Valeur originale à convertir |
+| `result` | `number` | Valeur convertie             |
 
 ## Exemples de code
 
-<Examples method="get" path="/convert" :params="{ value: '30', from: 'celsius', to: 'kelvin' }" />
+<Examples method="get" path="/convert" :params="{ value: '100', from: 'km', to: 'mi' }" />
 
 ## Essayer
 
-<Try method="get" path="/convert" :params="[{ name: 'value', required: true }, { name: 'from', required: true, options: ['celsius', 'fahrenheit', 'kelvin'] }, { name: 'to', required: true, options: ['celsius', 'fahrenheit', 'kelvin'] }]" />
+<Try method="get" path="/convert" :params="[{ name: 'value', required: true }, { name: 'from', required: true, options: ['celsius', 'fahrenheit', 'kelvin', 'km', 'mi', 'm', 'ft', 'cm', 'in', 'yd', 'kg', 'lb', 'oz', 'g', 'ton', 'b', 'kb', 'mb', 'gb', 'tb', 'km/h', 'mph', 'm/s', 'knots'] }, { name: 'to', required: true, options: ['celsius', 'fahrenheit', 'kelvin', 'km', 'mi', 'm', 'ft', 'cm', 'in', 'yd', 'kg', 'lb', 'oz', 'g', 'ton', 'b', 'kb', 'mb', 'gb', 'tb', 'km/h', 'mph', 'm/s', 'knots'] }]" />
 
 ## Gestion des erreurs
 
 Si les paramètres sont manquants ou invalides, l'API retournera une erreur :
 
-| Message d'erreur                                    | Description                                   |
-| --------------------------------------------------- | --------------------------------------------- |
-| `Please provide a valid value (?value={value})`     | Le paramètre `value` est manquant ou invalide |
-| `Please provide a valid source unit (&from={unit})` | Le paramètre `from` est manquant ou invalide  |
-| `Please provide a valid target unit (&to={unit})`   | Le paramètre `to` est manquant ou invalide    |
+| Message d'erreur                                    | Description                                                      |
+| --------------------------------------------------- | ---------------------------------------------------------------- |
+| `Please provide a valid value (?value={value})`     | Le paramètre `value` est manquant ou invalide                    |
+| `Please provide a valid source unit (&from={unit})` | Le paramètre `from` est manquant ou invalide                     |
+| `Please provide a valid target unit (&to={unit})`   | Le paramètre `to` est manquant ou invalide                       |
+| `Value must be a number`                            | La valeur n'est pas un nombre valide                             |
+| `Invalid conversion unit`                           | La combinaison `from`/`to` n'est pas valide                      |
+| `Value must be greater than absolute zero`          | La valeur est en dessous du zéro absolu (température uniquement) |
