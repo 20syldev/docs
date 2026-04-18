@@ -49,7 +49,7 @@ With `format=base64`, the response is a JSON object:
 
 ## Try It
 
-<Try method="get" path="/qrcode" :params="[{ name: 'url', required: true }, { name: 'format' }, { name: 'size' }, { name: 'margin' }, { name: 'correction' }, { name: 'dark' }, { name: 'light' }, { name: 'icon' }, { name: 'iconSize' }, { name: 'iconPadding' }, { name: 'iconRadius' }]" />
+<Try method="get" path="/qrcode" :params="[{ name: 'url', required: true }, { name: 'format', options: ['png', 'base64'] }, { name: 'size' }, { name: 'margin' }, { name: 'correction', options: ['L', 'M', 'Q', 'H'] }, { name: 'dark' }, { name: 'light' }, { name: 'icon' }, { name: 'iconSize' }, { name: 'iconPadding' }, { name: 'iconRadius' }]" />
 
 ## Error Handling
 

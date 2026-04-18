@@ -49,7 +49,7 @@ Avec `format=base64`, la réponse est un objet JSON :
 
 ## Essayer
 
-<Try method="get" path="/qrcode" :params="[{ name: 'url', required: true }, { name: 'format' }, { name: 'size' }, { name: 'margin' }, { name: 'correction' }, { name: 'dark' }, { name: 'light' }, { name: 'icon' }, { name: 'iconSize' }, { name: 'iconPadding' }, { name: 'iconRadius' }]" />
+<Try method="get" path="/qrcode" :params="[{ name: 'url', required: true }, { name: 'format', options: ['png', 'base64'] }, { name: 'size' }, { name: 'margin' }, { name: 'correction', options: ['L', 'M', 'Q', 'H'] }, { name: 'dark' }, { name: 'light' }, { name: 'icon' }, { name: 'iconSize' }, { name: 'iconPadding' }, { name: 'iconRadius' }]" />
 
 ## Gestion des erreurs
 
