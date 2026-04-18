@@ -12,12 +12,16 @@ curl -H "Authorization: Bearer YOUR_API_KEY" https://api.sylvain.sh/v4/infos
 
 ## Rate Limits
 
-| Plan     | Requests/hour |
-| -------- | ------------- |
-| Free     | 2,000         |
-| Advanced | 3,500         |
-| Pro      | 6,000         |
-| Business | 10,000        |
+| Plan     | Requests/hour | Burst/10s |
+| -------- | ------------- | --------- |
+| Free     | 2,000         | 50        |
+| Advanced | 3,500         | 80        |
+| Pro      | 6,000         | 120       |
+| Business | 10,000        | 200       |
+
+::: tip Burst Limit
+The burst limit prevents sending too many requests in a short window. If you exceed the burst limit, you will receive a `429 Too Many Requests` response.
+:::
 
 See the [Pricing](/v4/en/pricing) page for more details.
 

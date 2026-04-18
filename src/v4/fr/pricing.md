@@ -57,6 +57,10 @@ Si vous souhaitez dépasser cette limite, vous devez utiliser un token d'authent
   </div>
 </div>
 
+::: tip Limite de burst
+Chaque offre inclut également une limite de burst (requêtes par 10 secondes) pour éviter le spam. Voir la page [Authentification](/v4/fr/authentication#limites-de-requetes) pour les détails.
+:::
+
 ## Offres personnalisées
 
 Si vous souhaitez un nombre de requêtes supérieur à 10 000 par heure ou un tarif personnalisé, envoyez un email à [contact@sylvain.sh](mailto:contact@sylvain.sh).

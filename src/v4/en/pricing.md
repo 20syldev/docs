@@ -57,6 +57,10 @@ If you wish to exceed this limit, you must use an authentication token. The auth
   </div>
 </div>
 
+::: tip Burst Limit
+Each plan also includes a burst limit (requests per 10 seconds) to prevent spam. See the [Authentication](/v4/en/authentication#rate-limits) page for details.
+:::
+
 ## Custom Plans
 
 If you need more than 10,000 requests per hour or a custom pricing plan, send an email to [contact@sylvain.sh](mailto:contact@sylvain.sh).

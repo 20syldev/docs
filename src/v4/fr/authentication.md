@@ -12,12 +12,16 @@ curl -H "Authorization: Bearer VOTRE_CLE_API" https://api.sylvain.sh/v4/infos
 
 ## Limites de requêtes
 
-| Plan     | Requêtes/heure |
-| -------- | -------------- |
-| Free     | 2 000          |
-| Advanced | 3 500          |
-| Pro      | 6 000          |
-| Business | 10 000         |
+| Plan     | Requêtes/heure | Burst/10s |
+| -------- | -------------- | --------- |
+| Free     | 2 000          | 50        |
+| Advanced | 3 500          | 80        |
+| Pro      | 6 000          | 120       |
+| Business | 10 000         | 200       |
+
+::: tip Limite de burst
+La limite de burst empêche l'envoi de trop de requêtes dans un court laps de temps. Si vous dépassez la limite de burst, vous recevrez une réponse `429 Too Many Requests`.
+:::
 
 Voir la page [Tarification](/v4/fr/pricing) pour plus de détails.
 
