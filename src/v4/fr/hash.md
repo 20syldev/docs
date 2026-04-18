@@ -107,7 +107,7 @@ L'endpoint `/hash` convertit une chaîne de caractères en hash, c'est-à-dire u
 
 ## Essayer
 
-<Try method="post" path="/hash" :params="[{ name: 'text', required: true }, { name: 'method', required: true, options: ['sha256', 'sha512', 'md5', 'sha1', 'sha384', 'blake2b512'] }, { name: 'encoding', required: false, options: ['hex', 'base64'] }]" />
+<Try method="post" path="/hash" :params="[{ name: 'text', required: true }, { name: 'method', required: true, options: ['md5', 'sha1', 'sha224', 'sha256', 'sha384', 'sha512', 'sha512-224', 'sha512-256', 'sha3-224', 'sha3-256', 'sha3-384', 'sha3-512', 'blake2b512', 'blake2s256', 'ripemd160', 'shake128', 'shake256'] }, { name: 'encoding', required: false, options: ['hex', 'base64'] }]" />
 
 ## Gestion des erreurs
 
