@@ -35,7 +35,7 @@ The response is an `image/svg+xml` file for both types.
 
 ## Try It
 
-<Try method="get" path="/placeholder" :params="[{ name: 'type', required: true, options: ['image', 'skeleton'] }, { name: 'width', required: false }, { name: 'height', required: false }, { name: 'bg', required: false }, { name: 'color', required: false }, { name: 'text', required: false }, { name: 'rows', required: false }, { name: 'avatar', required: false, options: ['circle', 'rounded', 'square'] }, { name: 'animate', required: false, options: ['shimmer', 'pulse', 'none'] }, { name: 'speed', required: false }, { name: 'radius', required: false }]" />
+<Try method="get" path="/placeholder" :params="[{ name: 'type', required: true, options: ['image', 'skeleton'] }, { name: 'width', required: false }, { name: 'height', required: false }, { name: 'bg', required: false }, { name: 'color', required: false }, { name: 'text', required: false }, { name: 'rows', required: false }, { name: 'avatar', required: false, options: ['true', 'circle', 'rounded', 'square'] }, { name: 'lines', required: false }, { name: 'animate', required: false, options: ['shimmer', 'pulse', 'none'] }, { name: 'speed', required: false }, { name: 'radius', required: false }]" />
 
 ## Error Handling
 

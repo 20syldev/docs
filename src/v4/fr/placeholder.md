@@ -35,7 +35,7 @@ La réponse est un fichier `image/svg+xml` pour les deux types.
 
 ## Essayer
 
-<Try method="get" path="/placeholder" :params="[{ name: 'type', required: true, options: ['image', 'skeleton'] }, { name: 'width', required: false }, { name: 'height', required: false }, { name: 'bg', required: false }, { name: 'color', required: false }, { name: 'text', required: false }, { name: 'rows', required: false }, { name: 'avatar', required: false, options: ['circle', 'rounded', 'square'] }, { name: 'animate', required: false, options: ['shimmer', 'pulse', 'none'] }, { name: 'speed', required: false }, { name: 'radius', required: false }]" />
+<Try method="get" path="/placeholder" :params="[{ name: 'type', required: true, options: ['image', 'skeleton'] }, { name: 'width', required: false }, { name: 'height', required: false }, { name: 'bg', required: false }, { name: 'color', required: false }, { name: 'text', required: false }, { name: 'rows', required: false }, { name: 'avatar', required: false, options: ['true', 'circle', 'rounded', 'square'] }, { name: 'lines', required: false }, { name: 'animate', required: false, options: ['shimmer', 'pulse', 'none'] }, { name: 'speed', required: false }, { name: 'radius', required: false }]" />
 
 ## Gestion des erreurs
 
