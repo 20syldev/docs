@@ -3,7 +3,7 @@
 /* ----- Version cards ----- */
 
 .version-cards {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     display: grid;
     margin: 24px 0;
     gap: 16px;
