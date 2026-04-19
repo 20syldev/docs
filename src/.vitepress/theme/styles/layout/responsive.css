@@ -39,6 +39,9 @@
     .extra-menu {
         display: flex !important;
     }
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* ----- Desktop ----- */
