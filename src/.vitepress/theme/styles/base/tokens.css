@@ -1,7 +1,9 @@
 /* - - - - - - - Tokens - - - - - - - */
 
-/* ----- Variables ----- */
+/* Dark mode aligné sur VitePress */
+@custom-variant dark (&:where(.dark, .dark *));
 
+/* CSS custom properties */
 :root {
     /* Fonts */
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
@@ -37,8 +39,7 @@
     --vp-home-hero-name-background: linear-gradient(135deg, #5c7cfa 0%, #20c997 100%);
 }
 
-/* ----- Dark mode ----- */
-
+/* Dark mode overrides */
 .dark {
     --vp-c-bg: #0d1117;
     --vp-c-bg-soft: #161b22;

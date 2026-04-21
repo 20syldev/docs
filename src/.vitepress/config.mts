@@ -1,3 +1,4 @@
+import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vitepress';
 
 import { v1 } from './sidebar/v1';
@@ -115,6 +116,7 @@ export default defineConfig({
     },
 
     vite: {
+        plugins: [tailwindcss()],
         server: {
             host: '127.0.0.1',
         },

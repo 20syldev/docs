@@ -53,7 +53,7 @@ Le plateau est une grille 3x3 avec des positions numérotées comme suit :
 
 ## Essayer
 
-<Try method="post" path="/tic-tac-toe" :params="[{ name: 'username', required: true }, { name: 'move', required: true }, { name: 'session', required: true }, { name: 'game', required: true }]" />
+<Try name="Tic-Tac-Toe" />
 
 ## Gestion des erreurs
 

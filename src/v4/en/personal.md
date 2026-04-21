@@ -43,7 +43,7 @@ This endpoint does not require any parameters. It returns a randomly generated i
 
 ## Try It
 
-<Try method="get" path="/personal" :params="[]" />
+<Try name="Personal" />
 
 ::: warning Note
 All generated data is fictional and randomly created. Credit card numbers are not valid for transactions.

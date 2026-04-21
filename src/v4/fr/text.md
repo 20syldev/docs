@@ -38,7 +38,7 @@ L'endpoint `/text` fournit des utilitaires de manipulation et de génération de
 
 ## Essayer
 
-<Try method="get" path="/text" :params="[{ name: 'method', required: true, options: ['stats', 'slug', 'lorem', 'number'] }, { name: 'value', required: false }, { name: 'type', required: false, options: ['words', 'sentences', 'paragraphs'] }, { name: 'count', required: false }, { name: 'lang', required: false, options: ['en', 'fr'] }]" />
+<Try name="Text" />
 
 ## Gestion des erreurs
 

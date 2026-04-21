@@ -40,7 +40,7 @@ L'endpoint `/algorithms` fournit plusieurs algorithmes à utiliser comme paramè
 
 ## Essayer
 
-<Try method="get" path="/algorithms" :params="[{ name: 'method', required: true, options: ['anagram', 'bubblesort', 'factorial', 'gcd', 'isprime', 'fibonacci', 'palindrome', 'primelist', 'primefactors', 'reverse', 'roman'] }, { name: 'value', required: true }, { name: 'value2', required: false }]" />
+<Try name="Algorithms" />
 
 ## Gestion des erreurs
 

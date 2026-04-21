@@ -19,10 +19,16 @@ onMounted(() => {
 </script>
 
 <template>
-    <div v-if="!redirecting" class="not-found">
-        <p class="code">404</p>
-        <h1 class="title">{{ t('notFound.title', lang) }}</h1>
-        <p class="quote">{{ t('notFound.message', lang) }}</p>
-        <a class="link" :href="getPrefix(lang) || '/'">{{ t('notFound.link', lang) }}</a>
+    <div v-if="!redirecting" class="text-center px-6 pt-16 pb-24">
+        <p class="text-body leading-[64px] font-semibold text-[64px]">404</p>
+        <h1 class="tracking-[2px] leading-5 pt-3 font-bold text-xl">{{ t('notFound.title', lang) }}</h1>
+        <p class="text-muted mx-auto text-sm font-medium max-w-[560px] leading-5 pt-7">
+            {{ t('notFound.message', lang) }}
+        </p>
+        <a
+            :href="getPrefix(lang) || '/'"
+            class="border border-brand text-brand inline-block transition-all duration-300 rounded-2xl px-5 py-1.5 mt-7 font-medium text-sm hover:border-brand-hover hover:text-brand-hover"
+            >{{ t('notFound.link', lang) }}</a
+        >
     </div>
 </template>

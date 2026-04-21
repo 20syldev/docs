@@ -34,7 +34,7 @@ The `/chat` endpoint provides a real-time messaging system with support for publ
 
 ## Try It
 
-<Try method="post" path="/chat" :params="[{ name: 'username', required: true }, { name: 'message', required: true }, { name: 'session', required: true }, { name: 'token', required: false }]" />
+<Try name="Chat (POST)" />
 
 ## Error Handling
 

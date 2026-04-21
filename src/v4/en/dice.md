@@ -27,7 +27,7 @@ The `/dice` endpoint rolls dice using RPG notation (NdX or NdX+M).
 
 ## Try It
 
-<Try method="get" path="/dice" :params="[{ name: 'roll', required: true }]" />
+<Try name="Dice" />
 
 ## Error Handling
 

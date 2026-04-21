@@ -32,7 +32,7 @@ The `/tic-tac-toe/fetch` endpoint retrieves information about a current Tic-Tac-
 
 ## Try It
 
-<Try method="post" path="/tic-tac-toe/fetch" :params="[{ name: 'username', required: true }, { name: 'game', required: false }, { name: 'private', required: false }]" />
+<Try name="Tic-Tac-Toe Fetch" />
 
 ## Error Handling
 

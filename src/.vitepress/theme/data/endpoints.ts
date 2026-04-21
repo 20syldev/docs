@@ -8,7 +8,7 @@ export interface EndpointParam {
 export interface EndpointDef {
     name: string;
     path: string;
-    method: 'get' | 'post';
+    method: 'get' | 'post' | 'patch' | 'delete';
     params: EndpointParam[];
     group: string;
 }
@@ -72,6 +72,7 @@ export const endpoints: EndpointDef[] = [
         params: [
             { name: 'username', required: true },
             { name: 'message', required: true },
+            { name: 'session', required: true },
             { name: 'token', required: false },
         ],
     },
@@ -220,7 +221,7 @@ export const endpoints: EndpointDef[] = [
         group: 'Endpoints',
         params: [
             { name: 'text', required: true },
-            { name: 'method', required: true, options: ['md5', 'sha1', 'sha256', 'sha384', 'sha512', 'blake2b512'] },
+            { name: 'method', required: true, options: ['md5', 'sha1', 'sha224', 'sha256', 'sha384', 'sha512', 'sha512-224', 'sha512-256', 'sha3-224', 'sha3-256', 'sha3-384', 'sha3-512', 'blake2b512', 'blake2s256', 'ripemd160', 'shake128', 'shake256'] },
             { name: 'encoding', required: false, options: ['hex', 'base64'] },
         ],
     },
@@ -315,7 +316,8 @@ export const endpoints: EndpointDef[] = [
             { name: 'color', required: false },
             { name: 'text', required: false },
             { name: 'rows', required: false },
-            { name: 'avatar', required: false, options: ['circle', 'rounded', 'square'] },
+            { name: 'avatar', required: false, options: ['true', 'circle', 'rounded', 'square'] },
+            { name: 'lines', required: false },
             { name: 'animate', required: false, options: ['shimmer', 'pulse', 'none'] },
             { name: 'speed', required: false },
             { name: 'radius', required: false },
@@ -400,7 +402,7 @@ export const endpoints: EndpointDef[] = [
                     'timezone',
                 ],
             },
-            { name: 'timezone', required: false },
+            { name: 'timezone', required: false, options: ['UTC', 'Europe/Paris', 'America/New_York', 'Asia/Tokyo', 'Australia/Sydney'] },
             { name: 'start', required: false },
             { name: 'end', required: false },
         ],
@@ -427,3 +429,7 @@ export const endpoints: EndpointDef[] = [
         params: [],
     },
 ];
+
+export function findEndpoint(name: string): EndpointDef | undefined {
+    return endpoints.find((ep) => ep.name === name);
+}

@@ -35,7 +35,7 @@ When no `text` is provided, the auto-generated string avoids ambiguous character
 
 ## Try It
 
-<Try method="get" path="/captcha" :params="[{ name: 'text', required: false }, { name: 'length', required: false }, { name: 'width', required: false }, { name: 'height', required: false }, { name: 'noise', required: false }, { name: 'bg', required: false }, { name: 'color', required: false }]" />
+<Try name="Captcha" />
 
 ## Error Handling
 

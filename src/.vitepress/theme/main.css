@@ -1,22 +1,41 @@
 /* - - - - - - - Main - - - - - - - */
 
+@import 'tailwindcss';
+
+@theme {
+    --breakpoint-vp: 960px;
+
+    /* Brand */
+    --color-brand: var(--vp-c-brand-1);
+    --color-brand-hover: var(--vp-c-brand-2);
+
+    /* Text */
+    --color-body: var(--vp-c-text-1);
+    --color-muted: var(--vp-c-text-2);
+    --color-faint: var(--vp-c-text-3);
+
+    /* Backgrounds */
+    --color-surface: var(--vp-c-bg);
+    --color-soft: var(--vp-c-bg-soft);
+    --color-mute: var(--vp-c-bg-mute);
+
+    /* Borders */
+    --color-divider: var(--vp-c-divider);
+
+    /* Code */
+    --color-codeblock: var(--vp-code-block-bg);
+
+    /* Semantic */
+    --color-danger: var(--vp-c-danger-1);
+}
+
 /* Base */
+@import './styles/base/tokens.css';
 @import './styles/base/global.css';
 @import './styles/base/overrides.css';
 @import './styles/base/shared.css';
-@import './styles/base/tokens.css';
-
-/* Components */
-@import './styles/components/api.css';
-@import './styles/components/banner.css';
-@import './styles/components/panel.css';
-@import './styles/components/playground.css';
-@import './styles/components/tabs.css';
-@import './styles/components/terminal.css';
 
 /* Layout */
-@import './styles/layout/cards.css';
-@import './styles/layout/footer.css';
 @import './styles/layout/navbar.css';
 @import './styles/layout/pricing.css';
 @import './styles/layout/responsive.css';

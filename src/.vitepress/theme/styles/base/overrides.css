@@ -1,5 +1,11 @@
 /* - - - - - - - Overrides - - - - - - - */
 
+/* ----- Footer ----- */
+
+.VPFooter {
+    display: none !important;
+}
+
 /* ----- Hero ----- */
 
 .VPHero .image-bg {
@@ -94,20 +100,39 @@ div[class*='language-']:has(> pre):hover .copy-btn {
 /* ----- Tables ----- */
 
 .vp-doc table {
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     display: table;
     margin: 20px 0;
     width: 100%;
 }
 .vp-doc th,
 .vp-doc td {
-    border: 1px solid var(--vp-c-divider);
+    border-bottom: 1px solid var(--vp-c-divider);
+    border-right: 1px solid var(--vp-c-divider);
     text-align: left;
     padding: 12px 16px;
 }
-.vp-doc th {
+.vp-doc th:first-child,
+.vp-doc td:first-child {
+    border-left: 1px solid var(--vp-c-divider);
+}
+.vp-doc thead th {
+    border-top: 1px solid var(--vp-c-divider);
     background: var(--vp-c-bg-soft);
     font-weight: 600;
+}
+.vp-doc thead th:first-child {
+    border-top-left-radius: 8px;
+}
+.vp-doc thead th:last-child {
+    border-top-right-radius: 8px;
+}
+.vp-doc tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+.vp-doc tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
 }
 .vp-doc tr:nth-child(even) {
     background: var(--vp-c-bg-soft);
@@ -118,6 +143,32 @@ div[class*='language-']:has(> pre):hover .copy-btn {
 .vp-doc a.version-card {
     text-decoration: none;
     color: inherit;
+    transition: all 0.3s ease !important;
+}
+
+/* ----- API endpoint link (vp-doc context) ----- */
+
+.vp-doc .api-endpoint a {
+    color: var(--vp-c-text-2);
+    text-decoration: none;
+    font-weight: 500;
+}
+.vp-doc .api-endpoint a:hover {
+    color: var(--vp-c-brand-1);
+}
+
+
+/* Search trigger + dropdown items (VitePress resets button{border:0;padding:0}) */
+.pg-search-trigger {
+    border: 1px solid var(--vp-c-divider);
+    padding: 6px 16px;
+    transition: border-color 0.2s;
+}
+.pg-search-trigger:hover {
+    border-color: var(--vp-c-brand-1);
+}
+.pg-dropdown-item {
+    padding: 8px 16px;
 }
 
 /* ----- Dark mode ----- */

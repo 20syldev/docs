@@ -40,7 +40,7 @@ This endpoint does not require any parameters. It returns all currently active p
 
 ## Try It
 
-<Try method="post" path="/tic-tac-toe/list" :params="[]" />
+<Try name="Tic-Tac-Toe List" />
 
 ## Error Handling
 

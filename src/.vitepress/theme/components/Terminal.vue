@@ -140,27 +140,27 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div class="terminal">
-        <div class="terminal-header">
-            <div class="terminal-buttons">
-                <span class="terminal-btn close"></span>
-                <span class="terminal-btn minimize"></span>
-                <span class="terminal-btn maximize"></span>
+    <div class="font-mono bg-(--terminal-bg) overflow-hidden h-[220px] w-[565px] text-[13px] rounded-[12px] mt-5 ml-[25px] shadow-[0_20px_60px_#0000004d]">
+        <div class="bg-(--terminal-header) border-b border-(--terminal-border) flex items-center gap-3 py-3 px-4">
+            <div class="flex gap-2">
+                <span class="rounded-full h-3 w-3 bg-[#ff5f56]"></span>
+                <span class="rounded-full h-3 w-3 bg-[#ffbd2e]"></span>
+                <span class="rounded-full h-3 w-3 bg-[#27c93f]"></span>
             </div>
-            <span class="terminal-title">sylvain@api</span>
+            <span class="text-(--terminal-title) text-center mr-14 text-[13px] flex-1">sylvain@api</span>
         </div>
-        <div ref="body" class="terminal-body">
-            <div class="terminal-line">
-                <span class="terminal-prompt">$</span>
-                <span class="terminal-command-wrapper"
-                    ><span class="terminal-command"
-                        >{{ command }}<span v-if="cursor === 'command'" class="terminal-cursor">_</span></span
+        <div ref="body" class="terminal overflow-y-auto p-[18px] h-[180px]">
+            <div class="flex items-start mb-3 gap-2">
+                <span class="text-(--terminal-prompt) font-semibold">$</span>
+                <span class="break-words whitespace-pre-wrap"
+                    ><span class="text-(--terminal-text) text-[12px]"
+                        >{{ command }}<span v-if="cursor === 'command'" class="font-bold">_</span></span
                     ></span
                 >
             </div>
             <pre
                 v-if="response"
-                class="terminal-response">{{ response }}<span v-if="cursor === 'response'" class="terminal-cursor">_</span></pre>
+                class="text-(--terminal-text-dim) break-words whitespace-pre-wrap leading-[1.6] text-[12px] m-0">{{ response }}<span v-if="cursor === 'response'" class="text-(--terminal-text) font-bold">_</span></pre>
         </div>
     </div>
 </template>

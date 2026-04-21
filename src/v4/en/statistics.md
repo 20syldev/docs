@@ -33,7 +33,7 @@ The `/statistics` endpoint calculates descriptive statistics on a list of number
 
 ## Try It
 
-<Try method="get" path="/statistics" :params="[{ name: 'values', required: true }]" />
+<Try name="Statistics" />
 
 ## Error Handling
 

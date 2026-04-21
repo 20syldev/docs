@@ -27,7 +27,7 @@ The `/color` endpoint generates a color in multiple formats. You can provide a H
 
 ## Try It
 
-<Try method="get" path="/color" :params="[{ name: 'hex', required: false }]" />
+<Try name="Color" />
 
 ## Error Handling
 

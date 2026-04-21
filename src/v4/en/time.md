@@ -75,7 +75,7 @@ The `/time` endpoint allows you to retrieve time information based on various pa
 
 ## Try It
 
-<Try method="get" path="/time" :params="[{ name: 'type', required: false, options: ['live', 'random'] }, { name: 'start', required: false }, { name: 'end', required: false }, { name: 'format', required: false, options: ['iso', 'utc', 'timestamp', 'locale', 'date', 'time', 'year', 'month', 'day', 'hour', 'minute', 'second', 'ms', 'dayOfWeek', 'dayOfYear', 'weekNumber', 'timezone'] }, { name: 'timezone', required: false, options: ['UTC', 'Europe/Paris', 'America/New_York', 'Asia/Tokyo', 'Australia/Sydney'] }]" />
+<Try name="Time" />
 
 ## Error Handling
 

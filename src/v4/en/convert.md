@@ -78,7 +78,7 @@ The `/convert` endpoint allows you to convert values between units of the same c
 
 ## Try It
 
-<Try method="get" path="/convert" :params="[{ name: 'value', required: true }, { name: 'from', required: true, options: ['celsius', 'fahrenheit', 'kelvin', 'km', 'mi', 'm', 'ft', 'cm', 'in', 'yd', 'kg', 'lb', 'oz', 'g', 'ton', 'b', 'kb', 'mb', 'gb', 'tb', 'km/h', 'mph', 'm/s', 'knots'] }, { name: 'to', required: true, options: ['celsius', 'fahrenheit', 'kelvin', 'km', 'mi', 'm', 'ft', 'cm', 'in', 'yd', 'kg', 'lb', 'oz', 'g', 'ton', 'b', 'kb', 'mb', 'gb', 'tb', 'km/h', 'mph', 'm/s', 'knots'] }]" />
+<Try name="Convert" />
 
 ## Error Handling
 

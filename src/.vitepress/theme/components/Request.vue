@@ -8,12 +8,12 @@ defineProps<{
 </script>
 
 <template>
-    <div class="panel request-block">
-        <div v-if="title || method" class="panel-header request-block-header">
+    <div class="border border-divider bg-soft overflow-hidden rounded-lg">
+        <div v-if="title || method" class="border-b border-divider bg-mute flex items-center gap-2.5 py-2.5 px-4 font-mono text-[13px] flex-wrap">
             <Method v-if="method" :type="method" />
-            <span v-if="title" class="title">{{ title }}</span>
+            <span v-if="title" class="text-body font-medium">{{ title }}</span>
         </div>
-        <div class="request-block-content">
+        <div class="request-block-content p-4">
             <slot></slot>
         </div>
     </div>

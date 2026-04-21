@@ -27,7 +27,7 @@ L'endpoint `/dice` lance des dés en notation RPG (NdX ou NdX+M).
 
 ## Essayer
 
-<Try method="get" path="/dice" :params="[{ name: 'roll', required: true }]" />
+<Try name="Dice" />
 
 ## Gestion des erreurs
 

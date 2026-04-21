@@ -39,7 +39,7 @@ L'endpoint `/tic-tac-toe/fetch` permet de récupérer les informations d'une par
 
 ## Essayer
 
-<Try method="post" path="/tic-tac-toe/fetch" :params="[{ name: 'username', required: true }, { name: 'game', required: false }, { name: 'private', required: false, options: ['true', 'false'] }]" />
+<Try name="Tic-Tac-Toe Fetch" />
 
 ## Gestion des erreurs
 

@@ -40,7 +40,7 @@ Générer des identifiants de session pour l'authentification, des clés API sé
 
 ## Essayer
 
-<Try method="post" path="/token" :params="[{ name: 'len', required: false }, { name: 'type', required: false, options: ['alpha', 'alphanum', 'base64', 'hex', 'num', 'punct', 'urlsafe', 'uuid'] }]" />
+<Try name="Token" />
 
 ## Gestion des erreurs
 

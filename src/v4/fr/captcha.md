@@ -35,7 +35,7 @@ Lorsqu'aucun `text` n'est fourni, la chaîne auto-générée évite les caractè
 
 ## Essayer
 
-<Try method="get" path="/captcha" :params="[{ name: 'text', required: false }, { name: 'length', required: false }, { name: 'width', required: false }, { name: 'height', required: false }, { name: 'noise', required: false }, { name: 'bg', required: false }, { name: 'color', required: false }]" />
+<Try name="Captcha" />
 
 ## Gestion des erreurs
 

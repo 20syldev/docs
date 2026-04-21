@@ -75,7 +75,7 @@ L'endpoint `/time` permet de récupérer des informations sur le temps en foncti
 
 ## Essayer
 
-<Try method="get" path="/time" :params="[{ name: 'type', required: false, options: ['live', 'random'] }, { name: 'start', required: false }, { name: 'end', required: false }, { name: 'format', required: false, options: ['iso', 'utc', 'timestamp', 'locale', 'date', 'time', 'year', 'month', 'day', 'hour', 'minute', 'second', 'ms', 'dayOfWeek', 'dayOfYear', 'weekNumber', 'timezone'] }, { name: 'timezone', required: false, options: ['UTC', 'Europe/Paris', 'America/New_York', 'Asia/Tokyo', 'Australia/Sydney'] }]" />
+<Try name="Time" />
 
 ## Gestion des erreurs
 

@@ -24,4 +24,4 @@ This endpoint does not require any parameters. It returns the API metadata: endp
 
 ## Try It
 
-<Try method="get" path="/infos" :params="[]" />
+<Try name="Infos" />

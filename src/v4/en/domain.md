@@ -37,4 +37,4 @@ This endpoint does not require any parameters. It returns a randomly generated d
 
 ## Try It
 
-<Try method="get" path="/domain" :params="[]" />
+<Try name="Domain" />

@@ -74,13 +74,14 @@ async function copy() {
 </script>
 
 <template>
-    <div class="panel examples">
-        <div class="tab-bar examples-header">
-            <div class="examples-tabs">
+    <div class="border border-divider bg-soft overflow-hidden rounded-lg my-4">
+        <div class="border-b border-divider bg-surface flex justify-between items-center px-2">
+            <div class="flex">
                 <button
                     v-for="lang in CODE_LANGS"
                     :key="lang"
                     :class="['tab-item', { active: active === lang }]"
+                    class="px-2.5 py-2 vp:px-3.5 text-faint bg-transparent transition-colors duration-200 relative cursor-pointer border-none text-xs font-medium"
                     @click="setTab(lang)"
                 >
                     {{ CODE_LANG_LABELS[lang] }}
@@ -88,12 +89,13 @@ async function copy() {
             </div>
             <button
                 :class="['examples-copy', { copied }]"
+                class="flex justify-center items-center bg-transparent border-none cursor-pointer w-7 h-7 shrink-0 mr-2 rounded transition-all duration-200 hover:bg-soft"
                 :title="copied ? 'Copied!' : 'Copy'"
                 :aria-label="copied ? 'Copied!' : 'Copy code'"
                 @click="copy"
                 v-html="`${copyIcon}${checkIcon}`"
             />
         </div>
-        <pre class="code-output"><code>{{ code }}</code></pre>
+        <pre class="bg-codeblock font-mono text-body overflow-x-auto leading-[1.6] text-[13px] p-4 m-0"><code class="bg-transparent font-[inherit] text-[inherit] p-0">{{ code }}</code></pre>
     </div>
 </template>

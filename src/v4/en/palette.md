@@ -40,7 +40,7 @@ The `/palette` endpoint generates a harmonious color palette from a base HEX col
 
 ## Try It
 
-<Try method="get" path="/palette" :params="[{ name: 'color', required: true }, { name: 'type', required: true, options: ['complementary', 'triadic', 'analogous', 'tetradic', 'split-complementary'] }]" />
+<Try name="Palette" />
 
 ## Error Handling
 
