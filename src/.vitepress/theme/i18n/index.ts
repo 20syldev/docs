@@ -26,10 +26,23 @@ function resolve(obj: TranslationSchema | undefined, key: string): string | unde
     return typeof current === 'string' ? current : undefined;
 }
 
+/**
+ * Translates a key for the given language, falling back to the default language.
+ *
+ * @param key - The dot-notation translation key
+ * @param lang - The target language code
+ * @returns The translated string, or the key itself if not found
+ */
 export function t(key: TranslationKey, lang: string): string {
     return resolve(translations[lang], key) ?? resolve(translations[defaultLang], key) ?? key;
 }
 
+/**
+ * Checks whether a path corresponds to a homepage (root or language root).
+ *
+ * @param path - The current URL path
+ * @returns `true` if the path is a homepage
+ */
 export function isHome(path: string): boolean {
     const homePaths = [
         '/',
@@ -39,15 +52,35 @@ export function isHome(path: string): boolean {
     return homePaths.includes(path);
 }
 
+/**
+ * Extracts the language code from a path.
+ *
+ * @param path - The current URL path
+ * @returns The language code (e.g. `'fr'`), or `'en'` if none is found
+ */
 export function getLang(path: string): string {
     const match = languages.find((l) => l.prefix && path.includes(l.prefix));
     return match ? match.code : defaultLang;
 }
 
+/**
+ * Returns the URL prefix for a given language.
+ *
+ * @param lang - The language code
+ * @returns The prefix string (e.g. `'/fr'`), or `''` for the default language
+ */
 export function getPrefix(lang: string): string {
     return languages.find((l) => l.code === lang)?.prefix ?? '';
 }
 
+/**
+ * Builds the language switcher items with translated labels and correct links.
+ *
+ * @param path - The current URL path
+ * @param homepage - Whether the current page is a homepage
+ * @param lang - The current language code
+ * @returns An array of `{ text, link, lang }` objects for each available language
+ */
 export function getLangItems(
     path: string,
     homepage: boolean,
@@ -66,10 +99,21 @@ export function getLangItems(
     });
 }
 
+/**
+ * Returns the BCP 47 locale string for a language code.
+ *
+ * @param lang - The language code
+ * @returns The locale string (e.g. `'fr-FR'`)
+ */
 export function getLocale(lang: string): string {
     return languages.find((l) => l.code === lang)?.locale ?? lang;
 }
 
+/**
+ * Persists the selected language to localStorage.
+ *
+ * @param lang - The language code to save
+ */
 export function saveLang(lang: string): void {
     if (typeof localStorage !== 'undefined') {
         localStorage.setItem('lang', lang);
