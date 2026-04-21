@@ -11,6 +11,11 @@ export const VERSION_PATH_REGEX = new RegExp(`^(v[${versionNums}])\\/`);
 const langPattern = langCodes.join('|');
 const rootPaths = new Set(['', '404', ...languages.filter((l) => l.prefix).map((l) => l.prefix.replace(/^\//, ''))]);
 
+/**
+ * Returns the user's preferred language from localStorage, browser navigator, or the default.
+ *
+ * @returns A language code (e.g. `'en'`, `'fr'`)
+ */
 export function getUserLang(): string {
     if (typeof localStorage === 'undefined') return defaultLang;
     const saved = localStorage.getItem('lang');
@@ -20,6 +25,14 @@ export function getUserLang(): string {
     return match ? match.code : defaultLang;
 }
 
+/**
+ * Computes a redirect path by injecting the version and language when missing.
+ *
+ * @param path - The current URL path
+ * @param lang - The target language code
+ * @param latest - The latest version to use when no version is present. Defaults to `LATEST_VERSION`
+ * @returns The redirect path, or `null` if no redirect is needed
+ */
 export function getSmartRedirect(path: string, lang: string, latest = LATEST_VERSION): string | null {
     const p = path.replace(/\/$/, '').replace(/^\//, '');
 
