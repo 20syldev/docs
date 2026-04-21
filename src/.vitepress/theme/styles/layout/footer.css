@@ -8,6 +8,7 @@
     border-top: 1px solid var(--vp-c-divider);
     background: var(--vp-c-bg);
     padding: 24px;
+    z-index: 10;
 }
 .site-footer a {
     color: var(--vp-c-text-3);
