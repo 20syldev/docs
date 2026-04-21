@@ -48,6 +48,8 @@ const filledEntries = computed(() =>
     props.params.filter((p) => values.value[p.name]).map((p) => [p.name, values.value[p.name]] as [string, string]),
 );
 
+const canSend = computed(() => props.params.filter((p) => p.required).every((p) => !!values.value[p.name]));
+
 const bodyObject = computed<Record<string, string>>(() =>
     props.method !== 'get' ? Object.fromEntries(filledEntries.value) : {},
 );
@@ -119,7 +121,7 @@ defineExpose({ resetState });
         <div class="panel-header">
             <span :class="['method-badge', method]">{{ method.toUpperCase() }}</span>
             <code class="panel-url panel-path">{{ fullUrl }}</code>
-            <button class="action-btn panel-send" :disabled="loading" @click="send">
+            <button class="action-btn panel-send" :disabled="loading || !canSend" @click="send">
                 {{ loading ? '...' : t('playground.send', lang) }}
             </button>
         </div>
