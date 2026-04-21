@@ -31,7 +31,7 @@ const endpoint = computed(() => (props.name ? findEndpoint(props.name) : undefin
 
 const resolvedMethod = computed(() => endpoint.value?.method ?? props.method ?? 'get');
 const resolvedPath = computed(() => endpoint.value?.path ?? props.path ?? '/');
-const resolvedParams = computed(() => endpoint.value?.params ?? props.params);
+const resolvedParams = computed(() => endpoint.value?.params ?? props.params ?? []);
 </script>
 
 <template>

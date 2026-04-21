@@ -113,6 +113,13 @@ curl_close($ch);`;
 $data = json_decode($response, true);`;
 }
 
+/**
+ * Generates an HTTP request code snippet for the given language and options.
+ *
+ * @param lang - The target code language (`'curl'`, `'javascript'`, `'python'`, `'php'`)
+ * @param opts - The request options (method, URL, body)
+ * @returns A formatted code snippet string
+ */
 export function generateSnippet(lang: CodeLang, opts: SnippetOptions): string {
     switch (lang) {
         case 'curl':
