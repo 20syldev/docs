@@ -22,7 +22,7 @@ This endpoint does not require any parameters. It returns all messages from the 
 
 ## Try It
 
-<Try method="get" path="/chat" :params="[]" />
+<Try name="Chat (GET)" />
 
 ## Error Handling
 

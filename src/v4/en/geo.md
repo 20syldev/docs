@@ -33,7 +33,7 @@ The `/geo` endpoint calculates the distance and bearing between two GPS coordina
 
 ## Try It
 
-<Try method="get" path="/geo" :params="[{ name: 'lat1', required: true }, { name: 'lon1', required: true }, { name: 'lat2', required: true }, { name: 'lon2', required: true }]" />
+<Try name="Geo" />
 
 ## Error Handling
 

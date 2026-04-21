@@ -53,7 +53,7 @@ The board is a 3x3 grid with positions numbered as follows:
 
 ## Try It
 
-<Try method="post" path="/tic-tac-toe" :params="[{ name: 'username', required: true }, { name: 'move', required: true }, { name: 'session', required: true }, { name: 'game', required: true }]" />
+<Try name="Tic-Tac-Toe" />
 
 ## Error Handling
 

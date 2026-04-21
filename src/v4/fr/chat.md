@@ -34,7 +34,7 @@ L'endpoint `/chat` fournit un système de messagerie en temps réel avec support
 
 ## Essayer
 
-<Try method="post" path="/chat" :params="[{ name: 'username', required: true }, { name: 'message', required: true }, { name: 'session', required: true }, { name: 'token', required: false }]" />
+<Try name="Chat (POST)" />
 
 ## Gestion des erreurs
 

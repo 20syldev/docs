@@ -14,7 +14,7 @@ https://api.sylvain.sh/v4
 
 ## Exemple rapide
 
-<Try method="get" path="/infos" :params="[]" auto-send />
+<Try name="Infos" auto-send />
 
 ## Limitation de débit
 

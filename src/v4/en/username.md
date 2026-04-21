@@ -28,4 +28,4 @@ This endpoint does not require any parameters. It returns a randomly generated u
 
 ## Try It
 
-<Try method="get" path="/username" :params="[]" />
+<Try name="Username" />

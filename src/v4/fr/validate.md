@@ -33,7 +33,7 @@ L'endpoint `/validate` valide différents formats de données.
 
 ## Essayer
 
-<Try method="get" path="/validate" :params="[{ name: 'type', required: true, options: ['luhn', 'iban', 'email'] }, { name: 'value', required: true }]" />
+<Try name="Validate" />
 
 ## Gestion des erreurs
 

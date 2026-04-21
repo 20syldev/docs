@@ -40,7 +40,7 @@ Cet endpoint ne nécessite aucun paramètre. Il retourne toutes les parties publ
 
 ## Essayer
 
-<Try method="post" path="/tic-tac-toe/list" :params="[]" />
+<Try name="Tic-Tac-Toe List" />
 
 ## Endpoints associés
 

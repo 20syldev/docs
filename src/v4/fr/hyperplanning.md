@@ -47,7 +47,7 @@ Retourne un tableau d'objets résumé avec les champs `summary`, `start` et `end
 
 ## Essayer
 
-<Try method="post" path="/hyperplanning" :params="[{ name: 'url', required: true }, { name: 'detail', required: false, options: ['full', 'list'] }]" />
+<Try name="Hyperplanning" />
 
 ## Gestion des erreurs
 

@@ -40,7 +40,7 @@ L'endpoint `/palette` génère une palette de couleurs harmonieuse à partir d'u
 
 ## Essayer
 
-<Try method="get" path="/palette" :params="[{ name: 'color', required: true }, { name: 'type', required: true, options: ['complementary', 'triadic', 'analogous', 'tetradic', 'split-complementary'] }]" />
+<Try name="Palette" />
 
 ## Gestion des erreurs
 

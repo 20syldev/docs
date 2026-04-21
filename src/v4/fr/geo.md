@@ -33,7 +33,7 @@ L'endpoint `/geo` calcule la distance et le cap entre deux coordonnées GPS en u
 
 ## Essayer
 
-<Try method="get" path="/geo" :params="[{ name: 'lat1', required: true }, { name: 'lon1', required: true }, { name: 'lat2', required: true }, { name: 'lon2', required: true }]" />
+<Try name="Geo" />
 
 ## Gestion des erreurs
 

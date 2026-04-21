@@ -31,7 +31,7 @@ L'endpoint `/statistics` calcule des statistiques descriptives sur une liste de 
 
 ## Essayer
 
-<Try method="get" path="/statistics" :params="[{ name: 'values', required: true }]" />
+<Try name="Statistics" />
 
 ## Gestion des erreurs
 

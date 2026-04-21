@@ -29,7 +29,7 @@ La distance de Levenshtein compte le nombre minimum d'éditions (insertions, sup
 
 ## Essayer
 
-<Try method="get" path="/levenshtein" :params="[{ name: 'str1', required: true }, { name: 'str2', required: true }]" />
+<Try name="Levenshtein" />
 
 ## Gestion des erreurs
 

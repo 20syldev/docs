@@ -29,7 +29,7 @@ The Levenshtein distance counts the minimum number of single-character edits (in
 
 ## Try It
 
-<Try method="get" path="/levenshtein" :params="[{ name: 'str1', required: true }, { name: 'str2', required: true }]" />
+<Try name="Levenshtein" />
 
 ## Error Handling
 

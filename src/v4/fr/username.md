@@ -28,4 +28,4 @@ Cet endpoint ne nécessite aucun paramètre. Il retourne un nom d'utilisateur g�
 
 ## Essayer
 
-<Try method="get" path="/username" :params="[]" />
+<Try name="Username" />

@@ -40,7 +40,7 @@ The `/encode` endpoint encodes or decodes text in various formats.
 
 ## Try It
 
-<Try method="get" path="/encode" :params="[{ name: 'method', required: true, options: ['base64encode', 'base64decode', 'urlencode', 'urldecode', 'morse', 'unmorse', 'rot13', 'caesar', 'binary', 'unbinary'] }, { name: 'text', required: true }, { name: 'shift', required: false }]" />
+<Try name="Encode" />
 
 ## Error Handling
 

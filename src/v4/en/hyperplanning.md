@@ -56,7 +56,7 @@ The response format depends on the `detail` parameter:
 
 ## Try It
 
-<Try method="post" path="/hyperplanning" :params="[{ name: 'url', required: true }, { name: 'detail', required: false, options: ['full', 'list'] }]" />
+<Try name="Hyperplanning" />
 
 ## Error Handling
 

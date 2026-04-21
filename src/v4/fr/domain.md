@@ -37,4 +37,4 @@ Cet endpoint ne nécessite aucun paramètre. Il retourne un profil de domaine g�
 
 ## Essayer
 
-<Try method="get" path="/domain" :params="[]" />
+<Try name="Domain" />

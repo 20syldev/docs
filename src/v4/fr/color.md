@@ -27,7 +27,7 @@ L'endpoint `/color` génère une couleur en plusieurs formats. Vous pouvez fourn
 
 ## Essayer
 
-<Try method="get" path="/color" :params="[{ name: 'hex', required: false }]" />
+<Try name="Color" />
 
 ## Gestion des erreurs
 

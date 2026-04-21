@@ -27,7 +27,7 @@ Retourne un tableau d'objets message.
 
 ## Essayer
 
-<Try method="post" path="/chat/private" :params="[{ name: 'username', required: true }, { name: 'token', required: true }]" />
+<Try name="Chat Private" />
 
 ## Gestion des erreurs
 

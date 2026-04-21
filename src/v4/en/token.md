@@ -40,7 +40,7 @@ Generate unique session IDs for authentication, secure API keys for third-party 
 
 ## Try It
 
-<Try method="post" path="/token" :params="[{ name: 'len', required: false }, { name: 'type', required: false, options: ['alpha', 'alphanum', 'base64', 'hex', 'num', 'punct', 'urlsafe', 'uuid'] }]" />
+<Try name="Token" />
 
 ## Error Handling
 

@@ -43,7 +43,7 @@ Cet endpoint ne nécessite aucun paramètre. Il retourne une identité fictive g
 
 ## Essayer
 
-<Try method="get" path="/personal" :params="[]" />
+<Try name="Personal" />
 
 ::: warning Note
 Toutes les données générées sont fictives et créées de manière aléatoire. Les numéros de carte de crédit ne sont pas valides pour les transactions.

@@ -24,4 +24,4 @@ Cet endpoint ne nécessite aucun paramètre. Il retourne les métadonnées de l'
 
 ## Essayer
 
-<Try method="get" path="/infos" :params="[]" />
+<Try name="Infos" />
