@@ -94,20 +94,39 @@ div[class*='language-']:has(> pre):hover .copy-btn {
 /* ----- Tables ----- */
 
 .vp-doc table {
-    border-collapse: collapse;
     display: table;
+    border-collapse: separate;
+    border-spacing: 0;
     margin: 20px 0;
     width: 100%;
 }
 .vp-doc th,
 .vp-doc td {
-    border: 1px solid var(--vp-c-divider);
+    border-bottom: 1px solid var(--vp-c-divider);
+    border-right: 1px solid var(--vp-c-divider);
     text-align: left;
     padding: 12px 16px;
 }
-.vp-doc th {
+.vp-doc th:first-child,
+.vp-doc td:first-child {
+    border-left: 1px solid var(--vp-c-divider);
+}
+.vp-doc thead th {
+    border-top: 1px solid var(--vp-c-divider);
     background: var(--vp-c-bg-soft);
     font-weight: 600;
+}
+.vp-doc thead th:first-child {
+    border-top-left-radius: 8px;
+}
+.vp-doc thead th:last-child {
+    border-top-right-radius: 8px;
+}
+.vp-doc tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+.vp-doc tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
 }
 .vp-doc tr:nth-child(even) {
     background: var(--vp-c-bg-soft);
