@@ -6,13 +6,14 @@ L'endpoint `/time` permet de récupérer des informations sur le temps en foncti
 
 ## Paramètres
 
-| Paramètre  | Requis | Description                                                                |
-| ---------- | ------ | -------------------------------------------------------------------------- |
-| `type`     | Non    | `live` (par défaut) pour le temps actuel, `random` pour un temps aléatoire |
-| `start`    | Non    | Date de début pour la plage aléatoire (format : `YYYY-MM-DD`)              |
-| `end`      | Non    | Date de fin pour la plage aléatoire (format : `YYYY-MM-DD`)                |
-| `format`   | Non    | Format de la réponse (voir les options ci-dessous)                         |
-| `timezone` | Non    | Fuseau horaire à utiliser (voir les options ci-dessous)                    |
+| Paramètre  | Requis | Description                                                                                            |
+| ---------- | ------ | ------------------------------------------------------------------------------------------------------ |
+| `type`     | Non    | `live` (par défaut) pour le temps actuel, `random` pour un temps aléatoire, `countdown` vers une cible |
+| `start`    | Non    | Date de début pour la plage `random` (format : `YYYY-MM-DD`)                                           |
+| `end`      | Non    | Date de fin pour la plage `random` (format : `YYYY-MM-DD`)                                             |
+| `target`   | Non    | Date cible pour le mode `countdown` (format : `YYYY-MM-DD` ou ISO 8601)                                |
+| `format`   | Non    | Format de la réponse (voir les options ci-dessous)                                                     |
+| `timezone` | Non    | Fuseau horaire à utiliser (voir les options ci-dessous)                                                |
 
 ## Options de format
 
@@ -86,5 +87,6 @@ Si les paramètres sont invalides, l'API retournera une erreur :
 | `Please provide a valid type (?type={type})`              | Le paramètre `type` est invalide     |
 | `Please provide a valid start date (?start={YYYY-MM-DD})` | Le paramètre `start` est invalide    |
 | `Please provide a valid end date (?end={YYYY-MM-DD})`     | Le paramètre `end` est invalide      |
+| `Please provide a valid target date (?target=...)`        | Le paramètre `target` est invalide   |
 | `Please provide a valid format (?format={format})`        | Le paramètre `format` est invalide   |
 | `Please provide a valid timezone (?timezone={timezone})`  | Le paramètre `timezone` est invalide |

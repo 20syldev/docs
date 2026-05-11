@@ -6,13 +6,14 @@ The `/time` endpoint allows you to retrieve time information based on various pa
 
 ## Parameters
 
-| Parameter  | Required | Description                                                 |
-| ---------- | -------- | ----------------------------------------------------------- |
-| `type`     | No       | `live` (default) for current time, `random` for random time |
-| `start`    | No       | Start date for random range (format: `YYYY-MM-DD`)          |
-| `end`      | No       | End date for random range (format: `YYYY-MM-DD`)            |
-| `format`   | No       | Response format (see options below)                         |
-| `timezone` | No       | Time zone to use (see options below)                        |
+| Parameter  | Required | Description                                                                                        |
+| ---------- | -------- | -------------------------------------------------------------------------------------------------- |
+| `type`     | No       | `live` (default) for current time, `random` for a random time, `countdown` for time until a target |
+| `start`    | No       | Start date for `random` range (format: `YYYY-MM-DD`)                                               |
+| `end`      | No       | End date for `random` range (format: `YYYY-MM-DD`)                                                 |
+| `target`   | No       | Target date for `countdown` mode (format: `YYYY-MM-DD` or ISO 8601)                                |
+| `format`   | No       | Response format (see options below)                                                                |
+| `timezone` | No       | Time zone to use (see options below)                                                               |
 
 ## Format Options
 
@@ -86,5 +87,6 @@ If parameters are invalid, the API will return an error:
 | `Please provide a valid type (?type={type})`              | The `type` parameter is invalid     |
 | `Please provide a valid start date (?start={YYYY-MM-DD})` | The `start` parameter is invalid    |
 | `Please provide a valid end date (?end={YYYY-MM-DD})`     | The `end` parameter is invalid      |
+| `Please provide a valid target date (?target=...)`        | The `target` parameter is invalid   |
 | `Please provide a valid format (?format={format})`        | The `format` parameter is invalid   |
 | `Please provide a valid timezone (?timezone={timezone})`  | The `timezone` parameter is invalid |
