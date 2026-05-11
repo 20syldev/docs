@@ -57,6 +57,7 @@ export type TranslationSchema = {
         captcha: string;
         color: string;
         convert: string;
+        cron: string;
         dice: string;
         domain: string;
         encode: string;
@@ -72,6 +73,7 @@ export type TranslationSchema = {
         personal: string;
         placeholder: string;
         qrcode: string;
+        regex: string;
         statistics: string;
         text: string;
         time: string;
