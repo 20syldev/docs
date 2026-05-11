@@ -4,6 +4,7 @@ import { computed, onMounted, onUnmounted, ref } from 'vue';
 import { useVersion } from '../composables/useVersion';
 import { type EndpointDef, endpoints } from '../data/endpoints';
 import { t } from '../utils/i18n';
+import { bookIcon, searchIcon } from '../utils/icons';
 import Panel from './Panel.vue';
 
 const { lang } = useVersion();
@@ -15,6 +16,11 @@ const dropdownRef = ref<HTMLElement | null>(null);
 const panelRef = ref<InstanceType<typeof Panel> | null>(null);
 
 const selected = ref<EndpointDef | null>(null);
+
+const documentation = computed(() => {
+    if (!selected.value) return null;
+    return `/v4/${lang.value}${selected.value.doc ?? selected.value.path}`;
+});
 
 const filtered = computed(() => {
     const q = query.value.toLowerCase().trim();
@@ -64,42 +70,26 @@ onUnmounted(() => document.removeEventListener('click', onClickOutside, true));
 <template>
     <div class="pg">
         <div ref="dropdownRef" class="pg-search">
-            <button v-if="!open" class="pg-search-trigger" @click="toggleSearch">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+            <div v-if="!open" class="pg-search-bar">
+                <button class="pg-search-trigger" @click="toggleSearch">
+                    <span v-html="searchIcon" />
+                    <span v-if="selected" class="pg-search-selected">
+                        <span :class="['method-badge', selected.method]">{{ selected.method.toUpperCase() }}</span>
+                        {{ selected.name }}
+                    </span>
+                    <span v-else class="pg-search-placeholder">{{ t('playground.selectEndpoint', lang) }}</span>
+                </button>
+                <a
+                    v-if="documentation"
+                    :href="documentation"
+                    class="pg-doc-link"
+                    :title="t('playground.viewDocs', lang)"
                 >
-                    <circle cx="11" cy="11" r="8" />
-                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                </svg>
-                <span v-if="selected" class="pg-search-selected">
-                    <span :class="['method-badge', selected.method]">{{ selected.method.toUpperCase() }}</span>
-                    {{ selected.name }}
-                </span>
-                <span v-else class="pg-search-placeholder">{{ t('playground.selectEndpoint', lang) }}</span>
-            </button>
+                    <span v-html="bookIcon" />
+                </a>
+            </div>
             <div v-if="open" class="pg-search-input-wrap">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <circle cx="11" cy="11" r="8" />
-                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                </svg>
+                <span v-html="searchIcon" />
                 <input
                     ref="inputRef"
                     v-model="query"
