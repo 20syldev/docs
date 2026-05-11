@@ -11,6 +11,8 @@ export const v4 = {
             text: 'Endpoints',
             collapsed: false,
             items: [
+                { text: 'Address', link: '/v4/en/address', badge: 'GET' },
+                { text: 'Agent', link: '/v4/en/agent', badge: 'GET' },
                 { text: 'Algorithms', link: '/v4/en/algorithms', badge: 'GET' },
                 { text: 'Captcha', link: '/v4/en/captcha', badge: 'GET' },
                 {
@@ -38,10 +40,13 @@ export const v4 = {
                 { text: 'Encode', link: '/v4/en/encode', badge: 'GET' },
                 { text: 'Geo', link: '/v4/en/geo', badge: 'GET' },
                 { text: 'Hash', link: '/v4/en/hash', badge: 'POST' },
+                { text: 'Headers', link: '/v4/en/headers', badge: 'GET' },
                 { text: 'Hyperplanning', link: '/v4/en/hyperplanning', badge: 'POST' },
+                { text: 'IP', link: '/v4/en/ip', badge: 'GET' },
                 { text: 'Infos', link: '/v4/en/infos', badge: 'GET' },
                 { text: 'Levenshtein', link: '/v4/en/levenshtein', badge: 'GET' },
                 { text: 'Palette', link: '/v4/en/palette', badge: 'GET' },
+                { text: 'Password', link: '/v4/en/password', badge: 'GET' },
                 { text: 'Personal', link: '/v4/en/personal', badge: 'GET' },
                 { text: 'Placeholder', link: '/v4/en/placeholder', badge: 'GET' },
                 { text: 'QR Code', link: '/v4/en/qrcode', badge: 'GET' },
@@ -93,6 +98,7 @@ export const v4 = {
                     collapsed: true,
                     items: [
                         { text: 'Overview', link: '/v4/en/changelog' },
+                        { text: '4.7.0', link: '/v4/en/changelog/4.7.0' },
                         { text: '4.6.0', link: '/v4/en/changelog/4.6.0' },
                         { text: '4.5.0', link: '/v4/en/changelog/4.5.0' },
                         { text: '4.4.0', link: '/v4/en/changelog/4.4.0' },
@@ -121,6 +127,8 @@ export const v4 = {
             text: 'Endpoints',
             collapsed: false,
             items: [
+                { text: 'Address', link: '/v4/fr/address', badge: 'GET' },
+                { text: 'Agent', link: '/v4/fr/agent', badge: 'GET' },
                 { text: 'Algorithms', link: '/v4/fr/algorithms', badge: 'GET' },
                 { text: 'Captcha', link: '/v4/fr/captcha', badge: 'GET' },
                 {
@@ -148,10 +156,13 @@ export const v4 = {
                 { text: 'Encode', link: '/v4/fr/encode', badge: 'GET' },
                 { text: 'Geo', link: '/v4/fr/geo', badge: 'GET' },
                 { text: 'Hash', link: '/v4/fr/hash', badge: 'POST' },
+                { text: 'Headers', link: '/v4/fr/headers', badge: 'GET' },
                 { text: 'Hyperplanning', link: '/v4/fr/hyperplanning', badge: 'POST' },
+                { text: 'IP', link: '/v4/fr/ip', badge: 'GET' },
                 { text: 'Infos', link: '/v4/fr/infos', badge: 'GET' },
                 { text: 'Levenshtein', link: '/v4/fr/levenshtein', badge: 'GET' },
                 { text: 'Palette', link: '/v4/fr/palette', badge: 'GET' },
+                { text: 'Password', link: '/v4/fr/password', badge: 'GET' },
                 { text: 'Personal', link: '/v4/fr/personal', badge: 'GET' },
                 { text: 'Placeholder', link: '/v4/fr/placeholder', badge: 'GET' },
                 { text: 'QR Code', link: '/v4/fr/qrcode', badge: 'GET' },
@@ -203,6 +214,7 @@ export const v4 = {
                     collapsed: true,
                     items: [
                         { text: 'Aperçu', link: '/v4/fr/changelog' },
+                        { text: '4.7.0', link: '/v4/fr/changelog/4.7.0' },
                         { text: '4.6.0', link: '/v4/fr/changelog/4.6.0' },
                         { text: '4.5.0', link: '/v4/fr/changelog/4.5.0' },
                         { text: '4.4.0', link: '/v4/fr/changelog/4.4.0' },
