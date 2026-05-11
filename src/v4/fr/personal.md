@@ -10,32 +10,32 @@ Cet endpoint ne nécessite aucun paramètre. Il retourne une identité fictive g
 
 ## Champs de réponse
 
-| Champ                | Type       | Description                          |
-| -------------------- | ---------- | ------------------------------------ |
-| `name`               | `string`   | Nom complet                          |
-| `email`              | `string`   | Adresse email                        |
-| `localisation`       | `string`   | Code pays                            |
-| `phone`              | `string`   | Numéro de téléphone                  |
-| `job`                | `string`   | Profession                           |
-| `hobbies`            | `string`   | Loisirs/intérêts                     |
-| `language`           | `string`   | Langue parlée                        |
-| `card`               | `string`   | Numéro de carte de crédit            |
-| `cvc`                | `number`   | Code de sécurité de la carte         |
-| `expiration`         | `string`   | Date d'expiration de la carte        |
-| `address`            | `string`   | Adresse postale                      |
-| `birthday`           | `string`   | Date de naissance                    |
-| `civil_status`       | `string`   | Situation matrimoniale               |
-| `children`           | `number`   | Nombre d'enfants                     |
-| `vehicle`            | `string[]` | Tableau des véhicules possédés       |
-| `social_profiles`    | `object`   | Objet des profils de réseaux sociaux |
-| `year_income`        | `string`   | Revenu annuel                        |
-| `month_income`       | `string`   | Revenu mensuel                       |
-| `education`          | `string`   | Niveau d'éducation                   |
-| `work_experience`    | `string`   | Années d'expérience professionnelle  |
-| `health_status`      | `string`   | État de santé                        |
-| `emergency_contacts` | `object[]` | Tableau des contacts d'urgence       |
-| `subscriptions`      | `string[]` | Tableau des abonnements              |
-| `pets`               | `string[]` | Tableau des animaux de compagnie     |
+| Champ                | Type       | Description                                                              |
+| -------------------- | ---------- | ------------------------------------------------------------------------ |
+| `name`               | `string`   | Nom complet                                                              |
+| `email`              | `string`   | Adresse email                                                            |
+| `localisation`       | `string`   | Code pays                                                                |
+| `phone`              | `string`   | Numéro de téléphone                                                      |
+| `job`                | `string`   | Profession                                                               |
+| `hobbies`            | `string`   | Loisirs/intérêts                                                         |
+| `language`           | `string`   | Langue parlée                                                            |
+| `card`               | `string`   | Numéro de carte de crédit                                                |
+| `cvc`                | `number`   | Code de sécurité de la carte                                             |
+| `expiration`         | `string`   | Date d'expiration de la carte                                            |
+| `address`            | `object`   | Objet adresse complet (voir [Address](/v4/fr/address#champs-de-reponse)) |
+| `birthday`           | `string`   | Date de naissance                                                        |
+| `civil_status`       | `string`   | Situation matrimoniale                                                   |
+| `children`           | `number`   | Nombre d'enfants                                                         |
+| `vehicle`            | `string[]` | Tableau des véhicules possédés                                           |
+| `social_profiles`    | `object`   | Objet des profils de réseaux sociaux                                     |
+| `year_income`        | `string`   | Revenu annuel                                                            |
+| `month_income`       | `string`   | Revenu mensuel                                                           |
+| `education`          | `string`   | Niveau d'éducation                                                       |
+| `work_experience`    | `string`   | Années d'expérience professionnelle                                      |
+| `health_status`      | `string`   | État de santé                                                            |
+| `emergency_contacts` | `object[]` | Tableau des contacts d'urgence                                           |
+| `subscriptions`      | `string[]` | Tableau des abonnements                                                  |
+| `pets`               | `string[]` | Tableau des animaux de compagnie                                         |
 
 ## Exemples de code
 

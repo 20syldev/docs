@@ -22,7 +22,7 @@ This endpoint does not require any parameters. It returns a randomly generated i
 | `card`               | `string`   | Credit card number                                                     |
 | `cvc`                | `number`   | Card security code                                                     |
 | `expiration`         | `string`   | Card expiration date                                                   |
-| `address`            | `string`   | Street address                                                         |
+| `address`            | `object`   | Full address object (see [Address](/v4/en/address#response-fields))    |
 | `birthday`           | `string`   | Date of birth                                                          |
 | `civil_status`       | `string`   | Marital status                                                         |
 | `children`           | `number`   | Number of children                                                     |
