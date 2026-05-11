@@ -26,7 +26,21 @@ const props = withDefaults(
 );
 
 const { lang, versionedPath } = useVersion();
-const fullPath = computed(() => (props.noVersion ? props.path : versionedPath(props.path)));
+
+const pathParamNames = computed(() => {
+    const matches = props.path.match(/:([a-zA-Z]+)/g);
+    return matches ? matches.map((m) => m.slice(1)) : [];
+});
+
+const resolvedPath = computed(() => {
+    let p = props.path;
+    for (const name of pathParamNames.value) {
+        p = p.replace(`:${name}`, values.value[name] || `:${name}`);
+    }
+    return p;
+});
+
+const fullPath = computed(() => (props.noVersion ? resolvedPath.value : versionedPath(resolvedPath.value)));
 
 const values = ref<Record<string, string>>({});
 const codeLang = ref<CodeLang>('curl');
@@ -45,7 +59,9 @@ watch(
 );
 
 const filledEntries = computed(() =>
-    props.params.filter((p) => values.value[p.name]).map((p) => [p.name, values.value[p.name]] as [string, string]),
+    props.params
+        .filter((p) => values.value[p.name] && !pathParamNames.value.includes(p.name))
+        .map((p) => [p.name, values.value[p.name]] as [string, string]),
 );
 
 const canSend = computed(() => props.params.filter((p) => p.required).every((p) => !!values.value[p.name]));
@@ -120,7 +136,9 @@ defineExpose({ resetState });
     <div class="panel panel">
         <div class="panel-header">
             <span :class="['method-badge', method]">{{ method.toUpperCase() }}</span>
-            <code class="panel-url panel-path">{{ fullUrl }}</code>
+            <a :href="fullUrl" target="_blank" rel="noopener noreferrer"
+                ><code class="panel-path">{{ fullUrl }}</code></a
+            >
             <button class="action-btn panel-send" :disabled="loading || !canSend" @click="send">
                 {{ loading ? '...' : t('playground.send', lang) }}
             </button>
@@ -133,7 +151,13 @@ defineExpose({ resetState });
                     <option value="" disabled>{{ t('playground.select', lang) }}</option>
                     <option v-for="opt in p.options" :key="opt" :value="opt">{{ opt }}</option>
                 </select>
-                <input v-else v-model="values[p.name]" :placeholder="p.name" type="text" @keydown.enter="send" />
+                <input
+                    v-else
+                    v-model="values[p.name]"
+                    :placeholder="p.placeholder ?? p.name"
+                    type="text"
+                    @keydown.enter="send"
+                />
             </div>
         </div>
 
