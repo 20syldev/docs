@@ -15,6 +15,14 @@ export interface SnippetOptions {
     body?: Record<string, string>;
 }
 
+function toJsObject(obj: Record<string, string>, baseIndent: number): string {
+    const entries = Object.entries(obj);
+    if (entries.length === 0) return '{}';
+    const pad = ' '.repeat(baseIndent);
+    const inner = ' '.repeat(baseIndent + 4);
+    return `{\n${entries.map(([k, v]) => `${inner}"${k}": "${v}"`).join(',\n')}\n${pad}}`;
+}
+
 function toPythonDict(obj: Record<string, string>): string {
     const entries = Object.entries(obj)
         .map(([k, v]) => `"${k}": "${v}"`)
@@ -39,20 +47,18 @@ function curlSnippet({ method, url, body = {} }: SnippetOptions): string {
 
 function javascriptSnippet({ method, url, body = {} }: SnippetOptions): string {
     if (method === 'post') {
-        const bodyObj = JSON.stringify(body, null, 4);
         return `const response = await fetch("${url}", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(${bodyObj})
+    body: new URLSearchParams(${toJsObject(body, 4)})
 });
 const data = await response.json();`;
     }
     if (method === 'patch' || method === 'delete') {
-        const bodyObj = JSON.stringify(body, null, 4);
         return `const response = await fetch("${url}", {
     method: "${method.toUpperCase()}",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(${bodyObj})
+    body: JSON.stringify(${toJsObject(body, 4)})
 });
 const data = await response.json();`;
     }
