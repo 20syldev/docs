@@ -239,6 +239,22 @@ export const endpoints: EndpointDef[] = [
         ],
     },
     {
+        name: 'Cron',
+        path: '/cron',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'expr', required: true, placeholder: '0 9 * * 1-5' },
+            { name: 'count', required: false, placeholder: '5' },
+            { name: 'from', required: false, placeholder: '2025-01-01T00:00:00Z' },
+            {
+                name: 'timezone',
+                required: false,
+                options: ['UTC', 'Europe/Paris', 'America/New_York', 'Asia/Tokyo', 'Australia/Sydney'],
+            },
+        ],
+    },
+    {
         name: 'Domain',
         path: '/domain',
         method: 'get',
@@ -427,6 +443,17 @@ export const endpoints: EndpointDef[] = [
         ],
     },
     {
+        name: 'Regex',
+        path: '/regex',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'pattern', required: true, placeholder: '\\d+' },
+            { name: 'text', required: true, placeholder: 'Order 42 and item 7' },
+            { name: 'flags', required: false, placeholder: 'i' },
+        ],
+    },
+    {
         name: 'Tic-Tac-Toe',
         path: '/tic-tac-toe',
         method: 'post',
@@ -487,7 +514,7 @@ export const endpoints: EndpointDef[] = [
         method: 'get',
         group: 'Endpoints',
         params: [
-            { name: 'type', required: false, options: ['live', 'random'] },
+            { name: 'type', required: false, options: ['live', 'random', 'countdown'] },
             {
                 name: 'format',
                 required: false,
@@ -518,6 +545,7 @@ export const endpoints: EndpointDef[] = [
             },
             { name: 'start', required: false, placeholder: '2025-01-01' },
             { name: 'end', required: false, placeholder: '2025-12-31' },
+            { name: 'target', required: false, placeholder: '2026-01-01' },
         ],
     },
     {
