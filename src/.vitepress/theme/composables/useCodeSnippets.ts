@@ -15,6 +15,13 @@ export interface SnippetOptions {
     body?: Record<string, string>;
 }
 
+/**
+ * Serializes a string key-value object as an indented JS object literal.
+ *
+ * @param obj - Key-value pairs to serialize
+ * @param baseIndent - Number of spaces for the closing brace indentation
+ * @returns A formatted JS object literal string
+ */
 function toJsObject(obj: Record<string, string>, baseIndent: number): string {
     const entries = Object.entries(obj);
     if (entries.length === 0) return '{}';
@@ -23,6 +30,12 @@ function toJsObject(obj: Record<string, string>, baseIndent: number): string {
     return `{\n${entries.map(([k, v]) => `${inner}"${k}": "${v}"`).join(',\n')}\n${pad}}`;
 }
 
+/**
+ * Serializes a string key-value object as a Python dict literal.
+ *
+ * @param obj - Key-value pairs to serialize
+ * @returns A formatted Python dict literal string
+ */
 function toPythonDict(obj: Record<string, string>): string {
     const entries = Object.entries(obj)
         .map(([k, v]) => `"${k}": "${v}"`)
@@ -30,6 +43,12 @@ function toPythonDict(obj: Record<string, string>): string {
     return `{${entries}}`;
 }
 
+/**
+ * Generates a cURL command snippet for the given request options.
+ *
+ * @param opts - The request method, URL, and optional body
+ * @returns A formatted cURL command string
+ */
 function curlSnippet({ method, url, body = {} }: SnippetOptions): string {
     const m = method.toUpperCase();
     if (method === 'post') {
@@ -45,6 +64,12 @@ function curlSnippet({ method, url, body = {} }: SnippetOptions): string {
     return `curl -X GET \\\n  "${url}"`;
 }
 
+/**
+ * Generates a JavaScript fetch snippet for the given request options.
+ *
+ * @param opts - The request method, URL, and optional body
+ * @returns A formatted JavaScript code snippet string
+ */
 function javascriptSnippet({ method, url, body = {} }: SnippetOptions): string {
     if (method === 'post') {
         return `const response = await fetch("${url}", {
@@ -66,6 +91,12 @@ const data = await response.json();`;
 const data = await response.json();`;
 }
 
+/**
+ * Generates a Python requests snippet for the given request options.
+ *
+ * @param opts - The request method, URL, and optional body
+ * @returns A formatted Python code snippet string
+ */
 function pythonSnippet({ method, url, body = {} }: SnippetOptions): string {
     if (method === 'post') {
         return `import requests
@@ -91,6 +122,12 @@ response = requests.get("${url}")
 data = response.json()`;
 }
 
+/**
+ * Generates a PHP cURL snippet for the given request options.
+ *
+ * @param opts - The request method, URL, and optional body
+ * @returns A formatted PHP code snippet string
+ */
 function phpSnippet({ method, url, body = {} }: SnippetOptions): string {
     if (method === 'post') {
         const fields = Object.entries(body)
