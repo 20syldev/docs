@@ -2,15 +2,27 @@
 
 /* ----- Header ----- */
 
-.panel .panel-header .method-badge {
+.panel-header a {
+    display: contents;
+}
+.panel-header .method-badge {
     font-size: 12px;
     flex-shrink: 0;
     order: 1;
 }
 
 .panel-path {
-    width: 100%;
+    font-family: var(--font-mono);
+    color: var(--vp-c-text-2);
+    word-break: break-all;
+    cursor: pointer;
     order: 3;
+    width: 100%;
+    font-size: 13px;
+    line-height: 1.2;
+}
+.panel-path:hover {
+    text-decoration: underline dotted;
 }
 
 .panel-send {

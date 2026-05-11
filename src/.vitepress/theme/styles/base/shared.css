@@ -70,14 +70,6 @@
     border-top: 1px solid var(--vp-c-divider);
 }
 
-.panel-url {
-    font-family: var(--font-mono);
-    color: var(--vp-c-text-2);
-    word-break: break-all;
-    line-height: 1.2;
-    font-size: 13px;
-}
-
 .panel-params {
     display: flex;
     flex-wrap: wrap;
