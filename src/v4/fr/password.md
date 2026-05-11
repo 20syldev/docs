@@ -11,13 +11,13 @@ Générez des mots de passe sécurisés lors de la création de comptes, produis
 ## Paramètres
 
 | Paramètre   | Requis | Défaut   | Description                                                                              |
-| ----------- | ------ | -------- | ---------------------------------------------------------------------------------------- | ---------------------------------------- |
+| ----------- | ------ | -------- | ---------------------------------------------------------------------------------------- |
 | `type`      | Non    | `random` | Mode de génération : `random` (caractères) ou `passphrase` (mots).                       |
 | `length`    | Non    | `16`     | Nombre de caractères pour le mode `random` (8–128), ou de mots pour `passphrase` (3–10). |
 | `uppercase` | Non    | `true`   | Inclure les majuscules (`A–Z`). Mettre à `false` pour désactiver.                        |
 | `lowercase` | Non    | `true`   | Inclure les minuscules (`a–z`). Mettre à `false` pour désactiver.                        |
 | `digits`    | Non    | `true`   | Inclure les chiffres (`0–9`). Mettre à `false` pour désactiver.                          |
-| `symbols`   | Non    | `false`  | Inclure les symboles (`!@#$%^&\*()-\_=+[]{}                                              | ;:,.<>?`). Mettre à `true` pour activer. |
+| `symbols`   | Non    | `false`  | Inclure les symboles (`!@#$%^&*()-_=+[]{}\|;:,.<>?`). Mettre à `true` pour activer.      |
 | `exclude`   | Non    | `""`     | Caractères à exclure du jeu de caractères (ex. `exclude=0Ol1`).                          |
 | `count`     | Non    | `1`      | Nombre de mots de passe à générer (1–20).                                                |
 | `separator` | Non    | `-`      | Séparateur de mots pour le mode `passphrase`.                                            |

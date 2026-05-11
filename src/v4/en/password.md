@@ -11,13 +11,13 @@ Generate secure passwords for users during account creation, produce passphrases
 ## Parameters
 
 | Parameter   | Required | Default  | Description                                                                            |
-| ----------- | -------- | -------- | -------------------------------------------------------------------------------------- | ----------------------------------- |
+| ----------- | -------- | -------- | -------------------------------------------------------------------------------------- |
 | `type`      | No       | `random` | Generation mode: `random` (character-based) or `passphrase` (word-based).              |
 | `length`    | No       | `16`     | Character count for `random` mode (8–128), or word count for `passphrase` mode (3–10). |
 | `uppercase` | No       | `true`   | Include uppercase letters (`A–Z`). Set to `false` to disable.                          |
 | `lowercase` | No       | `true`   | Include lowercase letters (`a–z`). Set to `false` to disable.                          |
 | `digits`    | No       | `true`   | Include digits (`0–9`). Set to `false` to disable.                                     |
-| `symbols`   | No       | `false`  | Include symbols (`!@#$%^&\*()-\_=+[]{}                                                 | ;:,.<>?`). Set to `true` to enable. |
+| `symbols`   | No       | `false`  | Include symbols (`!@#$%^&*()-_=+[]{}\|;:,.<>?`). Set to `true` to enable.              |
 | `exclude`   | No       | `""`     | Characters to remove from the charset (e.g. `exclude=0Ol1`).                           |
 | `count`     | No       | `1`      | Number of passwords to generate (1–20).                                                |
 | `separator` | No       | `-`      | Word separator for `passphrase` mode.                                                  |
