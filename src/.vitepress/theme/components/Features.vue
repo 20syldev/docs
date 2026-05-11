@@ -11,6 +11,8 @@ const route = useRoute();
 const { version, lang } = useVersion();
 
 const keys: Record<string, TranslationKey> = {
+    Address: 'features.address',
+    Agent: 'features.agent',
     Algorithms: 'features.algorithms',
     Captcha: 'features.captcha',
     Color: 'features.color',
@@ -20,10 +22,13 @@ const keys: Record<string, TranslationKey> = {
     Encode: 'features.encode',
     Geo: 'features.geo',
     Hash: 'features.hash',
+    Headers: 'features.headers',
     Hyperplanning: 'features.hyperplanning',
     Infos: 'features.infos',
+    IP: 'features.ip',
     Levenshtein: 'features.levenshtein',
     Palette: 'features.palette',
+    Password: 'features.password',
     Personal: 'features.personal',
     Placeholder: 'features.placeholder',
     'QR Code': 'features.qrcode',
