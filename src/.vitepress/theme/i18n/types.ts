@@ -44,12 +44,15 @@ export type TranslationSchema = {
         responseTime: string;
         copyCode: string;
         tryIt: string;
+        viewDocs: string;
     };
     footer: {
         changelog: string;
         issue: string;
     };
     features: {
+        address: string;
+        agent: string;
         algorithms: string;
         captcha: string;
         color: string;
@@ -59,10 +62,13 @@ export type TranslationSchema = {
         encode: string;
         geo: string;
         hash: string;
+        headers: string;
         hyperplanning: string;
         infos: string;
+        ip: string;
         levenshtein: string;
         palette: string;
+        password: string;
         personal: string;
         placeholder: string;
         qrcode: string;

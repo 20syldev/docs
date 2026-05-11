@@ -2,8 +2,8 @@
 import { computed } from 'vue';
 
 import { useVersion } from '../composables/useVersion';
-import { arrowRightIcon } from '../utils/icons';
 import { t, type TranslationKey } from '../utils/i18n';
+import { arrowRightIcon } from '../utils/icons';
 import { KNOWN_VERSIONS, LATEST_VERSION } from '../utils/redirect';
 
 const { version, lang } = useVersion();
