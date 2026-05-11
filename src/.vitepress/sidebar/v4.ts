@@ -35,6 +35,7 @@ export const v4 = {
                 },
                 { text: 'Color', link: '/v4/en/color', badge: 'GET' },
                 { text: 'Convert', link: '/v4/en/convert', badge: 'GET' },
+                { text: 'Cron', link: '/v4/en/cron', badge: 'GET' },
                 { text: 'Dice', link: '/v4/en/dice', badge: 'GET' },
                 { text: 'Domain', link: '/v4/en/domain', badge: 'GET' },
                 { text: 'Encode', link: '/v4/en/encode', badge: 'GET' },
@@ -50,6 +51,7 @@ export const v4 = {
                 { text: 'Personal', link: '/v4/en/personal', badge: 'GET' },
                 { text: 'Placeholder', link: '/v4/en/placeholder', badge: 'GET' },
                 { text: 'QR Code', link: '/v4/en/qrcode', badge: 'GET' },
+                { text: 'Regex', link: '/v4/en/regex', badge: 'GET' },
                 { text: 'Statistics', link: '/v4/en/statistics', badge: 'GET' },
                 { text: 'Text', link: '/v4/en/text', badge: 'GET' },
                 {
@@ -98,6 +100,7 @@ export const v4 = {
                     collapsed: true,
                     items: [
                         { text: 'Overview', link: '/v4/en/changelog' },
+                        { text: '4.8.0', link: '/v4/en/changelog/4.8.0' },
                         { text: '4.7.0', link: '/v4/en/changelog/4.7.0' },
                         { text: '4.6.0', link: '/v4/en/changelog/4.6.0' },
                         { text: '4.5.0', link: '/v4/en/changelog/4.5.0' },
@@ -151,6 +154,7 @@ export const v4 = {
                 },
                 { text: 'Color', link: '/v4/fr/color', badge: 'GET' },
                 { text: 'Convert', link: '/v4/fr/convert', badge: 'GET' },
+                { text: 'Cron', link: '/v4/fr/cron', badge: 'GET' },
                 { text: 'Dice', link: '/v4/fr/dice', badge: 'GET' },
                 { text: 'Domain', link: '/v4/fr/domain', badge: 'GET' },
                 { text: 'Encode', link: '/v4/fr/encode', badge: 'GET' },
@@ -166,6 +170,7 @@ export const v4 = {
                 { text: 'Personal', link: '/v4/fr/personal', badge: 'GET' },
                 { text: 'Placeholder', link: '/v4/fr/placeholder', badge: 'GET' },
                 { text: 'QR Code', link: '/v4/fr/qrcode', badge: 'GET' },
+                { text: 'Regex', link: '/v4/fr/regex', badge: 'GET' },
                 { text: 'Statistics', link: '/v4/fr/statistics', badge: 'GET' },
                 { text: 'Text', link: '/v4/fr/text', badge: 'GET' },
                 {
@@ -214,6 +219,7 @@ export const v4 = {
                     collapsed: true,
                     items: [
                         { text: 'Aperçu', link: '/v4/fr/changelog' },
+                        { text: '4.8.0', link: '/v4/fr/changelog/4.8.0' },
                         { text: '4.7.0', link: '/v4/fr/changelog/4.7.0' },
                         { text: '4.6.0', link: '/v4/fr/changelog/4.6.0' },
                         { text: '4.5.0', link: '/v4/fr/changelog/4.5.0' },
