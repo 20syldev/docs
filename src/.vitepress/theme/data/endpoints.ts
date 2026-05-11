@@ -3,11 +3,13 @@ export interface EndpointParam {
     required: boolean;
     default?: string;
     options?: string[];
+    placeholder?: string;
 }
 
 export interface EndpointDef {
     name: string;
     path: string;
+    doc?: string;
     method: 'get' | 'post' | 'patch' | 'delete';
     params: EndpointParam[];
     group: string;
@@ -15,6 +17,23 @@ export interface EndpointDef {
 
 export const endpoints: EndpointDef[] = [
     // Standalone GET endpoints
+    {
+        name: 'Address',
+        path: '/address',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'country', required: false, options: ['fr', 'us', 'uk', 'de', 'es'] },
+            { name: 'count', required: false, placeholder: '1-10' },
+        ],
+    },
+    {
+        name: 'Agent',
+        path: '/agent',
+        method: 'get',
+        group: 'Endpoints',
+        params: [{ name: 'ua', required: false, placeholder: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) ...' }],
+    },
     {
         name: 'Algorithms',
         path: '/algorithms',
@@ -38,8 +57,8 @@ export const endpoints: EndpointDef[] = [
                     'roman',
                 ],
             },
-            { name: 'value', required: true },
-            { name: 'value2', required: false },
+            { name: 'value', required: true, placeholder: '42' },
+            { name: 'value2', required: false, placeholder: '24' },
         ],
     },
     {
@@ -48,13 +67,13 @@ export const endpoints: EndpointDef[] = [
         method: 'get',
         group: 'Endpoints',
         params: [
-            { name: 'text', required: false },
-            { name: 'length', required: false },
-            { name: 'width', required: false },
-            { name: 'height', required: false },
+            { name: 'text', required: false, placeholder: 'abc123' },
+            { name: 'length', required: false, placeholder: '6' },
+            { name: 'width', required: false, placeholder: '300' },
+            { name: 'height', required: false, placeholder: '150' },
             { name: 'noise', required: false, options: ['low', 'medium', 'high'] },
-            { name: 'bg', required: false },
-            { name: 'color', required: false },
+            { name: 'bg', required: false, placeholder: '#ffffff' },
+            { name: 'color', required: false, placeholder: '#000000' },
         ],
     },
     {
@@ -70,10 +89,10 @@ export const endpoints: EndpointDef[] = [
         method: 'post',
         group: 'Chat',
         params: [
-            { name: 'username', required: true },
-            { name: 'message', required: true },
-            { name: 'session', required: true },
-            { name: 'token', required: false },
+            { name: 'username', required: true, placeholder: 'john' },
+            { name: 'message', required: true, placeholder: 'Hello!' },
+            { name: 'session', required: true, placeholder: 'my-session' },
+            { name: 'token', required: false, placeholder: 'abc123' },
         ],
     },
     {
@@ -82,8 +101,20 @@ export const endpoints: EndpointDef[] = [
         method: 'post',
         group: 'Chat',
         params: [
-            { name: 'username', required: true },
-            { name: 'token', required: true },
+            { name: 'username', required: true, placeholder: 'john' },
+            { name: 'token', required: true, placeholder: 'abc123' },
+        ],
+    },
+    {
+        name: 'Chat Clear',
+        path: '/chat/:token',
+        doc: '/chat/clear',
+        method: 'delete',
+        group: 'Chat',
+        params: [
+            { name: 'token', required: true, placeholder: '41a43360-9874-4c7a-9ca8-eec29e765a0e' },
+            { name: 'username', required: true, placeholder: 'alice' },
+            { name: 'session', required: true, placeholder: 'abc123' },
         ],
     },
     {
@@ -91,7 +122,7 @@ export const endpoints: EndpointDef[] = [
         path: '/dice',
         method: 'get',
         group: 'Endpoints',
-        params: [{ name: 'roll', required: true }],
+        params: [{ name: 'roll', required: true, placeholder: '2d6+3' }],
     },
     {
         name: 'Encode',
@@ -115,8 +146,8 @@ export const endpoints: EndpointDef[] = [
                     'unbinary',
                 ],
             },
-            { name: 'text', required: true },
-            { name: 'shift', required: false },
+            { name: 'text', required: true, placeholder: 'Hello World' },
+            { name: 'shift', required: false, placeholder: '3' },
         ],
     },
     {
@@ -124,7 +155,7 @@ export const endpoints: EndpointDef[] = [
         path: '/color',
         method: 'get',
         group: 'Endpoints',
-        params: [{ name: 'hex', required: false }],
+        params: [{ name: 'hex', required: false, placeholder: '#ff6600' }],
     },
     {
         name: 'Geo',
@@ -132,10 +163,10 @@ export const endpoints: EndpointDef[] = [
         method: 'get',
         group: 'Endpoints',
         params: [
-            { name: 'lat1', required: true },
-            { name: 'lon1', required: true },
-            { name: 'lat2', required: true },
-            { name: 'lon2', required: true },
+            { name: 'lat1', required: true, placeholder: '48.8566' },
+            { name: 'lon1', required: true, placeholder: '2.3522' },
+            { name: 'lat2', required: true, placeholder: '40.7128' },
+            { name: 'lon2', required: true, placeholder: '-74.0060' },
         ],
     },
     {
@@ -144,7 +175,7 @@ export const endpoints: EndpointDef[] = [
         method: 'get',
         group: 'Endpoints',
         params: [
-            { name: 'value', required: true },
+            { name: 'value', required: true, placeholder: '100' },
             {
                 name: 'from',
                 required: true,
@@ -220,7 +251,7 @@ export const endpoints: EndpointDef[] = [
         method: 'post',
         group: 'Endpoints',
         params: [
-            { name: 'text', required: true },
+            { name: 'text', required: true, placeholder: 'Hello World' },
             {
                 name: 'method',
                 required: true,
@@ -248,14 +279,28 @@ export const endpoints: EndpointDef[] = [
         ],
     },
     {
+        name: 'Headers',
+        path: '/headers',
+        method: 'get',
+        group: 'Endpoints',
+        params: [{ name: 'filter', required: false, placeholder: 'host,user-agent' }],
+    },
+    {
         name: 'Hyperplanning',
         path: '/hyperplanning',
         method: 'post',
         group: 'Endpoints',
         params: [
-            { name: 'url', required: true },
+            { name: 'url', required: true, placeholder: 'https://example.com/planning.ics' },
             { name: 'detail', required: false, options: ['full', 'list'] },
         ],
+    },
+    {
+        name: 'IP',
+        path: '/ip',
+        method: 'get',
+        group: 'Endpoints',
+        params: [{ name: 'address', required: false, placeholder: '8.8.8.8' }],
     },
     {
         name: 'Infos',
@@ -270,8 +315,8 @@ export const endpoints: EndpointDef[] = [
         method: 'get',
         group: 'Endpoints',
         params: [
-            { name: 'str1', required: true },
-            { name: 'str2', required: true },
+            { name: 'str1', required: true, placeholder: 'kitten' },
+            { name: 'str2', required: true, placeholder: 'sitting' },
         ],
     },
     {
@@ -286,7 +331,7 @@ export const endpoints: EndpointDef[] = [
         path: '/statistics',
         method: 'get',
         group: 'Endpoints',
-        params: [{ name: 'values', required: true }],
+        params: [{ name: 'values', required: true, placeholder: '1,2,3,4,5' }],
     },
     {
         name: 'Text',
@@ -295,9 +340,9 @@ export const endpoints: EndpointDef[] = [
         group: 'Endpoints',
         params: [
             { name: 'method', required: true, options: ['stats', 'slug', 'lorem', 'number'] },
-            { name: 'value', required: false },
+            { name: 'value', required: false, placeholder: 'Hello World' },
             { name: 'type', required: false, options: ['words', 'sentences', 'paragraphs'] },
-            { name: 'count', required: false },
+            { name: 'count', required: false, placeholder: '5' },
             { name: 'lang', required: false, options: ['en', 'fr'] },
         ],
     },
@@ -308,7 +353,7 @@ export const endpoints: EndpointDef[] = [
         group: 'Endpoints',
         params: [
             { name: 'type', required: true, options: ['luhn', 'iban', 'email'] },
-            { name: 'value', required: true },
+            { name: 'value', required: true, placeholder: 'test@example.com' },
         ],
     },
     {
@@ -317,12 +362,29 @@ export const endpoints: EndpointDef[] = [
         method: 'get',
         group: 'Endpoints',
         params: [
-            { name: 'color', required: true },
+            { name: 'color', required: true, placeholder: '#ff6600' },
             {
                 name: 'type',
                 required: true,
                 options: ['complementary', 'triadic', 'analogous', 'tetradic', 'split-complementary'],
             },
+        ],
+    },
+    {
+        name: 'Password',
+        path: '/password',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'type', required: false, options: ['random', 'passphrase'] },
+            { name: 'length', required: false, placeholder: '16' },
+            { name: 'uppercase', required: false, options: ['true', 'false'] },
+            { name: 'lowercase', required: false, options: ['true', 'false'] },
+            { name: 'digits', required: false, options: ['true', 'false'] },
+            { name: 'symbols', required: false, options: ['true', 'false'] },
+            { name: 'exclude', required: false, placeholder: '0Ol1' },
+            { name: 'count', required: false, placeholder: '1' },
+            { name: 'separator', required: false, placeholder: '-' },
         ],
     },
     {
@@ -332,17 +394,17 @@ export const endpoints: EndpointDef[] = [
         group: 'Endpoints',
         params: [
             { name: 'type', required: true, options: ['image', 'skeleton'] },
-            { name: 'width', required: false },
-            { name: 'height', required: false },
-            { name: 'bg', required: false },
-            { name: 'color', required: false },
-            { name: 'text', required: false },
-            { name: 'rows', required: false },
+            { name: 'width', required: false, placeholder: '400' },
+            { name: 'height', required: false, placeholder: '300' },
+            { name: 'bg', required: false, placeholder: '#cccccc' },
+            { name: 'color', required: false, placeholder: '#666666' },
+            { name: 'text', required: false, placeholder: '400×300' },
+            { name: 'rows', required: false, placeholder: '3' },
             { name: 'avatar', required: false, options: ['true', 'circle', 'rounded', 'square'] },
-            { name: 'lines', required: false },
+            { name: 'lines', required: false, placeholder: '4' },
             { name: 'animate', required: false, options: ['shimmer', 'pulse', 'none'] },
-            { name: 'speed', required: false },
-            { name: 'radius', required: false },
+            { name: 'speed', required: false, placeholder: '1.5' },
+            { name: 'radius', required: false, placeholder: '8' },
         ],
     },
     {
@@ -351,17 +413,17 @@ export const endpoints: EndpointDef[] = [
         method: 'get',
         group: 'Endpoints',
         params: [
-            { name: 'url', required: true },
+            { name: 'url', required: true, placeholder: 'https://example.com' },
             { name: 'format', required: false, options: ['png', 'base64'] },
-            { name: 'size', required: false },
-            { name: 'margin', required: false },
+            { name: 'size', required: false, placeholder: '300' },
+            { name: 'margin', required: false, placeholder: '2' },
             { name: 'correction', required: false, options: ['L', 'M', 'Q', 'H'] },
-            { name: 'dark', required: false },
-            { name: 'light', required: false },
-            { name: 'icon', required: false },
-            { name: 'iconSize', required: false },
-            { name: 'iconPadding', required: false },
-            { name: 'iconRadius', required: false },
+            { name: 'dark', required: false, placeholder: '#000000' },
+            { name: 'light', required: false, placeholder: '#ffffff' },
+            { name: 'icon', required: false, placeholder: 'https://example.com/icon.png' },
+            { name: 'iconSize', required: false, placeholder: '50' },
+            { name: 'iconPadding', required: false, placeholder: '4' },
+            { name: 'iconRadius', required: false, placeholder: '8' },
         ],
     },
     {
@@ -370,10 +432,35 @@ export const endpoints: EndpointDef[] = [
         method: 'post',
         group: 'Tic-Tac-Toe',
         params: [
-            { name: 'username', required: true },
-            { name: 'move', required: true },
-            { name: 'session', required: true },
-            { name: 'game', required: true },
+            { name: 'username', required: true, placeholder: 'john' },
+            { name: 'move', required: true, placeholder: '5' },
+            { name: 'session', required: true, placeholder: 'my-session' },
+            { name: 'game', required: true, placeholder: 'abc123' },
+        ],
+    },
+    {
+        name: 'Tic-Tac-Toe Play',
+        path: '/tic-tac-toe/:game',
+        doc: '/tic-tac-toe/play',
+        method: 'patch',
+        group: 'Tic-Tac-Toe',
+        params: [
+            { name: 'game', required: true, placeholder: 'VWXYZ' },
+            { name: 'username', required: true, placeholder: 'alice' },
+            { name: 'move', required: true, placeholder: '1-1' },
+            { name: 'session', required: true, placeholder: 'abc123' },
+        ],
+    },
+    {
+        name: 'Tic-Tac-Toe Forfeit',
+        path: '/tic-tac-toe/:game',
+        doc: '/tic-tac-toe/forfeit',
+        method: 'delete',
+        group: 'Tic-Tac-Toe',
+        params: [
+            { name: 'game', required: true, placeholder: 'VWXYZ' },
+            { name: 'username', required: true, placeholder: 'alice' },
+            { name: 'session', required: true, placeholder: 'abc123' },
         ],
     },
     {
@@ -382,8 +469,8 @@ export const endpoints: EndpointDef[] = [
         method: 'post',
         group: 'Tic-Tac-Toe',
         params: [
-            { name: 'username', required: true },
-            { name: 'game', required: false },
+            { name: 'username', required: true, placeholder: 'john' },
+            { name: 'game', required: false, placeholder: 'abc123' },
             { name: 'private', required: false, options: ['true', 'false'] },
         ],
     },
@@ -429,8 +516,8 @@ export const endpoints: EndpointDef[] = [
                 required: false,
                 options: ['UTC', 'Europe/Paris', 'America/New_York', 'Asia/Tokyo', 'Australia/Sydney'],
             },
-            { name: 'start', required: false },
-            { name: 'end', required: false },
+            { name: 'start', required: false, placeholder: '2025-01-01' },
+            { name: 'end', required: false, placeholder: '2025-12-31' },
         ],
     },
     {
@@ -439,7 +526,7 @@ export const endpoints: EndpointDef[] = [
         method: 'post',
         group: 'Endpoints',
         params: [
-            { name: 'len', required: false, default: '24' },
+            { name: 'len', required: false, default: '24', placeholder: '24' },
             {
                 name: 'type',
                 required: false,
