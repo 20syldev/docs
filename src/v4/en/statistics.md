@@ -4,6 +4,10 @@ The `/statistics` endpoint calculates descriptive statistics on a list of number
 
 <Endpoint method="get" path="/statistics" baseUrl="https://api.sylvain.sh" />
 
+::: info How it works?
+All measures are computed on the full population (not a sample). `variance` and `stddev` use population formulas (divide by N). `mode` returns all values tied for the highest frequency. `mean`, `median`, `variance`, and `stddev` are rounded to 6 decimal places.
+:::
+
 ## Parameters
 
 | Parameter | Required | Description                                       |
