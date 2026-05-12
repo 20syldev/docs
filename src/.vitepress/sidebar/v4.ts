@@ -14,6 +14,8 @@ export const v4 = {
                 { text: 'Address', link: '/v4/en/address', badge: 'GET' },
                 { text: 'Agent', link: '/v4/en/agent', badge: 'GET' },
                 { text: 'Algorithms', link: '/v4/en/algorithms', badge: 'GET' },
+                { text: 'Avatar', link: '/v4/en/avatar', badge: 'GET' },
+                { text: 'Barcode', link: '/v4/en/barcode', badge: 'GET' },
                 { text: 'Captcha', link: '/v4/en/captcha', badge: 'GET' },
                 {
                     text: 'Chat',
@@ -35,6 +37,7 @@ export const v4 = {
                 },
                 { text: 'Color', link: '/v4/en/color', badge: 'GET' },
                 { text: 'Convert', link: '/v4/en/convert', badge: 'GET' },
+                { text: 'Credit', link: '/v4/en/credit', badge: 'GET' },
                 { text: 'Cron', link: '/v4/en/cron', badge: 'GET' },
                 { text: 'Dice', link: '/v4/en/dice', badge: 'GET' },
                 { text: 'Domain', link: '/v4/en/domain', badge: 'GET' },
@@ -100,6 +103,7 @@ export const v4 = {
                     collapsed: true,
                     items: [
                         { text: 'Overview', link: '/v4/en/changelog' },
+                        { text: '4.9.0', link: '/v4/en/changelog/4.9.0' },
                         { text: '4.8.0', link: '/v4/en/changelog/4.8.0' },
                         { text: '4.7.0', link: '/v4/en/changelog/4.7.0' },
                         { text: '4.6.0', link: '/v4/en/changelog/4.6.0' },
@@ -133,6 +137,8 @@ export const v4 = {
                 { text: 'Address', link: '/v4/fr/address', badge: 'GET' },
                 { text: 'Agent', link: '/v4/fr/agent', badge: 'GET' },
                 { text: 'Algorithms', link: '/v4/fr/algorithms', badge: 'GET' },
+                { text: 'Avatar', link: '/v4/fr/avatar', badge: 'GET' },
+                { text: 'Barcode', link: '/v4/fr/barcode', badge: 'GET' },
                 { text: 'Captcha', link: '/v4/fr/captcha', badge: 'GET' },
                 {
                     text: 'Chat',
@@ -154,6 +160,7 @@ export const v4 = {
                 },
                 { text: 'Color', link: '/v4/fr/color', badge: 'GET' },
                 { text: 'Convert', link: '/v4/fr/convert', badge: 'GET' },
+                { text: 'Credit', link: '/v4/fr/credit', badge: 'GET' },
                 { text: 'Cron', link: '/v4/fr/cron', badge: 'GET' },
                 { text: 'Dice', link: '/v4/fr/dice', badge: 'GET' },
                 { text: 'Domain', link: '/v4/fr/domain', badge: 'GET' },
@@ -219,6 +226,7 @@ export const v4 = {
                     collapsed: true,
                     items: [
                         { text: 'Aperçu', link: '/v4/fr/changelog' },
+                        { text: '4.9.0', link: '/v4/fr/changelog/4.9.0' },
                         { text: '4.8.0', link: '/v4/fr/changelog/4.8.0' },
                         { text: '4.7.0', link: '/v4/fr/changelog/4.7.0' },
                         { text: '4.6.0', link: '/v4/fr/changelog/4.6.0' },
