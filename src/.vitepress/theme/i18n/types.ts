@@ -54,9 +54,12 @@ export type TranslationSchema = {
         address: string;
         agent: string;
         algorithms: string;
+        avatar: string;
+        barcode: string;
         captcha: string;
         color: string;
         convert: string;
+        credit: string;
         cron: string;
         dice: string;
         domain: string;
