@@ -4,10 +4,6 @@ L'endpoint `/username` génère un nom d'utilisateur aléatoire composé d'un ad
 
 <Endpoint method="get" path="/username" baseUrl="https://api.sylvain.sh" />
 
-::: tip Cas d'utilisation
-Suggérer des noms d'utilisateur à l'inscription, générer des noms de joueurs, créer des données de test, ou remplir du contenu de remplacement pour les maquettes.
-:::
-
 ## Paramètres
 
 Cet endpoint ne nécessite aucun paramètre. Il retourne un nom d'utilisateur généré aléatoirement avec le format adjectif + animal.

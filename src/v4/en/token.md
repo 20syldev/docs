@@ -4,10 +4,6 @@ The `/token` endpoint generates secure strings called _tokens_. This endpoint is
 
 <Endpoint method="post" path="/token" baseUrl="https://api.sylvain.sh" />
 
-::: tip Use Cases
-Generate unique session IDs for authentication, secure API keys for third-party access, one-time password reset tokens, or unique identifiers for files and database records.
-:::
-
 ## Parameters
 
 | Parameter | Required | Description                                         |

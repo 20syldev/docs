@@ -4,10 +4,6 @@ The `/username` endpoint generates random usernames. This endpoint is useful for
 
 <Endpoint method="get" path="/username" baseUrl="https://api.sylvain.sh" />
 
-::: tip Use Cases
-Suggest usernames during sign-up, generate player names for games, create test user data, or fill in placeholder content for mockups.
-:::
-
 ## Parameters
 
 This endpoint does not require any parameters. It returns a randomly generated username using an adjective + animal pattern.

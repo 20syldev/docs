@@ -4,10 +4,6 @@ L'endpoint `/address` génère une ou plusieurs adresses postales fictives pour 
 
 <Endpoint method="get" path="/address" baseUrl="https://api.sylvain.sh" />
 
-::: tip Cas d'utilisation
-Remplissez des formulaires avec des adresses réalistes pour les tests, générez des données pour des démos ou alimentez des bases de données avec de fausses données postales plausibles dans plusieurs pays.
-:::
-
 ## Paramètres
 
 | Paramètre | Requis | Description                                                                           |

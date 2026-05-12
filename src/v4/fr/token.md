@@ -4,10 +4,6 @@ L'endpoint `/token` permet de générer des chaînes sécurisées appelées _tok
 
 <Endpoint method="post" path="/token" baseUrl="https://api.sylvain.sh" />
 
-::: tip Cas d'utilisation
-Générer des identifiants de session pour l'authentification, des clés API sécurisées, des tokens de réinitialisation de mot de passe, ou des identifiants uniques pour fichiers et enregistrements.
-:::
-
 ## Paramètres
 
 | Paramètre | Requis | Description                                                          |
