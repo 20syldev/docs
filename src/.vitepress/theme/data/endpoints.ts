@@ -62,6 +62,34 @@ export const endpoints: EndpointDef[] = [
         ],
     },
     {
+        name: 'Avatar',
+        path: '/avatar',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'seed', required: false, placeholder: 'claude' },
+            { name: 'type', required: false, options: ['identicon', 'pixel'] },
+            { name: 'format', required: false, options: ['png', 'svg'] },
+            { name: 'size', required: false, placeholder: '200' },
+            { name: 'bg', required: false, placeholder: '#f0f0f0' },
+        ],
+    },
+    {
+        name: 'Barcode',
+        path: '/barcode',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'data', required: true, placeholder: 'Hello123' },
+            { name: 'type', required: false, options: ['code128', 'ean13', 'ean8', 'upca', 'code39'] },
+            { name: 'format', required: false, options: ['svg', 'png'] },
+            { name: 'width', required: false, placeholder: '2' },
+            { name: 'height', required: false, placeholder: '100' },
+            { name: 'color', required: false, placeholder: '#000000' },
+            { name: 'bg', required: false, placeholder: '#ffffff' },
+        ],
+    },
+    {
         name: 'Captcha',
         path: '/captcha',
         method: 'get',
@@ -236,6 +264,17 @@ export const endpoints: EndpointDef[] = [
                     'knots',
                 ],
             },
+        ],
+    },
+    {
+        name: 'Credit',
+        path: '/credit',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'brand', required: false, options: ['random', 'visa', 'mastercard', 'amex', 'discover'] },
+            { name: 'count', required: false, placeholder: '1' },
+            { name: 'format', required: false, options: ['masked', 'full'] },
         ],
     },
     {
