@@ -19,8 +19,8 @@ This endpoint does not require any parameters. It returns a randomly generated i
 | `job`                | `string`   | Profession                                                             |
 | `hobbies`            | `string`   | Hobbies/interests                                                      |
 | `language`           | `string`   | Spoken language                                                        |
-| `card`               | `string`   | Credit card number                                                     |
-| `cvc`                | `number`   | Card security code                                                     |
+| `card`               | `string`   | Luhn-valid credit card number (see [Credit](/v4/en/credit))            |
+| `cvc`                | `string`   | Card security code                                                     |
 | `expiration`         | `string`   | Card expiration date                                                   |
 | `address`            | `object`   | Full address object (see [Address](/v4/en/address#response-fields))    |
 | `birthday`           | `string`   | Date of birth                                                          |
@@ -46,5 +46,5 @@ This endpoint does not require any parameters. It returns a randomly generated i
 <Try name="Personal" />
 
 ::: warning Note
-All generated data is fictional and randomly created. Credit card numbers are not valid for transactions.
+All generated data is fictional and randomly created. Credit card numbers are Luhn-valid but do not correspond to any real account.
 :::

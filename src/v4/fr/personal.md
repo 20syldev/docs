@@ -19,8 +19,8 @@ Cet endpoint ne nécessite aucun paramètre. Il retourne une identité fictive g
 | `job`                | `string`   | Profession                                                               |
 | `hobbies`            | `string`   | Loisirs/intérêts                                                         |
 | `language`           | `string`   | Langue parlée                                                            |
-| `card`               | `string`   | Numéro de carte de crédit                                                |
-| `cvc`                | `number`   | Code de sécurité de la carte                                             |
+| `card`               | `string`   | Numéro de carte Luhn-valide (voir [Credit](/v4/fr/credit))               |
+| `cvc`                | `string`   | Code de sécurité de la carte                                             |
 | `expiration`         | `string`   | Date d'expiration de la carte                                            |
 | `address`            | `object`   | Objet adresse complet (voir [Address](/v4/fr/address#champs-de-reponse)) |
 | `birthday`           | `string`   | Date de naissance                                                        |
@@ -46,5 +46,5 @@ Cet endpoint ne nécessite aucun paramètre. Il retourne une identité fictive g
 <Try name="Personal" />
 
 ::: warning Note
-Toutes les données générées sont fictives et créées de manière aléatoire. Les numéros de carte de crédit ne sont pas valides pour les transactions.
+Toutes les données générées sont fictives et créées de manière aléatoire. Les numéros de carte sont Luhn-valides mais ne correspondent à aucun compte réel.
 :::
