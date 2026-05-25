@@ -1,6 +1,6 @@
 {
     "name": "hyperion",
-    "version": "4.9.0",
+    "version": "5.0.0",
     "description": "Hyperion API Documentation",
     "type": "module",
     "scripts": {
