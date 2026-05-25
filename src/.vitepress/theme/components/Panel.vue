@@ -66,9 +66,23 @@ const filledEntries = computed(() =>
 
 const canSend = computed(() => props.params.filter((p) => p.required).every((p) => !!values.value[p.name]));
 
-const bodyObject = computed<Record<string, string>>(() =>
-    props.method !== 'get' ? Object.fromEntries(filledEntries.value) : {},
-);
+const bodyObject = computed<Record<string, unknown>>(() => {
+    if (props.method === 'get') return {};
+    return Object.fromEntries(
+        filledEntries.value.map(([k, v]) => {
+            const param = props.params.find((p) => p.name === k);
+            if (param?.boolean) return [k, v === 'true'];
+            if (param?.json) {
+                try {
+                    return [k, JSON.parse(v)];
+                } catch {
+                    return [k, v];
+                }
+            }
+            return [k, v];
+        }),
+    );
+});
 
 const fullUrl = computed(() => {
     const base = `${props.baseUrl}${fullPath.value}`;
@@ -100,12 +114,12 @@ async function send() {
     const start = performance.now();
     try {
         const opts: RequestInit = { method: props.method.toUpperCase() };
-        if (props.method === 'post' && filledEntries.value.length) {
-            opts.headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
-            opts.body = new URLSearchParams(filledEntries.value).toString();
-        } else if ((props.method === 'patch' || props.method === 'delete') && filledEntries.value.length) {
+        if (
+            (props.method === 'post' || props.method === 'patch' || props.method === 'delete') &&
+            Object.keys(bodyObject.value).length
+        ) {
             opts.headers = { 'Content-Type': 'application/json' };
-            opts.body = JSON.stringify(Object.fromEntries(filledEntries.value));
+            opts.body = JSON.stringify(bodyObject.value);
         }
         const res = await fetch(fullUrl.value, opts);
         duration.value = Math.round(performance.now() - start);

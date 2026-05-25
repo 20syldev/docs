@@ -12,7 +12,7 @@ const props = withDefaults(
         path: string;
         baseUrl?: string;
         params?: Record<string, string>;
-        body?: Record<string, string>;
+        body?: Record<string, unknown>;
     }>(),
     {
         baseUrl: API_BASE_URL,
