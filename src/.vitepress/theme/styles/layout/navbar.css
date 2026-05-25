@@ -51,6 +51,10 @@
 
 /* ----- Version dropdown ----- */
 
+.version-switcher-wrapper .VPFlyout .VPMenu .VPMenuLink .link:hover {
+    color: var(--vp-c-brand-1) !important;
+}
+
 .version-switcher-wrapper .VPFlyout .VPMenu .VPMenuLink:first-child .link {
     display: inline-flex;
     align-items: center;
