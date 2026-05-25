@@ -3,99 +3,42 @@ import { useRoute } from 'vitepress';
 import VPFlyout from 'vitepress/dist/client/theme-default/components/VPFlyout.vue';
 import { computed } from 'vue';
 
+import { v1 } from '../../sidebar/v1';
+import { v2 } from '../../sidebar/v2';
+import { v3 } from '../../sidebar/v3';
+import { v4 } from '../../sidebar/v4';
+import { v5 } from '../../sidebar/v5';
 import { useVersion } from '../composables/useVersion';
 import { KNOWN_VERSIONS } from '../utils/redirect';
 
+interface SidebarItem {
+    link?: string;
+    items?: SidebarItem[];
+}
+
+function extractPages(sidebar: Record<string, SidebarItem[]>): string[] {
+    const pages = new Set<string>();
+    function walk(items: SidebarItem[]) {
+        for (const item of items) {
+            if (item.link) {
+                const match = item.link.match(/^\/v\d+\/(en|fr)\/(.*)$/);
+                if (match) pages.add(match[2]);
+            }
+            if (item.items) walk(item.items);
+        }
+    }
+    const firstKey = Object.keys(sidebar)[0];
+    if (firstKey) walk(sidebar[firstKey]);
+    return [...pages];
+}
+
+const sidebars: Record<string, Record<string, SidebarItem[]>> = { v1, v2, v3, v4, v5 };
+const pages: Record<string, string[]> = Object.fromEntries(
+    Object.entries(sidebars).map(([v, s]) => [v, extractPages(s)]),
+);
+
 const route = useRoute();
 const { version, lang } = useVersion();
-
-const pages: Record<string, string[]> = {
-    v4: [
-        '',
-        'authentication',
-        'pricing',
-        'algorithms',
-        'captcha',
-        'chat',
-        'chat/private',
-        'color',
-        'convert',
-        'domain',
-        'hash',
-        'hyperplanning',
-        'infos',
-        'levenshtein',
-        'personal',
-        'qrcode',
-        'tic-tac-toe',
-        'tic-tac-toe/fetch',
-        'tic-tac-toe/list',
-        'time',
-        'token',
-        'username',
-        'playground',
-        'changelog',
-    ],
-    v3: [
-        '',
-        'authentication',
-        'pricing',
-        'algorithms',
-        'captcha',
-        'chat',
-        'chat/private',
-        'color',
-        'convert',
-        'domain',
-        'hash',
-        'hyperplanning',
-        'infos',
-        'levenshtein',
-        'personal',
-        'qrcode',
-        'tic-tac-toe',
-        'tic-tac-toe/fetch',
-        'tic-tac-toe/list',
-        'time',
-        'token',
-        'username',
-    ],
-    v2: [
-        '',
-        'authentication',
-        'pricing',
-        'algorithms',
-        'captcha',
-        'chat',
-        'chat/private',
-        'color',
-        'convert',
-        'domain',
-        'hash',
-        'infos',
-        'personal',
-        'qrcode',
-        'tic-tac-toe',
-        'tic-tac-toe/fetch',
-        'token',
-        'username',
-    ],
-    v1: [
-        '',
-        'authentication',
-        'pricing',
-        'algorithms',
-        'captcha',
-        'color',
-        'convert',
-        'domain',
-        'infos',
-        'personal',
-        'qrcode',
-        'token',
-        'username',
-    ],
-};
 
 const page = computed(() => route.path.match(/^\/v\d+\/(en|fr)\/(.*)$/)?.[2] ?? '');
 const visible = computed(() => route.path.includes('/v'));
