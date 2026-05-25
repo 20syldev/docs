@@ -25,7 +25,22 @@ https://api.sylvain.sh/v4/infos
 
 ### Endpoint Compatibility
 
-All endpoints are fully compatible. Adapt your code to handle the enriched response fields (username, personal, domain).
+Most endpoints are compatible. Some response fields changed shape (username, personal, domain) and some parameter defaults changed (convert, time, token) — check the individual endpoint pages if something breaks.
+
+## Versions
+
+| Version                         | Highlights                                                           |
+| ------------------------------- | -------------------------------------------------------------------- |
+| [4.9.0](/v4/en/changelog/4.9.0) | Added Credit, Avatar, Barcode endpoints                              |
+| [4.8.0](/v4/en/changelog/4.8.0) | Added Cron, Regex endpoints; countdown on Time                       |
+| [4.7.0](/v4/en/changelog/4.7.0) | Added Address, Password endpoints; overhauled Token                  |
+| [4.6.0](/v4/en/changelog/4.6.0) | Added Agent, IP, Headers endpoints; security hardening               |
+| [4.5.0](/v4/en/changelog/4.5.0) | Security audit, rate limiting, input hardening                       |
+| [4.4.0](/v4/en/changelog/4.4.0) | Added QR Code, Captcha, Color, Convert, Hash                         |
+| [4.3.0](/v4/en/changelog/4.3.0) | Added Geo, Palette, Placeholder; REST standardization                |
+| [4.2.0](/v4/en/changelog/4.2.0) | Added Encode, Text, Validate endpoints                               |
+| [4.1.0](/v4/en/changelog/4.1.0) | Added Dice, Statistics; Roman numeral support                        |
+| [4.0.0](/v4/en/changelog/4.0.0) | Full TypeScript rewrite; new Algorithms, Levenshtein, Username, Chat |
 
 ## Previous Versions
 
