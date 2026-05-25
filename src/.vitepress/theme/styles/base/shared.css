@@ -1,5 +1,13 @@
 /* - - - - - - - Shared - - - - - - - */
 
+/* ----- Inline icon ----- */
+
+.inline-icon {
+    display: inline-block;
+    vertical-align: -3px;
+    flex-shrink: 0;
+}
+
 /* ----- Method badge ----- */
 
 .method-badge {
