@@ -4,6 +4,8 @@ export interface EndpointParam {
     default?: string;
     options?: string[];
     placeholder?: string;
+    json?: boolean;
+    boolean?: boolean;
 }
 
 export interface EndpointDef {
@@ -105,6 +107,28 @@ export const endpoints: EndpointDef[] = [
         ],
     },
     {
+        name: 'Chart',
+        path: '/chart',
+        method: 'post',
+        group: 'Endpoints',
+        params: [
+            { name: 'type', required: true, options: ['bar', 'line', 'pie', 'donut'] },
+            {
+                name: 'data',
+                required: true,
+                placeholder: '{"labels":["Jan","Feb","Mar"],"datasets":[{"label":"Sales","values":[120,200,150]}]}',
+                json: true,
+            },
+            { name: 'title', required: false, placeholder: 'My Chart' },
+            { name: 'width', required: false, placeholder: '600' },
+            { name: 'height', required: false, placeholder: '400' },
+            { name: 'colors', required: false, placeholder: '#5c7cfa,#f03e3e,#37b24d' },
+            { name: 'bg', required: false, placeholder: '#ffffff' },
+            { name: 'legend', required: false, options: ['true', 'false'], boolean: true },
+            { name: 'mode', required: false, options: ['svg', 'data'] },
+        ],
+    },
+    {
         name: 'Chat (GET)',
         path: '/chat',
         method: 'get',
@@ -184,6 +208,16 @@ export const endpoints: EndpointDef[] = [
         method: 'get',
         group: 'Endpoints',
         params: [{ name: 'hex', required: false, placeholder: '#ff6600' }],
+    },
+    {
+        name: 'Evaluate',
+        path: '/evaluate',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'expr', required: true, placeholder: '2*(3+4)^2' },
+            { name: 'precision', required: false, placeholder: '2' },
+        ],
     },
     {
         name: 'Geo',
@@ -372,6 +406,22 @@ export const endpoints: EndpointDef[] = [
         params: [
             { name: 'str1', required: true, placeholder: 'kitten' },
             { name: 'str2', required: true, placeholder: 'sitting' },
+        ],
+    },
+    {
+        name: 'Matrix',
+        path: '/matrix',
+        method: 'post',
+        group: 'Endpoints',
+        params: [
+            {
+                name: 'operation',
+                required: true,
+                options: ['add', 'subtract', 'multiply', 'scalar', 'transpose', 'determinant', 'inverse', 'identity'],
+            },
+            { name: 'matrix', required: true, placeholder: '[[1,2],[3,4]]', json: true },
+            { name: 'matrix2', required: false, placeholder: '[[5,6],[7,8]]', json: true },
+            { name: 'scalar', required: false, placeholder: '3' },
         ],
     },
     {
