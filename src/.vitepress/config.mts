@@ -4,6 +4,7 @@ import { v1 } from './sidebar/v1';
 import { v2 } from './sidebar/v2';
 import { v3 } from './sidebar/v3';
 import { v4 } from './sidebar/v4';
+import { v5 } from './sidebar/v5';
 
 export default defineConfig({
     title: 'Hyperion API Documentation',
@@ -75,6 +76,7 @@ export default defineConfig({
         nav: [{ text: 'Home', link: '/' }],
 
         sidebar: {
+            ...v5,
             ...v4,
             ...v3,
             ...v2,
