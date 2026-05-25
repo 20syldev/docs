@@ -80,7 +80,7 @@ composables/
 utils/
   redirect.ts          → LATEST_VERSION, KNOWN_VERSIONS, API_BASE_URL, smart redirects
   i18n.ts              → Language translations and helpers
-  icons.ts             → SVG icons (copy/check)
+  icons.ts             → SVG icons
 
 data/
   endpoints.ts         → Endpoint metadata (version-agnostic paths)
