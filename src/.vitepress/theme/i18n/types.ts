@@ -57,6 +57,7 @@ export type TranslationSchema = {
         avatar: string;
         barcode: string;
         captcha: string;
+        chart: string;
         color: string;
         convert: string;
         credit: string;
@@ -64,6 +65,7 @@ export type TranslationSchema = {
         dice: string;
         domain: string;
         encode: string;
+        evaluate: string;
         geo: string;
         hash: string;
         headers: string;
@@ -71,6 +73,7 @@ export type TranslationSchema = {
         infos: string;
         ip: string;
         levenshtein: string;
+        matrix: string;
         palette: string;
         password: string;
         personal: string;
