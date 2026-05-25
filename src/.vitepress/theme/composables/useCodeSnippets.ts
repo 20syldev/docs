@@ -12,7 +12,7 @@ export const CODE_LANG_LABELS: Record<CodeLang, string> = {
 export interface SnippetOptions {
     method: 'get' | 'post' | 'patch' | 'delete';
     url: string;
-    body?: Record<string, string>;
+    body?: Record<string, unknown>;
 }
 
 /**
@@ -22,12 +22,12 @@ export interface SnippetOptions {
  * @param baseIndent - Number of spaces for the closing brace indentation
  * @returns A formatted JS object literal string
  */
-function toJsObject(obj: Record<string, string>, baseIndent: number): string {
+function toJsObject(obj: Record<string, unknown>, baseIndent: number): string {
     const entries = Object.entries(obj);
     if (entries.length === 0) return '{}';
     const pad = ' '.repeat(baseIndent);
     const inner = ' '.repeat(baseIndent + 4);
-    return `{\n${entries.map(([k, v]) => `${inner}"${k}": "${v}"`).join(',\n')}\n${pad}}`;
+    return `{\n${entries.map(([k, v]) => `${inner}"${k}": ${typeof v === 'string' ? `"${v}"` : JSON.stringify(v)}`).join(',\n')}\n${pad}}`;
 }
 
 /**
@@ -36,9 +36,9 @@ function toJsObject(obj: Record<string, string>, baseIndent: number): string {
  * @param obj - Key-value pairs to serialize
  * @returns A formatted Python dict literal string
  */
-function toPythonDict(obj: Record<string, string>): string {
+function toPythonDict(obj: Record<string, unknown>): string {
     const entries = Object.entries(obj)
-        .map(([k, v]) => `"${k}": "${v}"`)
+        .map(([k, v]) => `"${k}": ${typeof v === 'string' ? `"${v}"` : JSON.stringify(v)}`)
         .join(', ');
     return `{${entries}}`;
 }
@@ -51,13 +51,7 @@ function toPythonDict(obj: Record<string, string>): string {
  */
 function curlSnippet({ method, url, body = {} }: SnippetOptions): string {
     const m = method.toUpperCase();
-    if (method === 'post') {
-        const data = Object.entries(body)
-            .map(([k, v]) => `${k}=${v}`)
-            .join('&');
-        return `curl -X POST \\\n  -d "${data}" \\\n  "${url}"`;
-    }
-    if (method === 'patch' || method === 'delete') {
+    if (method === 'post' || method === 'patch' || method === 'delete') {
         const json = JSON.stringify(body, null, 4);
         return `curl -X ${m} \\\n  -H "Content-Type: application/json" \\\n  -d '${json}' \\\n  "${url}"`;
     }
@@ -71,15 +65,7 @@ function curlSnippet({ method, url, body = {} }: SnippetOptions): string {
  * @returns A formatted JavaScript code snippet string
  */
 function javascriptSnippet({ method, url, body = {} }: SnippetOptions): string {
-    if (method === 'post') {
-        return `const response = await fetch("${url}", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(${toJsObject(body, 4)})
-});
-const data = await response.json();`;
-    }
-    if (method === 'patch' || method === 'delete') {
+    if (method === 'post' || method === 'patch' || method === 'delete') {
         return `const response = await fetch("${url}", {
     method: "${method.toUpperCase()}",
     headers: { "Content-Type": "application/json" },
@@ -98,16 +84,7 @@ const data = await response.json();`;
  * @returns A formatted Python code snippet string
  */
 function pythonSnippet({ method, url, body = {} }: SnippetOptions): string {
-    if (method === 'post') {
-        return `import requests
-
-response = requests.post(
-    "${url}",
-    data=${toPythonDict(body)}
-)
-data = response.json()`;
-    }
-    if (method === 'patch' || method === 'delete') {
+    if (method === 'post' || method === 'patch' || method === 'delete') {
         return `import requests
 
 response = requests.${method}(
@@ -129,20 +106,7 @@ data = response.json()`;
  * @returns A formatted PHP code snippet string
  */
 function phpSnippet({ method, url, body = {} }: SnippetOptions): string {
-    if (method === 'post') {
-        const fields = Object.entries(body)
-            .map(([k, v]) => `    "${k}" => "${v}"`)
-            .join(',\n');
-        return `$ch = curl_init("${url}");
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
-${fields}
-]));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$data = json_decode(curl_exec($ch), true);
-curl_close($ch);`;
-    }
-    if (method === 'patch' || method === 'delete') {
+    if (method === 'post' || method === 'patch' || method === 'delete') {
         const json = JSON.stringify(body);
         return `$ch = curl_init("${url}");
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "${method.toUpperCase()}");
