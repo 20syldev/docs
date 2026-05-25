@@ -25,9 +25,25 @@ const requests: ApiRequest[] = [
         command: 'curl -X GET \\\n  "https://api.sylvain.sh/v5/algorithms?method=fibonacci&value=10"',
     },
     {
+        method: 'POST',
+        endpoint: 'https://api.sylvain.sh/v5/chart',
+        body: {
+            type: 'bar',
+            data: { labels: ['Jan', 'Feb', 'Mar'], datasets: [{ label: 'Sales', values: [120, 200, 150] }] },
+            mode: 'data',
+        },
+        command:
+            'curl -X POST \\\n  -H "Content-Type: application/json" \\\n  -d \'{"type":"bar","data":{...},"mode":"data"}\' \\\n  "https://api.sylvain.sh/v5/chart"',
+    },
+    {
         method: 'GET',
         endpoint: 'https://api.sylvain.sh/v5/domain',
         command: 'curl -X GET \\\n  "https://api.sylvain.sh/v5/domain"',
+    },
+    {
+        method: 'GET',
+        endpoint: 'https://api.sylvain.sh/v5/evaluate?expr=2*(3%2B4)%5E2&precision=2',
+        command: 'curl -X GET \\\n  "https://api.sylvain.sh/v5/evaluate?expr=2*(3%2B4)%5E2&precision=2"',
     },
     {
         method: 'POST',
@@ -40,6 +56,19 @@ const requests: ApiRequest[] = [
         method: 'GET',
         endpoint: 'https://api.sylvain.sh/v5/infos',
         command: 'curl -X GET \\\n  "https://api.sylvain.sh/v5/infos"',
+    },
+    {
+        method: 'POST',
+        endpoint: 'https://api.sylvain.sh/v5/matrix',
+        body: {
+            operation: 'determinant',
+            matrix: [
+                [1, 2],
+                [3, 4],
+            ],
+        },
+        command:
+            'curl -X POST \\\n  -H "Content-Type: application/json" \\\n  -d \'{"operation":"determinant","matrix":[[1,2],[3,4]]}\' \\\n  "https://api.sylvain.sh/v5/matrix"',
     },
     {
         method: 'GET',
