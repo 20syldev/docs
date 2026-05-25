@@ -1,3 +1,5 @@
+import { arrowRightIcon } from '../theme/utils/icons';
+
 export const v4 = {
     '/v4/en/': [
         {
@@ -103,6 +105,7 @@ export const v4 = {
                     collapsed: true,
                     items: [
                         { text: 'Overview', link: '/v4/en/changelog' },
+                        { text: `New version ${arrowRightIcon}`, link: '/v5/en/changelog' },
                         { text: '4.9.0', link: '/v4/en/changelog/4.9.0' },
                         { text: '4.8.0', link: '/v4/en/changelog/4.8.0' },
                         { text: '4.7.0', link: '/v4/en/changelog/4.7.0' },
@@ -226,6 +229,7 @@ export const v4 = {
                     collapsed: true,
                     items: [
                         { text: 'Aperçu', link: '/v4/fr/changelog' },
+                        { text: `Nouvelle version ${arrowRightIcon}`, link: '/v5/fr/changelog' },
                         { text: '4.9.0', link: '/v4/fr/changelog/4.9.0' },
                         { text: '4.8.0', link: '/v4/fr/changelog/4.8.0' },
                         { text: '4.7.0', link: '/v4/fr/changelog/4.7.0' },
