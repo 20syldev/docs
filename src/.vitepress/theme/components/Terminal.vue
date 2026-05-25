@@ -4,7 +4,7 @@ import { nextTick, onMounted, onUnmounted, ref } from 'vue';
 interface ApiRequest {
     method: 'GET' | 'POST';
     endpoint: string;
-    body?: Record<string, string>;
+    body?: Record<string, unknown>;
     command: string;
 }
 
@@ -33,7 +33,8 @@ const requests: ApiRequest[] = [
         method: 'POST',
         endpoint: 'https://api.sylvain.sh/v5/hash',
         body: { text: 'hello', method: 'sha256' },
-        command: 'curl -X POST \\\n  -d "text=hello&method=sha256" \\\n  "https://api.sylvain.sh/v5/hash"',
+        command:
+            'curl -X POST \\\n  -H "Content-Type: application/json" \\\n  -d \'{"text":"hello","method":"sha256"}\' \\\n  "https://api.sylvain.sh/v5/hash"',
     },
     {
         method: 'GET',
@@ -53,8 +54,9 @@ const requests: ApiRequest[] = [
     {
         method: 'POST',
         endpoint: 'https://api.sylvain.sh/v5/token',
-        body: { len: '24', type: 'alphanum' },
-        command: 'curl -X POST \\\n  -d "len=48&type=alphanum" \\\n  "https://api.sylvain.sh/v5/token"',
+        body: { len: 48, type: 'alphanum' },
+        command:
+            'curl -X POST \\\n  -H "Content-Type: application/json" \\\n  -d \'{"len":48,"type":"alphanum"}\' \\\n  "https://api.sylvain.sh/v5/token"',
     },
     {
         method: 'GET',
@@ -83,8 +85,8 @@ async function fetchApi(request: ApiRequest): Promise<string> {
     try {
         const options: RequestInit = { method: request.method, headers: {} };
         if (request.method === 'POST' && request.body) {
-            options.headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
-            options.body = new URLSearchParams(request.body).toString();
+            options.headers = { 'Content-Type': 'application/json' };
+            options.body = JSON.stringify(request.body);
         }
         const res = await fetch(request.endpoint, options);
         return JSON.stringify(await res.json(), null, 2);
