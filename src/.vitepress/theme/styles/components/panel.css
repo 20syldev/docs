@@ -38,6 +38,9 @@
     flex-wrap: wrap;
     row-gap: 8px;
 }
+.panel-header:last-child {
+    border-bottom: none;
+}
 
 .panel-params {
     flex-direction: column;
