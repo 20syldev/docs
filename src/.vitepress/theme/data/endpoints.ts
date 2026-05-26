@@ -425,6 +425,23 @@ export const endpoints: EndpointDef[] = [
         ],
     },
     {
+        name: 'OTP',
+        path: '/otp',
+        method: 'post',
+        group: 'Endpoints',
+        params: [
+            { name: 'action', required: true, options: ['secret', 'generate', 'verify'] },
+            { name: 'secret', required: false, placeholder: 'JBSWY3DPEHPK3PXP' },
+            { name: 'code', required: false, placeholder: '123456' },
+            { name: 'label', required: false, placeholder: 'alice' },
+            { name: 'issuer', required: false, placeholder: 'Demo' },
+            { name: 'algorithm', required: false, options: ['sha1', 'sha256', 'sha512'] },
+            { name: 'digits', required: false, options: ['6', '8'] },
+            { name: 'period', required: false, options: ['15', '30', '60'] },
+            { name: 'counter', required: false, placeholder: '0' },
+        ],
+    },
+    {
         name: 'Personal',
         path: '/personal',
         method: 'get',
@@ -437,6 +454,18 @@ export const endpoints: EndpointDef[] = [
         method: 'get',
         group: 'Endpoints',
         params: [{ name: 'values', required: true, placeholder: '1,2,3,4,5' }],
+    },
+    {
+        name: 'Symmetric',
+        path: '/symmetric',
+        method: 'post',
+        group: 'Endpoints',
+        params: [
+            { name: 'action', required: true, options: ['encrypt', 'decrypt'] },
+            { name: 'text', required: true, placeholder: 'Hello World' },
+            { name: 'key', required: true, placeholder: 'mysecretkey' },
+            { name: 'algorithm', required: false, options: ['aes-256-gcm', 'aes-256-cbc', 'aes-128-gcm'] },
+        ],
     },
     {
         name: 'Text',
