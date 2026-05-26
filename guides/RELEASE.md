@@ -5,7 +5,7 @@ When a new API version adds endpoints, follow this exact order for commits and m
 ## 1. Endpoint documentation pages (one commit per endpoint)
 
 **Commit:** `MAJOR: docs: Add <name> endpoint documentation`
-**Files:** `src/v4/en/<name>.md` + `src/v4/fr/<name>.md`
+**Files:** `src/v5/en/<name>.md` + `src/v5/fr/<name>.md`
 
 Each page follows this structure:
 
@@ -86,14 +86,14 @@ Add key mapping: `'<Name>': 'features.<name>'` (alphabetical order)
 ## 6. Changelog
 
 **Commit:** `MAJOR: docs: Add <version> changelog`
-**Files:** `src/v4/en/changelog/<version>.md` + `src/v4/fr/changelog/<version>.md`
+**Files:** `src/v5/en/changelog/<version>.md` + `src/v5/fr/changelog/<version>.md`
 
 ## 7. Sidebar
 
 **Commit:** `MEDIUM: sidebar: Add <names> and <version> changelog entries`
-**File:** `src/.vitepress/sidebar/v4.ts`
+**File:** `src/.vitepress/sidebar/v5.ts`
 
-Add entries in both `/v4/en/` and `/v4/fr/` sections:
+Add entries in both `/v5/en/` and `/v5/fr/` sections:
 
 - Endpoint entries: alphabetical order, with `badge: 'GET'` (or POST, etc.)
 - Changelog entry: at the top of the changelog items list
@@ -116,7 +116,7 @@ After push + tag, edit the release notes. Follow the style of the previous relea
 gh release edit <tag> --notes "$(cat <<'EOF'
 # Version X.X.X - Mois Année
 
-- French narrative bullets from the user's perspective, with **[endpoint links](https://docs.sylvain.sh/v4/<name>)**.
+- French narrative bullets from the user's perspective, with **[endpoint links](https://docs.sylvain.sh/v5/<name>)**.
 - Each bullet ends with a period.
 EOF
 )"
