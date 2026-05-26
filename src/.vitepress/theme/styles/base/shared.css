@@ -4,7 +4,8 @@
 
 .inline-icon {
     display: inline-block;
-    vertical-align: -3px;
+    vertical-align: -4px;
+    margin-left: 4px;
     flex-shrink: 0;
 }
 
