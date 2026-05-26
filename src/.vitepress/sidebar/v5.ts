@@ -54,6 +54,7 @@ export const v5 = {
                 { text: 'Infos', link: '/v5/en/infos', badge: 'GET' },
                 { text: 'Levenshtein', link: '/v5/en/levenshtein', badge: 'GET' },
                 { text: 'Matrix', link: '/v5/en/matrix', badge: 'POST' },
+                { text: 'OTP', link: '/v5/en/otp', badge: 'POST' },
                 { text: 'Palette', link: '/v5/en/palette', badge: 'GET' },
                 { text: 'Password', link: '/v5/en/password', badge: 'GET' },
                 { text: 'Personal', link: '/v5/en/personal', badge: 'GET' },
@@ -61,6 +62,7 @@ export const v5 = {
                 { text: 'QR Code', link: '/v5/en/qrcode', badge: 'GET' },
                 { text: 'Regex', link: '/v5/en/regex', badge: 'GET' },
                 { text: 'Statistics', link: '/v5/en/statistics', badge: 'GET' },
+                { text: 'Symmetric', link: '/v5/en/symmetric', badge: 'POST' },
                 { text: 'Text', link: '/v5/en/text', badge: 'GET' },
                 {
                     text: 'Tic-Tac-Toe',
@@ -108,6 +110,7 @@ export const v5 = {
                     collapsed: true,
                     items: [
                         { text: 'Overview', link: '/v5/en/changelog' },
+                        { text: '5.1.0', link: '/v5/en/changelog/5.1.0' },
                         { text: '5.0.0', link: '/v5/en/changelog/5.0.0' },
                         { text: `Previous version ${arrowRightIcon}`, link: '/v4/en/changelog' },
                     ],
@@ -172,6 +175,7 @@ export const v5 = {
                 { text: 'Infos', link: '/v5/fr/infos', badge: 'GET' },
                 { text: 'Levenshtein', link: '/v5/fr/levenshtein', badge: 'GET' },
                 { text: 'Matrix', link: '/v5/fr/matrix', badge: 'POST' },
+                { text: 'OTP', link: '/v5/fr/otp', badge: 'POST' },
                 { text: 'Palette', link: '/v5/fr/palette', badge: 'GET' },
                 { text: 'Password', link: '/v5/fr/password', badge: 'GET' },
                 { text: 'Personal', link: '/v5/fr/personal', badge: 'GET' },
@@ -179,6 +183,7 @@ export const v5 = {
                 { text: 'QR Code', link: '/v5/fr/qrcode', badge: 'GET' },
                 { text: 'Regex', link: '/v5/fr/regex', badge: 'GET' },
                 { text: 'Statistics', link: '/v5/fr/statistics', badge: 'GET' },
+                { text: 'Symmetric', link: '/v5/fr/symmetric', badge: 'POST' },
                 { text: 'Text', link: '/v5/fr/text', badge: 'GET' },
                 {
                     text: 'Tic-Tac-Toe',
@@ -226,6 +231,7 @@ export const v5 = {
                     collapsed: true,
                     items: [
                         { text: 'Aperçu', link: '/v5/fr/changelog' },
+                        { text: '5.1.0', link: '/v5/fr/changelog/5.1.0' },
                         { text: '5.0.0', link: '/v5/fr/changelog/5.0.0' },
                         { text: `Version précédente ${arrowRightIcon}`, link: '/v4/fr/changelog' },
                     ],
