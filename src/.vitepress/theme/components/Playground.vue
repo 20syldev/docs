@@ -1,11 +1,36 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue';
 
+import { v1 } from '../../sidebar/v1';
+import { v2 } from '../../sidebar/v2';
+import { v3 } from '../../sidebar/v3';
+import { v4 } from '../../sidebar/v4';
+import { v5 } from '../../sidebar/v5';
 import { useVersion } from '../composables/useVersion';
 import { type EndpointDef, endpoints } from '../data/endpoints';
 import { t } from '../utils/i18n';
 import { bookIcon, searchIcon } from '../utils/icons';
+import { VERSION_PATH } from '../utils/redirect';
 import Panel from './Panel.vue';
+
+const sidebars = { v1, v2, v3, v4, v5 } as Record<string, Record<string, SidebarItem[]>>;
+
+type SidebarItem = { link?: string; items?: SidebarItem[] };
+
+function flattenSidebar(items: SidebarItem[]): SidebarItem[] {
+    return items.flatMap((item) => [item, ...(item.items ? flattenSidebar(item.items) : [])]);
+}
+
+function getSidebarPages(sidebar: Record<string, SidebarItem[]>): Set<string> {
+    const firstKey = Object.keys(sidebar)[0];
+    const items = firstKey ? flattenSidebar(sidebar[firstKey]) : [];
+    return new Set(
+        items.flatMap((item) => {
+            const match = item.link?.match(VERSION_PATH);
+            return match ? [match[2]] : [];
+        }),
+    );
+}
 
 const { version, lang } = useVersion();
 
@@ -22,10 +47,20 @@ const documentation = computed(() => {
     return `/${version.value}/${lang.value}${selected.value.doc ?? selected.value.path}`;
 });
 
+const versionedEndpoints = computed(() => {
+    const sidebar = sidebars[version.value];
+    if (!sidebar) return endpoints;
+    const pages = getSidebarPages(sidebar);
+    return endpoints.filter((ep) => {
+        const path = (ep.doc ?? ep.path).replace(/^\//, '').replace(/\/:.*$/, '');
+        return pages.has(path);
+    });
+});
+
 const filtered = computed(() => {
     const q = query.value.toLowerCase().trim();
-    if (!q) return endpoints;
-    return endpoints.filter(
+    if (!q) return versionedEndpoints.value;
+    return versionedEndpoints.value.filter(
         (ep) => ep.name.toLowerCase().includes(q) || ep.path.toLowerCase().includes(q) || ep.method.includes(q),
     );
 });
