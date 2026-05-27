@@ -95,6 +95,7 @@ function translate() {
     const homeLink = document.querySelector(homeSelectors) as HTMLAnchorElement;
     const href = getPrefix(l) || '/';
     if (homeLink) {
+        homeLink.classList.add('home');
         if (homeLink.textContent !== t('nav.home', l)) {
             homeLink.textContent = t('nav.home', l);
         }
