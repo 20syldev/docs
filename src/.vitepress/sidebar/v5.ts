@@ -15,6 +15,7 @@ export const v5 = {
                 { text: 'Address', link: '/v5/en/address', badge: 'GET' },
                 { text: 'Agent', link: '/v5/en/agent', badge: 'GET' },
                 { text: 'Algorithms', link: '/v5/en/algorithms', badge: 'GET' },
+                { text: 'Asymmetric', link: '/v5/en/asymmetric', badge: 'POST' },
                 { text: 'Avatar', link: '/v5/en/avatar', badge: 'GET' },
                 { text: 'Barcode', link: '/v5/en/barcode', badge: 'GET' },
                 { text: 'Captcha', link: '/v5/en/captcha', badge: 'GET' },
@@ -109,6 +110,7 @@ export const v5 = {
                     collapsed: true,
                     items: [
                         { text: 'Overview', link: '/v5/en/changelog' },
+                        { text: '5.2.0', link: '/v5/en/changelog/5.2.0' },
                         { text: '5.1.0', link: '/v5/en/changelog/5.1.0' },
                         { text: '5.0.0', link: '/v5/en/changelog/5.0.0' },
                         { text: `Previous version ${arrowRightIcon}`, link: '/v4/en/changelog' },
@@ -135,6 +137,7 @@ export const v5 = {
                 { text: 'Address', link: '/v5/fr/address', badge: 'GET' },
                 { text: 'Agent', link: '/v5/fr/agent', badge: 'GET' },
                 { text: 'Algorithms', link: '/v5/fr/algorithms', badge: 'GET' },
+                { text: 'Asymmetric', link: '/v5/fr/asymmetric', badge: 'POST' },
                 { text: 'Avatar', link: '/v5/fr/avatar', badge: 'GET' },
                 { text: 'Barcode', link: '/v5/fr/barcode', badge: 'GET' },
                 { text: 'Captcha', link: '/v5/fr/captcha', badge: 'GET' },
@@ -229,6 +232,7 @@ export const v5 = {
                     collapsed: true,
                     items: [
                         { text: 'Aperçu', link: '/v5/fr/changelog' },
+                        { text: '5.2.0', link: '/v5/fr/changelog/5.2.0' },
                         { text: '5.1.0', link: '/v5/fr/changelog/5.1.0' },
                         { text: '5.0.0', link: '/v5/fr/changelog/5.0.0' },
                         { text: `Version précédente ${arrowRightIcon}`, link: '/v4/fr/changelog' },
