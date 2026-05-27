@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useData, useRoute, useRouter } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
-import { computed, onMounted, onUnmounted, ref, watch, watchEffect } from 'vue';
+import { computed, onMounted, onUnmounted, watch, watchEffect } from 'vue';
 
 import {
     defaultLang,
@@ -15,6 +15,7 @@ import {
     saveLang,
     t,
 } from '../utils/i18n';
+import { LATEST_VERSION } from '../utils/redirect';
 import Copy from './Copy.vue';
 import Extra from './Extra.vue';
 import Features from './Features.vue';
@@ -30,7 +31,6 @@ const router = useRouter();
 const { isDark: dark } = useData();
 
 const lang = computed(() => getLang(route.path));
-const latest = ref('v4');
 const home = computed(() => isHome(route.path));
 const languages = computed(() => getLangItems(route.path, home.value, lang.value));
 
@@ -46,23 +46,10 @@ const VERSION_BUTTON_SELECTOR = '.version-switcher-wrapper button, .VPFlyout but
 
 let observer: MutationObserver | null = null;
 
-async function fetchLatest() {
-    try {
-        const response = await fetch('https://api.sylvain.sh/v4/infos');
-        const data = await response.json();
-        if (data.last_version) {
-            latest.value = data.last_version;
-            updateCSS();
-        }
-    } catch {
-        // Fallback to default v3
-    }
-}
-
 function updateCSS() {
     if (typeof document === 'undefined') return;
     const root = document.documentElement;
-    root.style.setProperty('--latest-version', `'${latest.value}'`);
+    root.style.setProperty('--latest-version', `'${LATEST_VERSION}'`);
     root.style.setProperty('--latest-text', `'${t('version.latest', lang.value)}'`);
     root.style.setProperty('--current-text', `'${t('version.current', lang.value)}'`);
 }
@@ -266,7 +253,6 @@ onMounted(() => {
     redirectLang();
     translate();
     updateCSS();
-    fetchLatest();
     scrollSidebarToActive();
     document.addEventListener('keydown', onKey);
 
