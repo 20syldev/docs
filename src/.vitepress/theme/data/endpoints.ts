@@ -425,6 +425,20 @@ export const endpoints: EndpointDef[] = [
         ],
     },
     {
+        name: 'Asymmetric',
+        path: '/asymmetric',
+        method: 'post',
+        group: 'Endpoints',
+        params: [
+            { name: 'action', required: true, options: ['keygen', 'encrypt', 'decrypt'] },
+            { name: 'text', required: false, placeholder: 'Hello World' },
+            { name: 'publicKey', required: false, placeholder: '-----BEGIN PUBLIC KEY-----\n...' },
+            { name: 'privateKey', required: false, placeholder: '-----BEGIN PRIVATE KEY-----\n...' },
+            { name: 'modulusLength', required: false, options: ['2048', '4096'] },
+            { name: 'algorithm', required: false, options: ['rsa-oaep-sha256', 'rsa-oaep-sha1'] },
+        ],
+    },
+    {
         name: 'OTP',
         path: '/otp',
         method: 'post',
