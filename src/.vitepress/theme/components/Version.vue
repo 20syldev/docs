@@ -9,7 +9,7 @@ import { v3 } from '../../sidebar/v3';
 import { v4 } from '../../sidebar/v4';
 import { v5 } from '../../sidebar/v5';
 import { useVersion } from '../composables/useVersion';
-import { KNOWN_VERSIONS } from '../utils/redirect';
+import { KNOWN_VERSIONS, VERSION_PATH } from '../utils/redirect';
 
 interface SidebarItem {
     link?: string;
@@ -21,7 +21,7 @@ function extractPages(sidebar: Record<string, SidebarItem[]>): string[] {
     function walk(items: SidebarItem[]) {
         for (const item of items) {
             if (item.link) {
-                const match = item.link.match(/^\/v\d+\/(en|fr)\/(.*)$/);
+                const match = item.link.match(VERSION_PATH);
                 if (match) pages.add(match[2]);
             }
             if (item.items) walk(item.items);
@@ -40,7 +40,7 @@ const pages: Record<string, string[]> = Object.fromEntries(
 const route = useRoute();
 const { version, lang } = useVersion();
 
-const page = computed(() => route.path.match(/^\/v\d+\/(en|fr)\/(.*)$/)?.[2] ?? '');
+const page = computed(() => route.path.match(VERSION_PATH)?.[2] ?? '');
 const visible = computed(() => route.path.includes('/v'));
 
 const getLink = (v: string) => `/${v}/${lang.value}/${pages[v]?.includes(page.value) ? page.value : ''}`;
