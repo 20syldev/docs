@@ -22,11 +22,11 @@ The request body must be JSON:
 
 ## Available Actions
 
-| Action     | Description                                                                                             |
-| ---------- | ------------------------------------------------------------------------------------------------------- |
-| `secret`   | Generates a new random base32 secret and returns an `otpauth://` URI ready for QR code scanning        |
+| Action     | Description                                                                                                |
+| ---------- | ---------------------------------------------------------------------------------------------------------- |
+| `secret`   | Generates a new random base32 secret and returns an `otpauth://` URI ready for QR code scanning            |
 | `generate` | Generates the current OTP code. Without `counter`: TOTP (time-based). With `counter`: HOTP (deterministic) |
-| `verify`   | Verifies a code with a ±1 period tolerance window. Returns `valid` and a `drift` offset (0, +1, or -1) |
+| `verify`   | Verifies a code with a ±1 period tolerance window. Returns `valid` and a `drift` offset (0, +1, or -1)     |
 
 ## RFC Compliance
 

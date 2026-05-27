@@ -24,9 +24,9 @@ Le corps de la requête doit être en JSON :
 
 | Action     | Description                                                                                                           |
 | ---------- | --------------------------------------------------------------------------------------------------------------------- |
-| `secret`   | Génère un nouveau secret base32 aléatoire et retourne un URI `otpauth://` prêt à être scanné en QR code              |
+| `secret`   | Génère un nouveau secret base32 aléatoire et retourne un URI `otpauth://` prêt à être scanné en QR code               |
 | `generate` | Génère le code OTP courant. Sans `counter` : mode TOTP (basé sur le temps). Avec `counter` : mode HOTP (déterministe) |
-| `verify`   | Vérifie un code avec une fenêtre de tolérance de ±1 période. Retourne `valid` et un décalage `drift` (0, +1 ou -1)   |
+| `verify`   | Vérifie un code avec une fenêtre de tolérance de ±1 période. Retourne `valid` et un décalage `drift` (0, +1 ou -1)    |
 
 ## Conformité RFC
 
