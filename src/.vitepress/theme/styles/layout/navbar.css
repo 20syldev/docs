@@ -48,7 +48,8 @@
 
 /* ----- Version dropdown ----- */
 
-.version-switcher-wrapper .VPFlyout .VPMenu .VPMenuLink .link:hover {
+.version-switcher-wrapper .VPFlyout:hover .text,
+.language-switcher-wrapper .VPFlyout:hover .text {
     color: var(--vp-c-brand-1) !important;
 }
 
