@@ -11,7 +11,6 @@ export const v4 = {
         },
         {
             text: 'Endpoints',
-            collapsed: false,
             items: [
                 { text: 'Address', link: '/v4/en/address', badge: 'GET' },
                 { text: 'Agent', link: '/v4/en/agent', badge: 'GET' },
@@ -135,7 +134,6 @@ export const v4 = {
         },
         {
             text: 'Endpoints',
-            collapsed: false,
             items: [
                 { text: 'Address', link: '/v4/fr/address', badge: 'GET' },
                 { text: 'Agent', link: '/v4/fr/agent', badge: 'GET' },

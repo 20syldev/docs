@@ -9,7 +9,6 @@ export const v3 = {
         },
         {
             text: 'Endpoints',
-            collapsed: false,
             items: [
                 { text: 'Algorithms', link: '/v3/en/algorithms', badge: 'GET' },
                 { text: 'Captcha', link: '/v3/en/captcha', badge: 'GET' },
@@ -75,7 +74,6 @@ export const v3 = {
         },
         {
             text: 'Endpoints',
-            collapsed: false,
             items: [
                 { text: 'Algorithms', link: '/v3/fr/algorithms', badge: 'GET' },
                 { text: 'Captcha', link: '/v3/fr/captcha', badge: 'GET' },
