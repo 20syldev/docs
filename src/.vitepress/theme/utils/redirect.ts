@@ -4,12 +4,13 @@ export const API_BASE_URL = 'https://api.sylvain.sh';
 export const LATEST_VERSION = 'v5';
 export const KNOWN_VERSIONS = ['v1', 'v2', 'v3', 'v4', 'v5'];
 
+const langPattern = langCodes.join('|');
 const versionNums = KNOWN_VERSIONS.map((v) => v.replace('v', '')).join('');
+const rootPaths = new Set(['', '404', ...languages.filter((l) => l.prefix).map((l) => l.prefix.replace(/^\//, ''))]);
+
 export const VERSION_REGEX = new RegExp(`^v[${versionNums}]$`);
 export const VERSION_PATH_REGEX = new RegExp(`^(v[${versionNums}])\\/`);
-
-const langPattern = langCodes.join('|');
-const rootPaths = new Set(['', '404', ...languages.filter((l) => l.prefix).map((l) => l.prefix.replace(/^\//, ''))]);
+export const VERSION_PATH = new RegExp(`^/v\\d+/(${langPattern})/(.*)$`);
 
 /**
  * Returns the user's preferred language from localStorage, browser navigator, or the default.
