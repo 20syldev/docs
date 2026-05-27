@@ -14,15 +14,12 @@
 
 /* ----- Home link ----- */
 
-.VPNavBarMenuLink[href='/'],
-.VPNavBarMenuLink[href='/fr'],
-.VPNavBarMenuLink[href='/'].active,
-.VPNavBarMenuLink[href='/fr'].active {
+.VPNavBarMenuLink.home,
+.VPNavBarMenuLink.home.active {
     color: var(--vp-c-text-1) !important;
 }
 
-.VPNavBarMenuLink[href='/']:hover,
-.VPNavBarMenuLink[href='/fr']:hover {
+.VPNavBarMenuLink.home:hover {
     color: var(--vp-c-brand-1) !important;
 }
 
