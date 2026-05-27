@@ -7,7 +7,7 @@ import { t } from '../utils/i18n';
 import { bookIcon, searchIcon } from '../utils/icons';
 import Panel from './Panel.vue';
 
-const { lang } = useVersion();
+const { version, lang } = useVersion();
 
 const query = ref('');
 const open = ref(false);
@@ -19,7 +19,7 @@ const selected = ref<EndpointDef | null>(null);
 
 const documentation = computed(() => {
     if (!selected.value) return null;
-    return `/v4/${lang.value}${selected.value.doc ?? selected.value.path}`;
+    return `/${version.value}/${lang.value}${selected.value.doc ?? selected.value.path}`;
 });
 
 const filtered = computed(() => {
