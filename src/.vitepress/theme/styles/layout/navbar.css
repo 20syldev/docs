@@ -3,7 +3,7 @@
 /* ----- Version badge ----- */
 
 .VPNavBarTitle .title::after {
-    content: var(--latest-version, 'v3');
+    content: var(--latest-version);
     color: var(--vp-c-text-2);
     position: relative;
     margin-left: 6px;
