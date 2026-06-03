@@ -54,9 +54,11 @@ export type TranslationSchema = {
         address: string;
         agent: string;
         algorithms: string;
+        asymmetric: string;
         avatar: string;
         barcode: string;
         captcha: string;
+        case: string;
         chart: string;
         color: string;
         convert: string;
@@ -72,8 +74,10 @@ export type TranslationSchema = {
         hyperplanning: string;
         infos: string;
         ip: string;
+        jwt: string;
         levenshtein: string;
         matrix: string;
+        otp: string;
         palette: string;
         password: string;
         personal: string;
@@ -81,6 +85,7 @@ export type TranslationSchema = {
         qrcode: string;
         regex: string;
         statistics: string;
+        symmetric: string;
         text: string;
         time: string;
         token: string;
