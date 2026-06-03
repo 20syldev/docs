@@ -52,7 +52,7 @@ function toPythonDict(obj: Record<string, unknown>): string {
 function curlSnippet({ method, url, body = {} }: SnippetOptions): string {
     const m = method.toUpperCase();
     if (method === 'post' || method === 'patch' || method === 'delete') {
-        const json = JSON.stringify(body, null, 4);
+        const json = JSON.stringify(body, null, 2).replace(/\n/g, '\n  ');
         return `curl -X ${m} \\\n  -H "Content-Type: application/json" \\\n  -d '${json}' \\\n  "${url}"`;
     }
     return `curl -X GET \\\n  "${url}"`;
