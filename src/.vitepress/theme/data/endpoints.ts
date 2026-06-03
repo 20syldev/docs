@@ -92,6 +92,20 @@ export const endpoints: EndpointDef[] = [
         ],
     },
     {
+        name: 'Case',
+        path: '/case',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'text', required: true, placeholder: 'hello_world' },
+            {
+                name: 'to',
+                required: false,
+                options: ['camel', 'pascal', 'snake', 'kebab', 'constant', 'title', 'sentence', 'upper', 'lower'],
+            },
+        ],
+    },
+    {
         name: 'Captcha',
         path: '/captcha',
         method: 'get',
@@ -397,6 +411,13 @@ export const endpoints: EndpointDef[] = [
         method: 'get',
         group: 'Endpoints',
         params: [],
+    },
+    {
+        name: 'JWT',
+        path: '/jwt',
+        method: 'post',
+        group: 'Endpoints',
+        params: [{ name: 'token', required: true, placeholder: 'eyJ...' }],
     },
     {
         name: 'Levenshtein',
