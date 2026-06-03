@@ -19,6 +19,7 @@ export const v5 = {
                 { text: 'Avatar', link: '/v5/en/avatar', badge: 'GET' },
                 { text: 'Barcode', link: '/v5/en/barcode', badge: 'GET' },
                 { text: 'Captcha', link: '/v5/en/captcha', badge: 'GET' },
+                { text: 'Case', link: '/v5/en/case', badge: 'GET' },
                 { text: 'Chart', link: '/v5/en/chart', badge: 'POST' },
                 {
                     text: 'Chat',
@@ -52,6 +53,7 @@ export const v5 = {
                 { text: 'Hyperplanning', link: '/v5/en/hyperplanning', badge: 'POST' },
                 { text: 'IP', link: '/v5/en/ip', badge: 'GET' },
                 { text: 'Infos', link: '/v5/en/infos', badge: 'GET' },
+                { text: 'JWT', link: '/v5/en/jwt', badge: 'POST' },
                 { text: 'Levenshtein', link: '/v5/en/levenshtein', badge: 'GET' },
                 { text: 'Matrix', link: '/v5/en/matrix', badge: 'POST' },
                 { text: 'OTP', link: '/v5/en/otp', badge: 'POST' },
@@ -110,6 +112,7 @@ export const v5 = {
                     collapsed: true,
                     items: [
                         { text: 'Overview', link: '/v5/en/changelog' },
+                        { text: '5.3.0', link: '/v5/en/changelog/5.3.0' },
                         { text: '5.2.0', link: '/v5/en/changelog/5.2.0' },
                         { text: '5.1.0', link: '/v5/en/changelog/5.1.0' },
                         { text: '5.0.0', link: '/v5/en/changelog/5.0.0' },
@@ -141,6 +144,7 @@ export const v5 = {
                 { text: 'Avatar', link: '/v5/fr/avatar', badge: 'GET' },
                 { text: 'Barcode', link: '/v5/fr/barcode', badge: 'GET' },
                 { text: 'Captcha', link: '/v5/fr/captcha', badge: 'GET' },
+                { text: 'Case', link: '/v5/fr/case', badge: 'GET' },
                 { text: 'Chart', link: '/v5/fr/chart', badge: 'POST' },
                 {
                     text: 'Chat',
@@ -174,6 +178,7 @@ export const v5 = {
                 { text: 'Hyperplanning', link: '/v5/fr/hyperplanning', badge: 'POST' },
                 { text: 'IP', link: '/v5/fr/ip', badge: 'GET' },
                 { text: 'Infos', link: '/v5/fr/infos', badge: 'GET' },
+                { text: 'JWT', link: '/v5/fr/jwt', badge: 'POST' },
                 { text: 'Levenshtein', link: '/v5/fr/levenshtein', badge: 'GET' },
                 { text: 'Matrix', link: '/v5/fr/matrix', badge: 'POST' },
                 { text: 'OTP', link: '/v5/fr/otp', badge: 'POST' },
@@ -232,6 +237,7 @@ export const v5 = {
                     collapsed: true,
                     items: [
                         { text: 'Aperçu', link: '/v5/fr/changelog' },
+                        { text: '5.3.0', link: '/v5/fr/changelog/5.3.0' },
                         { text: '5.2.0', link: '/v5/fr/changelog/5.2.0' },
                         { text: '5.1.0', link: '/v5/fr/changelog/5.1.0' },
                         { text: '5.0.0', link: '/v5/fr/changelog/5.0.0' },
