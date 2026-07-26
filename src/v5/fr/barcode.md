@@ -54,6 +54,7 @@ Avec `format=png`, la réponse est un buffer PNG brut (`Content-Type: image/png`
 | `Format must be one of: svg, png`                                          | La valeur de `format` n'est pas valide                                      |
 | `Width must be between 1 and 5`                                            | Le paramètre `width` est hors de la plage autorisée                         |
 | `Height must be between 50 and 300`                                        | Le paramètre `height` est hors de la plage autorisée                        |
+| `Please provide valid dimensions (&width={px}&height={px})`                | Le paramètre `width` ou `height` n'est pas un nombre valide                 |
 | `Code 128 only supports ASCII 32-126 (invalid char: "{ch}")`               | Un caractère dans `data` est hors de la plage Code 128 supportée            |
 | `EAN-13 requires 12 or 13 digits`                                          | La chaîne `data` n'a pas le bon nombre de chiffres                          |
 | `Invalid EAN-13 check digit (expected {expected}, got {actual})`           | Le chiffre de contrôle EAN-13 fourni ne correspond pas à la valeur calculée |
