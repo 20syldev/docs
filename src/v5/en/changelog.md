@@ -11,6 +11,13 @@ https://api.sylvain.sh/latest/infos
 https://api.sylvain.sh/latest/evaluate
 ```
 
+Nested paths and query strings are preserved through the redirect:
+
+```
+https://api.sylvain.sh/latest/chat/private?session=abc
+# redirects to /v5/chat/private?session=abc
+```
+
 ### Manual Migration
 
 Replace all occurrences of `/v4/` with `/v5/` in your API requests:

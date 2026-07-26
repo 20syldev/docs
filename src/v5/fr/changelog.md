@@ -11,6 +11,13 @@ https://api.sylvain.sh/latest/infos
 https://api.sylvain.sh/latest/evaluate
 ```
 
+Les chemins imbriqués et les paramètres de requête sont préservés par la redirection :
+
+```
+https://api.sylvain.sh/latest/chat/private?session=abc
+# redirige vers /v5/chat/private?session=abc
+```
+
 ### Migration manuelle
 
 Remplacez `/v4/` par `/v5/` dans vos requêtes :
