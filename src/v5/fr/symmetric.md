@@ -21,18 +21,23 @@ La clé brute n'est jamais utilisée directement. Elle est dérivée avec `scryp
 
 ## Format du blob
 
-Le résultat chiffré est retourné sous forme de chaîne base64 avec la structure binaire suivante :
+Le résultat chiffré est retourné sous forme de chaîne base64 avec une structure binaire qui dépend de l'algorithme :
 
 ```
-[16 octets sel][12/16 octets IV][16 octets tag (GCM uniquement)][texte chiffré]
+GCM : [16 octets sel][12 octets IV][16 octets tag d'authentification][texte chiffré]
+CBC : [16 octets sel][16 octets IV][32 octets MAC HMAC-SHA256][texte chiffré]
 ```
 
-- **Sel** (16 octets) : utilisé pour dériver la clé
-- **IV** (12 octets en GCM, 16 octets en CBC) : vecteur d'initialisation
-- **Tag** (16 octets, GCM uniquement) : tag d'authentification pour la vérification d'intégrité
+- **Sel** (16 octets) : utilisé pour dériver la clé (et, pour CBC, une clé HMAC séparée)
+- **IV** : vecteur d'initialisation (12 octets en GCM, 16 octets en CBC)
+- **Tag d'authentification / MAC** : vérification d'intégrité — un tag GCM natif (16 octets) en GCM, ou un MAC HMAC-SHA256 (32 octets) en CBC, vérifié par comparaison à temps constant
 - **Texte chiffré** : le contenu chiffré
 
 Passer ce blob comme valeur de `text` pour déchiffrer.
+
+::: warning Changement cassant en 5.4.0
+Les blobs CBC embarquent désormais un MAC d'intégrité. Les blobs produits par `aes-256-cbc` avant la 5.4.0 (sans MAC) ne peuvent plus être déchiffrés — il faut les rechiffrer avec la version actuelle. Les blobs GCM ne sont pas affectés.
+:::
 
 ## Exemples de code
 

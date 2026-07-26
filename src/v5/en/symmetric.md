@@ -21,18 +21,23 @@ The raw key is never used directly. It is derived using `scryptSync` with a rand
 
 ## Blob Format
 
-Encrypted output is returned as a base64 string with the following binary layout:
+Encrypted output is returned as a base64 string with a binary layout that depends on the algorithm:
 
 ```
-[16 bytes salt][12/16 bytes IV][16 bytes tag (GCM only)][ciphertext]
+GCM: [16 bytes salt][12 bytes IV][16 bytes auth tag][ciphertext]
+CBC: [16 bytes salt][16 bytes IV][32 bytes HMAC-SHA256 MAC][ciphertext]
 ```
 
-- **Salt** (16 bytes): used to derive the key
-- **IV** (12 bytes for GCM, 16 bytes for CBC): initialization vector
-- **Tag** (16 bytes, GCM only): authentication tag for integrity verification
+- **Salt** (16 bytes): used to derive the key (and, for CBC, a separate HMAC key)
+- **IV**: initialization vector (12 bytes for GCM, 16 bytes for CBC)
+- **Auth tag / MAC**: integrity verification — a native GCM tag (16 bytes) for GCM, or an HMAC-SHA256 MAC (32 bytes) for CBC, checked with a constant-time comparison
 - **Ciphertext**: the encrypted content
 
 Pass this blob as `text` to decrypt.
+
+::: warning Breaking change in 5.4.0
+CBC blobs now carry an integrity MAC. Blobs produced by `aes-256-cbc` before 5.4.0 (without a MAC) can no longer be decrypted — re-encrypt them with the current version. GCM blobs are unaffected.
+:::
 
 ## Code Examples
 
