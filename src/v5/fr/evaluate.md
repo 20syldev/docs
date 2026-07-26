@@ -26,6 +26,8 @@ Les expressions sont tokenisées puis parsées récursivement via des binding po
 | `%`       | Modulo                         |
 | `^`       | Exponentiation                 |
 
+La négation unaire `-` a une priorité plus faible que `^`, conformément à la convention mathématique standard : `-2^2` donne `-4` (soit `-(2^2)`), et non `4`.
+
 ## Fonctions disponibles
 
 `sin`, `cos`, `tan`, `asin`, `acos`, `atan`, `sqrt`, `abs`, `floor`, `ceil`, `round`, `log`, `log2`, `log10`
@@ -49,11 +51,12 @@ Les expressions sont tokenisées puis parsées récursivement via des binding po
 
 Si les paramètres sont manquants ou invalides, l'API retournera une erreur :
 
-| Message d'erreur                                        | Description                                       |
-| ------------------------------------------------------- | ------------------------------------------------- |
-| `Please provide a math expression (?expr={expression})` | Le paramètre `expr` est manquant                  |
-| `Expression is too long (max 500 characters)`           | L'expression dépasse 500 caractères               |
-| `Maximum expression depth exceeded`                     | La profondeur d'imbrication dépasse 100 niveaux   |
-| `Division by zero`                                      | L'expression tente une division par zéro          |
-| `Unknown identifier: {name}`                            | Une constante ou fonction inconnue a été utilisée |
-| `precision must be between 0 and 15`                    | La valeur de `precision` est hors limites         |
+| Message d'erreur                                        | Description                                              |
+| ------------------------------------------------------- | -------------------------------------------------------- |
+| `Please provide a math expression (?expr={expression})` | Le paramètre `expr` est manquant                         |
+| `Expression is too long (max 500 characters)`           | L'expression dépasse 500 caractères                      |
+| `Maximum expression depth exceeded`                     | La profondeur d'imbrication dépasse 100 niveaux          |
+| `Division by zero`                                      | L'expression tente une division par zéro                 |
+| `Unknown identifier: {name}`                            | Une constante ou fonction inconnue a été utilisée        |
+| `Invalid number: {num}`                                 | Un nombre contient plus d'un point décimal (ex. `1.2.3`) |
+| `precision must be between 0 and 15`                    | La valeur de `precision` est hors limites                |

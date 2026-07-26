@@ -26,6 +26,8 @@ Expressions are tokenized then parsed recursively using binding powers (Pratt pa
 | `%`      | Modulo                       |
 | `^`      | Exponentiation               |
 
+Unary `-` binds looser than `^`, matching standard math convention: `-2^2` evaluates to `-4` (i.e. `-(2^2)`), not `4`.
+
 ## Available Functions
 
 `sin`, `cos`, `tan`, `asin`, `acos`, `atan`, `sqrt`, `abs`, `floor`, `ceil`, `round`, `log`, `log2`, `log10`
@@ -49,11 +51,12 @@ Expressions are tokenized then parsed recursively using binding powers (Pratt pa
 
 If parameters are missing or invalid, the API will return an error:
 
-| Error Message                                           | Description                                   |
-| ------------------------------------------------------- | --------------------------------------------- |
-| `Please provide a math expression (?expr={expression})` | The `expr` parameter is missing               |
-| `Expression is too long (max 500 characters)`           | The expression exceeds 500 characters         |
-| `Maximum expression depth exceeded`                     | Nesting depth exceeds 100 levels              |
-| `Division by zero`                                      | The expression attempts to divide by zero     |
-| `Unknown identifier: {name}`                            | An unknown constant or function name was used |
-| `precision must be between 0 and 15`                    | The `precision` value is out of range         |
+| Error Message                                           | Description                                                     |
+| ------------------------------------------------------- | --------------------------------------------------------------- |
+| `Please provide a math expression (?expr={expression})` | The `expr` parameter is missing                                 |
+| `Expression is too long (max 500 characters)`           | The expression exceeds 500 characters                           |
+| `Maximum expression depth exceeded`                     | Nesting depth exceeds 100 levels                                |
+| `Division by zero`                                      | The expression attempts to divide by zero                       |
+| `Unknown identifier: {name}`                            | An unknown constant or function name was used                   |
+| `Invalid number: {num}`                                 | A number literal has more than one decimal point (e.g. `1.2.3`) |
+| `precision must be between 0 and 15`                    | The `precision` value is out of range                           |
