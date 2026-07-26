@@ -38,9 +38,10 @@ Avec `format=svg`, la réponse est un SVG inline (`Content-Type: image/svg+xml`)
 
 ## Gestion des erreurs
 
-| Message d'erreur                        | Description                                              |
-| --------------------------------------- | -------------------------------------------------------- |
-| `Size must be between 50 and 2000`      | Le paramètre `size` est hors de la plage autorisée       |
-| `Type must be one of: identicon, pixel` | La valeur de `type` n'est pas valide                     |
-| `Format must be one of: png, svg`       | La valeur de `format` n'est pas valide                   |
-| `Invalid color (use hex like ff6600)`   | La couleur `bg` n'est pas une valeur hexadécimale valide |
+| Message d'erreur                                | Description                                              |
+| ----------------------------------------------- | -------------------------------------------------------- |
+| `Size must be between 50 and 2000`              | Le paramètre `size` est hors de la plage autorisée       |
+| `Please provide a valid size (&size={50-2000})` | Le paramètre `size` n'est pas un nombre valide           |
+| `Type must be one of: identicon, pixel`         | La valeur de `type` n'est pas valide                     |
+| `Format must be one of: png, svg`               | La valeur de `format` n'est pas valide                   |
+| `Invalid color (use hex like ff6600)`           | La couleur `bg` n'est pas une valeur hexadécimale valide |
