@@ -41,5 +41,6 @@ Prévisualisez les prochaines exécutions avant de planifier une tâche, affiche
 | `Please provide a cron expression (?expr=...)`     | Le paramètre `expr` est manquant                                |
 | `Invalid cron expression`                          | L'expression ne correspond pas au format cron à 5 champs        |
 | `Count must be between 1 and 20`                   | Le paramètre `count` est hors de la plage autorisée             |
+| `Please provide a valid count (&count={n})`        | Le paramètre `count` n'est pas un nombre valide                 |
 | `Please provide a valid ISO 8601 date (?from=...)` | Le paramètre `from` n'est pas une date ISO 8601 valide          |
 | `Please provide a valid timezone (?timezone=...)`  | Le paramètre `timezone` n'est pas un fuseau horaire IANA valide |

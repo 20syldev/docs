@@ -41,5 +41,6 @@ Preview upcoming job runs before scheduling a task, display a human-readable des
 | `Please provide a cron expression (?expr=...)`     | The `expr` parameter is missing                       |
 | `Invalid cron expression`                          | The expression does not match the 5-field cron format |
 | `Count must be between 1 and 20`                   | The `count` parameter is out of the allowed range     |
+| `Please provide a valid count (&count={n})`        | The `count` parameter is not a valid number           |
 | `Please provide a valid ISO 8601 date (?from=...)` | The `from` parameter is not a valid ISO 8601 date     |
 | `Please provide a valid timezone (?timezone=...)`  | The `timezone` parameter is not a valid IANA timezone |
