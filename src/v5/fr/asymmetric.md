@@ -8,14 +8,14 @@ L'endpoint `/asymmetric` effectue la génération de clés RSA asymétriques, le
 
 Le corps de la requête doit être en JSON :
 
-| Paramètre       | Requis | Description                                                           |
-| --------------- | ------ | --------------------------------------------------------------------- |
-| `action`        | Oui    | Action à effectuer : `keygen`, `encrypt` ou `decrypt`                 |
-| `text`          | Cond.  | Texte à chiffrer, ou texte chiffré en base64 à déchiffrer             |
-| `publicKey`     | Cond.  | Clé publique PEM (requise pour `encrypt`)                             |
-| `privateKey`    | Cond.  | Clé privée PEM (requise pour `decrypt`)                               |
-| `modulusLength` | Non    | Taille de la clé RSA : `2048` (défaut) ou `4096`                      |
-| `algorithm`     | Non    | Algorithme de padding : `rsa-oaep-sha256` (défaut) ou `rsa-oaep-sha1` |
+| Paramètre       | Requis | Description                                                                                                                                        |
+| --------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `action`        | Oui    | Action à effectuer : `keygen`, `encrypt` ou `decrypt`                                                                                              |
+| `text`          | Cond.  | Texte à chiffrer, ou texte chiffré en base64 à déchiffrer                                                                                          |
+| `publicKey`     | Cond.  | Clé publique PEM (requise pour `encrypt`)                                                                                                          |
+| `privateKey`    | Cond.  | Clé privée PEM (requise pour `decrypt`)                                                                                                            |
+| `modulusLength` | Non    | Taille de la clé RSA pour `keygen` : `2048` (défaut) ou `4096`. Ignoré pour `encrypt`/`decrypt` — la limite de taille est dérivée de la clé réelle |
+| `algorithm`     | Non    | Algorithme de padding : `rsa-oaep-sha256` (défaut) ou `rsa-oaep-sha1`                                                                              |
 
 ## Actions disponibles
 
@@ -70,17 +70,17 @@ La formule est : `modulusLength / 8 − 2 × hashLength − 2`.
 
 Si les paramètres sont manquants ou invalides, l'API retournera une erreur :
 
-| Message d'erreur                                                        | Description                                        |
-| ----------------------------------------------------------------------- | -------------------------------------------------- |
-| `Action must be "keygen", "encrypt", or "decrypt"`                      | La valeur de `action` n'est pas valide             |
-| `Unsupported algorithm. Use one of: rsa-oaep-sha256, rsa-oaep-sha1`     | L'`algorithm` n'est pas supporté                   |
-| `Modulus length must be 2048 or 4096`                                   | Le `modulusLength` n'est ni 2048 ni 4096           |
-| `Text is required`                                                      | Le paramètre `text` est manquant pour encrypt      |
-| `Public key is required`                                                | La `publicKey` est manquante pour encrypt          |
-| `Invalid public key format`                                             | La `publicKey` ne commence pas par l'en-tête PEM   |
-| `Text exceeds maximum length for this key size and algorithm (N bytes)` | Le texte est trop long pour la clé et l'algorithme |
-| `Encryption failed: invalid key or data too large`                      | Le chiffrement a échoué                            |
-| `Encrypted data is required`                                            | Le paramètre `text` est manquant pour decrypt      |
-| `Private key is required`                                               | La `privateKey` est manquante pour decrypt         |
-| `Invalid private key format`                                            | La `privateKey` ne commence pas par l'en-tête PEM  |
-| `Invalid key or corrupted data`                                         | Le déchiffrement a échoué                          |
+| Message d'erreur                                                        | Description                                                                                         |
+| ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `Action must be "keygen", "encrypt", or "decrypt"`                      | La valeur de `action` n'est pas valide                                                              |
+| `Unsupported algorithm. Use one of: rsa-oaep-sha256, rsa-oaep-sha1`     | L'`algorithm` n'est pas supporté                                                                    |
+| `Modulus length must be 2048 or 4096`                                   | Le `modulusLength` n'est ni 2048 ni 4096                                                            |
+| `Text is required`                                                      | Le paramètre `text` est manquant pour encrypt                                                       |
+| `Public key is required`                                                | La `publicKey` est manquante pour encrypt                                                           |
+| `Invalid public key format`                                             | La `publicKey` ne commence pas par l'en-tête PEM, ou ne peut pas être analysée comme une clé valide |
+| `Text exceeds maximum length for this key size and algorithm (N bytes)` | Le texte est trop long pour la clé et l'algorithme                                                  |
+| `Encryption failed: invalid key or data too large`                      | Le chiffrement a échoué                                                                             |
+| `Encrypted data is required`                                            | Le paramètre `text` est manquant pour decrypt                                                       |
+| `Private key is required`                                               | La `privateKey` est manquante pour decrypt                                                          |
+| `Invalid private key format`                                            | La `privateKey` ne commence pas par l'en-tête PEM                                                   |
+| `Invalid key or corrupted data`                                         | Le déchiffrement a échoué                                                                           |
