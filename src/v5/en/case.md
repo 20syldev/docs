@@ -45,8 +45,9 @@ The `/case` endpoint converts text between 9 case formats using universal tokeni
 
 If parameters are missing or invalid, the API will return an error:
 
-| Error Message                                                                                             | Description                           |
-| --------------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| `Please provide a text (?text={text})`                                                                    | The `text` parameter is missing       |
-| `Text cannot exceed 1000 characters`                                                                      | The `text` exceeds the maximum length |
-| `Invalid target case. Valid values: camel, pascal, snake, kebab, constant, title, sentence, upper, lower` | The `to` value is not valid           |
+| Error Message                                                                                             | Description                                                                              |
+| --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `Please provide a text (?text={text})`                                                                    | The `text` parameter is missing                                                          |
+| `Text cannot exceed 1000 characters`                                                                      | The `text` exceeds the maximum length                                                    |
+| `Text must contain at least one alphanumeric character`                                                   | The `text` contains only separators/punctuation (e.g. `---`), leaving nothing to convert |
+| `Invalid target case. Valid values: camel, pascal, snake, kebab, constant, title, sentence, upper, lower` | The `to` value is not valid                                                              |

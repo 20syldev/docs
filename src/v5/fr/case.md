@@ -45,8 +45,9 @@ L'endpoint `/case` convertit un texte entre 9 formats de casse avec une tokenisa
 
 Si les paramètres sont manquants ou invalides, l'API retournera une erreur :
 
-| Message d'erreur                                                                                          | Description                            |
-| --------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| `Please provide a text (?text={text})`                                                                    | Le paramètre `text` est manquant       |
-| `Text cannot exceed 1000 characters`                                                                      | Le `text` dépasse la longueur maximale |
-| `Invalid target case. Valid values: camel, pascal, snake, kebab, constant, title, sentence, upper, lower` | La valeur de `to` n'est pas valide     |
+| Message d'erreur                                                                                          | Description                                                                                    |
+| --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `Please provide a text (?text={text})`                                                                    | Le paramètre `text` est manquant                                                               |
+| `Text cannot exceed 1000 characters`                                                                      | Le `text` dépasse la longueur maximale                                                         |
+| `Text must contain at least one alphanumeric character`                                                   | Le `text` ne contient que des séparateurs/de la ponctuation (ex. `---`), sans rien à convertir |
+| `Invalid target case. Valid values: camel, pascal, snake, kebab, constant, title, sentence, upper, lower` | La valeur de `to` n'est pas valide                                                             |
