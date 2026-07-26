@@ -46,6 +46,11 @@ L'endpoint `/algorithms` fournit plusieurs algorithmes à utiliser comme paramè
 
 Si les paramètres sont manquants ou invalides, l'API retournera une erreur :
 
-| Message d'erreur                                         | Description                                    |
-| -------------------------------------------------------- | ---------------------------------------------- |
-| `Please provide a valid algorithm (?method={algorithm})` | Le paramètre `method` est manquant ou invalide |
+| Message d'erreur                                         | Description                                                         |
+| -------------------------------------------------------- | ------------------------------------------------------------------- |
+| `Please provide a valid algorithm (?method={algorithm})` | Le paramètre `method` est manquant ou invalide                      |
+| `Value must be a number`                                 | `factorial`/`isprime` : `value` n'est pas numérique                 |
+| `Value must be an integer`                               | `factorial`/`isprime` : `value` n'est pas un nombre entier          |
+| `Number must be positive`                                | `factorial`/`isprime` : `value` est négatif (ou nul pour `isprime`) |
+| `Number must be between 0 and 170`                       | `factorial` : `value` est hors de la plage autorisée                |
+| `Number must be between 1 and 100000`                    | `isprime` : `value` est hors de la plage autorisée                  |

@@ -46,7 +46,12 @@ The `/algorithms` endpoint provides several algorithms to use as parameters. You
 
 If parameters are missing or invalid, the API will return an error:
 
-| Error Message                                            | Description                                          |
-| -------------------------------------------------------- | ---------------------------------------------------- |
-| `Please provide a valid algorithm (?method={algorithm})` | The `method` parameter is missing or invalid         |
-| `Invalid input`                                          | The value exceeds the method's constraints or limits |
+| Error Message                                            | Description                                                        |
+| -------------------------------------------------------- | ------------------------------------------------------------------ |
+| `Please provide a valid algorithm (?method={algorithm})` | The `method` parameter is missing or invalid                       |
+| `Invalid input`                                          | The value exceeds the method's constraints or limits               |
+| `Value must be a number`                                 | `factorial`/`isprime`: `value` is not numeric                      |
+| `Value must be an integer`                               | `factorial`/`isprime`: `value` is not a whole number               |
+| `Number must be positive`                                | `factorial`/`isprime`: `value` is negative (or zero for `isprime`) |
+| `Number must be between 0 and 170`                       | `factorial`: `value` is out of range                               |
+| `Number must be between 1 and 100000`                    | `isprime`: `value` is out of range                                 |
