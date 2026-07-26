@@ -33,10 +33,10 @@ Le corps de la requête doit être en JSON :
 
 Si les paramètres sont manquants ou invalides, l'API retournera une erreur :
 
-| Message d'erreur                                        | Description                                     |
-| ------------------------------------------------------- | ----------------------------------------------- |
-| `Please provide a token (?token={token})`               | Le paramètre `token` est manquant               |
-| `Token cannot exceed 8192 characters`                   | Le token dépasse la longueur maximale           |
-| `Invalid JWT format. Expected 3 parts separated by "."` | Le token n'a pas 3 parties séparées par des `.` |
-| `Invalid JWT header: not valid base64url JSON`          | Le header n'est pas un JSON base64url valide    |
-| `Invalid JWT payload: not valid base64url JSON`         | Le payload n'est pas un JSON base64url valide   |
+| Message d'erreur                                                 | Description                                                                                                 |
+| ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `Please provide a token (?token={token})`                        | Le paramètre `token` est manquant                                                                           |
+| `Token cannot exceed 8192 characters`                            | Le token dépasse la longueur maximale                                                                       |
+| `Invalid JWT format. Expected 3 parts separated by "."`          | Le token n'a pas 3 parties séparées par des `.`                                                             |
+| `Invalid JWT header: not a valid base64url-encoded JSON object`  | Le header n'est pas un JSON base64url valide, ou ne décode pas vers un objet (ex. un tableau ou une chaîne) |
+| `Invalid JWT payload: not a valid base64url-encoded JSON object` | Le payload n'est pas un JSON base64url valide, ou ne décode pas vers un objet                               |
