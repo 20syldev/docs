@@ -47,6 +47,17 @@ All endpoints return consistent error responses:
 }
 ```
 
+Requesting an endpoint that doesn't exist also returns a structured JSON error:
+
+```json
+{
+    "message": "Not Found",
+    "error": "Endpoint '/v5/doesnotexist' does not exist.",
+    "documentation": "https://docs.sylvain.sh",
+    "status": "404"
+}
+```
+
 ## Other Versions
 
 - [v4 Documentation](/v4/en/) - Previous stable version
