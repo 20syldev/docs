@@ -10,6 +10,40 @@ To authenticate your requests, include your API key in the `Authorization` heade
 curl -H "Authorization: Bearer YOUR_API_KEY" https://api.sylvain.sh/v5/infos
 ```
 
+## Checking Your Plan
+
+Use `GET /auth` to check which tier a token resolves to, along with its limits:
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" https://api.sylvain.sh/auth
+```
+
+```json
+{
+    "authenticated": true,
+    "tier": "pro",
+    "limits": {
+        "hourly": 6000,
+        "burst": 120
+    }
+}
+```
+
+Without a token, it returns the `default` tier instead of an error:
+
+```json
+{
+    "authenticated": false,
+    "tier": "default",
+    "limits": {
+        "hourly": 2000,
+        "burst": 50
+    }
+}
+```
+
+An invalid token returns the same `401` shown below.
+
 ## Rate Limits
 
 | Plan     | Requests/hour | Burst/10s |
@@ -23,7 +57,7 @@ curl -H "Authorization: Bearer YOUR_API_KEY" https://api.sylvain.sh/v5/infos
 The burst limit prevents sending too many requests in a short window. If you exceed the burst limit, you will receive a `429 Too Many Requests` response.
 :::
 
-See the [Pricing](/v4/en/pricing) page for more details.
+See the [Pricing](/v5/en/pricing) page for more details.
 
 ## Error Responses
 
@@ -41,8 +75,10 @@ If the provided token is incorrect or expired:
 
 ### No Token
 
-If no token is provided, the request uses the FREE tier limits (2,000 requests/hour).
+::: warning Note
+If no token is provided, the request is treated as unauthenticated and uses the [Free](/v5/en/pricing#plans) tier limits (2,000 requests/hour).
+:::
 
 ## Getting an API Key
 
-To obtain an API key, purchase a plan on the [Pricing](/v4/en/pricing) page. Your unique token will be sent to your email after purchase.
+To obtain an API key, purchase a plan on the [Pricing](/v5/en/pricing) page. Your unique token will be sent to your email after purchase.
