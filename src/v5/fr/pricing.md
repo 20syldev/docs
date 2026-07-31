@@ -58,7 +58,7 @@ Si vous souhaitez dépasser cette limite, vous devez utiliser un token d'authent
 </div>
 
 ::: tip Limite de burst
-Chaque offre inclut également une limite de burst (requêtes par 10 secondes) pour éviter le spam. Voir la page [Authentification](/v4/fr/authentication#limites-de-requetes) pour les détails.
+Chaque offre inclut également une limite de burst (requêtes par 10 secondes) pour éviter le spam. Voir la page [Authentification](/v5/fr/authentication#limites-de-requetes) pour les détails.
 :::
 
 ## Offres personnalisées
@@ -67,24 +67,4 @@ Si vous souhaitez un nombre de requêtes supérieur à 10 000 par heure ou un ta
 
 ## Authentification
 
-Pour utiliser votre clé API, incluez-la dans l'en-tête `Authorization` :
-
-```bash
-curl -H "Authorization: Bearer VOTRE_CLE_API" https://api.sylvain.sh/v5/infos
-```
-
-### Réponse d'erreur
-
-Si le token fourni est incorrect ou expiré, vous obtiendrez une erreur 401 :
-
-```json
-{
-    "message": "Unauthorized",
-    "error": "Invalid token.",
-    "status": "401"
-}
-```
-
-::: warning Note
-Si aucun token n'est fourni, la requête est traitée comme non authentifiée et utilise les limites de l'offre [GRATUIT](#offres).
-:::
+Voir la page [Authentification](/v5/fr/authentication) pour inclure votre clé API, vérifier votre offre avec `GET /auth`, et gérer les réponses d'erreur.

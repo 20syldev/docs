@@ -58,7 +58,7 @@ If you wish to exceed this limit, you must use an authentication token. The auth
 </div>
 
 ::: tip Burst Limit
-Each plan also includes a burst limit (requests per 10 seconds) to prevent spam. See the [Authentication](/v4/en/authentication#rate-limits) page for details.
+Each plan also includes a burst limit (requests per 10 seconds) to prevent spam. See the [Authentication](/v5/en/authentication#rate-limits) page for details.
 :::
 
 ## Custom Plans
@@ -67,24 +67,4 @@ If you need more than 10,000 requests per hour or a custom pricing plan, send an
 
 ## Authentication
 
-To use your API key, include it in the `Authorization` header:
-
-```bash
-curl -H "Authorization: Bearer YOUR_API_KEY" https://api.sylvain.sh/v5/infos
-```
-
-### Error Response
-
-If the provided token is incorrect or expired, you will receive a 401 error:
-
-```json
-{
-    "message": "Unauthorized",
-    "error": "Invalid token.",
-    "status": "401"
-}
-```
-
-::: warning Note
-If no token is provided, the request is treated as unauthenticated and uses the [FREE](#plans) tier limits.
-:::
+See the [Authentication](/v5/en/authentication) page for how to send your API key, check your plan with `GET /auth`, and handle error responses.
