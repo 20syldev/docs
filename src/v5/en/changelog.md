@@ -18,6 +18,12 @@ https://api.sylvain.sh/latest/chat/private?session=abc
 # redirects to /v5/chat/private?session=abc
 ```
 
+The redirect works for any HTTP method (`GET`, `POST`, `PATCH`, `DELETE`...) via a `307 Temporary Redirect`, which preserves the original method and body — so `POST /latest/token` redirects to `POST /v5/token` with its body intact.
+
+::: tip Tip
+Most HTTP clients don't follow redirects by default. With `curl`, add the `-L` (`--location`) flag, or you'll get the `307` response without ever reaching `/v5`.
+:::
+
 ### Manual Migration
 
 Replace all occurrences of `/v4/` with `/v5/` in your API requests:
