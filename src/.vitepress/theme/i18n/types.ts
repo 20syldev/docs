@@ -64,6 +64,7 @@ export type TranslationSchema = {
         convert: string;
         credit: string;
         cron: string;
+        csv: string;
         dice: string;
         domain: string;
         encode: string;
@@ -89,6 +90,7 @@ export type TranslationSchema = {
         text: string;
         time: string;
         token: string;
+        url: string;
         username: string;
         validate: string;
     };
