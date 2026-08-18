@@ -18,7 +18,6 @@ export interface EndpointDef {
 }
 
 export const endpoints: EndpointDef[] = [
-    // Standalone GET endpoints
     {
         name: 'Address',
         path: '/address',
@@ -64,6 +63,20 @@ export const endpoints: EndpointDef[] = [
         ],
     },
     {
+        name: 'Asymmetric',
+        path: '/asymmetric',
+        method: 'post',
+        group: 'Endpoints',
+        params: [
+            { name: 'action', required: true, options: ['keygen', 'encrypt', 'decrypt'] },
+            { name: 'text', required: false, placeholder: 'Hello World' },
+            { name: 'publicKey', required: false, placeholder: '-----BEGIN PUBLIC KEY-----\n...' },
+            { name: 'privateKey', required: false, placeholder: '-----BEGIN PRIVATE KEY-----\n...' },
+            { name: 'modulusLength', required: false, options: ['2048', '4096'] },
+            { name: 'algorithm', required: false, options: ['rsa-oaep-sha256', 'rsa-oaep-sha1'] },
+        ],
+    },
+    {
         name: 'Avatar',
         path: '/avatar',
         method: 'get',
@@ -92,20 +105,6 @@ export const endpoints: EndpointDef[] = [
         ],
     },
     {
-        name: 'Case',
-        path: '/case',
-        method: 'get',
-        group: 'Endpoints',
-        params: [
-            { name: 'text', required: true, placeholder: 'hello_world' },
-            {
-                name: 'to',
-                required: false,
-                options: ['camel', 'pascal', 'snake', 'kebab', 'constant', 'title', 'sentence', 'upper', 'lower'],
-            },
-        ],
-    },
-    {
         name: 'Captcha',
         path: '/captcha',
         method: 'get',
@@ -118,6 +117,20 @@ export const endpoints: EndpointDef[] = [
             { name: 'noise', required: false, options: ['low', 'medium', 'high'] },
             { name: 'bg', required: false, placeholder: '#ffffff' },
             { name: 'color', required: false, placeholder: '#000000' },
+        ],
+    },
+    {
+        name: 'Case',
+        path: '/case',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'text', required: true, placeholder: 'hello_world' },
+            {
+                name: 'to',
+                required: false,
+                options: ['camel', 'pascal', 'snake', 'kebab', 'constant', 'title', 'sentence', 'upper', 'lower'],
+            },
         ],
     },
     {
@@ -184,66 +197,11 @@ export const endpoints: EndpointDef[] = [
         ],
     },
     {
-        name: 'Dice',
-        path: '/dice',
-        method: 'get',
-        group: 'Endpoints',
-        params: [{ name: 'roll', required: true, placeholder: '2d6+3' }],
-    },
-    {
-        name: 'Encode',
-        path: '/encode',
-        method: 'get',
-        group: 'Endpoints',
-        params: [
-            {
-                name: 'method',
-                required: true,
-                options: [
-                    'base64encode',
-                    'base64decode',
-                    'urlencode',
-                    'urldecode',
-                    'morse',
-                    'unmorse',
-                    'rot13',
-                    'caesar',
-                    'binary',
-                    'unbinary',
-                ],
-            },
-            { name: 'text', required: true, placeholder: 'Hello World' },
-            { name: 'shift', required: false, placeholder: '3' },
-        ],
-    },
-    {
         name: 'Color',
         path: '/color',
         method: 'get',
         group: 'Endpoints',
         params: [{ name: 'hex', required: false, placeholder: '#ff6600' }],
-    },
-    {
-        name: 'Evaluate',
-        path: '/evaluate',
-        method: 'get',
-        group: 'Endpoints',
-        params: [
-            { name: 'expr', required: true, placeholder: '2*(3+4)^2' },
-            { name: 'precision', required: false, placeholder: '2' },
-        ],
-    },
-    {
-        name: 'Geo',
-        path: '/geo',
-        method: 'get',
-        group: 'Endpoints',
-        params: [
-            { name: 'lat1', required: true, placeholder: '48.8566' },
-            { name: 'lon1', required: true, placeholder: '2.3522' },
-            { name: 'lat2', required: true, placeholder: '40.7128' },
-            { name: 'lon2', required: true, placeholder: '-74.0060' },
-        ],
     },
     {
         name: 'Convert',
@@ -355,11 +313,66 @@ export const endpoints: EndpointDef[] = [
         ],
     },
     {
+        name: 'Dice',
+        path: '/dice',
+        method: 'get',
+        group: 'Endpoints',
+        params: [{ name: 'roll', required: true, placeholder: '2d6+3' }],
+    },
+    {
         name: 'Domain',
         path: '/domain',
         method: 'get',
         group: 'Endpoints',
         params: [],
+    },
+    {
+        name: 'Encode',
+        path: '/encode',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            {
+                name: 'method',
+                required: true,
+                options: [
+                    'base64encode',
+                    'base64decode',
+                    'urlencode',
+                    'urldecode',
+                    'morse',
+                    'unmorse',
+                    'rot13',
+                    'caesar',
+                    'binary',
+                    'unbinary',
+                ],
+            },
+            { name: 'text', required: true, placeholder: 'Hello World' },
+            { name: 'shift', required: false, placeholder: '3' },
+        ],
+    },
+    {
+        name: 'Evaluate',
+        path: '/evaluate',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'expr', required: true, placeholder: '2*(3+4)^2' },
+            { name: 'precision', required: false, placeholder: '2' },
+        ],
+    },
+    {
+        name: 'Geo',
+        path: '/geo',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'lat1', required: true, placeholder: '48.8566' },
+            { name: 'lon1', required: true, placeholder: '2.3522' },
+            { name: 'lat2', required: true, placeholder: '40.7128' },
+            { name: 'lon2', required: true, placeholder: '-74.0060' },
+        ],
     },
     {
         name: 'Hash',
@@ -412,18 +425,18 @@ export const endpoints: EndpointDef[] = [
         ],
     },
     {
-        name: 'IP',
-        path: '/ip',
-        method: 'get',
-        group: 'Endpoints',
-        params: [{ name: 'address', required: false, placeholder: '8.8.8.8' }],
-    },
-    {
         name: 'Infos',
         path: '/infos',
         method: 'get',
         group: 'Endpoints',
         params: [],
+    },
+    {
+        name: 'IP',
+        path: '/ip',
+        method: 'get',
+        group: 'Endpoints',
+        params: [{ name: 'address', required: false, placeholder: '8.8.8.8' }],
     },
     {
         name: 'JWT',
@@ -459,20 +472,6 @@ export const endpoints: EndpointDef[] = [
         ],
     },
     {
-        name: 'Asymmetric',
-        path: '/asymmetric',
-        method: 'post',
-        group: 'Endpoints',
-        params: [
-            { name: 'action', required: true, options: ['keygen', 'encrypt', 'decrypt'] },
-            { name: 'text', required: false, placeholder: 'Hello World' },
-            { name: 'publicKey', required: false, placeholder: '-----BEGIN PUBLIC KEY-----\n...' },
-            { name: 'privateKey', required: false, placeholder: '-----BEGIN PRIVATE KEY-----\n...' },
-            { name: 'modulusLength', required: false, options: ['2048', '4096'] },
-            { name: 'algorithm', required: false, options: ['rsa-oaep-sha256', 'rsa-oaep-sha1'] },
-        ],
-    },
-    {
         name: 'OTP',
         path: '/otp',
         method: 'post',
@@ -487,55 +486,6 @@ export const endpoints: EndpointDef[] = [
             { name: 'digits', required: false, options: ['6', '8'] },
             { name: 'period', required: false, options: ['15', '30', '60'] },
             { name: 'counter', required: false, placeholder: '0' },
-        ],
-    },
-    {
-        name: 'Personal',
-        path: '/personal',
-        method: 'get',
-        group: 'Endpoints',
-        params: [],
-    },
-    {
-        name: 'Statistics',
-        path: '/statistics',
-        method: 'get',
-        group: 'Endpoints',
-        params: [{ name: 'values', required: true, placeholder: '1,2,3,4,5' }],
-    },
-    {
-        name: 'Symmetric',
-        path: '/symmetric',
-        method: 'post',
-        group: 'Endpoints',
-        params: [
-            { name: 'action', required: true, options: ['encrypt', 'decrypt'] },
-            { name: 'text', required: true, placeholder: 'Hello World' },
-            { name: 'key', required: true, placeholder: 'mysecretkey' },
-            { name: 'algorithm', required: false, options: ['aes-256-gcm', 'aes-256-cbc', 'aes-128-gcm'] },
-        ],
-    },
-    {
-        name: 'Text',
-        path: '/text',
-        method: 'get',
-        group: 'Endpoints',
-        params: [
-            { name: 'method', required: true, options: ['stats', 'slug', 'lorem', 'number'] },
-            { name: 'value', required: false, placeholder: 'Hello World' },
-            { name: 'type', required: false, options: ['words', 'sentences', 'paragraphs'] },
-            { name: 'count', required: false, placeholder: '5' },
-            { name: 'lang', required: false, options: ['en', 'fr'] },
-        ],
-    },
-    {
-        name: 'Validate',
-        path: '/validate',
-        method: 'get',
-        group: 'Endpoints',
-        params: [
-            { name: 'type', required: true, options: ['luhn', 'iban', 'email'] },
-            { name: 'value', required: true, placeholder: 'test@example.com' },
         ],
     },
     {
@@ -568,6 +518,13 @@ export const endpoints: EndpointDef[] = [
             { name: 'count', required: false, placeholder: '1' },
             { name: 'separator', required: false, placeholder: '-' },
         ],
+    },
+    {
+        name: 'Personal',
+        path: '/personal',
+        method: 'get',
+        group: 'Endpoints',
+        params: [],
     },
     {
         name: 'Placeholder',
@@ -617,6 +574,38 @@ export const endpoints: EndpointDef[] = [
             { name: 'pattern', required: true, placeholder: '\\d+' },
             { name: 'text', required: true, placeholder: 'Order 42 and item 7' },
             { name: 'flags', required: false, placeholder: 'i' },
+        ],
+    },
+    {
+        name: 'Statistics',
+        path: '/statistics',
+        method: 'get',
+        group: 'Endpoints',
+        params: [{ name: 'values', required: true, placeholder: '1,2,3,4,5' }],
+    },
+    {
+        name: 'Symmetric',
+        path: '/symmetric',
+        method: 'post',
+        group: 'Endpoints',
+        params: [
+            { name: 'action', required: true, options: ['encrypt', 'decrypt'] },
+            { name: 'text', required: true, placeholder: 'Hello World' },
+            { name: 'key', required: true, placeholder: 'mysecretkey' },
+            { name: 'algorithm', required: false, options: ['aes-256-gcm', 'aes-256-cbc', 'aes-128-gcm'] },
+        ],
+    },
+    {
+        name: 'Text',
+        path: '/text',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'method', required: true, options: ['stats', 'slug', 'lorem', 'number'] },
+            { name: 'value', required: false, placeholder: 'Hello World' },
+            { name: 'type', required: false, options: ['words', 'sentences', 'paragraphs'] },
+            { name: 'count', required: false, placeholder: '5' },
+            { name: 'lang', required: false, options: ['en', 'fr'] },
         ],
     },
     {
@@ -741,6 +730,16 @@ export const endpoints: EndpointDef[] = [
         method: 'get',
         group: 'Endpoints',
         params: [],
+    },
+    {
+        name: 'Validate',
+        path: '/validate',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'type', required: true, options: ['luhn', 'iban', 'email'] },
+            { name: 'value', required: true, placeholder: 'test@example.com' },
+        ],
     },
 ];
 
