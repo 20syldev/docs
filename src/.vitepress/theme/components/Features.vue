@@ -24,6 +24,7 @@ const keys: Record<string, TranslationKey> = {
     Convert: 'features.convert',
     Credit: 'features.credit',
     Cron: 'features.cron',
+    CSV: 'features.csv',
     Dice: 'features.dice',
     Domain: 'features.domain',
     Encode: 'features.encode',
@@ -49,6 +50,7 @@ const keys: Record<string, TranslationKey> = {
     Text: 'features.text',
     Time: 'features.time',
     Token: 'features.token',
+    URL: 'features.url',
     Username: 'features.username',
     Validate: 'features.validate',
 };
