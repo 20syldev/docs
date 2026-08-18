@@ -2,7 +2,7 @@
 
 <Banner />
 
-Bienvenue dans la documentation de l'**API Hyperion v4**. Cette API fournit une collection complète d'endpoints utilitaires pour les développeurs.
+Bienvenue dans la documentation de l'**API Hyperion v4**. Ceci est la version stable précédente de l'API.
 
 ## URL de base
 

@@ -2,7 +2,7 @@
 
 <Banner />
 
-Welcome to the **Hyperion API v4** documentation. This API provides a comprehensive collection of utility endpoints for developers.
+Welcome to the **Hyperion API v4** documentation. This is the previous stable version of the API.
 
 ## Base URL
 

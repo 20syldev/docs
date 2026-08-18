@@ -2,7 +2,7 @@
 
 <Banner />
 
-Bienvenue dans la documentation de l'**API Hyperion v2**. Ceci est la version stable précédente de l'API.
+Bienvenue dans la documentation de l'**API Hyperion v2**. Ancienne version de l'API, conservée pour compatibilité.
 
 ## URL de Base
 
