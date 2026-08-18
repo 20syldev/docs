@@ -56,8 +56,7 @@ const fr: TranslationSchema = {
         issue: 'Signaler un bug',
     },
     features: {
-        address:
-            "Générer des adresses fictives réalistes pour la France, les États-Unis, le Royaume-Uni, l'Allemagne et l'Espagne.",
+        address: 'Générer des adresses fictives réalistes pour 5 pays (FR, US, UK, DE, ES).',
         agent: 'Parser un User-Agent : navigateur, OS, appareil, moteur et détection de bot.',
         algorithms: 'Factorielle, fibonacci, nombres premiers, PGCD, chiffres romains, et plus.',
         asymmetric: 'Chiffrement RSA asymétrique : générer des paires de clés, chiffrer et déchiffrer.',
@@ -83,7 +82,7 @@ const fr: TranslationSchema = {
         ip: 'Analyser une adresse IP : type, classe, forme binaire, valeur décimale et reverse DNS.',
         jwt: "Décoder un JSON Web Token : header, payload, signature et statut d'expiration.",
         levenshtein: "Calculer la distance d'édition entre deux chaînes.",
-        matrix: 'Opérations matricielles : addition, soustraction, multiplication, transposée, déterminant, inverse, et plus.',
+        matrix: 'Opérations matricielles : addition, multiplication, déterminant, inverse, et plus.',
         otp: 'Générer et vérifier des mots de passe TOTP/HOTP avec support URI otpauth.',
         palette: "Générer des palettes de couleurs harmonieuses à partir d'une couleur HEX.",
         password: 'Générer des mots de passe sécurisés ou des phrases de passe avec options personnalisables.',
