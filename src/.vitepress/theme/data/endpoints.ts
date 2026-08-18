@@ -342,6 +342,19 @@ export const endpoints: EndpointDef[] = [
         ],
     },
     {
+        name: 'CSV',
+        path: '/csv',
+        method: 'post',
+        group: 'Endpoints',
+        params: [
+            { name: 'action', required: true, options: ['parse', 'format'] },
+            { name: 'csv', required: false, placeholder: 'name,age\nAlice,30' },
+            { name: 'json', required: false, placeholder: '[{"name":"Alice","age":30}]', json: true },
+            { name: 'delimiter', required: false, placeholder: ',' },
+            { name: 'headers', required: false, options: ['true', 'false'], boolean: true },
+        ],
+    },
+    {
         name: 'Domain',
         path: '/domain',
         method: 'get',
@@ -714,6 +727,13 @@ export const endpoints: EndpointDef[] = [
                 options: ['alpha', 'alphanum', 'base64', 'hex', 'num', 'punct', 'urlsafe', 'uuid'],
             },
         ],
+    },
+    {
+        name: 'URL',
+        path: '/url',
+        method: 'get',
+        group: 'Endpoints',
+        params: [{ name: 'url', required: true, placeholder: 'https://example.com/path?a=1' }],
     },
     {
         name: 'Username',
