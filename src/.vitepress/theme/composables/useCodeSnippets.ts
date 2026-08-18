@@ -27,7 +27,7 @@ function toJsObject(obj: Record<string, unknown>, baseIndent: number): string {
     if (entries.length === 0) return '{}';
     const pad = ' '.repeat(baseIndent);
     const inner = ' '.repeat(baseIndent + 4);
-    return `{\n${entries.map(([k, v]) => `${inner}"${k}": ${typeof v === 'string' ? `"${v}"` : JSON.stringify(v)}`).join(',\n')}\n${pad}}`;
+    return `{\n${entries.map(([k, v]) => `${inner}"${k}": ${JSON.stringify(v)}`).join(',\n')}\n${pad}}`;
 }
 
 /**
@@ -38,7 +38,7 @@ function toJsObject(obj: Record<string, unknown>, baseIndent: number): string {
  */
 function toPythonDict(obj: Record<string, unknown>): string {
     const entries = Object.entries(obj)
-        .map(([k, v]) => `"${k}": ${typeof v === 'string' ? `"${v}"` : JSON.stringify(v)}`)
+        .map(([k, v]) => `"${k}": ${JSON.stringify(v)}`)
         .join(', ');
     return `{${entries}}`;
 }
