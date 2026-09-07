@@ -24,7 +24,6 @@ Some endpoints have rate limiting to prevent abuse. If you exceed the [rate limi
 {
     "message": "Too Many Requests",
     "error": "You have exceeded the limit of 2000 requests per hour.",
-    "documentation": "https://docs.sylvain.sh",
     "status": "429"
 }
 ```
@@ -42,7 +41,6 @@ All endpoints return consistent error responses:
 {
     "message": "Bad Request",
     "error": "Description of the error",
-    "documentation": "https://docs.sylvain.sh/v5/{endpoint}",
     "status": "400"
 }
 ```
@@ -53,7 +51,6 @@ Requesting an endpoint that doesn't exist also returns a structured JSON error:
 {
     "message": "Not Found",
     "error": "Endpoint '/v5/doesnotexist' does not exist.",
-    "documentation": "https://docs.sylvain.sh",
     "status": "404"
 }
 ```

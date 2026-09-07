@@ -24,7 +24,6 @@ Certains endpoints ont une [limitation de débit](/v5/fr/pricing) pour éviter l
 {
     "message": "Too Many Requests",
     "error": "You have exceeded the limit of 2000 requests per hour.",
-    "documentation": "https://docs.sylvain.sh",
     "status": "429"
 }
 ```
@@ -42,7 +41,6 @@ Tous les endpoints retournent des réponses d'erreur cohérentes :
 {
     "message": "Bad Request",
     "error": "Description de l'erreur",
-    "documentation": "https://docs.sylvain.sh/v5/{endpoint}",
     "status": "400"
 }
 ```
@@ -53,7 +51,6 @@ Requêter un endpoint qui n'existe pas retourne aussi une erreur JSON structuré
 {
     "message": "Not Found",
     "error": "Endpoint '/v5/doesnotexist' does not exist.",
-    "documentation": "https://docs.sylvain.sh",
     "status": "404"
 }
 ```
