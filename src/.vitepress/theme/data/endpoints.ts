@@ -105,6 +105,17 @@ export const endpoints: EndpointDef[] = [
         ],
     },
     {
+        name: 'Base',
+        path: '/base',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'value', required: true, placeholder: '255' },
+            { name: 'from', required: false, placeholder: '10' },
+            { name: 'to', required: false, placeholder: '16' },
+        ],
+    },
+    {
         name: 'Captcha',
         path: '/captcha',
         method: 'get',
@@ -318,6 +329,17 @@ export const endpoints: EndpointDef[] = [
         method: 'get',
         group: 'Endpoints',
         params: [{ name: 'roll', required: true, placeholder: '2d6+3' }],
+    },
+    {
+        name: 'Diff',
+        path: '/diff',
+        method: 'post',
+        group: 'Endpoints',
+        params: [
+            { name: 'a', required: true, placeholder: 'line1\nline2' },
+            { name: 'b', required: true, placeholder: 'line1\nline2 edited' },
+            { name: 'mode', required: false, options: ['line', 'word'] },
+        ],
     },
     {
         name: 'Domain',
@@ -566,6 +588,16 @@ export const endpoints: EndpointDef[] = [
         ],
     },
     {
+        name: 'Read',
+        path: '/read',
+        method: 'post',
+        group: 'Endpoints',
+        params: [
+            { name: 'text', required: true, placeholder: 'The cat sat on the mat. It was happy.' },
+            { name: 'lang', required: false, options: ['en', 'fr'] },
+        ],
+    },
+    {
         name: 'Regex',
         path: '/regex',
         method: 'get',
@@ -574,6 +606,18 @@ export const endpoints: EndpointDef[] = [
             { name: 'pattern', required: true, placeholder: '\\d+' },
             { name: 'text', required: true, placeholder: 'Order 42 and item 7' },
             { name: 'flags', required: false, placeholder: 'i' },
+        ],
+    },
+    {
+        name: 'Semver',
+        path: '/semver',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'version', required: true, placeholder: '1.2.3-beta.1+build.42' },
+            { name: 'action', required: false, options: ['parse', 'bump', 'compare'] },
+            { name: 'part', required: false, options: ['major', 'minor', 'patch'] },
+            { name: 'other', required: false, placeholder: '1.3.0' },
         ],
     },
     {
@@ -730,6 +774,16 @@ export const endpoints: EndpointDef[] = [
         method: 'get',
         group: 'Endpoints',
         params: [],
+    },
+    {
+        name: 'UUID',
+        path: '/uuid',
+        method: 'get',
+        group: 'Endpoints',
+        params: [
+            { name: 'uuid', required: false, placeholder: '41a43360-9874-4c7a-9ca8-eec29e765a0e' },
+            { name: 'count', required: false, placeholder: '1-50' },
+        ],
     },
     {
         name: 'Validate',
