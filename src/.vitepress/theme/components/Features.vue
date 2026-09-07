@@ -17,6 +17,7 @@ const keys: Record<string, TranslationKey> = {
     Asymmetric: 'features.asymmetric',
     Avatar: 'features.avatar',
     Barcode: 'features.barcode',
+    Base: 'features.base',
     Captcha: 'features.captcha',
     Case: 'features.case',
     Chart: 'features.chart',
@@ -26,6 +27,7 @@ const keys: Record<string, TranslationKey> = {
     Cron: 'features.cron',
     CSV: 'features.csv',
     Dice: 'features.dice',
+    Diff: 'features.diff',
     Domain: 'features.domain',
     Encode: 'features.encode',
     Evaluate: 'features.evaluate',
@@ -44,7 +46,9 @@ const keys: Record<string, TranslationKey> = {
     Personal: 'features.personal',
     Placeholder: 'features.placeholder',
     'QR Code': 'features.qrcode',
+    Read: 'features.read',
     Regex: 'features.regex',
+    Semver: 'features.semver',
     Statistics: 'features.statistics',
     Symmetric: 'features.symmetric',
     Text: 'features.text',
@@ -52,6 +56,7 @@ const keys: Record<string, TranslationKey> = {
     Token: 'features.token',
     URL: 'features.url',
     Username: 'features.username',
+    UUID: 'features.uuid',
     Validate: 'features.validate',
 };
 
