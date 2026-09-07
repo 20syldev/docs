@@ -57,6 +57,7 @@ export type TranslationSchema = {
         asymmetric: string;
         avatar: string;
         barcode: string;
+        base: string;
         captcha: string;
         case: string;
         chart: string;
@@ -66,6 +67,7 @@ export type TranslationSchema = {
         cron: string;
         csv: string;
         dice: string;
+        diff: string;
         domain: string;
         encode: string;
         evaluate: string;
@@ -84,7 +86,9 @@ export type TranslationSchema = {
         personal: string;
         placeholder: string;
         qrcode: string;
+        read: string;
         regex: string;
+        semver: string;
         statistics: string;
         symmetric: string;
         text: string;
@@ -92,6 +96,7 @@ export type TranslationSchema = {
         token: string;
         url: string;
         username: string;
+        uuid: string;
         validate: string;
     };
 };
