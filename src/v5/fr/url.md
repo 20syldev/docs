@@ -10,18 +10,32 @@ L'endpoint `/url` décompose une URL en ses composants structurels : schéma, h�
 | --------- | ------ | -------------------------------------------------------------------------------- |
 | `url`     | Oui    | URL absolue à analyser, incluant son schéma (ex. `https://example.com/path?a=1`) |
 
+## Ports par défaut
+
+Lorsque l'URL omet le port, le port par défaut du schéma est retourné :
+
+| Schéma  | Port |
+| ------- | ---- |
+| `ftp`   | 21   |
+| `http`  | 80   |
+| `https` | 443  |
+| `ws`    | 80   |
+| `wss`   | 443  |
+
+Tout autre schéma retourne `null`.
+
 ## Champs de réponse
 
-| Champ      | Type           | Description                                                            |
-| ---------- | -------------- | ---------------------------------------------------------------------- |
-| `url`      | `string`       | L'URL d'entrée originale                                               |
-| `scheme`   | `string`       | Schéma de l'URL sans le `:` final (ex. `https`)                        |
-| `host`     | `string`       | Nom d'hôte                                                             |
-| `port`     | `number\|null` | Numéro de port, ou `null` si non spécifié                              |
-| `path`     | `string`       | Composant chemin                                                       |
-| `params`   | `object`       | Paramètres de requête — les clés dupliquées sont regroupées en tableau |
-| `fragment` | `string`       | Identifiant de fragment sans le `#` initial                            |
-| `valid`    | `boolean`      | Toujours `true` pour une URL analysée avec succès                      |
+| Champ      | Type           | Description                                                                                                                    |
+| ---------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `url`      | `string`       | L'URL d'entrée originale                                                                                                       |
+| `scheme`   | `string`       | Schéma de l'URL sans le `:` final (ex. `https`)                                                                                |
+| `host`     | `string`       | Nom d'hôte                                                                                                                     |
+| `port`     | `number\|null` | Numéro de port — le port par défaut du schéma si l'URL ne le précise pas, `null` si le schéma n'a pas de port par défaut connu |
+| `path`     | `string`       | Composant chemin                                                                                                               |
+| `params`   | `object`       | Paramètres de requête — les clés dupliquées sont regroupées en tableau                                                         |
+| `fragment` | `string`       | Identifiant de fragment sans le `#` initial                                                                                    |
+| `valid`    | `boolean`      | Toujours `true` pour une URL analysée avec succès                                                                              |
 
 ## Exemples de code
 

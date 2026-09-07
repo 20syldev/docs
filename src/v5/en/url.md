@@ -10,18 +10,32 @@ The `/url` endpoint parses a URL into its structural components: scheme, host, p
 | --------- | -------- | --------------------------------------------------------------------------------- |
 | `url`     | Yes      | Absolute URL to parse, including its scheme (e.g. `https://example.com/path?a=1`) |
 
+## Default Ports
+
+When the URL omits the port, the scheme's default port is returned:
+
+| Scheme  | Port |
+| ------- | ---- |
+| `ftp`   | 21   |
+| `http`  | 80   |
+| `https` | 443  |
+| `ws`    | 80   |
+| `wss`   | 443  |
+
+Any other scheme returns `null`.
+
 ## Response Fields
 
-| Field      | Type           | Description                                                 |
-| ---------- | -------------- | ----------------------------------------------------------- |
-| `url`      | `string`       | The original input URL                                      |
-| `scheme`   | `string`       | URL scheme without the trailing colon (e.g. `https`)        |
-| `host`     | `string`       | Hostname                                                    |
-| `port`     | `number\|null` | Port number, or `null` if not specified                     |
-| `path`     | `string`       | Path component                                              |
-| `params`   | `object`       | Query parameters — duplicate keys are grouped into an array |
-| `fragment` | `string`       | Fragment identifier without the leading `#`                 |
-| `valid`    | `boolean`      | Always `true` for a successfully parsed URL                 |
+| Field      | Type           | Description                                                                                              |
+| ---------- | -------------- | -------------------------------------------------------------------------------------------------------- |
+| `url`      | `string`       | The original input URL                                                                                   |
+| `scheme`   | `string`       | URL scheme without the trailing colon (e.g. `https`)                                                     |
+| `host`     | `string`       | Hostname                                                                                                 |
+| `port`     | `number\|null` | Port number — the scheme's default port when the URL omits it, `null` if the scheme has no known default |
+| `path`     | `string`       | Path component                                                                                           |
+| `params`   | `object`       | Query parameters — duplicate keys are grouped into an array                                              |
+| `fragment` | `string`       | Fragment identifier without the leading `#`                                                              |
+| `valid`    | `boolean`      | Always `true` for a successfully parsed URL                                                              |
 
 ## Code Examples
 
