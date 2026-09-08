@@ -85,6 +85,7 @@ export type TranslationSchema = {
         password: string;
         personal: string;
         placeholder: string;
+        pow: string;
         qrcode: string;
         read: string;
         regex: string;

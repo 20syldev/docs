@@ -90,6 +90,7 @@ const en: TranslationSchema = {
         password: 'Generate secure random passwords or passphrases with customizable options.',
         personal: 'Generate a random fake identity with personal details.',
         placeholder: 'Generate SVG placeholders: images or animated skeleton loaders.',
+        pow: 'Proof-of-work challenge: a bot protection no vision model can shortcut.',
         qrcode: 'Generate QR code images from any URL.',
         read: 'Analyze a text: word, sentence and syllable counts, Flesch scores and reading time.',
         regex: 'Test a regex pattern against a text: matches, capture groups, and named groups.',

@@ -90,6 +90,7 @@ const fr: TranslationSchema = {
         password: 'Générer des mots de passe sécurisés ou des phrases de passe avec options personnalisables.',
         personal: 'Générer une identité fictive aléatoire avec des détails personnels.',
         placeholder: 'Générer des placeholders SVG : images ou squelettes de chargement animés.',
+        pow: 'Défi de preuve de travail : une protection anti-bot que la vision ne contourne pas.',
         qrcode: "Générer des images QR code à partir d'une URL.",
         read: 'Analyser un texte : mots, phrases, syllabes, scores Flesch et temps de lecture.',
         regex: 'Tester un pattern regex contre un texte : correspondances, groupes capturants et nommés.',
