@@ -19,7 +19,14 @@ export const v5 = {
                 { text: 'Avatar', link: '/v5/en/avatar', badge: 'GET' },
                 { text: 'Barcode', link: '/v5/en/barcode', badge: 'GET' },
                 { text: 'Base', link: '/v5/en/base', badge: 'GET' },
-                { text: 'Captcha', link: '/v5/en/captcha', badge: 'GET' },
+                {
+                    text: 'Captcha',
+                    collapsed: true,
+                    items: [
+                        { text: '/v5/captcha', link: '/v5/en/captcha', badge: 'GET' },
+                        { text: '/v5/captcha', link: '/v5/en/captcha/verify', badge: 'POST' },
+                    ],
+                },
                 { text: 'Case', link: '/v5/en/case', badge: 'GET' },
                 { text: 'Chart', link: '/v5/en/chart', badge: 'POST' },
                 {
@@ -64,6 +71,14 @@ export const v5 = {
                 { text: 'Password', link: '/v5/en/password', badge: 'GET' },
                 { text: 'Personal', link: '/v5/en/personal', badge: 'GET' },
                 { text: 'Placeholder', link: '/v5/en/placeholder', badge: 'GET' },
+                {
+                    text: 'Pow',
+                    collapsed: true,
+                    items: [
+                        { text: '/v5/pow', link: '/v5/en/pow', badge: 'GET' },
+                        { text: '/v5/pow', link: '/v5/en/pow/verify', badge: 'POST' },
+                    ],
+                },
                 { text: 'QR Code', link: '/v5/en/qrcode', badge: 'GET' },
                 { text: 'Read', link: '/v5/en/read', badge: 'POST' },
                 { text: 'Regex', link: '/v5/en/regex', badge: 'GET' },
@@ -119,6 +134,7 @@ export const v5 = {
                     collapsed: true,
                     items: [
                         { text: 'Overview', link: '/v5/en/changelog' },
+                        { text: '5.9.0', link: '/v5/en/changelog/5.9.0' },
                         { text: '5.8.0', link: '/v5/en/changelog/5.8.0' },
                         { text: '5.7.0', link: '/v5/en/changelog/5.7.0' },
                         { text: '5.6.0', link: '/v5/en/changelog/5.6.0' },
@@ -156,7 +172,14 @@ export const v5 = {
                 { text: 'Avatar', link: '/v5/fr/avatar', badge: 'GET' },
                 { text: 'Barcode', link: '/v5/fr/barcode', badge: 'GET' },
                 { text: 'Base', link: '/v5/fr/base', badge: 'GET' },
-                { text: 'Captcha', link: '/v5/fr/captcha', badge: 'GET' },
+                {
+                    text: 'Captcha',
+                    collapsed: true,
+                    items: [
+                        { text: '/v5/captcha', link: '/v5/fr/captcha', badge: 'GET' },
+                        { text: '/v5/captcha', link: '/v5/fr/captcha/verify', badge: 'POST' },
+                    ],
+                },
                 { text: 'Case', link: '/v5/fr/case', badge: 'GET' },
                 { text: 'Chart', link: '/v5/fr/chart', badge: 'POST' },
                 {
@@ -201,6 +224,14 @@ export const v5 = {
                 { text: 'Password', link: '/v5/fr/password', badge: 'GET' },
                 { text: 'Personal', link: '/v5/fr/personal', badge: 'GET' },
                 { text: 'Placeholder', link: '/v5/fr/placeholder', badge: 'GET' },
+                {
+                    text: 'Pow',
+                    collapsed: true,
+                    items: [
+                        { text: '/v5/pow', link: '/v5/fr/pow', badge: 'GET' },
+                        { text: '/v5/pow', link: '/v5/fr/pow/verify', badge: 'POST' },
+                    ],
+                },
                 { text: 'QR Code', link: '/v5/fr/qrcode', badge: 'GET' },
                 { text: 'Read', link: '/v5/fr/read', badge: 'POST' },
                 { text: 'Regex', link: '/v5/fr/regex', badge: 'GET' },
@@ -256,6 +287,7 @@ export const v5 = {
                     collapsed: true,
                     items: [
                         { text: 'Aperçu', link: '/v5/fr/changelog' },
+                        { text: '5.9.0', link: '/v5/fr/changelog/5.9.0' },
                         { text: '5.8.0', link: '/v5/fr/changelog/5.8.0' },
                         { text: '5.7.0', link: '/v5/fr/changelog/5.7.0' },
                         { text: '5.6.0', link: '/v5/fr/changelog/5.6.0' },
