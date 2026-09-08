@@ -45,6 +45,7 @@ const keys: Record<string, TranslationKey> = {
     Password: 'features.password',
     Personal: 'features.personal',
     Placeholder: 'features.placeholder',
+    Pow: 'features.pow',
     'QR Code': 'features.qrcode',
     Read: 'features.read',
     Regex: 'features.regex',
